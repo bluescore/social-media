@@ -1,0 +1,29 @@
+{
+  "data": "2026-11-11T21:16:00.367Z",
+  "modelo": "gpt-image-2.5-flare",
+  "qualidade": "low",
+  "tamanho": "1024x1536",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [],
+  "prompt": "A single matte orange ceramic coffee cup on an off-white table, soft warm studio light from the left, shallow depth of field, minimal composition, no text.",
+  "arquivos": [
+    "C:\\social-media\\ferramentas\\openai\\teste\\xicara-teste.png"
+  ],
+  "usage": {
+    "input_tokens": 38,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 38
+    },
+    "output_tokens": 158,
+    "output_tokens_details": {
+      "image_tokens": 158,
+      "text_tokens": 0
+    },
+    "total_tokens": 196
+  },
+  "custo_estimado_usd": 0.0049,
+  "segundos": 8
+}

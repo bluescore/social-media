@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-12T14:10:42.507Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/folha-A-final.png",
+    "hyperframes/_serie-clinicas/personagens/dra-helena/rascunhos/v2-capa-A.png"
+  ],
+  "prompt": "Image 1 = approved character sheet. Image 2 = the miniature office she stands in (light and scale only; do not include the room).\nKeep EXACTLY the wooden-figure character of Image 1 (approved sheet): honey-brown satin-varnished turned-wood head and hands; minimal painted face (small black dot eyes, tiny rounded wooden nose knob, thin subtle smile line, thin brow strokes); carved dark brown hair with fine grooves, side part, LOW BUN at the nape, ONE wide band of carved GREY hair on her own RIGHT side; bone-white carved lab coat with notched lapels, chest pocket with a small charcoal pen on her LEFT chest, sleeves rolled once; charcoal high-neck top, charcoal trousers, rounded charcoal shoes; thin brown watch on her LEFT wrist. Nothing orange. No text.\nPOSE: full body, standing on the floor, seen in three-quarter view from slightly above (as in a dollhouse), turned exactly like the SECOND figure of Image 1 (three-quarter front, facing toward the RIGHT of the image) — so the grey band is on the LEFT part of her head in the image (toward the back of the head, near the bun), never next to her face on the right; her body turned toward the RIGHT of the image, looking at a phone on a tripod that is just to her right (the tripod is NOT in the picture). Tired after a long day: shoulders dropped, head slightly lowered, eyes painted as soft half-closed curves, arms hanging relaxed.\nLIGHT: warm 2700 K lamp light from the LEFT, soft; faint cool light from the right.\nBACKGROUND: fully TRANSPARENT, isolated figure, no floor, no cast shadow.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\helena-corpo-tripe-v2.png"
+  ],
+  "usage": {
+    "input_tokens": 3395,
+    "input_tokens_details": {
+      "image_tokens": 3016,
+      "text_tokens": 379
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 4808
+  },
+  "custo_estimado_usd": 0.0684,
+  "segundos": 39
+}

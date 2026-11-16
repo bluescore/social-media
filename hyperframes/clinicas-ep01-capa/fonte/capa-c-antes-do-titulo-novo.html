@@ -1,0 +1,125 @@
+<!-- CAPA C (Reels do ep. 1): "O vídeo que ela não gravou" sobre a foto da tarde
+     (o título antigo desta capa, "O roteiro ela já tinha", é a frase de fechamento do episódio: só faz sentido para quem
+     já viu o vídeo. Para voltar a ele, troque as variáveis: linha1 "O roteiro ela", linha2 "" e destaque "já tinha";
+     o traço deve passar por baixo da perna do "j" com a mesma folga; confira no snapshot.)
+     Em cima: bloco laranja chapado (y 0-890) com o título e o logo pequeno no canto. Embaixo (y 890-1920): a Helena parada
+     no consultório da maquete à tarde, sorrindo para o celular — ela está vendo o vídeo que não gravou.
+     Na grade do Instagram aparece só o miolo 3:4 (y 240-1680): logo e título ficam dentro dele.
+     Camadas (originais em alta, de clinicas-ep01-protocolo-implante\fonte\geradas):
+       fundo-c-tarde.jpg        = consultorio-tarde.png, recorte x 100-1440 / y 300-1578, desfocado (fonte/scripts/preparar-camadas.py)
+       helena-celular-tarde.png = helena-parada-celular-1.png (1024x1536) em 95% — sem espelhar (grisalho na têmpora direita, relógio no pulso esquerdo) -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #f34500;
+      font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+    }
+    /* ---------- bloco de cima ---------- */
+    #c-bloco {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 890px;
+      background: var(--laranja, #f34500);
+    }
+    #c-logo {
+      position: absolute;
+      left: 769px; /* o desenho do logo termina em x 972 (margem 108) */
+      top: 302px;
+      width: 205px;
+      height: 59px;
+    }
+    #c-titulo {
+      position: absolute;
+      left: 108px;
+      top: 471px; /* centrado entre o logo (y 357) e a emenda (y 890) */
+      width: 864px;
+      margin: 0;
+      color: #ffffff;
+      font-size: 136px;
+      font-weight: 400;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+    }
+    #c-titulo .linha {
+      display: block;
+      white-space: nowrap;
+    }
+    #c-titulo .chave {
+      position: relative;
+      font-weight: 700;
+    }
+    /* traço de caneta branco (o mesmo desenho do modelo laranja aprovado, na escala deste título) */
+    #c-titulo .risco {
+      position: absolute;
+      left: 0;
+      width: calc(100% + 18px);
+      top: calc(100% + 11px); /* passa claramente por baixo da perna do "g" (e do "j", se voltar ao título antigo) */
+      height: 40px;
+      overflow: visible;
+    }
+    /* ---------- foto de baixo ---------- */
+    #c-foto {
+      position: absolute;
+      left: 0;
+      top: 890px;
+      width: 1080px;
+      height: 1030px;
+      overflow: hidden;
+      background: #2b2224;
+    }
+    #c-fundo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1030px;
+    }
+    #c-helena {
+      position: absolute;
+      left: 99px;
+      top: 15px;
+      width: 973px;
+      height: 1459px;
+    }
+  </style>
+
+  <div
+    id="root"
+    data-composition-id="capa-c"
+    data-width="1080"
+    data-height="1920"
+    data-composition-variables='[{"id":"linha1","type":"string","label":"Título, linha 1","default":"O vídeo que"},{"id":"linha2","type":"string","label":"Título, linha 2 (antes do destaque)","default":"ela"},{"id":"destaque","type":"string","label":"Destaque (Bold, sublinhado)","default":"não gravou"}]'
+  >
+    <div id="c-bloco">
+      <img id="c-logo" src="assets/marca/logo/sabia_branco.png" alt="Sabiá" />
+      <h1 id="c-titulo" data-layout-allow-overflow>
+        <span class="linha" data-var-text="linha1">O vídeo que</span>
+        <span class="linha"><span data-var-text="linha2">ela</span> <span class="chave"><span data-var-text="destaque">não gravou</span><svg class="risco" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 26.7 L25 27.4 L50 27.8 L75 28.1 L100 28.1 L125 28.0 L150 27.6 L175 27.1 L200 26.3 L225 25.5 L250 24.5 L275 23.5 L300 22.5 L325 21.5 L350 20.6 L375 19.8 L400 19.2 L425 18.7 L450 18.4 L475 18.3 L500 18.3 L525 18.5 L550 18.8 L575 19.1 L600 19.5 L625 19.9 L650 20.2 L675 20.4 L700 20.5 L725 20.4 L750 20.2 L775 19.7 L800 19.0 L825 18.1 L850 17.0 L875 15.7 L900 14.4 L925 12.9 L950 11.4 L975 9.9 L1000 8.5" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></svg></span></span>
+      </h1>
+    </div>
+
+    <div id="c-foto">
+      <img id="c-fundo" src="assets/img/fundo-c-tarde.jpg" alt="" />
+      <img id="c-helena" data-layout-allow-overflow src="assets/img/helena-celular-tarde.png" alt="dra. Helena" />
+    </div>
+  </div>
+
+  <script>
+    window.__timelines["capa-c"] = gsap.timeline({ paused: true });
+  </script>
+</template>

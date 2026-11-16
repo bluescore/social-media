@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-11T22:39:41.978Z",
+  "modelo": "gpt-image-2.5-flare",
+  "qualidade": "low",
+  "tamanho": "1536x864",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 4,
+  "referencias": [],
+  "prompt": "Character model sheet of ONE fictional adult woman: a Brazilian dental surgeon (implant specialist), 44 years old.\nStyle: premium stylized 3D film character for an adult drama, realistic adult anatomy with gently simplified features; matte skin with soft subsurface scattering and softened pores; real fabric weave on the coat. NOT a toy, NOT a collectible figure, NOT vinyl, NOT a porcelain doll, NOT cartoon, NOT big-eyed, NOT big-headed, NOT chibi, NOT clay.\nRealistic adult proportions: head = 1/7 of body height, human-sized almond eyes, minimal facial features.\nFace: oval; warm medium-brown skin; straight dark eyebrows; small straight nose; calm closed mouth, no teeth showing.\nHair: very dark brown, pulled back into a LOW BUN at the nape. ONE wide streak of grey hair starts at her own LEFT temple and is swept back into the bun (in the front view it appears on the image's RIGHT side). No loose strands.\nOutfit: bone-white matte lab coat (#F6F4F1) to mid-thigh with a MANDARIN (band) collar, closed with hidden buttons, sleeves folded once to the forearm; charcoal (#303236) high-neck top underneath; straight charcoal trousers; low charcoal shoes; thin brown leather watch on her LEFT wrist; a charcoal pen clipped to the left chest pocket.\nNothing orange on her. No glasses, no earrings, no jewelry, no badge, no logo, no embroidered name, no text.\nLayout: four full-body views side by side at the same scale and height: front, three-quarter front, left profile, back. Neutral standing pose, arms relaxed, five fingers on each hand.\nLight: soft even studio light from the upper LEFT; light grey seamless background (#E6E3DF); a soft contact shadow under each figure, no other shadows between the views.\nCharacter Consistency: same face, same grey streak, same low bun, same coat and collar, same proportions in all views.\nConstraints: no text, no labels, no numbers, no frames, no watermark, no extra people, no props besides pen and watch.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\_serie-clinicas\\personagens\\dra-helena\\rascunhos\\folha-1.png",
+    "C:\\social-media\\hyperframes\\_serie-clinicas\\personagens\\dra-helena\\rascunhos\\folha-2.png",
+    "C:\\social-media\\hyperframes\\_serie-clinicas\\personagens\\dra-helena\\rascunhos\\folha-3.png",
+    "C:\\social-media\\hyperframes\\_serie-clinicas\\personagens\\dra-helena\\rascunhos\\folha-4.png"
+  ],
+  "usage": {
+    "input_tokens": 1792,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 1792
+    },
+    "output_tokens": 480,
+    "output_tokens_details": {
+      "image_tokens": 480,
+      "text_tokens": 0
+    },
+    "total_tokens": 2272
+  },
+  "custo_estimado_usd": 0.0234,
+  "segundos": 13
+}

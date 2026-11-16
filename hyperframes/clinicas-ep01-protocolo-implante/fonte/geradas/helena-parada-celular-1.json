@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-12T18:30:02.786Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1024x1536",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/folha-A-final.png",
+    "hyperframes/clinicas-ep01-protocolo-implante/assets/img/helena-andando-a.png"
+  ],
+  "prompt": "Image 1 = approved character sheet. Image 2 = the same figure in the late-afternoon office light (keep the same rendering, wood and fabric materials, proportions and warm golden light).\nKeep EXACTLY the wooden-figure character of Image 1 (approved sheet): honey-brown satin turned-wood head and hands, minimal painted face (small black dot eyes, tiny wooden nose knob, thin smile line), carved dark brown hair in a LOW BUN with ONE wide band of carved GREY hair on her own RIGHT temple, bone-white carved lab coat with notched lapels and a small charcoal pen in the chest pocket on her own LEFT side, charcoal top and charcoal trousers, dark shoes, brown leather watch on her own LEFT wrist. Nothing orange.\nVIEW: full body, standing still, in three-quarter view turned exactly like the SECOND figure of Image 1 (body and face turned toward the LEFT of the image), seen from slightly above as in a dollhouse. Because of this view: the GREY band of hair is on the LEFT side of the image, at the top-front of her head above the far temple (exactly as in the second figure of Image 1); the BUN is on the RIGHT side of the image; the hand with the brown WATCH is the hand on the RIGHT side of the image. Do not mirror the character.\nPOSE: calm and relaxed, feet together flat on the ground, weight even. She holds a plain dark-grey smartphone with BOTH hands at chest height, in front of her coat, and looks down at its screen (the screen faces her, we see the back of the phone). Elbows bent close to the body, shoulders relaxed, head tilted slightly down toward the phone, a quiet content expression (calm dot eyes looking down, small smile line). The watch on the wrist of the hand on the RIGHT side of the image stays visible.\nLIGHT: warm low golden late-afternoon sunlight coming from behind her on the RIGHT side of the image (soft warm rim light on the right edges), gentle warm fill on the front. Soft and readable.\nFully TRANSPARENT background, isolated figure, clean edges, no glow, no halo, no floor, no shadow, no text, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\helena-parada-celular-1.png"
+  ],
+  "usage": {
+    "input_tokens": 3286,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 482
+    },
+    "output_tokens": 1372,
+    "output_tokens_details": {
+      "image_tokens": 1372,
+      "text_tokens": 0
+    },
+    "total_tokens": 4658
+  },
+  "custo_estimado_usd": 0.066,
+  "segundos": 44
+}

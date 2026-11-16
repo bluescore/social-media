@@ -1,0 +1,103 @@
+<!doctype html>
+<!-- CAPA DO REELS — ep. 1 da série "sala de espera" (vídeo: prontos\2026-11-13_sala-de-espera-ep01.mp4)
+     Quatro opções de capa, uma por segundo (cada uma é uma imagem parada):
+       0-1 s  capa A   "O vídeo que ela não gravou"   — Helena de olhos baixos ao lado do tripé, à noite
+       1-2 s  capa A2  "O vídeo que ela não gravou"   — a mesma cena, Helena de olhos abertos olhando a tela apagada
+       2-3 s  capa B   "Ela apagou / a 14ª tentativa" — a foto da A com o título da B
+       3-4 s  capa C   "Ela tirou o roteiro / do papel" (2 linhas) — Helena no consultório à tarde, sorrindo para o celular (ESCOLHIDA pelo dono, 13/11)
+     Modelo (referência do dono, fonte\referencia-dono.png): bloco laranja chapado em cima com o título e o logo
+     pequeno no canto; foto do próprio vídeo embaixo; emenda reta. 1080x1920; na grade aparece o miolo 3:4 (y 240-1680).
+     As fotos saem em renders\capa-A.jpg/.png etc. (fonte\scripts\exportar-capas.py). -->
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --laranja-intenso: #f34500; /* cor principal */
+        --branco: #ffffff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--laranja-intenso);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="4"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div
+        id="capa-a"
+        class="clip"
+        data-composition-id="capa-a"
+        data-composition-src="compositions/capa-a.html"
+        data-start="0"
+        data-duration="1"
+        data-track-index="0"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <div
+        id="capa-a2"
+        class="clip"
+        data-composition-id="capa-a2"
+        data-composition-src="compositions/capa-a2.html"
+        data-start="1"
+        data-duration="1"
+        data-track-index="0"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <div
+        id="capa-b"
+        class="clip"
+        data-composition-id="capa-b"
+        data-composition-src="compositions/capa-b.html"
+        data-start="2"
+        data-duration="1"
+        data-track-index="0"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <div
+        id="capa-c"
+        class="clip"
+        data-composition-id="capa-c"
+        data-composition-src="compositions/capa-c.html"
+        data-start="3"
+        data-duration="1"
+        data-track-index="0"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

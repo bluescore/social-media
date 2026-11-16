@@ -1,0 +1,2 @@
+Thick paper folded over and pressed flat, crisp crease with a firm paper snap, close-mic, short, dry
+{"duration_seconds": 0.7, "prompt_influence": 0.7}

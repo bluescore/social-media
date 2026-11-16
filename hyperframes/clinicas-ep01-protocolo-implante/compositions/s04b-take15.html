@@ -1,0 +1,332 @@
+<!-- CENA 4b (18,3 a 21,6 s do episódio) — NOVA na v3: o momento de virada antes da 15ª tentativa.
+     Volta ao celular no tripé, no mesmo enquadramento fechado do começo da cena 1 (as camadas, o tripé e a tela são cópia
+     de s01-maquete.html). No visor ela já está de olhos abertos; o contador mostra "take 15" parado, a hora é 23:51 e um
+     botão de gravar grande "respira" no pé da tela (pronto para gravar). Por cima, o lettering da fala T:
+     "mas isso está prestes a mudar…", palavra por palavra junto com a voz.
+     Tempos LOCAIS (tempo do episódio − 18,3):
+     0,00 corte (a imagem vem 40% mais escura por 3 quadros, como em s04) · a câmera avança devagar (~4%) a cena toda
+     0,30 "mas" · 0,95–2,25 "isso está prestes a mudar…" (o lettering fica até o fim)
+     2,85–3,05 a tela do celular apaga (ela não vai gravar): o botão para de respirar e a tela fica preta; o quarto continua
+          na penumbra · 3,30 corte para s05. -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #2b2224;
+      font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+    }
+    #s4b-cam {
+      position: absolute;
+      inset: 0;
+      transform-origin: 540px 860px;
+    }
+    /* as mesmas camadas da cena 1: cada uma ampliada em volta do centro da tela do celular */
+    .camada {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      transform-origin: 689.5px 685px;
+    }
+    .placa {
+      position: absolute;
+      left: -67.5px;
+      top: -120px;
+      width: 1215px;
+      height: 2160px;
+    }
+    #helena-corpo,
+    #helena-corpo-desf {
+      position: absolute;
+      left: 185px;
+      top: 509px;
+      width: 536px;
+      height: 952px;
+      transform-origin: 268px 940px;
+    }
+    #sombra-helena,
+    #sombra-tripe {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(22, 13, 10, 0.42), rgba(22, 13, 10, 0) 70%);
+    }
+    #sombra-helena {
+      left: 330px;
+      top: 1395px;
+      width: 290px;
+      height: 70px;
+    }
+    #sombra-tripe {
+      left: 560px;
+      top: 1405px;
+      width: 260px;
+      height: 60px;
+    }
+    #tripe {
+      position: absolute;
+      left: 414px;
+      top: 487px;
+      width: 553px;
+      height: 983px;
+    }
+    /* a tela do celular: desenhada em 441 x 812 (o tamanho dela no enquadramento fechado) e encolhida para caber no tripé */
+    #tela {
+      position: absolute;
+      left: 619px;
+      top: 554px;
+      width: 441px;
+      height: 812px;
+      transform-origin: 0 0;
+      transform: scale(0.32258);
+      border-radius: 34px;
+      overflow: hidden;
+      background: #1b1c1f;
+      color: #f6f4f1;
+    }
+    .visor {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 441px;
+      height: 812px;
+      object-fit: cover;
+      transform-origin: 220px 812px;
+    }
+    #reflexo {
+      position: absolute;
+      inset: -40px;
+      background: linear-gradient(118deg, rgba(255, 238, 220, 0) 30%, rgba(255, 238, 220, 0.1) 44%, rgba(255, 238, 220, 0) 58%);
+      pointer-events: none;
+    }
+    #rec {
+      position: absolute;
+      left: 26px;
+      top: 26px;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    }
+    #rec .bola {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #f6f4f1;
+      margin-right: 12px;
+    }
+    #rec .num {
+      display: inline-block;
+      height: 40px;
+      overflow: hidden;
+      vertical-align: top;
+      margin-left: 10px;
+    }
+    #hora {
+      position: absolute;
+      right: 26px;
+      top: 30px;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    }
+    /* pé da tela: leve sombra para o botão de gravar se destacar do jaleco */
+    #pe-tela {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 280px;
+      background: linear-gradient(180deg, rgba(10, 10, 12, 0) 0%, rgba(10, 10, 12, 0.42) 100%);
+    }
+    /* o botão de gravar (pronto para gravar): anel branco + disco vermelho, com um brilho que respira */
+    #gravar {
+      position: absolute;
+      left: 160.5px;
+      top: 648px;
+      width: 120px;
+      height: 120px;
+    }
+    #gravar-halo {
+      position: absolute;
+      left: -22px;
+      top: -22px;
+      width: 164px;
+      height: 164px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(232, 56, 46, 0.5) 38%, rgba(232, 56, 46, 0) 70%);
+      opacity: 0;
+    }
+    #gravar-anel {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 7px solid #f6f4f1;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    }
+    #gravar-disco {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #e8382e;
+    }
+    /* a tela apagada (só a tela; o reflexo do vidro continua por cima) */
+    #tela-apagada {
+      position: absolute;
+      inset: 0;
+      background: #070708;
+      opacity: 0;
+    }
+    /* véu em degradê no alto do quadro, para o lettering ter contraste (como em s11) */
+    #veu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 560px;
+      background: linear-gradient(180deg, rgba(36, 26, 22, 0.55) 0%, rgba(36, 26, 22, 0.35) 55%, rgba(36, 26, 22, 0) 100%);
+      opacity: 0;
+    }
+    /* lettering da fala T: Helvetica Now Text 100 px, entrelinha 0,9, -0,05em, branco quente, x = 108 */
+    #lettering {
+      position: absolute;
+      left: 108px;
+      top: 196px;
+      width: 864px;
+      color: #f6f4f1;
+      font-size: 100px;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      text-shadow: 0 3px 24px rgba(30, 18, 12, 0.55);
+    }
+    #lettering .palavra {
+      display: inline-block;
+      opacity: 0;
+    }
+    #lettering b {
+      font-weight: 700;
+    }
+    #corte-luz {
+      position: absolute;
+      inset: 0;
+      background: #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+
+  <div id="root" data-composition-id="s04b-take15" data-width="1080" data-height="1920">
+    <div id="s4b-cam" data-layout-allow-overflow data-layout-allow-overlap>
+      <div id="c-placa" class="camada">
+        <img id="placa-nitida" class="placa" src="assets/img/maquete-noite.jpg" alt="" />
+        <img id="placa-desf" class="placa" src="assets/img/maquete-noite-desfocada.jpg" alt="" />
+      </div>
+      <div id="c-helena" class="camada">
+        <div id="sombra-helena"></div>
+        <img id="helena-corpo" src="assets/img/helena-corpo.png" alt="" />
+        <img id="helena-corpo-desf" src="assets/img/helena-corpo-desfocada.png" alt="" />
+      </div>
+      <div id="c-tripe" class="camada">
+        <div id="sombra-tripe"></div>
+        <img id="tripe" src="assets/img/tripe.png" alt="" />
+        <div id="tela">
+          <img id="visor-abertos" class="visor" src="assets/img/visor-abertos.jpg" alt="" />
+          <div id="pe-tela"></div>
+          <div id="rec"><span class="bola"></span>take<span class="num">15</span></div>
+          <div id="hora">23:51</div>
+          <div id="gravar">
+            <div id="gravar-halo"></div>
+            <div id="gravar-anel"></div>
+            <div id="gravar-disco"></div>
+          </div>
+          <div id="tela-apagada"></div>
+          <div id="reflexo"></div>
+        </div>
+      </div>
+    </div>
+    <div id="veu"></div>
+    <div id="lettering"><span class="palavra" id="p-mas">mas</span> <span class="palavra" id="p-isso">isso</span> <span class="palavra" id="p-esta">está</span><br /><span class="palavra" id="p-prestes">prestes</span> <span class="palavra" id="p-a">a</span> <b class="palavra" id="p-mudar">mudar…</b></div>
+    <div id="corte-luz"></div>
+  </div>
+
+  <script>
+    (function () {
+      // =====================================================================
+      // TEMPOS DA LOCUÇÃO (ajustados pelo agente de legendas com assets/audio/voz-v3.palavras.json)
+      // Fala T: "mas isso está prestes a mudar…". Tempos LOCAIS desta cena
+      // (tempo do episódio − 18,3), medidos no som; cada palavra entra no seu tempo.
+      const PALAVRAS = [
+        { id: "#p-mas", t: 0.3 }, //     18,600
+        { id: "#p-isso", t: 0.58 }, //   18,877
+        { id: "#p-esta", t: 0.9 }, //    19,202
+        { id: "#p-prestes", t: 1.31 }, // 19,614
+        { id: "#p-a", t: 1.73 }, //      20,027
+        { id: "#p-mudar", t: 1.81 }, //  20,107
+      ];
+      // =====================================================================
+
+      const tl = gsap.timeline({ paused: true });
+      const T0 = { x: -149.5, y: 175 };
+
+      // ---- o mesmo enquadramento fechado do começo da cena 1
+      tl.set("#c-tripe", { x: T0.x, y: T0.y, scale: 3.1 }, 0);
+      tl.set("#c-helena", { x: T0.x, y: T0.y, scale: 2.55 }, 0);
+      tl.set("#c-placa", { x: T0.x, y: T0.y, scale: 2.2 }, 0);
+
+      // ---- entrada por corte: a imagem vem 40% mais escura por 3 quadros (como em s04)
+      tl.fromTo("#corte-luz", { opacity: 0.4 }, { opacity: 0, duration: 0.1, ease: "none" }, 0);
+
+      // ---- câmera: avanço lento e contínuo (~4%) durante a cena toda
+      tl.fromTo("#s4b-cam", { scale: 1 }, { scale: 1.04, duration: 3.3, ease: "none" }, 0);
+
+      // ---- respiração dela no visor (como na cena 1), ciclos de 1,6 s
+      for (let i = 0; i < 2; i++) {
+        tl.to(".visor", { scaleY: 1.01, duration: 0.8, ease: "sine.inOut" }, i * 1.6);
+        tl.to(".visor", { scaleY: 1, duration: 0.8, ease: "sine.inOut" }, i * 1.6 + 0.8);
+      }
+
+      // ---- o botão de gravar respira devagar (2 ciclos de 1,4 s) e para em 2,8, já em repouso
+      tl.set("#gravar-disco", { scale: 1 }, 0);
+      for (let i = 0; i < 2; i++) {
+        const t = i * 1.4;
+        tl.to("#gravar-disco", { scale: 0.88, duration: 0.7, ease: "sine.inOut" }, t);
+        tl.to("#gravar-halo", { opacity: 1, duration: 0.7, ease: "sine.inOut" }, t);
+        tl.to("#gravar-disco", { scale: 1, duration: 0.7, ease: "sine.inOut" }, t + 0.7);
+        tl.to("#gravar-halo", { opacity: 0, duration: 0.7, ease: "sine.inOut" }, t + 0.7);
+      }
+
+      // ---- lettering: o véu escurece o alto do quadro e as palavras entram junto com a voz
+      tl.to("#veu", { opacity: 1, duration: 0.3, ease: "power1.out" }, 0.15);
+      PALAVRAS.forEach(function (p) {
+        tl.fromTo(p.id, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.22, ease: "power2.out" }, p.t);
+      });
+
+      // ---- 2,85–3,05: a tela do celular apaga (ela não vai gravar); o quarto continua na penumbra
+      tl.to("#tela-apagada", { opacity: 1, duration: 0.2, ease: "power2.in" }, 2.85);
+
+      window.__timelines["s04b-take15"] = tl;
+    })();
+  </script>
+</template>

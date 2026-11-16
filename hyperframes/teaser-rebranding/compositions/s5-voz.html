@@ -1,0 +1,73 @@
+<!-- Cena 5 (10,6–13,6 s): a pista. Mundo lima, um passarinho gigante entra
+     num chicote (só cabeça e peito aparecem) e "Uma nova voz vai cantar."
+     Um círculo escuro abre a partir da ponta do bico para o final. -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Megion";
+      src: url("assets/fonts/Megion-Bold.otf") format("opentype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #efff57;
+      overflow: hidden;
+    }
+    #s5-texto {
+      position: absolute;
+      left: 80px;
+      top: 230px;
+      font-family: "Megion", sans-serif;
+      font-weight: 700;
+      font-size: 140px;
+      line-height: 1;
+      color: #1e1415;
+    }
+    .s5-linha {
+      white-space: nowrap;
+    }
+    .s5-palavra {
+      display: inline-block;
+    }
+    /* Passarinho chapado em 1,8x: a ponta do bico fica em (1010, 760) */
+    #s5-passaro {
+      position: absolute;
+      left: -878px;
+      top: 447px;
+      width: 2304px;
+    }
+    #s5-iris {
+      position: absolute;
+      inset: 0;
+      background: #1e1415;
+      clip-path: circle(0px at 1010px 760px);
+    }
+  </style>
+  <div data-hf-id="hf-ejdb" id="root" data-composition-id="s5" data-width="1080" data-height="1920">
+    <img data-hf-id="hf-erro"
+      id="s5-passaro"
+      src="assets/marca/logo/icone/icone_chapado_preto.png"
+      alt=""
+      data-layout-allow-overflow
+    />
+    <div data-hf-id="hf-k8g6" id="s5-texto">
+      <div data-hf-id="hf-kyd7" class="s5-linha"><span data-hf-id="hf-xikg" class="s5-palavra">Uma</span> <span data-hf-id="hf-efz1" class="s5-palavra">nova</span> <span data-hf-id="hf-6g56" class="s5-palavra">voz</span></div>
+      <div data-hf-id="hf-n6pn" class="s5-linha"><span data-hf-id="hf-dvj1" class="s5-palavra">vai</span> <span data-hf-id="hf-rgc4" class="s5-palavra">cantar.</span></div>
+    </div>
+    <div data-hf-id="hf-wodf" id="s5-iris"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // O passarinho chega num chicote da direita
+    tl.fromTo("#s5-passaro", { x: 1500, filter: "blur(24px)" }, { x: 0, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 0.05);
+    // Palavras passam de lima-claro para tinta, uma a uma, sem se mexer
+    tl.fromTo(".s5-palavra", { color: "#d6e44f" }, { color: "#1e1415", duration: 0.12, ease: "power1.out", stagger: 0.08 }, 0.55);
+
+    // Íris: o escuro do final abre a partir da ponta do bico
+    tl.fromTo("#s5-iris", { clipPath: "circle(0px at 1010px 760px)" }, { clipPath: "circle(2300px at 1010px 760px)", duration: 0.3, ease: "power3.in" }, 2.7);
+
+    window.__timelines["s5"] = tl;
+  </script>
+</template>

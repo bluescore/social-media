@@ -1,0 +1,1562 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 2 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\compositions\\s05-foto.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      }
+    ],
+    "filesScanned": 14
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 1,
+    "findings": [
+      {
+        "code": "motion_blur_filter_fallback",
+        "severity": "info",
+        "message": "data-motion-blur=\"on\" is drawn by the filter fallback: backface-visibility: hidden inside a 3D transform is drawn mirrored by html-in-canvas",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "71.7",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-motion-blur": "on",
+          "data-motion-blur-events": "on"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "fixHint": "the fallback smears movement but only softens zoom and rotation; backface-visibility: hidden inside a 3D transform is drawn mirrored; avoid the 3D flip or drop motion blur"
+      }
+    ]
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 17,
+    "findings": [
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 3.983,
+        "selector": "span.rolo > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 467.01,
+          "top": 434.36,
+          "right": 509.47,
+          "bottom": 474.48,
+          "width": 42.46,
+          "height": 40.12
+        },
+        "containerSelector": "#s1-cam > div:nth-of-type(3) > img:nth-of-type(1)",
+        "text": "14",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-maquete.html",
+        "bbox": {
+          "x": 467.01,
+          "y": 434.36,
+          "width": 42.46,
+          "height": 40.12
+        },
+        "firstSeen": 3.983,
+        "lastSeen": 3.983,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          3.983
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 3.983,
+        "selector": "div.pergunta",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 356.5,
+          "top": 1310.05,
+          "right": 589.83,
+          "bottom": 1347.17,
+          "width": 233.33,
+          "height": 37.11
+        },
+        "containerSelector": "#s1-cam > div:nth-of-type(3) > img:nth-of-type(1)",
+        "text": "apagar vídeo?",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.67,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-maquete.html",
+        "bbox": {
+          "x": 356.5,
+          "y": 1310.05,
+          "width": 233.33,
+          "height": 37.11
+        },
+        "firstSeen": 3.983,
+        "lastSeen": 3.983,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          3.983
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 3.983,
+        "selector": "div.botoes > div:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 378.14,
+          "top": 1419.89,
+          "right": 514.91,
+          "bottom": 1454,
+          "width": 136.76,
+          "height": 34.1
+        },
+        "containerSelector": "#s1-cam > div:nth-of-type(3) > img:nth-of-type(1)",
+        "text": "cancelar",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.56,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-maquete.html",
+        "bbox": {
+          "x": 378.14,
+          "y": 1419.89,
+          "width": 136.76,
+          "height": 34.1
+        },
+        "firstSeen": 3.983,
+        "lastSeen": 3.983,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          3.983
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 3.983,
+        "selector": "#apagar",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 591.09,
+          "top": 1420.42,
+          "right": 698.18,
+          "bottom": 1453.5,
+          "width": 107.09,
+          "height": 33.08
+        },
+        "containerSelector": "#s1-cam > div:nth-of-type(3) > img:nth-of-type(1)",
+        "text": "apagar",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.56,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-maquete.html",
+        "bbox": {
+          "x": 591.09,
+          "y": 1420.42,
+          "width": 107.09,
+          "height": 33.08
+        },
+        "firstSeen": 3.983,
+        "lastSeen": 3.983,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          3.983
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 27.883,
+        "selector": "#linhas > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 220.94,
+          "top": 798.96,
+          "right": 762.47,
+          "bottom": 859.39,
+          "width": 541.53,
+          "height": 60.43
+        },
+        "containerSelector": "#ponto-luz",
+        "text": "2. antes: exame clínico e tomografia",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.22,
+        "dataAttributes": {
+          "data-hf-id": "hf-gfc9"
+        },
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 220.94,
+          "y": 798.96,
+          "width": 541.53,
+          "height": 60.43
+        },
+        "firstSeen": 27.883,
+        "lastSeen": 27.883,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          27.883
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 51.783,
+        "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 855.1,
+          "top": 763.2,
+          "right": 1013.23,
+          "bottom": 825.9,
+          "width": 158.13,
+          "height": 62.7
+        },
+        "containerSelector": "#s09-post > div:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)",
+        "text": "quantos implantes vão no ?",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 855.1,
+          "y": 763.2,
+          "width": 158.13,
+          "height": 62.7
+        },
+        "firstSeen": 51.783,
+        "lastSeen": 51.783,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          51.783
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 51.783,
+        "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > span:nth-of-type(1) > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 855.1,
+          "top": 802.8,
+          "right": 943.87,
+          "bottom": 825.9,
+          "width": 88.77,
+          "height": 23.1
+        },
+        "containerSelector": "#s09-post > div:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)",
+        "text": "protocolo",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 855.1,
+          "y": 802.8,
+          "width": 88.77,
+          "height": 23.1
+        },
+        "firstSeen": 51.783,
+        "lastSeen": 51.783,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          51.783
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 51.783,
+        "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(5) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1055.3,
+          "top": 763.2,
+          "right": 1223.33,
+          "bottom": 806.1,
+          "width": 168.03,
+          "height": 42.9
+        },
+        "containerSelector": "#s09-post > div:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)",
+        "text": "o que é ?",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.22,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 1055.3,
+          "y": 763.2,
+          "width": 168.03,
+          "height": 42.9
+        },
+        "firstSeen": 51.783,
+        "lastSeen": 51.783,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          51.783
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 51.783,
+        "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(5) > span:nth-of-type(1) > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1055.3,
+          "top": 783,
+          "right": 1211.02,
+          "bottom": 806.1,
+          "width": 155.72,
+          "height": 23.1
+        },
+        "containerSelector": "#s09-post > div:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)",
+        "text": "osseointegração",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.22,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 1055.3,
+          "y": 783,
+          "width": 155.72,
+          "height": 23.1
+        },
+        "firstSeen": 51.783,
+        "lastSeen": 51.783,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          51.783
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 51.783,
+        "selector": "#fita > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": -43.94,
+          "top": 1113.96,
+          "right": 7.76,
+          "bottom": 1137.06,
+          "width": 51.7,
+          "height": 23.1
+        },
+        "containerSelector": "#s09-post > div:nth-of-type(1) > div:nth-of-type(2) > img:nth-of-type(1)",
+        "text": "antes",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.22,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": -43.94,
+          "y": 1113.96,
+          "width": 51.7,
+          "height": 23.1
+        },
+        "firstSeen": 51.783,
+        "lastSeen": 51.783,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          51.783
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 51.783,
+        "selector": "#fita > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 54.3,
+          "top": 1113.96,
+          "right": 208.51,
+          "bottom": 1156.86,
+          "width": 154.21,
+          "height": 42.9
+        },
+        "containerSelector": "#s09-post > div:nth-of-type(1) > div:nth-of-type(2) > img:nth-of-type(1)",
+        "text": "a prótese pra limpar?",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 54.3,
+          "y": 1113.96,
+          "width": 154.21,
+          "height": 42.9
+        },
+        "firstSeen": 51.783,
+        "lastSeen": 51.783,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          51.783
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 51.783,
+        "selector": "#fita > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > span:nth-of-type(1) > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 146.61,
+          "top": 1113.96,
+          "right": 173.2,
+          "bottom": 1137.06,
+          "width": 26.59,
+          "height": 23.1
+        },
+        "containerSelector": "#s09-post > div:nth-of-type(1) > div:nth-of-type(2) > img:nth-of-type(1)",
+        "text": "sai",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 146.61,
+          "y": 1113.96,
+          "width": 26.59,
+          "height": 23.1
+        },
+        "firstSeen": 51.783,
+        "lastSeen": 51.783,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          51.783
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 51.783,
+        "selector": "#fita > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(5) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": -145.9,
+          "top": 1464.74,
+          "right": 22.13,
+          "bottom": 1507.64,
+          "width": 168.03,
+          "height": 42.9
+        },
+        "containerSelector": "#s09-post > div:nth-of-type(1) > div:nth-of-type(2) > img:nth-of-type(1)",
+        "text": "o que é ?",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.5,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": -145.9,
+          "y": 1464.74,
+          "width": 168.03,
+          "height": 42.9
+        },
+        "firstSeen": 51.783,
+        "lastSeen": 51.783,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          51.783
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 51.783,
+        "selector": "#fita > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(5) > span:nth-of-type(1) > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": -145.9,
+          "top": 1484.54,
+          "right": 9.82,
+          "bottom": 1507.64,
+          "width": 155.72,
+          "height": 23.1
+        },
+        "containerSelector": "#s09-post > div:nth-of-type(1) > div:nth-of-type(2) > img:nth-of-type(1)",
+        "text": "osseointegração",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.11,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": -145.9,
+          "y": 1484.54,
+          "width": 155.72,
+          "height": 23.1
+        },
+        "firstSeen": 51.783,
+        "lastSeen": 51.783,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          51.783
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 51.783,
+        "selector": "#fita > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(11) > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1059.7,
+          "top": 1588.97,
+          "right": 1207.31,
+          "bottom": 1658.27,
+          "width": 147.61,
+          "height": 69.3
+        },
+        "containerSelector": "#s09-post > div:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)",
+        "text": "troque a escova a cada 3 meses",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.19,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 1059.7,
+          "y": 1588.97,
+          "width": 147.61,
+          "height": 69.3
+        },
+        "firstSeen": 51.783,
+        "lastSeen": 51.783,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          51.783
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 51.783,
+        "selector": "#fita > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(11) > span:nth-of-type(1) > b:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1059.7,
+          "top": 1588.97,
+          "right": 1109.11,
+          "bottom": 1612.07,
+          "width": 49.41,
+          "height": 23.1
+        },
+        "containerSelector": "#s09-post > div:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)",
+        "text": "dica:",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.44,
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 1059.7,
+          "y": 1588.97,
+          "width": 49.41,
+          "height": 23.1
+        },
+        "firstSeen": 51.783,
+        "lastSeen": 51.783,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          51.783
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 51.783,
+        "selector": "#etiqueta-seg > div:nth-of-type(1)",
+        "message": "Nowrap text is wider than its container.",
+        "rect": {
+          "left": 104.98,
+          "top": 186.07,
+          "right": 490.33,
+          "bottom": 268,
+          "width": 385.35,
+          "height": 81.93
+        },
+        "containerSelector": "#etiqueta-seg",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 108,
+          "top": 190,
+          "right": 474.86,
+          "bottom": 268,
+          "width": 366.86,
+          "height": 78
+        },
+        "overflow": {
+          "left": 3.02,
+          "right": 15.47
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 104.98,
+          "y": 186.07,
+          "width": 385.35,
+          "height": 81.93
+        },
+        "firstSeen": 51.783,
+        "lastSeen": 51.783,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          51.783
+        ]
+      }
+    ],
+    "duration": 71.7,
+    "samples": [
+      3.983,
+      11.95,
+      19.917,
+      27.883,
+      35.85,
+      43.817,
+      51.783,
+      59.75,
+      67.717
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 17,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 4,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.92:1; WCAG AA requires 3:1.",
+        "text": "a",
+        "fg": "rgb(246,244,241)",
+        "bg": "rgb(155,141,136)",
+        "ratio": 2.92,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(68,68,67)",
+        "large": true,
+        "selector": "#lg03-p4",
+        "dataAttributes": {},
+        "sourceFile": "compositions/legendas.html",
+        "bbox": {
+          "x": 108,
+          "y": 1272.6038818359375,
+          "width": 32.875,
+          "height": 62
+        },
+        "time": 3.983,
+        "times": [
+          3.983
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.69:1; WCAG AA requires 4.5:1.",
+        "text": "quantos implantes vão no protocolo?",
+        "fg": "rgb(246,244,241)",
+        "bg": "rgb(187,141,104)",
+        "ratio": 2.69,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(47,47,46)",
+        "large": false,
+        "selector": "div > div:nth-of-type(8) > div > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(1) > div > div:nth-of-type(4) > span",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 855.10009765625,
+          "y": 765.39990234375,
+          "width": 171.5999755859375,
+          "height": 59.4000244140625
+        },
+        "time": 51.783,
+        "times": [
+          51.783
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.25:1; WCAG AA requires 4.5:1.",
+        "text": "o que é osseointegração?",
+        "fg": "rgb(246,244,241)",
+        "bg": "rgb(207,154,107)",
+        "ratio": 2.25,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(60,59,59)",
+        "large": false,
+        "selector": "div > div:nth-of-type(8) > div > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(1) > div > div:nth-of-type(5) > span",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 1055.300048828125,
+          "y": 765.39990234375,
+          "width": 171.5999755859375,
+          "height": 39.5999755859375
+        },
+        "time": 51.783,
+        "times": [
+          51.783
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.91:1; WCAG AA requires 4.5:1.",
+        "text": "dica: troque a escova a cada 3 meses",
+        "fg": "rgb(58,54,51)",
+        "bg": "rgb(127,88,54)",
+        "ratio": 1.91,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(219,219,218)",
+        "large": false,
+        "selector": "div > div:nth-of-type(8) > div > div:nth-of-type(1) > div > div:nth-of-type(3) > div:nth-of-type(3) > div > div:nth-of-type(11) > span",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 1059.7000732421875,
+          "y": 1588.973388671875,
+          "width": 162.800048828125,
+          "height": 69.300048828125
+        },
+        "time": 51.783,
+        "times": [
+          51.783
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      3.983,
+      19.917,
+      35.85,
+      51.783,
+      67.717
+    ],
+    "checked": 39,
+    "passed": 35
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 18,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 3 text elements stay under it for 0.5 s or more, the smallest \"23:47\" at 10 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "23:47",
+        "selector": "#s1-cam > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s01-maquete.html",
+        "bbox": {
+          "x": 670.87,
+          "y": 501.32,
+          "width": 72.73,
+          "height": 26.91
+        },
+        "time": 4.497,
+        "times": [
+          4.497,
+          4.747,
+          4.747
+        ],
+        "fontPx": 10.32,
+        "floorPx": 28,
+        "seconds": 4.872,
+        "elements": [
+          {
+            "selector": "#s1-cam > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2)",
+            "text": "23:47",
+            "fontPx": 10.32,
+            "time": 4.497,
+            "seconds": 4.872
+          },
+          {
+            "selector": "#s1-cam > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1)",
+            "text": "take",
+            "fontPx": 12.9,
+            "time": 4.747,
+            "seconds": 4.622
+          },
+          {
+            "selector": "span.rolo > span:nth-of-type(2)",
+            "text": "15",
+            "fontPx": 12.9,
+            "time": 4.747,
+            "seconds": 4.622
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 3 text elements stay under it for 0.5 s or more, the smallest \"gravar 23/10\" at 23 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "gravar 23/10",
+        "selector": "#s3-cam > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s03-folha.html",
+        "bbox": {
+          "x": 625.08,
+          "y": 1083.73,
+          "width": 139.02,
+          "height": 30.32
+        },
+        "time": 9.244,
+        "times": [
+          9.244,
+          9.244,
+          9.244
+        ],
+        "fontPx": 23.12,
+        "floorPx": 28,
+        "seconds": 6.12,
+        "elements": [
+          {
+            "selector": "#s3-cam > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(1)",
+            "text": "gravar 23/10",
+            "fontPx": 23.12,
+            "time": 9.244,
+            "seconds": 6.12
+          },
+          {
+            "selector": "#s3-cam > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(2)",
+            "text": "gravar 30/10",
+            "fontPx": 23.12,
+            "time": 9.244,
+            "seconds": 6.12
+          },
+          {
+            "selector": "#s3-cam > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(3)",
+            "text": "gravar 06/11",
+            "fontPx": 23.12,
+            "time": 9.244,
+            "seconds": 6.12
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"1. o que é: prótese fixa da arcada inteira\" (9 words) is on screen 1.70 s (±0.01 s), under its 2.40 s floor: hold it about 0.5 s + 0.3 s a word (3.20 s here) before it leaves or changes; see references/motion.md.",
+        "text": "1. o que é: prótese fixa da arcada inteira",
+        "selector": "#s5-cam > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s05-foto.html",
+        "bbox": {
+          "x": 219.99,
+          "y": 737.85,
+          "width": 593.18,
+          "height": 62.91999999999996
+        },
+        "time": 21.602,
+        "words": 9,
+        "seconds": 1.702,
+        "floorSeconds": 2.4
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"3. implantes no osso: em geral, de 4 a 6\" (10 words) is on screen 1.70 s (±0.01 s), under its 2.63 s floor: hold it about 0.5 s + 0.3 s a word (3.50 s here) before it leaves or changes; see references/motion.md.",
+        "text": "3. implantes no osso: em geral, de 4 a 6",
+        "selector": "#s5-cam > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(3)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s05-foto.html",
+        "bbox": {
+          "x": 226.21,
+          "y": 856.54,
+          "width": 591.47,
+          "height": 62.83000000000004
+        },
+        "time": 21.602,
+        "words": 10,
+        "seconds": 1.702,
+        "floorSeconds": 2.625
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"5. prótese parafusada: só a dentista remove\" (7 words) is on screen 1.70 s (±0.01 s), under its 1.95 s floor: hold it about 0.5 s + 0.3 s a word (2.60 s here) before it leaves or changes; see references/motion.md.",
+        "text": "5. prótese parafusada: só a dentista remove",
+        "selector": "#s5-cam > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(5)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s05-foto.html",
+        "bbox": {
+          "x": 232.42,
+          "y": 971.96,
+          "width": 652.3,
+          "height": 66.00999999999999
+        },
+        "time": 21.602,
+        "words": 7,
+        "seconds": 1.702,
+        "floorSeconds": 1.95
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"fechar: leve sua dúvida para a consulta\" (7 words) is on screen 1.70 s (±0.01 s), under its 1.95 s floor: hold it about 0.5 s + 0.3 s a word (2.60 s here) before it leaves or changes; see references/motion.md.",
+        "text": "fechar: leve sua dúvida para a consulta",
+        "selector": "#s5-cam > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(6)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s05-foto.html",
+        "bbox": {
+          "x": 235.53,
+          "y": 1035.14,
+          "width": 578.29,
+          "height": 62.1400000000001
+        },
+        "time": 21.602,
+        "words": 7,
+        "seconds": 1.702,
+        "floorSeconds": 1.95
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"roteiro · protocolo sobre implantes\" (4 words) is on screen 0.16 s (±0.01 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "roteiro · protocolo sobre implantes",
+        "selector": "div.mini > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s05-foto.html",
+        "bbox": {
+          "x": 286.08,
+          "y": 412.62,
+          "width": 343.79,
+          "height": 39.43000000000001
+        },
+        "time": 23.304,
+        "words": 4,
+        "seconds": 0.164,
+        "floorSeconds": 1.275
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 10 text elements stay under it for 0.5 s or more, the smallest \"roteiro · protocolo sobre implantes\" at 16 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "roteiro · protocolo sobre implantes",
+        "selector": "div.mini > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s05-foto.html",
+        "bbox": {
+          "x": 286.08,
+          "y": 412.62,
+          "width": 343.79,
+          "height": 39.43
+        },
+        "time": 23.359,
+        "times": [
+          21.61,
+          21.61,
+          21.61,
+          23.359,
+          23.359,
+          23.359,
+          23.359,
+          23.359,
+          23.359,
+          23.359
+        ],
+        "fontPx": 15.64,
+        "floorPx": 28,
+        "seconds": 2.623,
+        "elements": [
+          {
+            "selector": "div.mini > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)",
+            "text": "roteiro · protocolo sobre implantes",
+            "fontPx": 15.64,
+            "time": 23.359,
+            "seconds": 2.623
+          },
+          {
+            "selector": "div.mini > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(1)",
+            "text": "1. o que é: prótese fixa da arcada inteira",
+            "fontPx": 15.98,
+            "time": 23.359,
+            "seconds": 2.623
+          },
+          {
+            "selector": "div.mini > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(2)",
+            "text": "2. antes: exame clínico e tomografia",
+            "fontPx": 15.98,
+            "time": 23.359,
+            "seconds": 2.623
+          },
+          {
+            "selector": "div.mini > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(3)",
+            "text": "3. implantes no osso: em geral, de 4 a 6",
+            "fontPx": 15.98,
+            "time": 23.359,
+            "seconds": 2.623
+          },
+          {
+            "selector": "div.mini > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(4)",
+            "text": "4. osseointegração: leva meses, varia",
+            "fontPx": 15.98,
+            "time": 23.359,
+            "seconds": 2.623
+          },
+          {
+            "selector": "div.mini > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(5)",
+            "text": "5. prótese parafusada: só a dentista remove",
+            "fontPx": 15.98,
+            "time": 23.359,
+            "seconds": 2.623
+          },
+          {
+            "selector": "div.mini > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(6)",
+            "text": "fechar: leve sua dúvida para a consulta",
+            "fontPx": 15.98,
+            "time": 23.359,
+            "seconds": 2.623
+          },
+          {
+            "selector": "#s5-cam > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(1)",
+            "text": "gravar 23/10",
+            "fontPx": 23.12,
+            "time": 21.61,
+            "seconds": 1.749
+          },
+          {
+            "selector": "#s5-cam > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(2)",
+            "text": "gravar 30/10",
+            "fontPx": 23.12,
+            "time": 21.61,
+            "seconds": 1.749
+          },
+          {
+            "selector": "#s5-cam > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(3)",
+            "text": "gravar 06/11",
+            "fontPx": 23.12,
+            "time": 21.61,
+            "seconds": 1.749
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 4 text elements stay under it for 0.5 s or more, the smallest \"dra. Helena Prado · cirurgiã-dentista...\" at 12 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "dra. Helena Prado · cirurgiã-dentista · CRO-UF 00000",
+        "selector": "#verso > div:nth-of-type(3)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 384.75,
+          "y": 1186.59,
+          "width": 448.03,
+          "height": 41.77
+        },
+        "time": 25.982,
+        "times": [
+          25.982,
+          25.982,
+          25.982,
+          25.982
+        ],
+        "fontPx": 11.99,
+        "floorPx": 28,
+        "seconds": 8.244,
+        "elements": [
+          {
+            "selector": "#verso > div:nth-of-type(3)",
+            "text": "dra. Helena Prado · cirurgiã-dentista · CRO-UF 00000",
+            "fontPx": 11.99,
+            "time": 25.982,
+            "seconds": 8.244
+          },
+          {
+            "selector": "#datas > span:nth-of-type(1)",
+            "text": "gravar 23/10",
+            "fontPx": 13.59,
+            "time": 25.982,
+            "seconds": 8.119
+          },
+          {
+            "selector": "#datas > span:nth-of-type(2)",
+            "text": "gravar 30/10",
+            "fontPx": 13.59,
+            "time": 25.982,
+            "seconds": 8.119
+          },
+          {
+            "selector": "#datas > span:nth-of-type(3)",
+            "text": "gravar 06/11",
+            "fontPx": 13.59,
+            "time": 25.982,
+            "seconds": 8.119
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"o que é uma prótese? protocolo\" (6 words) is on screen 0.30 s (±0.01 s), under its 1.72 s floor: hold it about 0.5 s + 0.3 s a word (2.30 s here) before it leaves or changes; see references/motion.md.",
+        "text": "o que é uma prótese? protocolo",
+        "selector": "#titulo-video",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 109.51,
+          "y": 259.46,
+          "width": 658.6,
+          "height": 144.88000000000005
+        },
+        "time": 34.437,
+        "words": 6,
+        "seconds": 0.297,
+        "floorSeconds": 1.725
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"dra. Helena Prado · cirurgiã-dentista · CRO-UF 00000\" (8 words) is on screen 0.54 s (±0.01 s), under its 2.17 s floor: hold it about 0.5 s + 0.3 s a word (2.90 s here) before it leaves or changes; see references/motion.md.",
+        "text": "dra. Helena Prado · cirurgiã-dentista · CRO-UF 00000",
+        "selector": "#s08-video-dela > div:nth-of-type(1) > div:nth-of-type(11)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s08-video-dela.html",
+        "bbox": {
+          "x": 108,
+          "y": 1265,
+          "width": 731.44,
+          "height": 30
+        },
+        "time": 34.734,
+        "words": 8,
+        "seconds": 0.538,
+        "floorSeconds": 2.175
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 26 text elements stay under it for 0.5 s or more, the smallest \"você sabe o que é um ?\" at 12 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "você sabe o que é um ?",
+        "selector": "div.grade > div:nth-of-type(4) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 309.6,
+          "y": 903.43,
+          "width": 101.4,
+          "height": 56.7
+        },
+        "time": 46.717,
+        "times": [
+          46.717,
+          46.717,
+          46.717,
+          46.717,
+          46.717,
+          46.717,
+          50.215,
+          50.215,
+          50.465,
+          50.465,
+          50.465,
+          50.465,
+          50.715,
+          50.715,
+          50.84,
+          50.84,
+          50.84,
+          50.964,
+          51.089,
+          51.089,
+          51.089,
+          51.089,
+          51.339,
+          51.339,
+          51.339,
+          51.339
+        ],
+        "fontPx": 11.5,
+        "floorPx": 28,
+        "seconds": 3.498,
+        "elements": [
+          {
+            "selector": "div.grade > div:nth-of-type(4) > span:nth-of-type(1)",
+            "text": "você sabe o que é um ?",
+            "fontPx": 11.5,
+            "time": 46.717,
+            "seconds": 3.498
+          },
+          {
+            "selector": "div.grade > div:nth-of-type(4) > span:nth-of-type(1) > b:nth-of-type(1)",
+            "text": "implante",
+            "fontPx": 11.5,
+            "time": 46.717,
+            "seconds": 3.498
+          },
+          {
+            "selector": "div.grade > div:nth-of-type(6) > span:nth-of-type(1)",
+            "text": "troque a escova a cada 3 meses",
+            "fontPx": 11.5,
+            "time": 46.717,
+            "seconds": 3.498
+          },
+          {
+            "selector": "div.grade > div:nth-of-type(6) > span:nth-of-type(1) > b:nth-of-type(1)",
+            "text": "dica:",
+            "fontPx": 11.5,
+            "time": 46.717,
+            "seconds": 3.498
+          },
+          {
+            "selector": "#fita > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(9) > span:nth-of-type(1)",
+            "text": "você sabe o que é um ?",
+            "fontPx": 11.52,
+            "time": 50.215,
+            "seconds": 0.75
+          },
+          {
+            "selector": "#fita > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(9) > span:nth-of-type(1) > b:nth-of-type(1)",
+            "text": "implante",
+            "fontPx": 11.52,
+            "time": 50.215,
+            "seconds": 0.75
+          },
+          {
+            "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(5) > span:nth-of-type(1)",
+            "text": "o que é ?",
+            "fontPx": 12.4,
+            "time": 50.465,
+            "seconds": 0.749
+          },
+          {
+            "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(5) > span:nth-of-type(1) > b:nth-of-type(1)",
+            "text": "osseointegração",
+            "fontPx": 12.4,
+            "time": 50.465,
+            "seconds": 0.749
+          },
+          {
+            "selector": "#fita > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(11) > span:nth-of-type(1)",
+            "text": "troque a escova a cada 3 meses",
+            "fontPx": 12.4,
+            "time": 50.465,
+            "seconds": 0.749
+          },
+          {
+            "selector": "#fita > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(11) > span:nth-of-type(1) > b:nth-of-type(1)",
+            "text": "dica:",
+            "fontPx": 12.4,
+            "time": 50.465,
+            "seconds": 0.749
+          },
+          {
+            "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > span:nth-of-type(1)",
+            "text": "quantos implantes vão no ?",
+            "fontPx": 16.75,
+            "time": 50.715,
+            "seconds": 0.624
+          },
+          {
+            "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > span:nth-of-type(1) > b:nth-of-type(1)",
+            "text": "protocolo",
+            "fontPx": 16.75,
+            "time": 50.715,
+            "seconds": 0.624
+          },
+          {
+            "selector": "div.barra > span:nth-of-type(1)",
+            "text": "‹ perfil",
+            "fontPx": 17.25,
+            "time": 46.717,
+            "seconds": 4.123
+          },
+          {
+            "selector": "div.barra > span:nth-of-type(2)",
+            "text": "17:42",
+            "fontPx": 17.25,
+            "time": 46.717,
+            "seconds": 4.123
+          },
+          {
+            "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span:nth-of-type(1)",
+            "text": "a prótese pra limpar?",
+            "fontPx": 19.53,
+            "time": 50.84,
+            "seconds": 2.748
+          },
+          {
+            "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > span:nth-of-type(1) > b:nth-of-type(1)",
+            "text": "sai",
+            "fontPx": 19.53,
+            "time": 50.84,
+            "seconds": 2.748
+          },
+          {
+            "selector": "#fita > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(9) > span:nth-of-type(1)",
+            "text": "você sabe o que é um ?",
+            "fontPx": 19.53,
+            "time": 50.84,
+            "seconds": 2.748
+          },
+          {
+            "selector": "#fita > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(9) > span:nth-of-type(1) > b:nth-of-type(1)",
+            "text": "implante",
+            "fontPx": 20.8,
+            "time": 50.964,
+            "seconds": 2.624
+          },
+          {
+            "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1)",
+            "text": "o que vem do implante",
+            "fontPx": 21.69,
+            "time": 51.089,
+            "seconds": 2.499
+          },
+          {
+            "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > b:nth-of-type(1)",
+            "text": "antes",
+            "fontPx": 21.69,
+            "time": 51.089,
+            "seconds": 2.499
+          },
+          {
+            "selector": "#fita > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(5) > span:nth-of-type(1)",
+            "text": "o que é ?",
+            "fontPx": 21.69,
+            "time": 51.089,
+            "seconds": 2.499
+          },
+          {
+            "selector": "#fita > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(5) > span:nth-of-type(1) > b:nth-of-type(1)",
+            "text": "osseointegração",
+            "fontPx": 21.69,
+            "time": 51.089,
+            "seconds": 2.499
+          },
+          {
+            "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "da semana",
+            "fontPx": 22,
+            "time": 51.339,
+            "seconds": 2.249
+          },
+          {
+            "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1) > b:nth-of-type(1)",
+            "text": "dúvida",
+            "fontPx": 22,
+            "time": 51.339,
+            "seconds": 2.249
+          },
+          {
+            "selector": "#fita > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > span:nth-of-type(1)",
+            "text": "quantos implantes vão no ?",
+            "fontPx": 22,
+            "time": 51.339,
+            "seconds": 2.249
+          },
+          {
+            "selector": "#fita > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > span:nth-of-type(1) > b:nth-of-type(1)",
+            "text": "protocolo",
+            "fontPx": 22,
+            "time": 51.339,
+            "seconds": 2.249
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"você sabe o que é um ? implante\" (7 words) is on screen 0.80 s (±0.01 s), under its 1.95 s floor: hold it about 0.5 s + 0.3 s a word (2.60 s here) before it leaves or changes; see references/motion.md.",
+        "text": "você sabe o que é um ? implante",
+        "selector": "#fita > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(9) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 392.99,
+          "y": 984.78,
+          "width": 64.92000000000002,
+          "height": 36.30000000000007
+        },
+        "time": 50.106,
+        "words": 7,
+        "seconds": 0.796,
+        "floorSeconds": 1.95
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"troque a escova a cada 3 meses dica:\" (8 words) is on screen 0.37 s (±0.01 s), under its 2.17 s floor: hold it about 0.5 s + 0.3 s a word (2.90 s here) before it leaves or changes; see references/motion.md.",
+        "text": "troque a escova a cada 3 meses dica:",
+        "selector": "#fita > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(11) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 602.73,
+          "y": 984.78,
+          "width": 77.31999999999994,
+          "height": 36.299999999999955
+        },
+        "time": 50.106,
+        "words": 8,
+        "seconds": 0.367,
+        "floorSeconds": 2.175
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"último post · agora\" (3 words) is on screen 0.23 s (±0.01 s), under its 1.05 s floor: hold it about 0.5 s + 0.3 s a word (1.40 s here) before it leaves or changes; see references/motion.md.",
+        "text": "último post · agora",
+        "selector": "#txt-antes",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 625.95,
+          "y": 347.68,
+          "width": 338.36,
+          "height": 42
+        },
+        "time": 50.106,
+        "words": 3,
+        "seconds": 0.234,
+        "floorSeconds": 1.05
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"troque a escova a cada 3 meses dica:\" (8 words) is on screen 0.70 s (±0.01 s), under its 2.17 s floor: hold it about 0.5 s + 0.3 s a word (2.90 s here) before it leaves or changes; see references/motion.md.",
+        "text": "troque a escova a cada 3 meses dica:",
+        "selector": "#fita > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(11) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 373.1,
+          "y": 1203.68,
+          "width": 75.15999999999997,
+          "height": 39.059999999999945
+        },
+        "time": 50.403,
+        "words": 8,
+        "seconds": 0.702,
+        "floorSeconds": 2.175
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"quantos implantes vão no ? protocolo\" (5 words) is on screen 0.70 s (±0.01 s), under its 1.50 s floor: hold it about 0.5 s + 0.3 s a word (2.00 s here) before it leaves or changes; see references/motion.md.",
+        "text": "quantos implantes vão no ? protocolo",
+        "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 322.14,
+          "y": 749.55,
+          "width": 120.38999999999999,
+          "height": 47.74000000000012
+        },
+        "time": 50.637,
+        "words": 5,
+        "seconds": 0.702,
+        "floorSeconds": 1.5
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"o que é ? osseointegração\" (4 words) is on screen 0.47 s (±0.01 s), under its 1.27 s floor: hold it about 0.5 s + 0.3 s a word (1.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "o que é ? osseointegração",
+        "selector": "#fita > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(5) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s09-post.html",
+        "bbox": {
+          "x": 474.57,
+          "y": 749.55,
+          "width": 127.92000000000002,
+          "height": 32.66000000000008
+        },
+        "time": 50.668,
+        "words": 4,
+        "seconds": 0.468,
+        "floorSeconds": 1.275
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 574
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

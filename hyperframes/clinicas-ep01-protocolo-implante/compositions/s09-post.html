@@ -1,0 +1,429 @@
+<!-- CENA 9 (46,7 a 53,5 s do episódio, 6,8 s): "o perfil voltou a andar."
+     0–3,4 s (APROVADO na v2, não mexer):
+     O último quadro do vídeo dela (assets/img/video-dela-final.jpg) encolhe (LEVAR JUNTO, 0–1,2 s, com borrão de movimento)
+     e pousa como o 1º post da grade, na tela de um celular num suporte sobre o balcão da recepção (maquete, fim de tarde).
+     A câmera recua devagar (1,3–3,4) e mostra a recepção; a Helena de costas, desfocada, à esquerda.
+     Etiqueta da maquete (presa ao celular por uma linha fina): "último post · agora" (1,6 até 3,5).
+     3,4–6,8 s (v3, pedido 8 do dono: dados de crescimento + feed com mais posts):
+     3,40–4,60 a câmera avança de novo para o celular (escala 2,2) e a Helena acompanha em outra velocidade.
+     3,50 a etiqueta troca para "3 semanas depois" (mesma caixa, a linha continua presa ao celular).
+     3,60 / 3,82 / 4,04 / 4,26 / 4,48 entram 5 posts novos no começo da grade, empurrando os outros.
+     4,80 etiqueta "+438 seguidores" (conta 0→438 em 1 s) · 5,10 "21,3 mil visualizações" (conta em 1 s) · parado até 6,8.
+     Medidas: a tela do celular na placa recepcao-tarde.jpg (1215x2160) fica em x 473–743, y 832–1372. -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #2b2224;
+      font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+    }
+    .camada {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      transform-origin: 540.5px 982px;
+    }
+    .placa {
+      position: absolute;
+      left: -67.5px;
+      top: -120px;
+      width: 1215px;
+      height: 2160px;
+    }
+    /* a tela do celular: desenhada em 540 x 1080 e reduzida à metade para caber na placa */
+    #tela-rec {
+      position: absolute;
+      left: 405.5px;
+      top: 712px;
+      width: 540px;
+      height: 1080px;
+      transform-origin: 0 0;
+      transform: scale(0.5);
+      border-radius: 40px;
+      overflow: hidden;
+      background: #161719;
+      color: #f6f4f1;
+    }
+    #tela-rec .barra {
+      height: 100px;
+      padding: 34px 24px 0;
+      font-size: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+    #tela-rec .grade {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+    #tela-rec .post {
+      aspect-ratio: 9 / 16;
+      position: relative;
+      overflow: hidden;
+      background: #26282c;
+    }
+    #tela-rec .post img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #tela-rec .card {
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      color: #3a3633;
+      font-size: 20px;
+      line-height: 1.05;
+    }
+    #tela-rec .c1 { background: #e6ddd0; }
+    #tela-rec .c2 { background: #cdd8cc; }
+    /* v3 (3,4 s em diante): a "fita" de posts. Cada linha da grade é uma janela sobre a mesma fila
+       de 14 posts (os 5 novos + os 9 de antes). Empurrar = a fila anda 182 px (um post + o vão)
+       para a direita: o post que sai pela direita de uma linha entra pela esquerda da linha de baixo.
+       Os posts das linhas são cópias de #molde-fita (feitas pelo script, sempre iguais). */
+    #fita {
+      position: absolute;
+      left: 0;
+      top: 100px;
+      width: 540px;
+      height: 980px;
+      opacity: 0;
+    }
+    #fita .linha {
+      position: absolute;
+      left: 0;
+      width: 540px;
+      height: calc(176px * 16 / 9);
+      overflow: hidden;
+    }
+    #fita .tira {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    #fita .tira > .post {
+      flex: 0 0 176px;
+      width: 176px;
+    }
+    #molde-fita {
+      display: none;
+    }
+    /* título dos posts novos (v4: capas próprias, geradas por IA, diferentes do 1º vídeo; alto da capa escuro para o título) */
+    #tela-rec .nova .titulo {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 14px;
+      font-size: 20px;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      color: #f6f4f1;
+    }
+    #tela-rec .nova .titulo b {
+      font-weight: 700;
+    }
+    /* o vídeo dela voando até o primeiro post (coordenadas da camada, origem no canto) */
+    #voo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      transform-origin: 0 0;
+    }
+    #helena {
+      position: absolute;
+      left: -170px;
+      top: 760px;
+      width: 650px;
+      height: 1156px;
+      opacity: 0;
+    }
+    /* etiqueta da maquete */
+    #etiqueta {
+      position: absolute;
+      left: 600px;
+      top: 330px;
+      opacity: 0;
+    }
+    #etiqueta .caixa {
+      background: #f6f4f1;
+      color: #303236;
+      border-radius: 14px;
+      padding: 18px 26px;
+      font-size: 42px;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      box-shadow: 0 10px 30px rgba(40, 24, 16, 0.25);
+      white-space: nowrap;
+    }
+    #etiqueta .caixa b {
+      font-weight: 700;
+    }
+    #etiqueta svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      overflow: visible;
+    }
+    /* etiquetas da v3: mesmo estilo branco da etiqueta da maquete.
+       #etiqueta-a é a cópia da etiqueta de cima que assume em 3,4 s (no mesmo lugar) para andar com a câmera
+       e trocar o texto; a original (#etiqueta) fica intacta até ali. */
+    .etq {
+      position: absolute;
+      opacity: 0;
+    }
+    .etq .caixa {
+      background: #f6f4f1;
+      color: #303236;
+      border-radius: 14px;
+      padding: 18px 26px;
+      font-size: 42px;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      box-shadow: 0 10px 30px rgba(40, 24, 16, 0.25);
+      white-space: nowrap;
+    }
+    .etq .caixa b {
+      font-weight: 700;
+    }
+    .etq svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      overflow: visible;
+    }
+    /* o número que conta: largura fixa (a do número final), alinhado à direita */
+    .etq .num {
+      display: inline-grid;
+      font-variant-numeric: tabular-nums;
+    }
+    .etq .num > span {
+      grid-area: 1 / 1;
+      text-align: right;
+    }
+    .etq .num .molde {
+      visibility: hidden;
+    }
+    .etq .num .sep {
+      font-variant-numeric: normal;
+    }
+    /* os dois textos da etiqueta-a ocupam o mesmo lugar (a caixa fica do tamanho do maior) */
+    .etq .troca {
+      display: grid;
+    }
+    .etq .troca > span {
+      grid-area: 1 / 1;
+    }
+    #txt-depois {
+      opacity: 0;
+    }
+    #etiqueta-a {
+      left: 600px;
+      top: 330px;
+    }
+    #etiqueta-seg {
+      left: 108px;
+      top: 190px;
+    }
+    #etiqueta-seg .caixa {
+      transform-origin: 60px 100%;
+    }
+    #etiqueta-vis {
+      left: 317px;
+      top: 390px;
+    }
+    #etiqueta-vis .caixa {
+      transform-origin: 50% 100%;
+    }
+  </style>
+
+  <div id="root" data-composition-id="s09-post" data-width="1080" data-height="1920">
+    <div id="c-placa" class="camada" data-layout-allow-overflow>
+      <img class="placa" src="assets/img/recepcao-tarde.jpg" alt="" />
+      <div id="tela-rec">
+        <div class="barra"><span>‹ perfil</span><span>17:42</span></div>
+        <div class="grade">
+          <div class="post" id="post-novo"></div>
+          <div class="post"><img src="assets/img/post-1-helena.jpg" alt="" /></div>
+          <div class="post"><img src="assets/img/post-2-dente.jpg" alt="" /></div>
+          <div class="post card c1"><span>você sabe o que é um <b>implante</b>?</span></div>
+          <div class="post"><img src="assets/img/post-4-recepcao.jpg" alt="" /></div>
+          <div class="post card c2"><span><b>dica:</b> troque a escova a cada 3 meses</span></div>
+          <div class="post"><img src="assets/img/post-5-escova.jpg" alt="" /></div>
+          <div class="post"><img src="assets/img/post-7-consulta.jpg" alt="" /></div>
+          <div class="post"><img src="assets/img/post-8-fachada.jpg" alt="" /></div>
+        </div>
+        <!-- v3: a grade a partir de 3,4 s (4 linhas: a 4ª só aparece na beirada de baixo) -->
+        <div id="fita" data-layout-allow-overflow>
+          <div class="linha" style="top: 0"><div class="tira"></div></div>
+          <div class="linha" style="top: calc(176px * 16 / 9 + 6px)"><div class="tira"></div></div>
+          <div class="linha" style="top: calc((176px * 16 / 9 + 6px) * 2)"><div class="tira"></div></div>
+          <div class="linha" style="top: calc((176px * 16 / 9 + 6px) * 3)"><div class="tira"></div></div>
+        </div>
+        <!-- os 5 posts novos (3 semanas depois), do mais novo ao mais antigo. Depois deles a fila segue com
+             o vídeo dela (cópia de #voo) e os 8 posts antigos (cópias da grade de cima), feitos pelo script. -->
+        <div id="molde-fita">
+          <div class="post nova"><img src="assets/img/post-novo-5.jpg" alt="" /><span class="titulo"><b>dúvida</b> da semana</span></div>
+          <div class="post nova"><img src="assets/img/post-novo-4.jpg" alt="" /><span class="titulo">o que vem <b>antes</b> do implante</span></div>
+          <div class="post nova"><img src="assets/img/post-novo-3.jpg" alt="" /><span class="titulo">a prótese <b>sai</b> pra limpar?</span></div>
+          <div class="post nova"><img src="assets/img/post-novo-2.jpg" alt="" /><span class="titulo">quantos implantes vão no <b>protocolo</b>?</span></div>
+          <div class="post nova"><img src="assets/img/post-novo-1.jpg" alt="" /><span class="titulo">o que é <b>osseointegração</b>?</span></div>
+        </div>
+      </div>
+      <img id="voo" src="assets/img/video-dela-final.jpg" alt="" />
+    </div>
+    <div id="c-helena" class="camada" data-layout-allow-overflow>
+      <img id="helena" src="assets/img/helena-costas-tarde-desf.png" alt="" />
+    </div>
+    <div id="etiqueta">
+      <svg width="10" height="10"><path id="linha-etiqueta" d="M 60 96 L -96 330" stroke="#f6f4f1" stroke-width="3" fill="none" /></svg>
+      <div class="caixa">último post · <b>agora</b></div>
+    </div>
+    <!-- v3: a mesma etiqueta, que assume em 3,4 s: anda com a câmera e troca para "3 semanas depois"
+         (fora do borrão de movimento da render: a linha fina sumiria no borrão) -->
+    <div id="etiqueta-a" class="etq" data-motion-blur="off">
+      <svg width="10" height="10"><path id="linha-a" d="M 60 96 L -96 330" stroke="#f6f4f1" stroke-width="3" fill="none" /></svg>
+      <div class="caixa">
+        <div class="troca"><span id="txt-antes">último post · <b>agora</b></span><span id="txt-depois"><b>3 semanas</b> depois</span></div>
+      </div>
+    </div>
+    <!-- v3: os números do perfil (cada linha sai do celular e vai até a etiqueta) -->
+    <div id="etiqueta-seg" class="etq" data-motion-blur="off">
+      <svg width="10" height="10"><path id="linha-seg" d="M 202 438 L 60 96" stroke="#f6f4f1" stroke-width="3" fill="none" stroke-dasharray="372" /></svg>
+      <div class="caixa"><b class="num"><span class="molde">+438</span><span id="n-seg">+0</span></b> seguidores</div>
+    </div>
+    <div id="etiqueta-vis" class="etq" data-motion-blur="off">
+      <svg width="10" height="10"><path id="linha-vis" d="M 223 238 L 223 96" stroke="#f6f4f1" stroke-width="3" fill="none" stroke-dasharray="144" /></svg>
+      <div class="caixa"><b class="num"><span class="molde">21<span class="sep">,</span>3 mil</span><span id="n-vis">0<span class="sep">,</span>0 mil</span></b> visualizações</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // câmera: começa perto do celular (escala 1,8) e recua devagar até 1,15
+      const PERTO = { x: -0.5, y: -82, scale: 1.8 };
+      tl.set("#c-placa", PERTO, 0);
+      tl.set("#c-helena", { x: -60, y: 40, scale: 1.25 }, 0);
+      tl.to("#helena", { opacity: 1, duration: 0.35, ease: "power1.out" }, 1.0);
+      // o vídeo dela cobre a tela inteira no começo (em coordenadas da camada com escala 1,8)
+      tl.set("#voo", { x: 240.5, y: 482, scale: 0.5556 }, 0);
+      // LEVAR JUNTO: encolhe e pousa como o 1º post (tile 0 da grade: x 405,5, y 762, largura 88)
+      tl.to("#voo", { x: 405.5, y: 762, scale: 0.0815, duration: 1.2, ease: "power2.inOut" }, 0);
+      // recuo da câmera e da Helena (camadas em velocidades diferentes)
+      tl.to("#c-placa", { x: 0, y: 0, scale: 1.15, duration: 2.1, ease: "power2.inOut" }, 1.3);
+      tl.to("#c-helena", { x: 0, y: 0, scale: 1, duration: 2.1, ease: "power2.inOut" }, 1.3);
+      // etiqueta da maquete
+      tl.to("#etiqueta", { opacity: 1, duration: 0.2, ease: "power1.out" }, 1.6);
+
+      // ===== v3 (3,4 s em diante) =====
+      // a fita de posts: cada linha recebe uma cópia da fila inteira (14 posts, 182 px entre eles):
+      // 5 novos + o vídeo dela + os 8 antigos da grade
+      const postVideo = document.createElement("div");
+      postVideo.className = "post";
+      const fotoVideo = document.querySelector("#voo").cloneNode(false);
+      fotoVideo.removeAttribute("id");
+      fotoVideo.removeAttribute("style");
+      postVideo.appendChild(fotoVideo);
+      const fila = [
+        ...document.querySelectorAll("#molde-fita > .post"),
+        postVideo,
+        ...document.querySelectorAll("#tela-rec .grade > .post:not(#post-novo)"),
+      ];
+      document.querySelectorAll("#fita .tira").forEach((tira) => {
+        fila.forEach((post) => tira.appendChild(post.cloneNode(true)));
+      });
+      // posição da fila na linha r depois de k posts novos: o vídeo dela (5º da fila) vai para o lugar k
+      const PASSO = 182;
+      const posFila = (k) => (r) => (k - 5 - 3 * r) * PASSO;
+      tl.set("#fita .tira", { x: posFila(0) }, 0);
+      // troca invisível: a grade de antes dá lugar à fita, com tudo no mesmo lugar
+      tl.set("#fita", { opacity: 1 }, 3.4);
+      tl.set("#tela-rec .grade", { opacity: 0 }, 3.4);
+      tl.set("#voo", { opacity: 0 }, 3.4);
+
+      // 3,40–4,60 a câmera avança de novo para o celular; a Helena acompanha em outra velocidade
+      const AVANCO = { duration: 1.2, ease: "power2.inOut" };
+      tl.to("#c-placa", { x: 0, y: 252, scale: 2.2, ...AVANCO }, 3.4);
+      tl.to("#c-helena", { x: -40, y: 300, scale: 1.35, ...AVANCO }, 3.4);
+      // a cópia da etiqueta assume no mesmo lugar (troca invisível)
+      tl.set("#etiqueta-a", { opacity: 1 }, 3.4);
+      tl.set("#etiqueta", { opacity: 0 }, 3.4);
+      // a etiqueta sobe junto e a linha continua presa ao celular (as duas pontas andam com a câmera)
+      tl.to("#etiqueta-a", { x: -20, y: -140, ...AVANCO }, 3.4);
+      const linhaA = document.querySelector("#linha-a");
+      const pontas = { x1: 60, y1: 96, x2: -96, y2: 330 };
+      tl.to(
+        pontas,
+        {
+          x1: 330,
+          y1: 96,
+          x2: 210,
+          y2: 438,
+          ...AVANCO,
+          onUpdate: () => linhaA.setAttribute("d", `M ${pontas.x1} ${pontas.y1} L ${pontas.x2} ${pontas.y2}`),
+        },
+        3.4
+      );
+      // 3,50 troca suave do texto: "último post · agora" → "3 semanas depois"
+      tl.to("#txt-antes", { opacity: 0, y: -12, duration: 0.16, ease: "power2.in" }, 3.5);
+      tl.fromTo("#txt-depois", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.26, ease: "power2.out" }, 3.66); // entra depois de o texto antigo sair (sem quadro com texto sobre texto)
+
+      // 3,60 / 3,82 / 4,04 / 4,26 / 4,48 cinco posts novos entram no começo e empurram os outros
+      [3.6, 3.82, 4.04, 4.26, 4.48].forEach((t, i) => {
+        tl.to("#fita .tira", { x: posFila(i + 1), duration: 0.2, ease: "power2.inOut" }, t);
+      });
+
+      // contadores: um objeto anda de 0 ao número final e escreve o texto (formato pt-BR)
+      const nSeg = document.querySelector("#n-seg");
+      const nVis = document.querySelector("#n-vis");
+      const seg = { v: 0 };
+      const vis = { v: 0 };
+      // 4,80 "+438 seguidores" salta e conta em 1,0 s
+      tl.to("#etiqueta-seg", { opacity: 1, duration: 0.12, ease: "power1.out" }, 4.8);
+      tl.fromTo("#linha-seg", { strokeDashoffset: 372 }, { strokeDashoffset: 0, duration: 0.22, ease: "power2.out" }, 4.8);
+      tl.fromTo("#etiqueta-seg .caixa", { scale: 0.6 }, { scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 4.8);
+      tl.to(seg, { v: 438, duration: 1.0, ease: "power2.out", onUpdate: () => (nSeg.textContent = "+" + Math.round(seg.v)) }, 4.8);
+      // 5,10 "21,3 mil visualizações" salta e conta em 1,0 s
+      tl.to("#etiqueta-vis", { opacity: 1, duration: 0.12, ease: "power1.out" }, 5.1);
+      tl.fromTo("#linha-vis", { strokeDashoffset: 144 }, { strokeDashoffset: 0, duration: 0.18, ease: "power2.out" }, 5.1);
+      tl.fromTo("#etiqueta-vis .caixa", { scale: 0.6 }, { scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 5.1);
+      tl.to(
+        vis,
+        {
+          v: 21.3,
+          duration: 1.0,
+          ease: "power2.out",
+          onUpdate: () => {
+            const [inteiro, decimal] = (Math.round(vis.v * 10) / 10).toFixed(1).split(".");
+            nVis.innerHTML = `${inteiro}<span class="sep">,</span>${decimal} mil`;
+          },
+        },
+        5.1
+      );
+      // parado até 6,8
+      tl.set({}, {}, 6.8);
+      window.__timelines["s09-post"] = tl;
+    })();
+  </script>
+</template>

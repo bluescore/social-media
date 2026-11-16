@@ -1,0 +1,31 @@
+{
+  "data": "2026-11-12T15:16:28.139Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/camada-osso.png"
+  ],
+  "prompt": "Image 1 is a 3D render layer of a human lower jaw bone made of translucent mint-green glass, with five titanium dental implants visible inside it, on a fully transparent background.\nEdit it and keep EXACTLY the same jaw: the same outline, the same shape, the same angle, the same scale and the same position in the frame (pixel-aligned with Image 1), the same warm soft key light from the upper left and the same thin orange rim light on the right edges.\nChange ONLY the glass: make it heavily FROSTED, milky, sandblasted mint-green glass, soft and cloudy, so opaque that NOTHING inside can be seen. The five implants must be completely hidden, including their tops: no metal visible anywhere, and the crest of the bone is smooth and continuous where the implant tops were.\nKeep the fully transparent background. No ground shadow, no glow, no text, no labels.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\camada-osso-fosco.png"
+  ],
+  "usage": {
+    "input_tokens": 1713,
+    "input_tokens_details": {
+      "image_tokens": 1508,
+      "text_tokens": 205
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 3126
+  },
+  "custo_estimado_usd": 0.0555,
+  "segundos": 38
+}

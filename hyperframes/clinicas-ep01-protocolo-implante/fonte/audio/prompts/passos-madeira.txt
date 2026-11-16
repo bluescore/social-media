@@ -1,0 +1,2 @@
+A few slow light footsteps of a small wooden doll walking on a wooden tabletop, soft hollow wooden taps, one tap per step, evenly spaced about half a second apart, close-mic, dry, no squeak, no music
+{"duration_seconds": 3, "prompt_influence": 0.6}

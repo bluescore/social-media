@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-11T22:42:12.896Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [
+    "hyperframes/_serie-clinicas/personagens/dra-helena/rascunhos/folha-estilizada-2.png",
+    "hyperframes/_serie-clinicas/cenarios/rascunhos/consultorio-noite.png"
+  ],
+  "prompt": "Image 1 = approved character model sheet. Image 2 = the dental office at night where the scene happens.\nDo not redesign the character. Keep exactly: face, one wide grey streak from her own LEFT temple swept into a LOW BUN, bone-white matte lab coat with mandarin collar, charcoal high-neck top, skin tone, adult proportions, the same rendering style as Image 1. Nothing orange on her. Mouth closed, no teeth. No text anywhere.\nSHOT: vertical 9:16 close shot, chest-up, as seen in a phone's front-camera selfie preview (mirror view), centered, eye level. In this mirror view the grey streak appears on the LEFT side of the image.\nEXPRESSION: tired after a long day, heavy eyelids, looking slightly down toward the phone screen, quiet frustration, jaw a little tense, shoulders slightly raised.\nLIGHT: warm 2700 K table-lamp light from the LEFT of the image, soft; a cool bluish phone-screen light on the face from the front; soft shadows, never pitch black; late night.\nBACKGROUND: the dental office from Image 2 behind her, out of focus (shallow depth of field), the lamp glow soft and diffuse on the left, no hard circle of light.\nConstraints: no phone frame, no UI, no text, no logos, no watermark, no extra people.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\_serie-clinicas\\personagens\\dra-helena\\rascunhos\\capa-estilizada.png"
+  ],
+  "usage": {
+    "input_tokens": 3110,
+    "input_tokens_details": {
+      "image_tokens": 2804,
+      "text_tokens": 306
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 4523
+  },
+  "custo_estimado_usd": 0.0664,
+  "segundos": 45
+}

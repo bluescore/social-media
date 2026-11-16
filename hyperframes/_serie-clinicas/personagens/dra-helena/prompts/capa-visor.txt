@@ -1,0 +1,7 @@
+Image 1 = approved character model sheet. Image 2 = the dental office at night where the scene happens.
+Do not redesign the character. Keep exactly: face, one wide grey streak from her own LEFT temple swept into a LOW BUN, bone-white matte lab coat with mandarin collar, charcoal high-neck top, skin tone, adult proportions, the same rendering style as Image 1. Nothing orange on her. Mouth closed, no teeth. No text anywhere.
+SHOT: vertical 9:16 close shot, chest-up, as seen in a phone's front-camera selfie preview (mirror view), centered, eye level. In this mirror view the grey streak appears on the LEFT side of the image.
+EXPRESSION: tired after a long day, heavy eyelids, looking slightly down toward the phone screen, quiet frustration, jaw a little tense, shoulders slightly raised.
+LIGHT: warm 2700 K table-lamp light from the LEFT of the image, soft; a cool bluish phone-screen light on the face from the front; soft shadows, never pitch black; late night.
+BACKGROUND: the dental office from Image 2 behind her, out of focus (shallow depth of field), the lamp glow soft and diffuse on the left, no hard circle of light.
+Constraints: no phone frame, no UI, no text, no logos, no watermark, no extra people.

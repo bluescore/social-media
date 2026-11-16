@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<!-- TEASER "SOMBRA DO SABIÁ" (Sabiá Lab, 2026-11-05)
+     Referência: teaser "coming soon" da Exoceuticals (sombra desfocada na parede).
+     A sombra de um sabiá chega voando e pousa num galho, numa parede de luz quente
+     com as cores da marca; a luz se apaga e fica "em breve".
+     Cena única em compositions\sombra.html. Cores e regras da marca: C:\social-media\marca\marca.md -->
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+<meta name="hf-scene-parts" content="{&quot;shared&quot;:&quot;a6b7928eec9cc304&quot;,&quot;scenes&quot;:{&quot;sombra&quot;:&quot;f750633200a56f89&quot;}}"><script data-hf-gsap-fallback>
+(function(){
+  var cdnBase="/api/vendor/npm/gsap@3.15.0/dist/";
+  var loaded={};
+  function loadFallback(file){
+    if(loaded[file])return loaded[file];
+    return loaded[file]=new Promise(function(ok,fail){
+      var s=document.createElement("script");
+      s.src=cdnBase+file;s.hfGsapFallback=true;s.onload=ok;s.onerror=fail;
+      document.head.appendChild(s);
+    });
+  }
+  document.addEventListener("error",function(e){
+    var t=e.target;
+    if(!t||t.tagName!=="SCRIPT"||!t.src||t.hfGsapFallback)return;
+    var m=t.src.match(/gsap[^/]*\/dist\/(.+\.js)/);
+    if(m)loadFallback(m[1]).catch(function(){
+      reportError(new Error("GSAP could not load from "+t.src+" or "+cdnBase+m[1]+", so this preview's animations will not play."));
+    });
+  },true);
+})();
+</script>
+<meta name="hyperframes-gsap-base-url" content="/api/vendor/npm">
+<meta name="hyperframes-studio-preview"><script>(function(){var seen=window.__hfPreviewErrors=[];
+addEventListener("error",function(e){seen.push(e.message||String(e))});})();</script>
+<base href="/api/projects/teaser-sombra-sabia/preview/">
+<script type="importmap">{"imports":{"/":"/api/projects/teaser-sombra-sabia/preview/","/api/projects/teaser-sombra-sabia/preview/":"/api/projects/teaser-sombra-sabia/preview/"}}</script><style data-hf-scene-fonts="">@font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }</style><style data-hyperframes-text-rendering="true">html,body,*{text-rendering:geometricPrecision}</style><script data-hf-after-fonts-fallback="">document.addEventListener("DOMContentLoaded", function () {
+  if (window.__hfAfterFontsClaimed) return;
+  var T = "text/hf-after-fonts";
+  var all = [].slice.call(document.querySelectorAll('script[type="text/hf-after-fonts"], script[type="text/hf-after-fonts+module"]'));
+  if (!all.length) return;
+  console.warn("[hyperframes] the runtime has no web-font gate; composition scripts run without waiting for fonts");
+  var late = function (el) { return el.type !== T || el.matches('[defer][src], [defer][data-hf-inlined-src]'); };
+  var queue = all.filter(function (el) { return !late(el); }).concat(all.filter(late));
+  (function next() {
+    var el = queue.shift();
+    if (!el) return;
+    var s = document.createElement("script");
+    for (var i = 0; i < el.attributes.length; i++) s.setAttribute(el.attributes[i].name, el.attributes[i].value);
+    if (el.type === T) s.removeAttribute("type"); else s.type = "module";
+    s.async = el.hasAttribute("async");
+    s.text = el.text;
+    var waits = s.type !== "module" && s.hasAttribute("src") && !s.async && !s.noModule;
+    if (waits) { s.addEventListener("load", next); s.addEventListener("error", next); }
+    el.replaceWith(s);
+    if (!waits) next();
+  })();
+});
+//# sourceURL=hyperframes://after-fonts-fallback</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>/* Cores da marca, disponíveis para todas as cenas: var(--laranja-intenso) etc. */
+      :root {
+        --laranja-intenso: #f34500; /* cor principal */
+        --laranja-medio: #f35c05;
+        --laranja-ambar: #f28801;
+        --amarelo-lima: #efff57;
+        --verde-menta: #88d09d;
+        --cinza-chumbo: #303236;
+        --marrom-acinzentado: #72605e;
+        --branco: #ffffff;
+        --preto: #000000;
+        --fundo-claro: #f6f4f1;
+        --fundo-escuro: #1e1415;
+        --texto-escuro: #181818;
+        --gradiente-paleta: linear-gradient(90deg, #f34500, #f35c05, #f28801, #efff57, #88d09d);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--fundo-escuro);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }</style><style data-hf-scene="sombra">[data-composition-id="sombra"] [data-hf-authored-id="root"] {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      /* Laranja da marca, com a mesma luminosidade dos tons medidos na referência (que eram azuis):
+         escuros no laranja intenso (#F34500), médios no laranja médio (#F35C05), claros no âmbar (#F28801).
+         Azul original: escura #2e4c61 · média #527b9f · clara #c6d9e9 · base #bdd2e8 · final #1d2b36 */
+      --parede-escura: #713423;
+      --parede-media: #b55833;
+      --parede-clara: #f5ceaf;
+      --parede-base: #f5c49d;
+      --fundo-final: #3e2017;
+      background: var(--parede-clara);
+    }
+
+    /* A parede: luz em diagonal (canto de cima à esquerda mais escuro), sem foco circular */
+    [data-composition-id="sombra"] #parede {
+      position: absolute;
+      inset: -80px;
+      background: linear-gradient(
+        158deg,
+        var(--parede-escura) 0%,
+        var(--parede-media) 15%,
+        color-mix(in oklab, var(--parede-media) 45%, var(--parede-clara)) 30%,
+        var(--parede-clara) 50%,
+        color-mix(in oklab, var(--parede-clara) 70%, var(--branco, #ffffff)) 68%,
+        var(--parede-base) 100%
+      );
+    }
+    /* Um véu de luz largo que respira devagar (nuvem passando) */
+    [data-composition-id="sombra"] #luz-viva {
+      position: absolute;
+      inset: -900px;
+      background: linear-gradient(
+        120deg,
+        transparent 30%,
+        color-mix(in oklab, var(--branco, #ffffff) 22%, transparent) 55%,
+        transparent 80%
+      );
+    }
+
+    /* A sombra: vídeo (branco = parede, azul escuro = sombra) multiplicado sobre a parede */
+    [data-composition-id="sombra"] #camera {
+      position: absolute;
+      inset: 0;
+      mix-blend-mode: multiply;
+    }
+    [data-composition-id="sombra"] #placa {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      object-fit: contain;
+    }
+    /* Pretos levantados: nada fica mais escuro que um azul profundo (visual suave, de filme) */
+    [data-composition-id="sombra"] #levanta {
+      position: absolute;
+      inset: 0;
+      background: #3e1e15;
+      mix-blend-mode: lighten;
+    }
+
+    /* Começo: a luz abre a partir de um azul médio (nunca do preto) */
+    [data-composition-id="sombra"] #abertura {
+      position: absolute;
+      inset: 0;
+      background: var(--parede-media);
+      mix-blend-mode: multiply;
+    }
+    /* Final: a luz baixa para um azul profundo */
+    [data-composition-id="sombra"] #entardecer {
+      position: absolute;
+      inset: 0;
+      background: var(--fundo-final);
+    }
+
+    [data-composition-id="sombra"] #em-breve {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 928px;
+      text-align: center;
+      font-family: "Helvetica Now Text", sans-serif;
+      font-weight: 400;
+      font-size: 52px;
+      line-height: 1;
+      letter-spacing: 0.1em;
+      color: var(--branco, #ffffff);
+    }</style>
+  
+<script data-hyperframes-preview-runtime="1" src="/api/runtime.js"></script>
+<meta name="hyperframes-project-signature" content="bbf7982fd6ad68231a33abe5">
+<script data-hf-media-codec-map>window.__HF_MEDIA_SOURCE_FACTS__={"/assets/video/sombra-sabia.mp4":{"width":1080,"height":1920,"bitDepth":8,"bitrate":1064809,"codec":"h264"}};</script>
+</head>
+  <body>
+    <div data-hf-id="hf-pycq" id="root" data-composition-id="main" data-start="0" data-duration="8.5" data-width="1080" data-height="1920">
+      <div data-composition-file="compositions/sombra.html" data-hf-scene="sombra" data-hf-id="hf-wv1t" id="sombra" class="clip" data-composition-id="sombra" data-start="0" data-duration="8.5" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"><div style="width:1080px;height:1920px" data-hf-inner-root="true" data-hf-authored-id="root" data-hf-id="hf-g4q3" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-eq73" id="parede" data-layout-allow-overflow=""></div>
+    <div data-hf-id="hf-b7qy" id="luz-viva" data-layout-allow-overflow=""></div>
+    <div data-hf-id="hf-j2lh" id="camera" data-layout-allow-overflow="">
+      <video data-hf-render-id="placa" data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0,&quot;contrast&quot;:0,&quot;highlights&quot;:0,&quot;shadows&quot;:0,&quot;whites&quot;:0,&quot;blacks&quot;:0,&quot;temperature&quot;:0,&quot;tint&quot;:0,&quot;vibrance&quot;:0,&quot;saturation&quot;:0},&quot;details&quot;:{&quot;vignette&quot;:0,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0.16,&quot;grainSize&quot;:0.35,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.06578947368421052,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.4117647058823529,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.4571428571428572,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.4666666666666667,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.2222222222222222,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.3333333333333333,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.2222222222222222,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14285714285714285,&quot;kuwaharaSharpness&quot;:0.3125,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" data-hf-id="hf-o5ht" id="placa" class="clip" src="assets/video/sombra-sabia.mp4" data-start="0" data-duration="8.5" data-track-index="1" muted playsinline></video>
+    </div>
+    <div data-hf-id="hf-fzgm" id="levanta"></div>
+    <div data-hf-id="hf-hjpf" id="abertura"></div>
+    <div data-hf-id="hf-xswq" id="entardecer"></div>
+    <div data-hf-id="hf-1ns2" id="em-breve">em breve</div>
+  </div></div>
+    </div>
+    
+  <script type="text/hf-after-fonts">window.__timelines = window.__timelines || {};
+window.__timelines["main"] = gsap.timeline({ paused: true });</script><script type="text/hf-after-fonts" data-hf-scene="sombra">(function() {
+  (function() {
+    "use strict";
+    (() => {
+      function I(e) {
+        return e ? /[\w-]/.test(e) || e.charCodeAt(0) >= 128 : false;
+      }
+      function _(e) {
+        return e === " " || e === "	" || e === `
+` || e === "\r" || e === "\f";
+      }
+      var j = /^[0-9a-fA-F]{1,6}/;
+      function G(e) {
+        let n = e >= 55296 && e <= 57343;
+        return e === 0 || e > 1114111 || n ? 65533 : e;
+      }
+      function $(e, n) {
+        return e[n] === "\r" && e[n + 1] === `
+` ? n + 2 : _(e[n]) ? n + 1 : n;
+      }
+      function R(e, n) {
+        let t = e[n + 1];
+        if (t === void 0 || /[\n\r\f]/.test(t)) return null;
+        let i = j.exec(e.slice(n + 1, n + 7));
+        if (!i) return { value: t, end: n + 2 };
+        let o = G(Number.parseInt(i[0], 16));
+        return { value: String.fromCodePoint(o), end: $(e, n + 1 + i[0].length) };
+      }
+      function H(e, n) {
+        let t = (o) => I(o) && !/[0-9-]/.test(o), i = (o) => e[o] === "\\" && R(e, o) !== null;
+        return e[n] === "-" ? e[n + 1] === "-" || t(e[n + 1]) || i(n + 1) : t(e[n]) || i(n);
+      }
+      function y(e, n) {
+        let t = n;
+        for (; e.startsWith("/*", t); ) {
+          let i = e.indexOf("*/", t + 2);
+          t = i < 0 ? e.length : i + 2;
+        }
+        return t;
+      }
+      function A(e, n) {
+        let t = y(e, n);
+        for (; _(e[t]); ) t = y(e, t + 1);
+        return t;
+      }
+      function h(e, n) {
+        if (!H(e, n)) return null;
+        let t = n, i = "";
+        for (; t < e.length; ) {
+          let o = e[t];
+          if (o === "\\") {
+            let a = R(e, t);
+            if (!a) break;
+            i += a.value, t = a.end;
+            continue;
+          }
+          if (!I(o)) break;
+          i += o, t += 1;
+        }
+        return t === n ? null : { value: i, end: t };
+      }
+      var C = 45;
+      function T(e) {
+        return e >= 48 && e <= 57;
+      }
+      function z(e) {
+        return e >= 128 || e === C || e === 95 || T(e) || e >= 65 && e <= 90 || e >= 97 && e <= 122;
+      }
+      function J(e, n) {
+        let t = e.charCodeAt(n);
+        return t >= 1 && t <= 31 || t === 127 ? true : T(t) ? n === 0 || n === 1 && e.charCodeAt(0) === C : false;
+      }
+      function k(e) {
+        let n = "";
+        for (let t = 0; t < e.length; t += 1) {
+          let i = e.charCodeAt(t), o = e[t];
+          i === 0 ? n += "\uFFFD" : J(e, t) ? n += `\\${i.toString(16)} ` : t === 0 && e.length === 1 && i === C ? n += `\\${o}` : z(i) ? n += o : n += `\\${o}`;
+        }
+        return n;
+      }
+      var W = /\/\*(?:[^*]|\*(?!\/))*\*\/|\\(?:[0-9a-fA-F]{1,6}(?:\r\n|[ \t\r\n\f])?|[\s\S])|"(?:[^"\\]|\\[\s\S])*"|'(?:[^'\\]|\\[\s\S])*'|\[(?:\/\*(?:[^*]|\*(?!\/))*\*\/|\\[\s\S]|"(?:[^"\\]|\\[\s\S])*"|'(?:[^'\\]|\\[\s\S])*'|[^\]"'\\/]|\/(?!\*))*\]/g;
+      function Q(e) {
+        let n = new Array(e.length).fill(true);
+        for (let t of e.matchAll(W)) {
+          let i = t.index;
+          n.fill(false, i, i + t[0].length);
+        }
+        return n;
+      }
+      function q(e, n, t) {
+        if (n.length === 0 || !e.includes("#")) return e;
+        let i = new Set(n), o = Q(e), a = "", u = 0;
+        for (; u < e.length; ) {
+          let d = o[u] && e[u] === "#" ? h(e, u + 1) : null;
+          d && i.has(d.value) ? (a += t(d.value), u = d.end) : (a += e[u], u += 1);
+        }
+        return a;
+      }
+      function X(e) {
+        let n = "";
+        for (let t = 0; t < e.length; t += 1) {
+          if (e[t] === "\\") {
+            let i = e[t + 1];
+            if (i !== void 0 && /[\n\r\f]/.test(i)) {
+              t = $(e, t + 1) - 1;
+              continue;
+            }
+            let o = R(e, t);
+            if (o) {
+              n += o.value, t = o.end - 1;
+              continue;
+            }
+          }
+          n += e[t];
+        }
+        return n;
+      }
+      function N(e) {
+        return Array.from(e, (n) => {
+          let t = n.charCodeAt(0);
+          return t === 0 ? "\uFFFD" : t < 32 || t === 127 ? `\\${t.toString(16)} ` : n === '"' || n === "\\" ? `\\${n}` : n;
+        }).join("");
+      }
+      function Y(e, n) {
+        return e ? { kind: "any" } : n === void 0 ? { kind: "none" } : { kind: "named", prefix: n };
+      }
+      function Z(e, n) {
+        return e[n] === "|" && e[n + 1] !== "=";
+      }
+      function B(e, n) {
+        let t = e[n] === "*", i = t ? { value: "*", end: n + 1 } : h(e, n), o = y(e, i?.end ?? n);
+        if (!Z(e, o)) return t ? null : i ? { token: i, namespace: { kind: "none" } } : null;
+        let a = h(e, y(e, o + 1));
+        return a ? { token: a, namespace: Y(t, i?.value) } : null;
+      }
+      function K(e) {
+        if (e[0] !== "[") return null;
+        let n = A(e, 1), t = B(e, n);
+        if (!t) return null;
+        let { token: i, namespace: o } = t;
+        return { name: i.value, rawName: e.slice(n, i.end), namespace: o, end: i.end };
+      }
+      function ee(e, n) {
+        let t = /^(?:"((?:\\[\s\S]|[^"\\])*)"|'((?:\\[\s\S]|[^'\\])*)')/.exec(e.slice(n));
+        return t ? { value: X(t[1] ?? t[2]), end: n + t[0].length } : h(e, n);
+      }
+      function ne(e, n) {
+        let t = A(e, n), i = h(e, t);
+        if (i) {
+          if (!/^[is]$/i.test(i.value)) return null;
+          t = A(e, i.end);
+        }
+        return e[t] !== "]" || t !== e.length - 1 ? null : { flag: i?.value };
+      }
+      function F(e) {
+        let n = K(e);
+        if (!n) return null;
+        let t = A(e, n.end), o = ["=", "~=", "|=", "^=", "$=", "*="].find((d) => e.startsWith(d, t));
+        if (!o) return null;
+        let a = ee(e, A(e, t + o.length));
+        if (!a) return null;
+        let u = ne(e, a.end);
+        return u ? { name: n.name, rawName: n.rawName, namespace: n.namespace, operator: o, value: a.value, flag: u.flag } : null;
+      }
+      function E(e, n) {
+        return e.replace(W, (t) => t.startsWith("[") ? n(t) : t);
+      }
+      var re = "data-hf-svg-reference-aliases";
+      function O(e, n, t, i) {
+        let o = { "=": (s, r) => s === r, "~=": (s, r) => s.split(/[ \t\r\n\f]+/).includes(r), "|=": (s, r) => s === r || s.startsWith(r + "-"), "^=": (s, r) => s.startsWith(r), "$=": (s, r) => s.endsWith(r), "*=": (s, r) => s.includes(r) }, a = (s, r, l) => !r && l !== "=" && l !== "|=" ? false : o[l](s, r), u = (s) => s.replace(/[A-Z]/g, (r) => r.toLowerCase()), d = (s) => {
+          let r = F(s);
+          if (!r) return s;
+          let { name: l, rawName: g, namespace: m, operator: b, value: D, flag: w } = r;
+          if (m.kind === "named" != (i !== void 0)) return s;
+          let x = w?.toLowerCase() === "i" ? u : (S) => S, L = u(l), P = t.filter((S) => {
+            let V = m.kind === "none" ? S.name : S.localName, U = m.kind === "named" ? i.get(m.prefix) : null;
+            return (m.kind === "any" || S.namespaceURI === U) && u(V) === L;
+          }), v = /* @__PURE__ */ new Set([s]);
+          for (let S of P) a(x(S.before), x(D), b) && v.add(`[${g}="${N(S.after)}"${w ? ` ${w}` : ""}]`);
+          return v.size === 1 ? s : `:is(${[...v].join(", ")})`;
+        };
+        if (i) return E(e, d);
+        let p = new Map(n.map(({ id: s, replacement: r }) => [s, r])), f = /* @__PURE__ */ new Map();
+        for (let s of t) {
+          if (s.name !== "id" || s.before === s.after || p.has(s.before)) continue;
+          let r = f.get(s.before);
+          r || (r = /* @__PURE__ */ new Set([`#${k(s.before)}`]), f.set(s.before, r)), r.add(`#${k(s.after)}`);
+        }
+        for (let [s, r] of f) p.set(s, `:is(${[...r].join(", ")})`);
+        let c = q(e, [...p.keys()], (s) => p.get(s));
+        return E(c, d);
+      }
+      function se(e, n, t = true) {
+        let i = [], a = (t ? [...e.querySelectorAll(`[${n}]`)] : []).map((d) => d.getAttribute(n)), u = e.getAttribute?.(n);
+        u && a.unshift(u);
+        for (let d of a) {
+          let p;
+          try {
+            p = JSON.parse(d);
+          } catch {
+            continue;
+          }
+          if (!Array.isArray(p)) continue;
+          let f = p;
+          for (let c of f) {
+            if (!ie(c)) continue;
+            let { name: s, localName: r, namespaceURI: l, before: g, after: m } = c;
+            i.push({ name: s, localName: r, namespaceURI: l, before: g, after: m });
+          }
+        }
+        return i;
+      }
+      function ie(e) {
+        if (!e || typeof e != "object") return false;
+        let { name: n, localName: t, namespaceURI: i, before: o, after: a } = e;
+        return typeof n == "string" && typeof t == "string" && (i === null || typeof i == "string") && typeof o == "string" && typeof a == "string";
+      }
+      function oe(e) {
+        let n = [], t = [], i = false, o, a = /* @__PURE__ */ new WeakMap(), u = (f, c) => {
+          for (let s of f) {
+            if ("selectorText" in s) {
+              let r = s, l = a.get(r), g = r.selectorText, m = l?.applied === g ? l.authored : g, b = O(m, [], t, c);
+              b !== g && (r.selectorText = b), b === m ? a.delete(r) : a.set(r, { authored: m, applied: r.selectorText });
+            }
+            "cssRules" in s && u(s.cssRules, c);
+          }
+        }, d = () => {
+          if (t.length) for (let f of e.document.styleSheets) {
+            let c;
+            try {
+              c = f.cssRules;
+            } catch {
+              continue;
+            }
+            let s = /* @__PURE__ */ new Map();
+            for (let r of c) {
+              if (!("namespaceURI" in r)) continue;
+              let { prefix: l, namespaceURI: g } = r;
+              l && s.set(l, g || null);
+            }
+            s.size && u(c, s);
+          }
+        }, p = { rewrite: (f, c = []) => {
+          if (typeof f != "string" || !f.includes("#") && !f.includes("[")) return f;
+          let s = O(f, c.length ? [...c, ...n] : n, t);
+          if (s !== f) {
+            if (!o) {
+              let r = e.document.createElement("div");
+              o = r.matches.bind(r);
+            }
+            o(f);
+          }
+          return s;
+        }, refresh() {
+          t = se(e.document, re).filter((r) => r.before !== r.after);
+          let f = new Set(t.filter((r) => r.name === "id").map((r) => r.before)), c = /* @__PURE__ */ new Set();
+          n = [];
+          for (let r of e.document.querySelectorAll("[data-hf-authored-id][id]")) {
+            let l = r.getAttribute("data-hf-authored-id");
+            if (!l || l === r.id || c.has(l) || f.has(l)) continue;
+            c.add(l);
+            let g = N(l);
+            n.push({ id: l, replacement: `:is(#${k(l)}, [data-hf-authored-id="${g}"])` });
+          }
+          if (d(), i || !n.length && !t.length) return;
+          let s = e.Element.prototype;
+          s.querySelector = new Proxy(s.querySelector, { apply(r, l, g) {
+            return Reflect.apply(r, l, [p.rewrite(g[0])]);
+          } }), s.querySelectorAll = new Proxy(s.querySelectorAll, { apply(r, l, g) {
+            return Reflect.apply(r, l, [p.rewrite(g[0])]);
+          } }), i = true;
+        } };
+        e.__hfSvgSelectorAliases = p, p.refresh();
+      }
+      function M() {
+        let e = window;
+        e.__hfSvgSelectorAliases || oe(e);
+      }
+      M();
+    })();
+  })();
+  var __hfCompId = "sombra";
+  var __hfTimelineCompId = "sombra";
+  var __hfErrorLabel = "[HyperFrames] composition script error:";
+  var __hfAuthoredRootId = "root";
+  var __hfCompositionSrc = "compositions/sombra.html";
+  var __hfAuthoredRootAttr = "data-hf-authored-id";
+  var __hfEscapeAttr = function(value) {
+    return (value + "").replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+  };
+  var __hfRootSelector = '[data-composition-id="sombra"]';
+  var __hfRoot = null;
+  var __hfRootSelectorPattern = `\\[\\s*data-composition-id\\s*=\\s*(?:"sombra"|'sombra')\\s*\\]`;
+  var __hfTimelineRootSelectorPattern = `\\[\\s*data-composition-id\\s*=\\s*(?:"sombra"|'sombra')\\s*\\]`;
+  var __hfTimingSelectorPattern = `\\s*\\[\\s*data-(?:start|duration)\\s*=\\s*(?:"[^"]*"|'[^']*')\\s*\\]`;
+  var __hfAuthoredRootSelector = __hfAuthoredRootId ? "[" + __hfAuthoredRootAttr + '="' + __hfEscapeAttr(__hfAuthoredRootId) + '"]' : "";
+  var __hfAuthoredRootEntries = __hfAuthoredRootSelector ? [{ id: __hfAuthoredRootId, replacement: __hfAuthoredRootSelector }] : [];
+  var __hfNormalizeSelector = function(selector) {
+    if (!__hfCompId || typeof selector !== "string") return selector;
+    var normalized = selector.replace(new RegExp(__hfRootSelectorPattern + "(?:" + __hfTimingSelectorPattern + ")+", "g"), __hfRootSelector).replace(new RegExp("(?:" + __hfTimingSelectorPattern + ")+" + __hfRootSelectorPattern, "g"), __hfRootSelector).replace(new RegExp(__hfRootSelectorPattern, "g"), __hfRootSelector);
+    if (__hfTimelineCompId !== __hfCompId) {
+      normalized = normalized.replace(new RegExp(__hfTimelineRootSelectorPattern, "g"), __hfRootSelector);
+    }
+    return window.__hfSvgSelectorAliases.rewrite(normalized, __hfAuthoredRootEntries);
+  };
+  var __hfFindRoot = function() {
+    if (!__hfRoot && __hfRootSelector) {
+      __hfRoot = window.document.querySelector(__hfRootSelector);
+    }
+    return __hfRoot;
+  };
+  var __hfContains = function(node) {
+    var root = __hfFindRoot();
+    return !root || node === root || root.contains(node);
+  };
+  var __hfQueryAll = function(selector) {
+    var root = __hfFindRoot();
+    if (!root || typeof selector !== "string") {
+      return window.document.querySelectorAll(selector);
+    }
+    return Array.prototype.filter.call(window.document.querySelectorAll(__hfNormalizeSelector(selector)), function(node) {
+      return __hfContains(node);
+    });
+  };
+  var __hfQueryOne = function(selector) {
+    var matches = __hfQueryAll(selector);
+    return matches[0] || null;
+  };
+  var __hfGetElementById = function(id) {
+    var found = window.document.getElementById(id);
+    if (found && __hfContains(found)) return found;
+    var root = __hfFindRoot();
+    if (!root) return found || null;
+    var idValue = id + "";
+    if (__hfAuthoredRootId && __hfAuthoredRootId === idValue && root.getAttribute && root.getAttribute(__hfAuthoredRootAttr) === idValue) {
+      return root;
+    }
+    if (root.id === idValue) return root;
+    if (typeof root.querySelector !== "function") return null;
+    try {
+      var authoredRootMatch = root.querySelector("[" + __hfAuthoredRootAttr + '="' + __hfEscapeAttr(idValue) + '"]');
+      if (authoredRootMatch) return authoredRootMatch;
+    } catch {
+    }
+    if (typeof CSS !== "undefined" && CSS && typeof CSS.escape === "function") {
+      try {
+        return root.querySelector("#" + CSS.escape(idValue)) || null;
+      } catch {
+      }
+    }
+    try {
+      return root.querySelector('[id="' + __hfEscapeAttr(idValue) + '"]') || null;
+    } catch {
+    }
+    return null;
+  };
+  var __hfScopedDocument = typeof Proxy === "function" ? new Proxy(window.document, {
+    get: function(target, prop, receiver) {
+      if (prop === "querySelector") return __hfQueryOne;
+      if (prop === "querySelectorAll") return __hfQueryAll;
+      if (prop === "getElementById") return __hfGetElementById;
+      var value = Reflect.get(target, prop, target);
+      return typeof value === "function" ? value.bind(target) : value;
+    }
+  }) : window.document;
+  var __hfTimelineRegistryProxy = null;
+  var __hfGetTimelineRegistry = function() {
+    window.__timelines = window.__timelines || {};
+    if (!__hfCompId || __hfCompId === __hfTimelineCompId || typeof Proxy !== "function") {
+      return window.__timelines;
+    }
+    if (!__hfTimelineRegistryProxy) {
+      __hfTimelineRegistryProxy = new Proxy(window.__timelines, {
+        get: function(target, prop, receiver) {
+          if (prop !== __hfCompId) {
+            return Reflect.get(target, prop, target);
+          }
+          var runtimeValue = Reflect.get(target, __hfTimelineCompId, target);
+          return runtimeValue === void 0 ? Reflect.get(target, prop, target) : runtimeValue;
+        },
+        set: function(target, prop, value, receiver) {
+          if (prop !== __hfCompId) {
+            return Reflect.set(target, prop, value, target);
+          }
+          var authoredValue = Reflect.get(target, __hfCompId, target);
+          var ownsAuthored = authoredValue === void 0 || authoredValue === Reflect.get(target, __hfTimelineCompId, target);
+          var runtimeSet = Reflect.set(target, __hfTimelineCompId, value, target);
+          if (!ownsAuthored) return runtimeSet;
+          return Reflect.set(target, __hfCompId, value, target) && runtimeSet;
+        }
+      });
+    }
+    return __hfTimelineRegistryProxy;
+  };
+  var __hfScopedWindow = typeof Proxy === "function" ? new Proxy(window, {
+    get: function(target, prop, receiver) {
+      if (prop === "__timelines") return __hfGetTimelineRegistry();
+      if (prop === "__hyperframes") return __hfScopedHyperframes;
+      var value = Reflect.get(target, prop, target);
+      return typeof value === "function" && value.prototype === void 0 ? value.bind(target) : value;
+    },
+    set: function(target, prop, value, receiver) {
+      if (prop === "__timelines") {
+        if (value === __hfTimelineRegistryProxy) return true;
+        target.__timelines = value || {};
+        __hfTimelineRegistryProxy = null;
+        return true;
+      }
+      return Reflect.set(target, prop, value, target);
+    }
+  }) : window;
+  var __hfResolveGsapTarget = function(target) {
+    if (typeof target !== "string" && !Array.isArray(target)) return target;
+    var resolved = typeof target === "string" ? __hfQueryAll(target) : target.reduce(function(resolved2, item) {
+      if (typeof item === "string") {
+        return resolved2.concat(Array.prototype.slice.call(__hfQueryAll(item)));
+      }
+      resolved2.push(item);
+      return resolved2;
+    }, []);
+    if (!resolved.length) {
+      var originalTarget = String(target);
+      resolved = [];
+      resolved.toString = function() {
+        return originalTarget;
+      };
+    }
+    return resolved;
+  };
+  var __hfScopeTimeline = function(timeline) {
+    if (!timeline || timeline.__hfScopedCompositionRoot === __hfFindRoot()) return timeline;
+    ["to", "from", "fromTo", "set"].forEach(function(method) {
+      var original = timeline[method];
+      if (typeof original !== "function") return;
+      timeline[method] = function(target) {
+        var args = Array.prototype.slice.call(arguments);
+        args[0] = __hfResolveGsapTarget(target);
+        return original.apply(timeline, args);
+      };
+    });
+    try {
+      Object.defineProperty(timeline, "__hfScopedCompositionRoot", {
+        value: __hfFindRoot(),
+        configurable: true
+      });
+    } catch {
+    }
+    return timeline;
+  };
+  var __hfBaseGsap = typeof gsap === "undefined" ? window.gsap : gsap;
+  var __hfScopedGsap = !__hfBaseGsap || typeof Proxy !== "function" ? __hfBaseGsap : new Proxy(__hfBaseGsap, {
+    get: function(target, prop, receiver) {
+      if (prop === "timeline") {
+        return function() {
+          return __hfScopeTimeline(target.timeline.apply(target, arguments));
+        };
+      }
+      if (prop === "to" || prop === "from" || prop === "fromTo" || prop === "set") {
+        return function(firstArg) {
+          var args = Array.prototype.slice.call(arguments);
+          args[0] = __hfResolveGsapTarget(firstArg);
+          return target[prop].apply(target, args);
+        };
+      }
+      if (prop === "utils" && target.utils && typeof Proxy === "function") {
+        return new Proxy(target.utils, {
+          get: function(utilsTarget, utilsProp, utilsReceiver) {
+            if (utilsProp === "toArray") {
+              return function(firstArg) {
+                var args = Array.prototype.slice.call(arguments);
+                args[0] = __hfResolveGsapTarget(firstArg);
+                return utilsTarget.toArray.apply(utilsTarget, args);
+              };
+            }
+            if (utilsProp === "selector") {
+              return function(base) {
+                var baseEl = typeof base === "string" ? __hfQueryOne(base) : base;
+                var root = baseEl || __hfFindRoot();
+                return function(selector) {
+                  if (!root || typeof selector !== "string") return [];
+                  return Array.prototype.filter.call(
+                    window.document.querySelectorAll(__hfNormalizeSelector(selector)),
+                    function(node) {
+                      return node === root || typeof root.contains === "function" && root.contains(node);
+                    }
+                  );
+                };
+              };
+            }
+            var value2 = Reflect.get(utilsTarget, utilsProp, utilsTarget);
+            return typeof value2 === "function" ? value2.bind(utilsTarget) : value2;
+          }
+        });
+      }
+      var value = Reflect.get(target, prop, target);
+      return typeof value === "function" ? value.bind(target) : value;
+    }
+  });
+  var __hfBaseHyperframes = window.__hyperframes;
+  var __hfScopedHyperframes = !__hfBaseHyperframes ? __hfBaseHyperframes : Object.assign({}, __hfBaseHyperframes, {
+    assetUrl: function(path) {
+      var page = window.document.baseURI;
+      return new URL(path, __hfCompositionSrc ? new URL(__hfCompositionSrc, page) : page).href;
+    },
+    getVariables: function() {
+      var byComp = window.__hfVariablesByComp;
+      var scoped = byComp && __hfTimelineCompId ? byComp[__hfTimelineCompId] : null;
+      return scoped ? Object.assign({}, scoped) : {};
+    }
+  });
+  var __hfRun = function() {
+    var report = window.__hfScriptState;
+    if (typeof report === "function") report("start", __hfCompositionSrc || "index.html");
+    try {
+      (function(document, gsap2, window2, __hyperframes) {
+        const tl = gsap2.timeline({ paused: true });
+        tl.fromTo("#abertura", { opacity: 0.55 }, { opacity: 0, duration: 1.6, ease: "sine.out" }, 0);
+        tl.fromTo("#luz-viva", { x: -260, opacity: 0.4 }, { x: 220, opacity: 1, duration: 8.5, ease: "sine.inOut" }, 0);
+        tl.fromTo("#parede", { x: -20, y: -20 }, { x: 20, y: 20, duration: 8.5, ease: "sine.inOut" }, 0);
+        tl.fromTo(
+          "#camera",
+          { scale: 1, y: 0 },
+          { scale: 1.08, y: -30, transformOrigin: "50% 58%", duration: 8.5, ease: "sine.inOut" },
+          0
+        );
+        tl.fromTo("#entardecer", { opacity: 0 }, { opacity: 0.94, duration: 1.4, ease: "sine.inOut" }, 5.3);
+        tl.fromTo("#em-breve", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 1.4, ease: "power3.out" }, 5.9);
+        window2.__timelines["sombra"] = tl;
+      }).call(window, __hfScopedDocument, __hfScopedGsap, __hfScopedWindow, __hfScopedHyperframes);
+    } catch (_err) {
+      console.error(__hfErrorLabel, __hfCompId, _err);
+    } finally {
+      if (typeof report === "function") report("finish", __hfCompositionSrc || "index.html");
+    }
+  };
+  var __hfRecordAnimations = function(run) {
+    if (window.__hfSceneAnimations === void 0) {
+      window.__hfSceneAnimations = window.document.querySelector('meta[name="hf-scene-parts"]') ? {} : null;
+    }
+    var byComp = window.__hfSceneAnimations;
+    var globalTimeline = __hfBaseGsap && __hfBaseGsap.globalTimeline;
+    if (!byComp || !globalTimeline || !__hfTimelineCompId) return run();
+    var before = globalTimeline.getChildren(false);
+    var autoRemove = globalTimeline.autoRemoveChildren;
+    globalTimeline.autoRemoveChildren = false;
+    run();
+    globalTimeline.autoRemoveChildren = autoRemove;
+    var recorded = byComp[__hfTimelineCompId] = byComp[__hfTimelineCompId] || [];
+    globalTimeline.getChildren(false).forEach(function(animation) {
+      if (before.indexOf(animation) >= 0) return;
+      recorded.push(animation);
+      if (autoRemove && !animation.getChildren && animation.totalProgress() === 1) globalTimeline.remove(animation);
+    });
+  };
+  __hfFindRoot();
+  __hfRecordAnimations(__hfRun);
+})();</script></body>
+</html>

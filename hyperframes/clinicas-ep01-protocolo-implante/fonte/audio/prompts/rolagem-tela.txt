@@ -1,0 +1,2 @@
+Soft fingertip swipe sliding on a smartphone glass screen, gentle skin on glass friction that slows down and stops, close-mic, very subtle, no beep, no tone, no musical note
+{"duration_seconds": 1.0, "prompt_influence": 0.6}

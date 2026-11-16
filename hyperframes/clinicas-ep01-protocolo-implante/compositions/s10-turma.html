@@ -1,0 +1,203 @@
+<!-- CENA 10 (53,5 a 58,5 s do episódio, 5 s): "ela mandou o vídeo pra Lúcia."
+     v4 (pedido 9 do dono): saiu o grupo "turma da especialização"; agora é a conversa 1 a 1 com a Lúcia (paciente).
+     Topo: "‹" + avatar redondo com "L" + "Lúcia". Desde o começo aparecem as 2 mensagens anteriores dela (à esquerda):
+     "Oi, doutora! Tudo bem?" e "Como funciona a prótese protocolo?".
+     Tempos iguais aos da v3 (o som depende deles): 0,40 o vídeo encaminhado entra (à direita, toque) · 0,65 "encaminhado"
+     · 1,40–2,00 ela digitando · 2,00 chega "Entendi! Agora ficou bem claro" (sem o nome no balão: conversa 1 a 1; parada até o fim).
+     A área escura à esquerda do vídeo (y ~1000–1200 no quadro) fica livre para a legenda.
+     A resposta é sobre o conteúdo, nunca sobre o método. -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #2b2224;
+      font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+      color: #f6f4f1;
+    }
+    #fundo {
+      position: absolute;
+      left: -67.5px;
+      top: -120px;
+      width: 1215px;
+      height: 2160px;
+    }
+    #fundo-escuro {
+      position: absolute;
+      inset: 0;
+      background: rgba(34, 24, 20, 0.55);
+    }
+    #celular {
+      position: absolute;
+      left: 140px;
+      top: 150px;
+      width: 800px;
+      height: 1620px;
+      border-radius: 76px;
+      background: #303236;
+      box-shadow: 0 30px 80px rgba(10, 6, 6, 0.55);
+    }
+    #tela {
+      position: absolute;
+      left: 22px;
+      top: 22px;
+      right: 22px;
+      bottom: 22px;
+      border-radius: 56px;
+      overflow: hidden;
+      background: #161719;
+    }
+    #barra {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 170px;
+      padding: 60px 36px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      font-size: 34px;
+      letter-spacing: -0.02em;
+      border-bottom: 1px solid rgba(246, 244, 241, 0.08);
+    }
+    /* avatar redondo da Lúcia (a inicial "L"), no verde que já era a cor do nome dela */
+    #barra .avatar {
+      flex: none;
+      width: 60px;
+      height: 60px;
+      margin-top: -10px;
+      border-radius: 50%;
+      background: #9fc2a6;
+      color: #303236;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 60px;
+      text-align: center;
+      letter-spacing: 0;
+    }
+    /* mensagens anteriores da Lúcia (recebidas, à esquerda), legíveis desde o começo */
+    .recebida {
+      position: absolute;
+      left: 34px;
+      max-width: 560px;
+      padding: 22px 30px 26px;
+      border-radius: 34px;
+      background: #2d3036;
+      font-size: 44px;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    #msg-1 {
+      top: 206px;
+    }
+    #msg-2 {
+      top: 312px;
+      border-radius: 34px 34px 34px 10px;
+    }
+    #encaminhado {
+      position: absolute;
+      right: 40px;
+      top: 470px;
+      font-size: 28px;
+      color: rgba(246, 244, 241, 0.7);
+      opacity: 0;
+    }
+    #video-enc {
+      position: absolute;
+      right: 34px;
+      top: 515px;
+      width: 330px;
+      height: 587px;
+      border-radius: 30px 30px 10px 30px;
+      overflow: hidden;
+      transform-origin: 100% 100%;
+      opacity: 0;
+    }
+    #video-enc img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #digitando {
+      position: absolute;
+      left: 34px;
+      top: 1140px;
+      width: 120px;
+      height: 64px;
+      border-radius: 30px;
+      background: #26282c;
+      opacity: 0;
+    }
+    #digitando i {
+      position: absolute;
+      top: 27px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(246, 244, 241, 0.6);
+    }
+    #resposta {
+      position: absolute;
+      left: 34px;
+      top: 1140px;
+      max-width: 560px;
+      padding: 22px 30px 26px;
+      border-radius: 34px 34px 34px 10px;
+      background: #2d3036;
+      transform-origin: 0 100%;
+      opacity: 0;
+    }
+    #resposta .msg {
+      font-size: 44px;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+  </style>
+
+  <div id="root" data-composition-id="s10-turma" data-width="1080" data-height="1920">
+    <img id="fundo" src="assets/img/recepcao-tarde-desfocada.jpg" alt="" />
+    <div id="fundo-escuro"></div>
+    <div id="celular">
+      <div id="tela">
+        <div id="barra"><span>‹</span><span class="avatar">L</span><span>Lúcia</span></div>
+        <div class="recebida" id="msg-1">Oi, doutora! Tudo bem?</div>
+        <div class="recebida" id="msg-2">Como funciona a<br />prótese protocolo?</div>
+        <div id="encaminhado">encaminhado</div>
+        <div id="video-enc"><img src="assets/img/video-dela-final.jpg" alt="" /></div>
+        <div id="digitando"><i style="left: 30px"></i><i style="left: 54px"></i><i style="left: 78px"></i></div>
+        <div id="resposta"><span class="msg">Entendi!<br />Agora ficou bem claro</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // o vídeo encaminhado entra (0,40) e o rótulo "encaminhado" (0,65)
+      tl.fromTo("#video-enc", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(1.4)" }, 0.4);
+      tl.to("#encaminhado", { opacity: 1, duration: 0.15 }, 0.65);
+      // a Lúcia digitando (1,40–2,00): os três pontos pulsam
+      tl.to("#digitando", { opacity: 1, duration: 0.12 }, 1.4);
+      [0, 1, 2].forEach((i) => {
+        tl.to("#digitando i:nth-child(" + (i + 1) + ")", { y: -6, duration: 0.15, ease: "sine.out" }, 1.45 + i * 0.12);
+        tl.to("#digitando i:nth-child(" + (i + 1) + ")", { y: 0, duration: 0.15, ease: "sine.in" }, 1.6 + i * 0.12);
+      });
+      tl.set("#digitando", { opacity: 0 }, 2.0);
+      // a resposta da Lúcia (2,00), parada até o fim
+      tl.fromTo("#resposta", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(1.5)" }, 2.0);
+      window.__timelines["s10-turma"] = tl;
+    })();
+  </script>
+</template>

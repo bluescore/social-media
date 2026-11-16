@@ -1,0 +1,75 @@
+<!doctype html>
+<!-- MOLDE SABIÁ LAB: toda peça nova do HyperFrames começa como cópia desta pasta.
+     Já traz as fontes (Megion e Helvetica Now Text), os logos e as sementes em assets\, e a vinheta da
+     marca em compositions\vinheta.html. Cenas novas entram em compositions\ e
+     são montadas aqui, antes ou depois da vinheta.
+     Cores e regras da marca: C:\social-media\marca\marca.md -->
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      /* Cores da marca, disponíveis para todas as cenas: var(--laranja-intenso) etc. */
+      :root {
+        --laranja-intenso: #f34500; /* cor principal */
+        --laranja-medio: #f35c05;
+        --laranja-ambar: #f28801;
+        --amarelo-lima: #efff57;
+        --verde-menta: #88d09d;
+        --cinza-chumbo: #303236;
+        --marrom-acinzentado: #72605e;
+        --branco: #ffffff;
+        --preto: #000000;
+        --fundo-claro: #f6f4f1;
+        --fundo-escuro: #1e1415;
+        --texto-escuro: #181818;
+        --gradiente-paleta: linear-gradient(90deg, #f34500, #f35c05, #f28801, #efff57, #88d09d);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--fundo-escuro);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="4"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div
+        id="vinheta"
+        class="clip"
+        data-composition-id="vinheta"
+        data-composition-src="compositions/vinheta.html"
+        data-start="0"
+        data-duration="4"
+        data-track-index="0"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

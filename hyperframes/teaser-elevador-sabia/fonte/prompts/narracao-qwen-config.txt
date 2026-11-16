@@ -1,0 +1,1 @@
+v1: speech_rate 0.95; v2: speech_rate 1.2 (mesma instrucao). Instrucao em narracao-qwen-instrucao.txt; formato wav 48 kHz; language pt; voz Yago-Voice (element af270031-c3d6-4d9a-9f1f-6c4ac3d98bbb).

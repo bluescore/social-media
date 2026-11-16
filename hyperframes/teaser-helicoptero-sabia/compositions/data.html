@@ -1,0 +1,53 @@
+<!-- Tela final: fundo preto com a data de lançamento em branco (Megion).
+     Para mudar a data, troque o valor da variável "data" no index.html. -->
+<html
+  data-composition-variables='[{"id":"data","type":"string","label":"Data do lançamento","default":"16/11"}]'
+>
+  <template>
+    <style>
+      @font-face {
+        font-family: "Megion";
+        src: url("assets/fonts/Megion-Bold.otf") format("opentype");
+        font-weight: 700;
+      }
+      #root {
+        position: absolute;
+        inset: 0;
+        background: #000000;
+      }
+      #data-texto {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        margin-top: -100px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+        font-family: "Megion", sans-serif;
+        font-weight: 700;
+        font-size: 168px;
+        letter-spacing: -2px;
+        color: #ffffff;
+      }
+    </style>
+    <div id="root" data-composition-id="data" data-width="1080" data-height="1920">
+      <div id="data-texto" class="clip" data-start="0" data-duration="4" data-var-text="data">16/11</div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // entra junto com a batida grave: sai do desfoque e cresce de leve
+      tl.fromTo(
+        "#data-texto",
+        { opacity: 0, scale: 1.06, filter: "blur(14px)" },
+        { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.55, ease: "power3.out" },
+        0.08,
+      );
+      // respira bem devagar enquanto fica parada
+      tl.to("#data-texto", { scale: 0.97, duration: 2.6, ease: "none" }, 0.63);
+      // apaga no fim, como no vídeo de referência
+      tl.to("#data-texto", { opacity: 0, filter: "blur(6px)", duration: 0.6, ease: "power2.in" }, 3.3);
+      window.__timelines["data"] = tl;
+    </script>
+  </template>
+</html>

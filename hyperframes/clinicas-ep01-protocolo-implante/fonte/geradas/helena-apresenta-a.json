@@ -1,0 +1,31 @@
+{
+  "data": "2026-11-12T22:34:47.696Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1024x1536",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/folha-A-final.png"
+  ],
+  "prompt": "Image 1 = the approved character sheet (the owner's favourite). Keep EXACTLY this character: same materials, colours, proportions and rendering style as the FIRST figure of Image 1 (the front view).\nCharacter: a premium hand-made wooden figure (turned-wood peg-doll / board-game figure) of a fictional Brazilian dental surgeon: smooth satin-varnished honey-brown wood head and hands; very minimal painted face: two small black dot eyes, a tiny rounded wooden nose knob, a thin subtle smile line, small thin brow strokes; carved dark brown wood hair with fine grooves, pulled back into a LOW BUN at the nape; ONE wide band of carved GREY hair on her own RIGHT temple. Bone-white carved lab coat (#F6F4F1) with classic notched lapels, a chest pocket on her own LEFT side with a small charcoal pen, sleeves rolled once; charcoal high-neck top; charcoal trousers; a thin brown leather watch on her own LEFT wrist. Nothing orange. No text.\nVIEW: she faces the camera straight on, exactly like the FIRST figure of Image 1 (front view), looking into the camera. Camera at chest height, straight, not from above. Because she faces the camera, the sides of the IMAGE are mirrored relative to her own body:\n- the GREY band of hair is on the LEFT side of the IMAGE (that is her own RIGHT temple), exactly as in the first figure of Image 1;\n- the brown leather WATCH is on the wrist of the arm on the RIGHT side of the IMAGE (that is her own LEFT wrist), exactly as in the first figure of Image 1;\n- the pen pocket is on the RIGHT side of the IMAGE (her own LEFT chest).\nDo NOT mirror or flip the character.\nFRAMING: medium shot, from the hips up, like a presenter in a short educational video. The figure is centred horizontally; the top of her head is about 7% below the top edge of the image; the bottom edge of the image cuts across her hips (the coat continues past the bottom edge). Both hands are fully inside the image with space around them.\nPOSE A (explaining): her own RIGHT hand (on the LEFT side of the IMAGE) is raised at chest height in front of her body, open, palm turned up and slightly toward the camera, fingers relaxed and slightly apart, in a calm explaining gesture, elbow bent and close to the body. Her own LEFT arm (with the WATCH, on the RIGHT side of the IMAGE) hangs relaxed along her side, hand near the hip, watch visible. Shoulders relaxed, head straight, friendly small smile, dot eyes looking at the camera.\nHANDS: carved wooden hands like the sheet, each with exactly four fingers and one thumb, clean and well formed, no extra or fused fingers.\nLIGHT: soft even studio light from the upper LEFT of the image with a gentle fill, like the sheet; clean and readable.\nFully TRANSPARENT background, isolated figure, clean edges, no glow, no halo, no floor, no shadow, no text, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\helena-apresenta-a.png"
+  ],
+  "usage": {
+    "input_tokens": 2158,
+    "input_tokens_details": {
+      "image_tokens": 1508,
+      "text_tokens": 650
+    },
+    "output_tokens": 1372,
+    "output_tokens_details": {
+      "image_tokens": 1372,
+      "text_tokens": 0
+    },
+    "total_tokens": 3530
+  },
+  "custo_estimado_usd": 0.0565,
+  "segundos": 35
+}

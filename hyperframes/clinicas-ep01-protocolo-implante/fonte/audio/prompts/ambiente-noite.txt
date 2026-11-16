@@ -1,0 +1,2 @@
+Quiet empty dental office at night, room tone, faint low electrical hum of an appliance, very soft distant air conditioning, no voices, no music
+{"duration_seconds": 5, "prompt_influence": 0.5}

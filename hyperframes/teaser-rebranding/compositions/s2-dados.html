@@ -1,0 +1,91 @@
+<!-- Cena 2 (2,4–5,2 s): o passado. "Começamos com dados." e um gráfico de BI
+     sobe; a barra maior fica laranja e cresce até virar a tela toda. -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Megion";
+      src: url("assets/fonts/Megion-Bold.otf") format("opentype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #0d79ff;
+      overflow: hidden;
+    }
+    #s2-texto {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 250px;
+      text-align: center;
+      font-family: "Megion", sans-serif;
+      font-weight: 700;
+      font-size: 150px;
+      line-height: 0.98;
+      color: #ffffff;
+    }
+    .s2-palavra {
+      display: inline-block;
+    }
+    .s2-barra {
+      position: absolute;
+      bottom: 630px; /* linha de base em y = 1290 */
+      width: 130px;
+      background: #ffffff;
+      transform-origin: center bottom;
+    }
+    #s2-barra-1 { left: 135px; height: 260px; }
+    #s2-barra-2 { left: 305px; height: 420px; }
+    #s2-barra-3 { left: 475px; height: 340px; }
+    #s2-barra-4 { left: 645px; height: 560px; }
+    #s2-barra-5 { left: 815px; height: 470px; }
+    #s2-base {
+      position: absolute;
+      left: 110px;
+      right: 110px;
+      top: 1290px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.55);
+    }
+    /* Mesma posição da barra 4; cresce até cobrir a tela */
+    #s2-inundacao {
+      position: absolute;
+      inset: 0;
+      background: #f34500;
+      opacity: 0;
+      clip-path: inset(730px 305px 630px 645px);
+    }
+  </style>
+  <div data-hf-id="hf-bmd6" id="root" data-composition-id="s2" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-5nht" id="s2-texto">
+      <span data-hf-id="hf-yc61" class="s2-palavra">Começamos</span><br data-hf-id="hf-x5px" />
+      <span data-hf-id="hf-fe21" class="s2-palavra">com</span> <span data-hf-id="hf-a0y3" class="s2-palavra">dados.</span>
+    </div>
+    <div data-hf-id="hf-ubr4" id="s2-base"></div>
+    <div data-hf-id="hf-pbqo" id="s2-barra-1" class="s2-barra s2-barra-outra"></div>
+    <div data-hf-id="hf-078b" id="s2-barra-2" class="s2-barra s2-barra-outra"></div>
+    <div data-hf-id="hf-w94a" id="s2-barra-3" class="s2-barra s2-barra-outra"></div>
+    <div data-hf-id="hf-s4np" id="s2-barra-4" class="s2-barra"></div>
+    <div data-hf-id="hf-cpqs" id="s2-barra-5" class="s2-barra s2-barra-outra"></div>
+    <div data-hf-id="hf-866l" id="s2-inundacao"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // Palavras entram desfocando, uma a uma
+    tl.fromTo(".s2-palavra", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, ease: "power2.out", stagger: 0.067 }, 0.08);
+    // Gráfico de BI sobe
+    tl.fromTo(".s2-barra", { scaleY: 0 }, { scaleY: 1, duration: 0.55, ease: "expo.out", stagger: 0.08 }, 0.3);
+    tl.fromTo("#s2-base", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "expo.out" }, 0.25);
+    // A barra maior fica laranja: a cor nova nasce dos dados
+    tl.fromTo("#s2-barra-4", { backgroundColor: "#ffffff" }, { backgroundColor: "#f34500", duration: 0.2, ease: "power2.out" }, 1.45);
+
+    // A barra vira o mundo: cresce até cobrir a tela; o resto desfoca e some
+    tl.set("#s2-inundacao", { opacity: 1 }, 1.95);
+    tl.fromTo("#s2-inundacao", { clipPath: "inset(730px 305px 630px 645px)" }, { clipPath: "inset(0px 0px 0px 0px)", duration: 0.65, ease: "power2.inOut" }, 2.0);
+    tl.fromTo("#s2-texto, .s2-barra-outra, #s2-base", { opacity: 1, filter: "blur(0px)" }, { opacity: 0, filter: "blur(15px)", duration: 0.3, ease: "power2.in" }, 2.0);
+
+    window.__timelines["s2"] = tl;
+  </script>
+</template>

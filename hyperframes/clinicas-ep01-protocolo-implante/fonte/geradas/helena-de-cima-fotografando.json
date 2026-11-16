@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-12T14:09:10.900Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/folha-A-final.png",
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/helena-de-cima-pose1-v2.png"
+  ],
+  "prompt": "Image 1 = approved character sheet. Image 2 = the same figure seen from above in an earlier shot (match this exact camera angle, scale and finish).\nKeep EXACTLY the wooden-figure character of Image 1 (approved sheet): honey-brown satin-varnished turned-wood head and hands; minimal painted face (small black dot eyes, tiny rounded wooden nose knob, thin subtle smile line, thin brow strokes); carved dark brown hair with fine grooves, side part, LOW BUN at the nape, ONE wide band of carved GREY hair on her own RIGHT side; bone-white carved lab coat with notched lapels, chest pocket with a small charcoal pen on her LEFT chest, sleeves rolled once; charcoal high-neck top, charcoal trousers, rounded charcoal shoes; thin brown watch on her LEFT wrist. Nothing orange. No text.\nPOSE AND VIEW: seen from ABOVE and slightly behind (camera looking down at about 70 degrees), like Image 2: top of the head with the low bun and the grey band (on the RIGHT half of the image when seen from behind), shoulders and the top of the lab coat. She holds a small charcoal phone with BOTH hands in front of her, pointing it down toward the lower part of the image as if photographing a sheet of paper below her; elbows bent.\nLIGHT: warm 2700 K lamp light from the upper-LEFT, soft.\nBACKGROUND: fully TRANSPARENT, isolated figure, no floor, no cast shadow. No text, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\helena-de-cima-fotografando.png"
+  ],
+  "usage": {
+    "input_tokens": 3350,
+    "input_tokens_details": {
+      "image_tokens": 3016,
+      "text_tokens": 334
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 4763
+  },
+  "custo_estimado_usd": 0.0682,
+  "segundos": 47
+}

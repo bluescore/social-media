@@ -1,0 +1,2 @@
+Stiff paper card flipped over quickly, short paper flick and soft air swish, close-mic, dry
+{"duration_seconds": 0.7, "prompt_influence": 0.7}

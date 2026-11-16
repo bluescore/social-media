@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-12T15:13:59.526Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "medium",
+  "tamanho": "1024x1536",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/folha-A-final.png",
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/maquete-larga-noite.png"
+  ],
+  "prompt": "Image 1 = approved character sheet. Keep EXACTLY the wooden-figure character of Image 1 (approved sheet): honey-brown satin turned-wood head and hands, minimal painted face (small black dot eyes, tiny wooden nose knob, thin smile line), carved dark brown hair in a LOW BUN with ONE wide band of carved GREY hair on her own RIGHT side, bone-white carved lab coat with notched lapels and a small charcoal pen in the LEFT chest pocket, charcoal top and trousers, brown watch on her LEFT wrist. Nothing orange.\nA friendly portrait post: the wooden figure dentist stands smiling (eyes as happy closed arcs) in front of the tiny reception of her miniature dental clinic in daylight, hands relaxed, welcoming. Premium tabletop miniature photography (dollhouse scale), real materials (wood, ceramic, fabric, plaster), soft natural daylight, gentle tilt-shift depth of field, warm and friendly, tasteful muted palette (greige, sage, warm wood, off-white). Vertical 9:16 Instagram post photo. No text, no logos, no letters, no watermark, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\post-1-helena.png"
+  ],
+  "usage": {
+    "input_tokens": 3268,
+    "input_tokens_details": {
+      "image_tokens": 3016,
+      "text_tokens": 252
+    },
+    "output_tokens": 1132,
+    "output_tokens_details": {
+      "image_tokens": 1132,
+      "text_tokens": 0
+    },
+    "total_tokens": 4400
+  },
+  "custo_estimado_usd": 0.0593,
+  "segundos": 36
+}

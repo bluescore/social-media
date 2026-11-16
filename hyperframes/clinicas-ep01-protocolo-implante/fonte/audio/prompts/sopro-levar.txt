@@ -1,0 +1,2 @@
+Soft gentle air whoosh moving away, smooth swish of air like a small card carried off into the distance, light filtered wind that swells briefly and recedes, airy only, no boom, no low bass tone, no hit, no musical note
+{"duration_seconds": 1.4, "prompt_influence": 0.7}

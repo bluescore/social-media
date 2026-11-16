@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-12T14:09:17.898Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1440x2560",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [
+    "hyperframes/_serie-clinicas/personagens/dra-helena/rascunhos/v2-capa-A.png",
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/placa-bancada-noite-v2.png"
+  ],
+  "prompt": "Image 1 = a reference for the miniature dollhouse look (use it ONLY for the style, scale and materials). Image 2 = the counter of this office seen from above (match its lamp, ceramic pen cup, small plant and warm wood).\nVertical 9:16 photograph of a premium tabletop MINIATURE: a cut-away dollhouse-style dental office at night (a box with two walls and a floor, the wooden edge of the box clearly visible), sitting on a real wooden table in a real room, seen from slightly above in three-quarter view, macro photography with a gentle tilt-shift depth of field (the real room around is warm and softly out of focus).\nInside the miniature: on the LEFT, a warm wooden work counter with the small table lamp switched ON (2700 K light spreading softly across the whole little room, no hard circle, no spotlight), the ceramic pen cup, a tiny plant and a single blank sheet of paper lying on the counter; on the RIGHT, a generic unbranded dental chair in muted warm grey, empty; back wall in warm greige plaster with a small window with horizontal blinds and faint cool street light outside. The CENTRE of the miniature floor is EMPTY (a tripod and a figure will be added later as separate layers).\nMood: late night, quiet, warm, cosy and readable; soft shadows, never pitch black (deepest tones around #2B2224). Real miniature materials: wood, fabric, plaster. Nothing orange. No people, no tripod, no phone, no text, no logos, no instruments.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\maquete-larga-noite.png"
+  ],
+  "usage": {
+    "input_tokens": 3362,
+    "input_tokens_details": {
+      "image_tokens": 3016,
+      "text_tokens": 346
+    },
+    "output_tokens": 1843,
+    "output_tokens_details": {
+      "image_tokens": 1843,
+      "text_tokens": 0
+    },
+    "total_tokens": 5205
+  },
+  "custo_estimado_usd": 0.0811,
+  "segundos": 54
+}

@@ -1,0 +1,149 @@
+<!-- CENA 12 (66,9 a 71,7 s do episódio, 4,8 s) — v4: o cartão final com a chamada "comente CLÍNICA".
+     Fundo chumbo #303236 revelado por uma máscara que corre de cima para baixo (0–0,6), por cima do fim da cena 11.
+     v4 (pedidos 6 e 7 do dono): saíram o ícone, "sala de espera · ep. 01" e "personagens fictícias · feito com apoio de IA".
+     Em cima, só o logo da Sabiá (branco, sem LAB: assets/marca/logo/sabia_branco.png), como assinatura.
+     Abaixo, a peça principal: balão + "comente" · pílula lima "CLÍNICA" · "e a gente te mostra como", no ritmo da fala 14
+     (animações e tempos iguais aos da v3). Tudo alinhado na margem de 108 e dentro da área segura (y 168–1330).
+     Depois tudo parado (só um brilho sutil na pílula). -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: transparent;
+      font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+      color: #f6f4f1;
+    }
+    #s12-cartao {
+      position: absolute;
+      inset: 0;
+      background: #303236;
+      clip-path: inset(0 0 100% 0);
+    }
+    /* o logo da Sabiá (passarinho + "sabiá", sem LAB), assinatura do cartão; proporção do arquivo 1418×408.
+       left 101 = margem 108 menos a borda transparente do PNG (o desenho começa em x 108); o desenho ocupa y ~496–600 */
+    #s12-logo {
+      position: absolute;
+      left: 101px;
+      top: 486px;
+      width: 440px;
+      height: auto;
+    }
+    /* a chamada: a peça principal do cartão */
+    #s12-comente {
+      position: absolute;
+      left: 108px;
+      top: 750px;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 124px;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      opacity: 0;
+    }
+    #s12-balao {
+      width: 104px;
+      height: 104px;
+      flex: none;
+      margin-top: 10px;
+    }
+    #s12-pilula {
+      position: absolute;
+      left: 108px;
+      top: 894px;
+      padding: 18px 48px 12px;
+      border-radius: 999px;
+      background: #efff57;
+      color: #303236;
+      font-size: 124px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      overflow: hidden;
+      opacity: 0;
+    }
+    #s12-brilho {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 38%;
+      background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.42) 50%, rgba(255, 255, 255, 0) 100%);
+    }
+    #s12-como {
+      position: absolute;
+      left: 108px;
+      top: 1092px;
+      font-size: 64px;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      color: rgba(246, 244, 241, 0.88);
+      opacity: 0;
+    }
+  </style>
+
+  <div id="root" data-composition-id="s12-cartao" data-width="1080" data-height="1920">
+    <div id="s12-cartao">
+      <img id="s12-logo" src="assets/marca/logo/sabia_branco.png" alt="sabiá" />
+      <div id="s12-comente">
+        <svg id="s12-balao" viewBox="0 0 100 100" aria-hidden="true">
+          <path
+            d="M22 14 H78 A14 14 0 0 1 92 28 V60 A14 14 0 0 1 78 74 H46 L26 90 V74 H22 A14 14 0 0 1 8 60 V28 A14 14 0 0 1 22 14 Z"
+            fill="none"
+            stroke="#f6f4f1"
+            stroke-width="7"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <span>comente</span>
+      </div>
+      <div id="s12-pilula">CLÍNICA<i id="s12-brilho"></i></div>
+      <div id="s12-como">e a gente te mostra como</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // TEMPOS DA LOCUÇÃO (ajustados pelo agente de legendas com assets/audio/voz-v3.palavras.json) — segundos LOCAIS desta cena (cena começa em 66,9 do episódio)
+      // fala 14: "comente clínica e a gente te mostra como." começa em 0,75 (67,65 no episódio)
+      const TEMPOS = {
+        comente: 0.75, // "comente"                       (67,650)
+        clinica: 1.1, // "clínica" → a pílula salta       (68,002)
+        como: 1.64, // "e a gente te mostra como"          (68,542)
+      };
+
+      const tl = gsap.timeline({ paused: true });
+      // estados iniciais (o GSAP cuida de todo transform)
+      tl.set("#s12-comente", { y: 18 }, 0);
+      tl.set("#s12-pilula", { scale: 0.85, transformOrigin: "50% 50%" }, 0);
+      tl.set("#s12-brilho", { xPercent: -160 }, 0);
+      tl.set("#s12-como", { y: 14 }, 0);
+
+      // REVELAR POR MÁSCARA: o cartão aparece inteiro, de cima para baixo
+      tl.to("#s12-cartao", { clipPath: "inset(0 0 0% 0)", duration: 0.6, ease: "power2.inOut" }, 0);
+
+      // a chamada, no ritmo da voz
+      tl.to("#s12-comente", { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, TEMPOS.comente);
+      tl.to("#s12-pilula", { opacity: 1, duration: 0.12, ease: "power1.out" }, TEMPOS.clinica);
+      tl.to("#s12-pilula", { scale: 1, duration: 0.45, ease: "back.out(2.2)" }, TEMPOS.clinica);
+      tl.to("#s12-como", { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, TEMPOS.como);
+
+      // depois, tudo parado; só um brilho bem sutil passa uma vez pela pílula
+      tl.to("#s12-brilho", { xPercent: 300, duration: 0.9, ease: "sine.inOut" }, 2.7);
+
+      window.__timelines["s12-cartao"] = tl;
+    })();
+  </script>
+</template>

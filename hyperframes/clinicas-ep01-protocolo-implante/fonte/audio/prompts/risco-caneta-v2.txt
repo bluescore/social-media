@@ -1,0 +1,2 @@
+One fast pen strike-through on a sheet of paper, dry scratchy papery friction, quick wavy stroke, close-mic, crisp texture, no squeak, no pitch, no tone
+{"duration_seconds": 0.5, "prompt_influence": 0.7}

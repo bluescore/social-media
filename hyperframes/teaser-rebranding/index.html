@@ -1,0 +1,81 @@
+<!doctype html>
+<!-- TEASER DO REBRANDING "Esqueça o azul" (17 s, vertical).
+     Roteiro: STORYLINES.md (as 3 ideias) e SPEC.md (quadro a quadro).
+     Cada cena está em compositions\; aqui só ficam as cenas montadas em sequência e os sons. -->
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #1e1415;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-rhwv"
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="17"
+      data-width="1080"
+      data-height="1920"
+      data-motion-blur="on"
+    >
+      <!-- Cenas -->
+      <div data-hf-id="hf-uva3" id="s1" class="clip" data-composition-id="s1" data-composition-src="compositions/s1-esqueca.html"
+        data-start="0" data-duration="2.4" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div data-hf-id="hf-3gh0" id="s2" class="clip" data-composition-id="s2" data-composition-src="compositions/s2-dados.html"
+        data-start="2.4" data-duration="2.8" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div data-hf-id="hf-17zs" id="s3" class="clip" data-composition-id="s3" data-composition-src="compositions/s3-alem.html"
+        data-start="5.2" data-duration="2.6" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div data-hf-id="hf-bkty" id="s4" class="clip" data-composition-id="s4" data-composition-src="compositions/s4-inteligencia.html"
+        data-start="7.8" data-duration="2.8" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div data-hf-id="hf-hbex" id="s5" class="clip" data-composition-id="s5" data-composition-src="compositions/s5-voz.html"
+        data-start="10.6" data-duration="3" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div data-hf-id="hf-u7dv" id="s6" class="clip" data-composition-id="s6" data-composition-src="compositions/s6-em-breve.html"
+        data-start="13.6" data-duration="3.4" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <!-- Sons: cada um posicionado para o pico cair 1 quadro depois da imagem -->
+      <audio data-hf-id="hf-txhk" id="sfx-risco" src="assets/sfx/whoosh-short.mp3" data-start="0.99" data-duration="0.57" data-volume="0.5" data-track-index="1"></audio>
+      <audio data-hf-id="hf-33o5" id="sfx-inunda-laranja" src="assets/sfx/whoosh-cinematic.mp3" data-start="2.25" data-duration="5.54" data-volume="0.45" data-fade-out="1.5" data-track-index="2"></audio>
+      <audio data-hf-id="hf-ue7l" id="sfx-riser" src="assets/sfx/riser.mp3" data-start="4.67" data-duration="10.03" data-volume="0.2" data-track-index="3"></audio>
+      <audio data-hf-id="hf-too2" id="sfx-chicote" src="assets/sfx/whoosh.mp3" data-start="7.67" data-duration="0.57" data-volume="0.5" data-track-index="1"></audio>
+      <audio data-hf-id="hf-nq6k" id="sfx-tique-1" src="assets/sfx/click-soft.mp3" data-start="8.53" data-duration="0.37" data-volume="0.8" data-track-index="4"></audio>
+      <audio data-hf-id="hf-c3fk" id="sfx-tique-2" src="assets/sfx/key-press.mp3" data-start="8.61" data-duration="0.4" data-volume="1" data-track-index="5"></audio>
+      <audio data-hf-id="hf-we2z" id="sfx-tique-3" src="assets/sfx/click-soft.mp3" data-start="8.7" data-duration="0.37" data-volume="0.8" data-track-index="6"></audio>
+      <audio data-hf-id="hf-u881" id="sfx-tique-4" src="assets/sfx/key-press.mp3" data-start="8.84" data-duration="0.4" data-volume="1" data-track-index="7"></audio>
+      <audio data-hf-id="hf-owwa" id="sfx-tarja" src="assets/sfx/impact-bass-1.mp3" data-start="9.11" data-duration="2.12" data-volume="0.3" data-track-index="2"></audio>
+      <audio data-hf-id="hf-ldbg" id="sfx-inunda-lima" src="assets/sfx/whoosh-short.mp3" data-start="10.02" data-duration="0.57" data-volume="0.45" data-track-index="1"></audio>
+      <audio data-hf-id="hf-y8xi" id="sfx-passaro-entra" src="assets/sfx/whoosh.mp3" data-start="10.52" data-duration="0.57" data-volume="0.45" data-track-index="4"></audio>
+      <audio data-hf-id="hf-1zi3" id="sfx-pio-1" src="assets/sfx/passaro-pio.mp3" data-start="11.06" data-duration="0.31" data-volume="0.9" data-track-index="5"></audio>
+      <audio data-hf-id="hf-h3ak" id="sfx-pio-2" src="assets/sfx/passaro-pio.mp3" data-start="11.41" data-duration="0.31" data-volume="0.9" data-track-index="6"></audio>
+      <audio data-hf-id="hf-dw6k" id="sfx-em-breve" src="assets/sfx/impact-bass-2.mp3" data-start="12.747" data-duration="2.59" data-volume="0.35" data-track-index="2"></audio>
+      <audio data-hf-id="hf-rvvb" id="sfx-iris" src="assets/sfx/whoosh-short.mp3" data-start="13.47" data-duration="0.57" data-volume="0.4" data-track-index="1"></audio>
+      <audio data-hf-id="hf-jr4g" id="sfx-traco-1" src="assets/sfx/key-press.mp3" data-start="14.157" data-duration="0.4" data-volume="1" data-track-index="4"></audio>
+      <audio data-hf-id="hf-58sr" id="sfx-traco-2" src="assets/sfx/key-press.mp3" data-start="14.237" data-duration="0.4" data-volume="1" data-track-index="5"></audio>
+      <audio data-hf-id="hf-9cdy" id="sfx-traco-3" src="assets/sfx/key-press.mp3" data-start="14.317" data-duration="0.4" data-volume="1" data-track-index="6"></audio>
+      <audio data-hf-id="hf-r2s6" id="sfx-traco-4" src="assets/sfx/key-press.mp3" data-start="14.397" data-duration="0.4" data-volume="1" data-track-index="7"></audio>
+      <audio data-hf-id="hf-4rhp" id="sfx-traco-5" src="assets/sfx/key-press.mp3" data-start="14.477" data-duration="0.4" data-volume="1" data-track-index="8"></audio>
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

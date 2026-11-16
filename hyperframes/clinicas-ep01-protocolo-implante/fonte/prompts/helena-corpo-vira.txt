@@ -1,0 +1,5 @@
+Image 1 = approved character sheet. Image 2 = the same figure in the same pose and scale (keep everything identical).
+Keep EXACTLY the wooden-figure character of Image 1 (approved sheet): honey-brown satin-varnished turned-wood head and hands; minimal painted face (small black dot eyes, tiny rounded wooden nose knob, thin subtle smile line, thin brow strokes); carved dark brown hair with fine grooves, side part, LOW BUN at the nape, ONE wide band of carved GREY hair on her own RIGHT side; bone-white carved lab coat with notched lapels, chest pocket with a small charcoal pen on her LEFT chest, sleeves rolled once; charcoal high-neck top, charcoal trousers, rounded charcoal shoes; thin brown watch on her LEFT wrist. Nothing orange. No text.
+POSE: identical to Image 2 (same position, scale, body turned toward the right, same light), but her HEAD now turns toward the LEFT of the image (looking back toward the counter behind her), eyes painted as small calm dots; shoulders still a little dropped.
+LIGHT: warm 2700 K lamp light from the LEFT, soft; faint cool light from the right.
+BACKGROUND: fully TRANSPARENT, isolated figure, no floor, no cast shadow.

@@ -1,0 +1,82 @@
+<!-- Cena 4 — "em breve" e "16.11" (3,93 s, até o fim do filme), fundo preto. É o fim: só a data, sem logo.
+     "em breve" sai do desfoque (0,1 s) e some (1,5–1,7 s), enquanto a trilha sobe; "16.11" entra em 1,767 s
+     (= 14,833 s do filme) JUNTO com o único impacto da trilha e o "plim" do elevador, fica parado e apaga
+     devagar no fim, junto com o eco do impacto.
+     Tipografia da marca: Helvetica Now Text, letras -0.05em (tracking -50), entrelinha 0.9, minúsculas.
+     As alturas (top) põem o centro visual das duas linhas em y ≈ 960. -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #000000;
+    }
+    .breve-linha {
+      position: absolute;
+      left: 0;
+      width: 1080px;
+      text-align: center;
+      font-family: "Helvetica Now Text", sans-serif;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+    #breve-texto {
+      top: 925px;
+      font-size: 76px; /* mesmo tamanho de todo texto de apoio do filme */
+      font-weight: 400;
+    }
+    #breve-data {
+      top: 890px;
+      font-size: 150px;
+      font-weight: 700;
+    }
+    .breve-tinta {
+      display: inline-block;
+      opacity: 0;
+    }
+  </style>
+  <div data-hf-id="hf-plz3" id="root" data-composition-id="breve" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-3v9z" id="breve-texto" class="breve-linha clip" data-start="0" data-duration="1.7667">
+      <span data-hf-id="hf-q0e6" id="breve-texto-tinta" class="breve-tinta">em breve</span>
+    </div>
+    <div data-hf-id="hf-5kn2" id="breve-data" class="breve-linha clip" data-start="1.7667" data-duration="2.1666">
+      <span data-hf-id="hf-arwh" id="breve-data-tinta" class="breve-tinta">16.11</span>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // "em breve": sai do desfoque, fica, e some desfocando antes da data (termina antes do fim do clipe, 1,767 s)
+      tl.fromTo(
+        "#breve-texto-tinta",
+        { opacity: 0, filter: "blur(10px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" },
+        0.1,
+      );
+      tl.to("#breve-texto-tinta", { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 1.5);
+      // "16.11": chega com o impacto — seca, saindo do desfoque e assentando de leve; depois parada
+      tl.fromTo(
+        "#breve-data-tinta",
+        { opacity: 0, filter: "blur(6px)", scale: 1.04 },
+        { opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.2, ease: "expo.out" },
+        1.7667,
+      );
+      // apaga devagar junto com o eco do impacto (termina antes do fim do clipe)
+      tl.to("#breve-data-tinta", { opacity: 0, duration: 0.3, ease: "power1.in" }, 3.62);
+      window.__timelines["breve"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,31 @@
+{
+  "data": "2026-11-12T15:14:05.617Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/folha-A-final.png"
+  ],
+  "prompt": "Image 1 = approved character sheet. Keep EXACTLY the wooden-figure character of Image 1 (approved sheet): honey-brown satin turned-wood head and hands, minimal painted face (small black dot eyes, tiny wooden nose knob, thin smile line), carved dark brown hair in a LOW BUN with ONE wide band of carved GREY hair on her own RIGHT side, bone-white carved lab coat with notched lapels and a small charcoal pen in the LEFT chest pocket, charcoal top and trousers, brown watch on her LEFT wrist. Nothing orange.\nView: seen from BEHIND, waist up, slightly from the left, standing upright and relaxed (shoulders down, calm), head slightly tilted down as if looking at a phone in front of her (the phone is NOT in the picture). From behind, the grey band is on the RIGHT half of her head. Warm low golden late-afternoon sunlight from the LEFT, soft. Fully TRANSPARENT background, isolated figure, no floor, no shadow, no text, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\helena-costas-tarde.png"
+  ],
+  "usage": {
+    "input_tokens": 1735,
+    "input_tokens_details": {
+      "image_tokens": 1508,
+      "text_tokens": 227
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 3148
+  },
+  "custo_estimado_usd": 0.0556,
+  "segundos": 42
+}

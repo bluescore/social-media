@@ -1,0 +1,2 @@
+Soft dry airy shimmer of light, a gentle breathy swell of filtered noise that brightens and fades, like a band of light sweeping across a surface, no chime, no bell, no sparkle tones, no musical note, no pitch
+{"duration_seconds": 1.2, "prompt_influence": 0.7}

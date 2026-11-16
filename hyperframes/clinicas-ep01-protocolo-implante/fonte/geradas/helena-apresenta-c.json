@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-12T22:36:35.039Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1024x1536",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/folha-A-final.png",
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/helena-apresenta-a.png"
+  ],
+  "prompt": "Image 1 = the approved character sheet (the owner's favourite). Image 2 = the SAME figure in the SAME shot, already approved (pose A). Keep EXACTLY the framing, camera, scale, head size and head position, body position, light, materials and rendering of Image 2; the head and face stay exactly as in Image 2 (facing the camera). ONLY the arms and hands change.\r\nCharacter: a premium hand-made wooden figure (turned-wood peg-doll / board-game figure) of a fictional Brazilian dental surgeon: smooth satin-varnished honey-brown wood head and hands; very minimal painted face: two small black dot eyes, a tiny rounded wooden nose knob, a thin subtle smile line, small thin brow strokes; carved dark brown wood hair with fine grooves, pulled back into a LOW BUN at the nape; ONE wide band of carved GREY hair on her own RIGHT temple. Bone-white carved lab coat (#F6F4F1) with classic notched lapels, a chest pocket on her own LEFT side with a small charcoal pen, sleeves rolled once; charcoal high-neck top; charcoal trousers; a thin brown leather watch on her own LEFT wrist. Nothing orange. No text.\r\nVIEW: she faces the camera straight on, exactly like the FIRST figure of Image 1 (front view), looking into the camera. Camera at chest height, straight, not from above. Because she faces the camera, the sides of the IMAGE are mirrored relative to her own body:\r\n- the GREY band of hair is on the LEFT side of the IMAGE (that is her own RIGHT temple), exactly as in the first figure of Image 1;\r\n- the brown leather WATCH is on the wrist of the arm on the RIGHT side of the IMAGE (that is her own LEFT wrist), exactly as in the first figure of Image 1;\r\n- the pen pocket is on the RIGHT side of the IMAGE (her own LEFT chest).\r\nDo NOT mirror or flip the character.\r\nFRAMING: medium shot, from the hips up, like a presenter in a short educational video. The figure is centred horizontally; the top of her head is about 7% below the top edge of the image; the bottom edge of the image cuts across her hips (the coat continues past the bottom edge). Both hands are fully inside the image with space around them.\r\nPOSE C (calm, hands together): both hands together in front of her belly, just above the bottom edge of the image, one hand resting gently in the other (relaxed, fingers loosely together), elbows close to the body, shoulders relaxed; the brown WATCH stays visible on the wrist of the arm on the RIGHT side of the IMAGE. A warm, slightly bigger smile line (still minimal and painted), dot eyes looking at the camera.\r\nHANDS: carved wooden hands like the sheet, each with exactly four fingers and one thumb, clean and well formed, no extra or fused fingers.\r\nLIGHT: soft even studio light from the upper LEFT of the image with a gentle fill, like the sheet; clean and readable.\r\nFully TRANSPARENT background, isolated figure, clean edges, no glow, no halo, no floor, no shadow, no text, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\helena-apresenta-c.png"
+  ],
+  "usage": {
+    "input_tokens": 3727,
+    "input_tokens_details": {
+      "image_tokens": 3044,
+      "text_tokens": 683
+    },
+    "output_tokens": 1372,
+    "output_tokens_details": {
+      "image_tokens": 1372,
+      "text_tokens": 0
+    },
+    "total_tokens": 5099
+  },
+  "custo_estimado_usd": 0.0689,
+  "segundos": 42
+}

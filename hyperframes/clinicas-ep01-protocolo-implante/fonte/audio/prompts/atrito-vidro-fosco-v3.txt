@@ -1,0 +1,2 @@
+Soft dry swoosh of fine grit sliding across a matte frosted surface, smooth sandy hiss that swells and fades once, noise texture only, dull and close, no squeak, no squeal, no pitch, no tone, no musical note, no reverb
+{"duration_seconds": 1.2, "prompt_influence": 0.7}

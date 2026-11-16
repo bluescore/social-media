@@ -1,0 +1,78 @@
+<!-- Cena 1 (0,0–2,4 s): o gancho. Mundo azul da Blue Score, a frase já na tela
+     no primeiro quadro (vira a capa do vídeo) e uma faixa laranja risca "azul". -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Megion";
+      src: url("assets/fonts/Megion-Bold.otf") format("opentype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #0d79ff; /* azul da Blue Score */
+      overflow: hidden;
+    }
+    #s1-logo {
+      position: absolute;
+      left: 50%;
+      top: 240px;
+      width: 600px;
+      margin-left: -300px;
+    }
+    #s1-frase {
+      position: absolute;
+      left: 80px;
+      top: 600px;
+      font-family: "Megion", sans-serif;
+      font-weight: 700;
+      font-size: 220px;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+    }
+    .s1-linha {
+      display: block;
+      white-space: nowrap;
+    }
+    .s1-palavra {
+      display: inline-block;
+    }
+    #s1-azul {
+      position: relative;
+    }
+    #s1-risco {
+      position: absolute;
+      left: -12px;
+      right: -12px;
+      top: 50%;
+      height: 34px;
+      margin-top: -10px;
+      background: #f34500;
+      transform-origin: left center;
+    }
+  </style>
+  <div data-hf-id="hf-qmpn" id="root" data-composition-id="s1" data-width="1080" data-height="1920">
+    <img data-hf-id="hf-8lst" id="s1-logo" src="assets/marca-antiga/bluescore_logo_branco.png" alt="Blue Score" />
+    <div data-hf-id="hf-s5kn" id="s1-frase">
+      <span data-hf-id="hf-z08a" class="s1-linha"><span data-hf-id="hf-0bi0" class="s1-palavra">Esqueça</span></span>
+      <span data-hf-id="hf-4gby" class="s1-linha"
+        ><span data-hf-id="hf-56b8" class="s1-palavra">o</span> <span data-hf-id="hf-pfrw" id="s1-azul" class="s1-palavra"
+          ><span data-hf-id="hf-oaf6" id="s1-azul-texto">azul.</span><span data-hf-id="hf-6i49" id="s1-risco"></span></span
+      ></span>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // A faixa laranja (primeira aparição da cor nova) risca "azul."
+    tl.fromTo("#s1-risco", { scaleX: 0 }, { scaleX: 1, duration: 0.28, ease: "expo.out" }, 1.1);
+    tl.fromTo("#s1-azul-texto", { opacity: 1 }, { opacity: 0.45, duration: 0.3, ease: "power2.out" }, 1.3);
+
+    // Saída: logo e palavras somem desfocando; o fundo azul continua na cena 2
+    tl.fromTo("#s1-logo", { opacity: 1, filter: "blur(0px)" }, { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 2.0);
+    tl.fromTo(".s1-palavra", { opacity: 1, filter: "blur(0px)" }, { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in", stagger: 0.06 }, 2.08);
+
+    window.__timelines["s1"] = tl;
+  </script>
+</template>

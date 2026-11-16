@@ -1,0 +1,2 @@
+A door closing gently in a quiet room, soft wooden door with a light latch click and a muted thud, slightly distant, dry, no slam, no squeak, no music
+{"duration_seconds": 1.2, "prompt_influence": 0.6}

@@ -1,0 +1,197 @@
+<!-- CENA 3 (10,2 a 17,2 s do episódio): "o roteiro parado".
+     A câmera chega descendo (10,2–10,8, com borrão) sobre a bancada da maquete: a folha impressa, pronta há seis semanas,
+     com "gravar 23/10" e "gravar 30/10" já riscadas. Avanço lento até 15,25. A sombra da mão chega (13,8), a mão de madeira
+     da Helena entra com a caneta (14,6–15,2) e risca "gravar 06/11" (15,25–15,60), caindo no "não" da narração.
+     A folha fica parada para ler (15,6–17,2); a mão sai (16,3–16,7); a luz fria do celular invade a borda (16,9).
+     A folha é a mesma da virada (mesmo texto, mesma posição: x 20, y 60, escala 0,68, girada -3°). -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: transparent;
+      font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+    }
+    #s3-cam {
+      position: absolute;
+      inset: 0;
+      transform-origin: 540px 960px;
+    }
+    .placa {
+      position: absolute;
+      left: -67.5px;
+      top: -120px;
+      width: 1215px;
+      height: 2160px;
+    }
+    .folha-plana {
+      position: absolute;
+      left: -135px;
+      top: 0;
+      width: 1350px;
+      height: 1920px;
+      transform-origin: 675px 960px;
+      transform: translate(20px, 60px) scale(0.68) rotate(-3deg);
+    }
+    .folha-plana .papel {
+      position: absolute;
+      inset: 0;
+      background: #e8dccb url("assets/img/papel.jpg") 0 0 / 1350px 1920px;
+      box-shadow: 0 10px 26px rgba(25, 14, 10, 0.38);
+    }
+    .folha-plana .luz {
+      position: absolute;
+      inset: 0;
+      mix-blend-mode: multiply;
+      background: radial-gradient(ellipse 1500px 1700px at 0% 0%, #fff2df 0%, #ecd9c4 45%, #b9a594 100%);
+    }
+    .folha-plana .luz-celular {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(196, 214, 236, 0.55) 0%, rgba(196, 214, 236, 0) 30%);
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+    .texto {
+      position: absolute;
+      left: 195px;
+      top: 0;
+      width: 960px;
+      height: 1920px;
+      color: #303236;
+      letter-spacing: -0.02em;
+    }
+    .titulo-folha {
+      position: absolute;
+      left: 0;
+      top: 190px;
+      font-weight: 700;
+      font-size: 46px;
+      line-height: 1.1;
+    }
+    .datas {
+      position: absolute;
+      left: 610px;
+      top: 300px;
+      width: 350px;
+      font-size: 34px;
+      line-height: 1.5;
+      color: #4a4b4f;
+    }
+    .data {
+      position: relative;
+      display: block;
+    }
+    .data svg {
+      position: absolute;
+      left: -6px;
+      top: 12px;
+      width: 230px;
+      height: 30px;
+      overflow: visible;
+    }
+    .linhas {
+      position: absolute;
+      left: 0;
+      top: 560px;
+      width: 960px;
+      font-size: 47px;
+      line-height: 1.22;
+    }
+    .linha {
+      display: block;
+      padding-left: 46px;
+      text-indent: -46px;
+      margin-bottom: 30px;
+    }
+    /* a mão de madeira, no sistema de coordenadas da folha (gira e escala com ela) */
+    #mao {
+      position: absolute;
+      left: 760px;
+      top: 129px;
+      width: 520px;
+      height: 924px;
+    }
+    #sombra-mao {
+      position: absolute;
+      left: 900px;
+      top: 330px;
+      width: 520px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(30, 18, 12, 0.32), rgba(30, 18, 12, 0) 68%);
+      opacity: 0;
+    }
+  </style>
+
+  <div id="root" data-composition-id="s03-folha" data-width="1080" data-height="1920">
+    <div id="s3-cam" data-layout-allow-overflow data-layout-allow-overlap>
+      <img class="placa" src="assets/img/placa-acesa.jpg" alt="" />
+      <div class="folha-plana">
+        <div class="papel"></div>
+        <div class="luz"></div>
+        <div class="texto">
+          <div class="titulo-folha">roteiro · protocolo sobre implantes</div>
+          <div class="datas">
+            <span class="data">gravar 23/10<svg viewBox="0 0 230 30"><path d="M2 16 C 30 6, 50 26, 78 15 S 128 6, 156 16 S 205 24, 228 13" fill="none" stroke="#303236" stroke-width="4" stroke-linecap="round"/></svg></span>
+            <span class="data">gravar 30/10<svg viewBox="0 0 230 30"><path d="M2 14 C 28 24, 54 5, 80 16 S 130 25, 158 13 S 204 6, 228 17" fill="none" stroke="#303236" stroke-width="4" stroke-linecap="round"/></svg></span>
+            <span class="data">gravar 06/11<svg viewBox="0 0 230 30"><path id="risco3" d="M2 17 C 32 7, 52 25, 82 14 S 134 7, 160 17 S 206 23, 228 12" fill="none" stroke="#303236" stroke-width="4" stroke-linecap="round" stroke-dasharray="260" stroke-dashoffset="260"/></svg></span>
+          </div>
+          <div class="linhas">
+            <span class="linha">1. o que é: prótese fixa da arcada inteira</span>
+            <span class="linha">2. antes: exame clínico e tomografia</span>
+            <span class="linha">3. implantes no osso: em geral, de 4 a 6</span>
+            <span class="linha">4. osseointegração: leva meses, varia</span>
+            <span class="linha">5. prótese parafusada: só a dentista remove</span>
+            <span class="linha">fechar: leve sua dúvida para a consulta</span>
+          </div>
+        </div>
+        <div id="sombra-mao"></div>
+        <img id="mao" src="assets/img/mao-caneta.png" alt="" />
+        <div class="luz-celular"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // tempo local = tempo do episódio − 10,2
+
+      // ---- a câmera chega descendo (borrão de movimento) e desacelera; avanço lento até 15,25; depois parada
+      tl.fromTo("#s3-cam", { y: 760, scale: 1 }, { y: 0, duration: 0.6, ease: "expo.out" }, 0);
+      tl.to("#s3-cam", { scale: 1.04, duration: 3.85, ease: "sine.inOut" }, 0.6);
+
+      // ---- a sombra da mão chega (13,8–14,6) e a mão entra com a caneta (14,6–15,2)
+      tl.set("#mao", { x: 380, y: 560, rotation: 6, opacity: 0 }, 0);
+      tl.fromTo("#sombra-mao", { x: 260, y: 300, opacity: 0 }, { x: 40, y: 40, opacity: 1, duration: 0.7, ease: "power2.out" }, 2.9);
+      tl.to("#mao", { opacity: 1, duration: 0.08 }, 3.6);
+      tl.to("#mao", { x: 0, y: 0, rotation: 0, duration: 0.6, ease: "power3.out" }, 3.6);
+
+      // ---- o risco: o traço ondulado atravessa "gravar 06/11" e a mão anda junto (15,25–15,60)
+      tl.to("#risco3", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power1.inOut" }, 4.5);
+      tl.to("#mao", { x: 212, y: -5, rotation: -2, duration: 0.35, ease: "power1.inOut" }, 4.5);
+      tl.to("#sombra-mao", { x: 250, y: 30, duration: 0.35, ease: "power1.inOut" }, 4.5);
+
+      // ---- a folha fica parada para ler; a mão sai pela direita de baixo (16,3–16,7)
+      tl.to("#mao", { x: 760, y: 700, rotation: 10, duration: 0.4, ease: "power2.in" }, 5.2);
+      tl.to("#sombra-mao", { x: 800, y: 760, opacity: 0, duration: 0.4, ease: "power2.in" }, 5.2);
+
+      // ---- a luz fria do celular invade a borda de baixo (16,9)
+      tl.to(".luz-celular", { opacity: 1, duration: 0.3, ease: "power1.out" }, 5.8);
+
+      window.__timelines["s03-folha"] = tl;
+    })();
+  </script>
+</template>

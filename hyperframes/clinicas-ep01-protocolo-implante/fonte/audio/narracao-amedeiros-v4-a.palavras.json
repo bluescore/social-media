@@ -1,0 +1,466 @@
+{
+ "arquivo": "assets/audio/fontes/narracao-amedeiros-v4-a.mp3",
+ "modelo": "faster-whisper large-v3",
+ "erros": [
+  "sobrou \"para\"",
+  "trocou \"pra\" por \"a\""
+ ],
+ "palavras": [
+  {
+   "palavra": "Décima",
+   "inicio": 0.0,
+   "fim": 0.5,
+   "confianca": 0.854
+  },
+  {
+   "palavra": "quarta",
+   "inicio": 0.5,
+   "fim": 1.04,
+   "confianca": 0.992
+  },
+  {
+   "palavra": "tentativa.",
+   "inicio": 1.04,
+   "fim": 1.84,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "E",
+   "inicio": 1.92,
+   "fim": 2.36,
+   "confianca": 0.983
+  },
+  {
+   "palavra": "o",
+   "inicio": 2.36,
+   "fim": 2.44,
+   "confianca": 0.998
+  },
+  {
+   "palavra": "vídeo",
+   "inicio": 2.44,
+   "fim": 2.7,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "não",
+   "inicio": 2.7,
+   "fim": 2.88,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "sai.",
+   "inicio": 2.88,
+   "fim": 3.18,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "A",
+   "inicio": 3.5,
+   "fim": 3.96,
+   "confianca": 0.991
+  },
+  {
+   "palavra": "doutora",
+   "inicio": 3.96,
+   "fim": 4.18,
+   "confianca": 0.972
+  },
+  {
+   "palavra": "Helena",
+   "inicio": 4.18,
+   "fim": 4.38,
+   "confianca": 0.982
+  },
+  {
+   "palavra": "explica",
+   "inicio": 4.38,
+   "fim": 4.94,
+   "confianca": 0.998
+  },
+  {
+   "palavra": "a",
+   "inicio": 4.94,
+   "fim": 5.02,
+   "confianca": 0.996
+  },
+  {
+   "palavra": "prótese",
+   "inicio": 5.02,
+   "fim": 5.4,
+   "confianca": 0.995
+  },
+  {
+   "palavra": "protocolo",
+   "inicio": 5.4,
+   "fim": 6.12,
+   "confianca": 0.662
+  },
+  {
+   "palavra": "toda",
+   "inicio": 6.12,
+   "fim": 6.4,
+   "confianca": 0.996
+  },
+  {
+   "palavra": "semana,",
+   "inicio": 6.4,
+   "fim": 6.84,
+   "confianca": 0.981
+  },
+  {
+   "palavra": "paciente",
+   "inicio": 7.1,
+   "fim": 7.76,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "por",
+   "inicio": 7.76,
+   "fim": 8.02,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "paciente.",
+   "inicio": 8.02,
+   "fim": 8.52,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "O",
+   "inicio": 8.78,
+   "fim": 9.16,
+   "confianca": 0.995
+  },
+  {
+   "palavra": "roteiro",
+   "inicio": 9.16,
+   "fim": 9.52,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "sobre",
+   "inicio": 9.52,
+   "fim": 9.7,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "implantes",
+   "inicio": 9.7,
+   "fim": 10.2,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "está",
+   "inicio": 10.2,
+   "fim": 10.48,
+   "confianca": 0.998
+  },
+  {
+   "palavra": "pronto",
+   "inicio": 10.48,
+   "fim": 10.76,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "há",
+   "inicio": 10.76,
+   "fim": 10.96,
+   "confianca": 0.994
+  },
+  {
+   "palavra": "seis",
+   "inicio": 10.96,
+   "fim": 11.28,
+   "confianca": 0.924
+  },
+  {
+   "palavra": "semanas.",
+   "inicio": 11.28,
+   "fim": 11.68,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "A",
+   "inicio": 12.14,
+   "fim": 12.44,
+   "confianca": 0.998
+  },
+  {
+   "palavra": "gravação,",
+   "inicio": 12.44,
+   "fim": 13.06,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "não.",
+   "inicio": 13.06,
+   "fim": 13.48,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "Ela",
+   "inicio": 13.68,
+   "fim": 14.22,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "não",
+   "inicio": 14.22,
+   "fim": 14.38,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "gravou",
+   "inicio": 14.38,
+   "fim": 14.8,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "a",
+   "inicio": 14.8,
+   "fim": 14.88,
+   "confianca": 0.995
+  },
+  {
+   "palavra": "décima",
+   "inicio": 14.88,
+   "fim": 15.22,
+   "confianca": 0.969
+  },
+  {
+   "palavra": "quinta.",
+   "inicio": 15.22,
+   "fim": 15.52,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "Mandou",
+   "inicio": 15.66,
+   "fim": 16.16,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "só",
+   "inicio": 16.16,
+   "fim": 16.32,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "o",
+   "inicio": 16.32,
+   "fim": 16.42,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "roteiro.",
+   "inicio": 16.42,
+   "fim": 16.84,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "Cada",
+   "inicio": 16.9,
+   "fim": 17.36,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "linha",
+   "inicio": 17.36,
+   "fim": 17.74,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "que",
+   "inicio": 17.74,
+   "fim": 18.02,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "ela",
+   "inicio": 18.02,
+   "fim": 18.1,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "escreveu",
+   "inicio": 18.1,
+   "fim": 18.62,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "virou",
+   "inicio": 18.62,
+   "fim": 18.9,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "uma",
+   "inicio": 18.9,
+   "fim": 19.02,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "cena.",
+   "inicio": 19.02,
+   "fim": 19.34,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "O",
+   "inicio": 19.58,
+   "fim": 19.94,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "perfil",
+   "inicio": 19.94,
+   "fim": 20.36,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "voltou",
+   "inicio": 20.36,
+   "fim": 20.78,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "a",
+   "inicio": 20.78,
+   "fim": 20.88,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "andar.",
+   "inicio": 20.88,
+   "fim": 21.04,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "Ela",
+   "inicio": 21.3,
+   "fim": 21.66,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "mandou",
+   "inicio": 21.66,
+   "fim": 21.98,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "o",
+   "inicio": 21.98,
+   "fim": 22.04,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "vídeo",
+   "inicio": 22.04,
+   "fim": 22.24,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "para",
+   "inicio": 22.24,
+   "fim": 22.4,
+   "confianca": 0.693
+  },
+  {
+   "palavra": "a",
+   "inicio": 22.4,
+   "fim": 22.48,
+   "confianca": 0.992
+  },
+  {
+   "palavra": "turma.",
+   "inicio": 22.48,
+   "fim": 22.8,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "O",
+   "inicio": 22.86,
+   "fim": 23.16,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "roteiro",
+   "inicio": 23.16,
+   "fim": 23.58,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "ela",
+   "inicio": 23.58,
+   "fim": 23.68,
+   "confianca": 0.968
+  },
+  {
+   "palavra": "já",
+   "inicio": 23.68,
+   "fim": 23.84,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "tinha.",
+   "inicio": 23.84,
+   "fim": 24.04,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "No",
+   "inicio": 24.34,
+   "fim": 24.74,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "próximo",
+   "inicio": 24.74,
+   "fim": 25.06,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "episódio,",
+   "inicio": 25.06,
+   "fim": 25.42,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "o",
+   "inicio": 25.74,
+   "fim": 26.14,
+   "confianca": 0.996
+  },
+  {
+   "palavra": "que",
+   "inicio": 26.14,
+   "fim": 26.28,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "a",
+   "inicio": 26.28,
+   "fim": 26.36,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "recepção",
+   "inicio": 26.36,
+   "fim": 26.94,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "mais",
+   "inicio": 26.94,
+   "fim": 27.18,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "ouve?",
+   "inicio": 27.18,
+   "fim": 27.72,
+   "confianca": 0.99
+  }
+ ]
+}

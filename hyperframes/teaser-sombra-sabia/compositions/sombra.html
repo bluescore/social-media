@@ -1,0 +1,146 @@
+<!-- Cena única (8,5 s): a sombra de um sabiá de verdade pousando num galho, numa parede de luz azul suave.
+     A sombra vem de uma filmagem real (Pixabay, licença livre para uso comercial, sem crédito obrigatório):
+     um pássaro do mesmo gênero do sabiá (Turdus; no Pixabay, "blackbird") contra o céu branco, recortado e
+     transformado em sombra em assets/video/sombra-sabia.mp4 (processo em LEIA-ME.md).
+     0–1,4 s   galho vazio; a luz da parede vai abrindo
+     1,4 s     o sabiá entra pelo alto, freia em câmera lenta e pousa (≈1,7 s); o galho afunda
+     2,3 s     assenta · 3,9 s abre e fecha a asa e vira a cabeça
+     5,3–6,7 s a luz baixa devagar (laranja queimado profundo, sem ir ao preto)
+     5,9 s     "em breve" (Helvetica Now Text, caixa baixa) até o fim
+     Cores: laranja da marca na mesma luminosidade da referência (parede clara, canto de cima mais escuro). -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      /* Laranja da marca, com a mesma luminosidade dos tons medidos na referência (que eram azuis):
+         escuros no laranja intenso (#F34500), médios no laranja médio (#F35C05), claros no âmbar (#F28801).
+         Azul original: escura #2e4c61 · média #527b9f · clara #c6d9e9 · base #bdd2e8 · final #1d2b36 */
+      --parede-escura: #713423;
+      --parede-media: #b55833;
+      --parede-clara: #f5ceaf;
+      --parede-base: #f5c49d;
+      --fundo-final: #3e2017;
+      background: var(--parede-clara);
+    }
+
+    /* A parede: luz em diagonal (canto de cima à esquerda mais escuro), sem foco circular */
+    #parede {
+      position: absolute;
+      inset: -80px;
+      background: linear-gradient(
+        158deg,
+        var(--parede-escura) 0%,
+        var(--parede-media) 15%,
+        color-mix(in oklab, var(--parede-media) 45%, var(--parede-clara)) 30%,
+        var(--parede-clara) 50%,
+        color-mix(in oklab, var(--parede-clara) 70%, var(--branco, #ffffff)) 68%,
+        var(--parede-base) 100%
+      );
+    }
+    /* Um véu de luz largo que respira devagar (nuvem passando) */
+    #luz-viva {
+      position: absolute;
+      inset: -900px;
+      background: linear-gradient(
+        120deg,
+        transparent 30%,
+        color-mix(in oklab, var(--branco, #ffffff) 22%, transparent) 55%,
+        transparent 80%
+      );
+    }
+
+    /* A sombra: vídeo (branco = parede, azul escuro = sombra) multiplicado sobre a parede */
+    #camera {
+      position: absolute;
+      inset: 0;
+      mix-blend-mode: multiply;
+    }
+    #placa {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      object-fit: contain;
+    }
+    /* Pretos levantados: nada fica mais escuro que um azul profundo (visual suave, de filme) */
+    #levanta {
+      position: absolute;
+      inset: 0;
+      background: #3e1e15;
+      mix-blend-mode: lighten;
+    }
+
+    /* Começo: a luz abre a partir de um azul médio (nunca do preto) */
+    #abertura {
+      position: absolute;
+      inset: 0;
+      background: var(--parede-media);
+      mix-blend-mode: multiply;
+    }
+    /* Final: a luz baixa para um azul profundo */
+    #entardecer {
+      position: absolute;
+      inset: 0;
+      background: var(--fundo-final);
+    }
+
+    #em-breve {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 928px;
+      text-align: center;
+      font-family: "Helvetica Now Text", sans-serif;
+      font-weight: 400;
+      font-size: 52px;
+      line-height: 1;
+      letter-spacing: 0.1em;
+      color: var(--branco, #ffffff);
+    }
+  </style>
+
+  <div data-hf-id="hf-g4q3" id="root" data-composition-id="sombra" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-eq73" id="parede" data-layout-allow-overflow=""></div>
+    <div data-hf-id="hf-b7qy" id="luz-viva" data-layout-allow-overflow=""></div>
+    <div data-hf-id="hf-j2lh" id="camera" data-layout-allow-overflow="">
+      <video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0,&quot;contrast&quot;:0,&quot;highlights&quot;:0,&quot;shadows&quot;:0,&quot;whites&quot;:0,&quot;blacks&quot;:0,&quot;temperature&quot;:0,&quot;tint&quot;:0,&quot;vibrance&quot;:0,&quot;saturation&quot;:0},&quot;details&quot;:{&quot;vignette&quot;:0,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0.16,&quot;grainSize&quot;:0.35,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.06578947368421052,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.4117647058823529,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.4571428571428572,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.4666666666666667,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.2222222222222222,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.3333333333333333,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.2222222222222222,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14285714285714285,&quot;kuwaharaSharpness&quot;:0.3125,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" data-hf-id="hf-o5ht" id="placa" class="clip" src="assets/video/sombra-sabia.mp4" data-start="0" data-duration="8.5" data-track-index="1" muted playsinline></video>
+    </div>
+    <div data-hf-id="hf-fzgm" id="levanta"></div>
+    <div data-hf-id="hf-hjpf" id="abertura"></div>
+    <div data-hf-id="hf-xswq" id="entardecer"></div>
+    <div data-hf-id="hf-1ns2" id="em-breve">em breve</div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // a luz abre devagar
+    tl.fromTo("#abertura", { opacity: 0.55 }, { opacity: 0, duration: 1.6, ease: "sine.out" }, 0);
+    // véu de luz que atravessa a parede devagar
+    tl.fromTo("#luz-viva", { x: -260, opacity: 0.4 }, { x: 220, opacity: 1, duration: 8.5, ease: "sine.inOut" }, 0);
+    // a parede escorrega um pouco (a luz mudando de ângulo)
+    tl.fromTo("#parede", { x: -20, y: -20 }, { x: 20, y: 20, duration: 8.5, ease: "sine.inOut" }, 0);
+    // aproximação lenta da câmera, subindo de leve
+    tl.fromTo(
+      "#camera",
+      { scale: 1, y: 0 },
+      { scale: 1.08, y: -30, transformOrigin: "50% 58%", duration: 8.5, ease: "sine.inOut" },
+      0
+    );
+    // a luz baixa para um azul profundo
+    tl.fromTo("#entardecer", { opacity: 0 }, { opacity: 0.94, duration: 1.4, ease: "sine.inOut" }, 5.3);
+    // "em breve"
+    tl.fromTo("#em-breve", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 1.4, ease: "power3.out" }, 5.9);
+
+    window.__timelines["sombra"] = tl;
+  </script>
+</template>

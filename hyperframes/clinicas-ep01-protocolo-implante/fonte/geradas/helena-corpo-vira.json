@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-12T14:11:49.745Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/folha-A-final.png",
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/helena-corpo-tripe-v2.png"
+  ],
+  "prompt": "Image 1 = approved character sheet. Image 2 = the same figure in the same pose and scale (keep everything identical).\nKeep EXACTLY the wooden-figure character of Image 1 (approved sheet): honey-brown satin-varnished turned-wood head and hands; minimal painted face (small black dot eyes, tiny rounded wooden nose knob, thin subtle smile line, thin brow strokes); carved dark brown hair with fine grooves, side part, LOW BUN at the nape, ONE wide band of carved GREY hair on her own RIGHT side; bone-white carved lab coat with notched lapels, chest pocket with a small charcoal pen on her LEFT chest, sleeves rolled once; charcoal high-neck top, charcoal trousers, rounded charcoal shoes; thin brown watch on her LEFT wrist. Nothing orange. No text.\nPOSE: identical to Image 2 (same position, scale, body turned toward the right, same light), but her HEAD now turns toward the LEFT of the image (looking back toward the counter behind her), eyes painted as small calm dots; shoulders still a little dropped.\nLIGHT: warm 2700 K lamp light from the LEFT, soft; faint cool light from the right.\nBACKGROUND: fully TRANSPARENT, isolated figure, no floor, no cast shadow.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\helena-corpo-vira.png"
+  ],
+  "usage": {
+    "input_tokens": 3301,
+    "input_tokens_details": {
+      "image_tokens": 3016,
+      "text_tokens": 285
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 4714
+  },
+  "custo_estimado_usd": 0.0679,
+  "segundos": 42
+}

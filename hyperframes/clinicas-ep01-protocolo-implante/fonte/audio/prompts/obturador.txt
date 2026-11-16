@@ -1,0 +1,2 @@
+Smartphone camera shutter, single dry short mechanical shutter click, close-mic, no beep, no tone, no musical note, no reverb
+{"duration_seconds": 0.5, "prompt_influence": 0.7}

@@ -1,0 +1,670 @@
+{
+ "_sobre": "Tempo de cada palavra de cada fala, em segundos do EPISÓDIO v3 (para as legendas e o lettering). Gerado por fonte/audio/montar-v3.py junto com o mix-v3.wav. Como: o Whisper (large-v3) de cada tomada de origem (fonte/audio/*.palavras.json) levado pelo deslocamento exato do recorte de cada fala; a 1ª palavra começa no começo real do som da fala e a última termina no fim real (volume em janelas de 2 ms acima de -50 dBFS); onde há um silêncio de 0,10 s ou mais dentro da fala, a fronteira entre as duas palavras vai para ele (a anterior termina quando o silêncio começa e a seguinte começa quando ele acaba). Dentro da fala corrida, a fronteira é a do Whisper (ele costuma marcar ~0,1 s antes do som; ver conferência no LEIA-ME), menos nas falas T e 14, que comandam a imagem (lettering de s04b, pílula CLÍNICA de s12): nelas as fronteiras foram medidas no som (ver fronteiras_medidas no montar-v3.py).",
+ "duracao_s": 71.7,
+ "falas": [
+  {
+   "id": "1",
+   "texto": "décima quarta tentativa.",
+   "comeca": 0.1,
+   "termina": 2.066,
+   "tomada": "assets/audio/fontes/narracao-amedeiros-v4-a.mp3",
+   "palavras": [
+    {
+     "palavra": "décima",
+     "inicio": 0.1,
+     "fim": 0.778
+    },
+    {
+     "palavra": "quarta",
+     "inicio": 0.91,
+     "fim": 1.138
+    },
+    {
+     "palavra": "tentativa.",
+     "inicio": 1.138,
+     "fim": 2.066
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "texto": "e o vídeo não sai.",
+   "comeca": 2.32,
+   "termina": 3.382,
+   "tomada": "assets/audio/fontes/narracao-amedeiros-v4-a.mp3",
+   "palavras": [
+    {
+     "palavra": "e",
+     "inicio": 2.32,
+     "fim": 2.36
+    },
+    {
+     "palavra": "o",
+     "inicio": 2.36,
+     "fim": 2.418
+    },
+    {
+     "palavra": "vídeo",
+     "inicio": 2.418,
+     "fim": 2.678
+    },
+    {
+     "palavra": "não",
+     "inicio": 2.678,
+     "fim": 2.858
+    },
+    {
+     "palavra": "sai.",
+     "inicio": 2.858,
+     "fim": 3.382
+    }
+   ]
+  },
+  {
+   "id": "3",
+   "texto": "a doutora Helena explica a prótese protocolo toda semana, paciente por paciente.",
+   "comeca": 3.95,
+   "termina": 8.78,
+   "tomada": "assets/audio/fontes/narracao-amedeiros-v4-a.mp3",
+   "palavras": [
+    {
+     "palavra": "a",
+     "inicio": 3.95,
+     "fim": 3.99
+    },
+    {
+     "palavra": "doutora",
+     "inicio": 3.99,
+     "fim": 4.198
+    },
+    {
+     "palavra": "Helena",
+     "inicio": 4.198,
+     "fim": 4.398
+    },
+    {
+     "palavra": "explica",
+     "inicio": 4.398,
+     "fim": 4.958
+    },
+    {
+     "palavra": "a",
+     "inicio": 4.958,
+     "fim": 5.038
+    },
+    {
+     "palavra": "prótese",
+     "inicio": 5.038,
+     "fim": 5.418
+    },
+    {
+     "palavra": "protocolo",
+     "inicio": 5.418,
+     "fim": 6.206
+    },
+    {
+     "palavra": "toda",
+     "inicio": 6.37,
+     "fim": 6.5
+    },
+    {
+     "palavra": "semana,",
+     "inicio": 6.5,
+     "fim": 7.154
+    },
+    {
+     "palavra": "paciente",
+     "inicio": 7.348,
+     "fim": 7.778
+    },
+    {
+     "palavra": "por",
+     "inicio": 7.778,
+     "fim": 8.038
+    },
+    {
+     "palavra": "paciente.",
+     "inicio": 8.038,
+     "fim": 8.78
+    }
+   ]
+  },
+  {
+   "id": "4",
+   "texto": "o roteiro sobre implantes está pronto há seis semanas.",
+   "comeca": 9.45,
+   "termina": 12.404,
+   "tomada": "assets/audio/fontes/narracao-amedeiros-v4-a.mp3",
+   "palavras": [
+    {
+     "palavra": "o",
+     "inicio": 9.45,
+     "fim": 9.49
+    },
+    {
+     "palavra": "roteiro",
+     "inicio": 9.49,
+     "fim": 9.832
+    },
+    {
+     "palavra": "sobre",
+     "inicio": 9.832,
+     "fim": 10.012
+    },
+    {
+     "palavra": "implantes",
+     "inicio": 10.012,
+     "fim": 10.512
+    },
+    {
+     "palavra": "está",
+     "inicio": 10.512,
+     "fim": 10.792
+    },
+    {
+     "palavra": "pronto",
+     "inicio": 10.792,
+     "fim": 11.072
+    },
+    {
+     "palavra": "há",
+     "inicio": 11.072,
+     "fim": 11.272
+    },
+    {
+     "palavra": "seis",
+     "inicio": 11.272,
+     "fim": 11.592
+    },
+    {
+     "palavra": "semanas.",
+     "inicio": 11.592,
+     "fim": 12.404
+    }
+   ]
+  },
+  {
+   "id": "5",
+   "texto": "a gravação, não.",
+   "comeca": 12.95,
+   "termina": 14.114,
+   "tomada": "assets/audio/fontes/narracao-amedeiros-v4-a.mp3",
+   "palavras": [
+    {
+     "palavra": "a",
+     "inicio": 12.95,
+     "fim": 12.99
+    },
+    {
+     "palavra": "gravação,",
+     "inicio": 12.99,
+     "fim": 13.698
+    },
+    {
+     "palavra": "não.",
+     "inicio": 13.87,
+     "fim": 14.114
+    }
+   ]
+  },
+  {
+   "id": "F",
+   "texto": "quarenta e sete dias sem postar nada.",
+   "comeca": 15.55,
+   "termina": 18.046,
+   "tomada": "assets/audio/fontes/narracao-v3-novas-c.mp3",
+   "palavras": [
+    {
+     "palavra": "quarenta",
+     "inicio": 15.55,
+     "fim": 15.934
+    },
+    {
+     "palavra": "e",
+     "inicio": 15.934,
+     "fim": 15.974
+    },
+    {
+     "palavra": "sete",
+     "inicio": 15.974,
+     "fim": 16.314
+    },
+    {
+     "palavra": "dias",
+     "inicio": 16.314,
+     "fim": 16.614
+    },
+    {
+     "palavra": "sem",
+     "inicio": 16.614,
+     "fim": 16.894
+    },
+    {
+     "palavra": "postar",
+     "inicio": 16.894,
+     "fim": 17.354
+    },
+    {
+     "palavra": "nada.",
+     "inicio": 17.354,
+     "fim": 18.046
+    }
+   ]
+  },
+  {
+   "id": "T",
+   "texto": "mas isso está prestes a mudar...",
+   "comeca": 18.6,
+   "termina": 20.506,
+   "tomada": "assets/audio/fontes/narracao-v3-novas-c.mp3",
+   "palavras": [
+    {
+     "palavra": "mas",
+     "inicio": 18.6,
+     "fim": 18.877
+    },
+    {
+     "palavra": "isso",
+     "inicio": 18.877,
+     "fim": 19.202
+    },
+    {
+     "palavra": "está",
+     "inicio": 19.202,
+     "fim": 19.434
+    },
+    {
+     "palavra": "prestes",
+     "inicio": 19.614,
+     "fim": 20.027
+    },
+    {
+     "palavra": "a",
+     "inicio": 20.027,
+     "fim": 20.107
+    },
+    {
+     "palavra": "mudar...",
+     "inicio": 20.107,
+     "fim": 20.506
+    }
+   ]
+  },
+  {
+   "id": "6",
+   "texto": "ela não gravou a décima quinta.",
+   "comeca": 21.9,
+   "termina": 23.414,
+   "tomada": "assets/audio/fontes/narracao-amedeiros-v4-a.mp3",
+   "palavras": [
+    {
+     "palavra": "ela",
+     "inicio": 21.9,
+     "fim": 22.03
+    },
+    {
+     "palavra": "não",
+     "inicio": 22.03,
+     "fim": 22.106
+    },
+    {
+     "palavra": "gravou",
+     "inicio": 22.106,
+     "fim": 22.526
+    },
+    {
+     "palavra": "a",
+     "inicio": 22.526,
+     "fim": 22.606
+    },
+    {
+     "palavra": "décima",
+     "inicio": 22.606,
+     "fim": 22.946
+    },
+    {
+     "palavra": "quinta.",
+     "inicio": 22.946,
+     "fim": 23.414
+    }
+   ]
+  },
+  {
+   "id": "7",
+   "texto": "mandou só o roteiro.",
+   "comeca": 24.2,
+   "termina": 25.168,
+   "tomada": "assets/audio/fontes/narracao-amedeiros-v4-a.mp3",
+   "palavras": [
+    {
+     "palavra": "mandou",
+     "inicio": 24.2,
+     "fim": 24.422
+    },
+    {
+     "palavra": "só",
+     "inicio": 24.422,
+     "fim": 24.582
+    },
+    {
+     "palavra": "o",
+     "inicio": 24.582,
+     "fim": 24.682
+    },
+    {
+     "palavra": "roteiro.",
+     "inicio": 24.682,
+     "fim": 25.168
+    }
+   ]
+  },
+  {
+   "id": "8",
+   "texto": "cada linha que ela escreveu virou uma cena.",
+   "comeca": 26.9,
+   "termina": 29.204,
+   "tomada": "assets/audio/fontes/narracao-amedeiros-v4-a.mp3",
+   "palavras": [
+    {
+     "palavra": "cada",
+     "inicio": 26.9,
+     "fim": 27.03
+    },
+    {
+     "palavra": "linha",
+     "inicio": 27.03,
+     "fim": 27.35
+    },
+    {
+     "palavra": "que",
+     "inicio": 27.35,
+     "fim": 27.63
+    },
+    {
+     "palavra": "ela",
+     "inicio": 27.63,
+     "fim": 27.76
+    },
+    {
+     "palavra": "escreveu",
+     "inicio": 27.76,
+     "fim": 28.23
+    },
+    {
+     "palavra": "virou",
+     "inicio": 28.23,
+     "fim": 28.51
+    },
+    {
+     "palavra": "uma",
+     "inicio": 28.51,
+     "fim": 28.64
+    },
+    {
+     "palavra": "cena.",
+     "inicio": 28.64,
+     "fim": 29.204
+    }
+   ]
+  },
+  {
+   "id": "9",
+   "texto": "o perfil voltou a andar.",
+   "comeca": 47.0,
+   "termina": 48.322,
+   "tomada": "assets/audio/fontes/narracao-amedeiros-v4-a.mp3",
+   "palavras": [
+    {
+     "palavra": "o",
+     "inicio": 47.0,
+     "fim": 47.04
+    },
+    {
+     "palavra": "perfil",
+     "inicio": 47.04,
+     "fim": 47.4
+    },
+    {
+     "palavra": "voltou",
+     "inicio": 47.4,
+     "fim": 47.82
+    },
+    {
+     "palavra": "a",
+     "inicio": 47.82,
+     "fim": 47.92
+    },
+    {
+     "palavra": "andar.",
+     "inicio": 47.92,
+     "fim": 48.322
+    }
+   ]
+  },
+  {
+   "id": "10",
+   "texto": "ela mandou o vídeo pra turma.",
+   "comeca": 53.8,
+   "termina": 55.056,
+   "tomada": "assets/audio/fontes/narracao-amedeiros-v4-a.mp3",
+   "palavras": [
+    {
+     "palavra": "ela",
+     "inicio": 53.8,
+     "fim": 53.93
+    },
+    {
+     "palavra": "mandou",
+     "inicio": 53.93,
+     "fim": 54.164
+    },
+    {
+     "palavra": "o",
+     "inicio": 54.164,
+     "fim": 54.224
+    },
+    {
+     "palavra": "vídeo",
+     "inicio": 54.224,
+     "fim": 54.424
+    },
+    {
+     "palavra": "pra",
+     "inicio": 54.424,
+     "fim": 54.664
+    },
+    {
+     "palavra": "turma.",
+     "inicio": 54.664,
+     "fim": 55.056
+    }
+   ]
+  },
+  {
+   "id": "11",
+   "texto": "o roteiro ela já tinha.",
+   "comeca": 58.9,
+   "termina": 59.966,
+   "tomada": "assets/audio/fontes/narracao-amedeiros-v4-a.mp3",
+   "palavras": [
+    {
+     "palavra": "o",
+     "inicio": 58.9,
+     "fim": 58.94
+    },
+    {
+     "palavra": "roteiro",
+     "inicio": 58.94,
+     "fim": 59.312
+    },
+    {
+     "palavra": "ela",
+     "inicio": 59.312,
+     "fim": 59.442
+    },
+    {
+     "palavra": "já",
+     "inicio": 59.442,
+     "fim": 59.572
+    },
+    {
+     "palavra": "tinha.",
+     "inicio": 59.572,
+     "fim": 59.966
+    }
+   ]
+  },
+  {
+   "id": "12",
+   "texto": "faltava tirar do papel.",
+   "comeca": 60.4,
+   "termina": 61.544,
+   "tomada": "assets/audio/fontes/narracao-v3-novas-b.mp3",
+   "palavras": [
+    {
+     "palavra": "faltava",
+     "inicio": 60.4,
+     "fim": 60.652
+    },
+    {
+     "palavra": "tirar",
+     "inicio": 60.652,
+     "fim": 60.852
+    },
+    {
+     "palavra": "do",
+     "inicio": 60.852,
+     "fim": 61.072
+    },
+    {
+     "palavra": "papel.",
+     "inicio": 61.072,
+     "fim": 61.544
+    }
+   ]
+  },
+  {
+   "id": "13",
+   "texto": "se você explica isso todo dia no consultório, o seu também já existe.",
+   "comeca": 62.1,
+   "termina": 66.382,
+   "tomada": "assets/audio/fontes/narracao-v3-novas-a.mp3",
+   "palavras": [
+    {
+     "palavra": "se",
+     "inicio": 62.1,
+     "fim": 62.14
+    },
+    {
+     "palavra": "você",
+     "inicio": 62.14,
+     "fim": 62.306
+    },
+    {
+     "palavra": "explica",
+     "inicio": 62.306,
+     "fim": 62.786
+    },
+    {
+     "palavra": "isso",
+     "inicio": 62.786,
+     "fim": 63.126
+    },
+    {
+     "palavra": "todo",
+     "inicio": 63.252,
+     "fim": 63.382
+    },
+    {
+     "palavra": "dia",
+     "inicio": 63.382,
+     "fim": 63.646
+    },
+    {
+     "palavra": "no",
+     "inicio": 63.646,
+     "fim": 63.786
+    },
+    {
+     "palavra": "consultório,",
+     "inicio": 63.786,
+     "fim": 64.558
+    },
+    {
+     "palavra": "o",
+     "inicio": 64.794,
+     "fim": 64.834
+    },
+    {
+     "palavra": "seu",
+     "inicio": 64.834,
+     "fim": 65.066
+    },
+    {
+     "palavra": "também",
+     "inicio": 65.066,
+     "fim": 65.506
+    },
+    {
+     "palavra": "já",
+     "inicio": 65.506,
+     "fim": 65.786
+    },
+    {
+     "palavra": "existe.",
+     "inicio": 65.786,
+     "fim": 66.382
+    }
+   ]
+  },
+  {
+   "id": "14",
+   "texto": "comente clínica e a gente te mostra como.",
+   "comeca": 67.65,
+   "termina": 69.85,
+   "tomada": "assets/audio/fontes/narracao-v3-novas-b.mp3",
+   "palavras": [
+    {
+     "palavra": "comente",
+     "inicio": 67.65,
+     "fim": 68.002
+    },
+    {
+     "palavra": "clínica",
+     "inicio": 68.002,
+     "fim": 68.542
+    },
+    {
+     "palavra": "e",
+     "inicio": 68.542,
+     "fim": 68.632
+    },
+    {
+     "palavra": "a",
+     "inicio": 68.632,
+     "fim": 68.717
+    },
+    {
+     "palavra": "gente",
+     "inicio": 68.717,
+     "fim": 68.947
+    },
+    {
+     "palavra": "te",
+     "inicio": 68.947,
+     "fim": 69.067
+    },
+    {
+     "palavra": "mostra",
+     "inicio": 69.067,
+     "fim": 69.467
+    },
+    {
+     "palavra": "como.",
+     "inicio": 69.467,
+     "fim": 69.85
+    }
+   ]
+  }
+ ]
+}

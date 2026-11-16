@@ -1,0 +1,809 @@
+{
+ "_sobre": "Áudio do CORTE AMPLIADO do ep. 01 (sala de espera): do início do episódio (0 s) até 36,133 s, onde termina o corte de 10 s. Tempos em segundos do EPISÓDIO (o corte de 10 s começa em 25,300 s; o golpe é o quadro 1000 = 33,333 s). De 25,3 s em diante é o corte de 10 s sem mudança. Gerado por fonte/audio/montar-corte-ampliado.py; para mudar, edite o PLANO no script e rode de novo.",
+ "duracao_s": 36.133,
+ "duracao_do_video_s": 36.3,
+ "amostragem_hz": 48000,
+ "canais": 2,
+ "corte_de_10s_comeca_em_s": 25.3,
+ "falas": [
+  {
+   "texto": "décima quarta tentativa.",
+   "alvo_s": 0.1,
+   "comeca_s": 0.1,
+   "termina_s": 2.066,
+   "deslizou_s": 0.0,
+   "trecho_da_tomada_s": [
+    0.0,
+    2.093
+   ],
+   "fala_na_tomada_s": [
+    0.002,
+    1.968
+   ],
+   "clip_no_episodio_s": [
+    0.098,
+    2.191
+   ],
+   "ganho_db": -8.0,
+   "ganho_total_db": 4.32,
+   "lufs": -19.4,
+   "pico_real_dbtp": -1.35,
+   "obs": "a tomada começa já falando (0,002 s): entrada de 3 ms; ganho 0,4 dB abaixo das outras para o pico real não passar de -1,2 dBTP"
+  },
+  {
+   "texto": "e o vídeo não sai.",
+   "alvo_s": 2.0,
+   "comeca_s": 2.316,
+   "termina_s": 3.378,
+   "deslizou_s": 0.316,
+   "trecho_da_tomada_s": [
+    2.217,
+    3.668
+   ],
+   "fala_na_tomada_s": [
+    2.342,
+    3.404
+   ],
+   "clip_no_episodio_s": [
+    2.191,
+    3.642
+   ],
+   "ganho_db": -7.6,
+   "ganho_total_db": 4.72,
+   "lufs": -21.7,
+   "pico_real_dbtp": -11.57
+  },
+  {
+   "texto": "a doutora Helena explica a prótese protocolo toda semana, paciente por paciente.",
+   "alvo_s": 4.4,
+   "comeca_s": 4.4,
+   "termina_s": 9.23,
+   "deslizou_s": 0.0,
+   "trecho_da_tomada_s": [
+    3.732,
+    8.95
+   ],
+   "fala_na_tomada_s": [
+    3.932,
+    8.762
+   ],
+   "clip_no_episodio_s": [
+    4.2,
+    9.418
+   ],
+   "ganho_db": -7.6,
+   "ganho_total_db": 4.72,
+   "lufs": -19.7,
+   "pico_real_dbtp": -5.31
+  },
+  {
+   "texto": "o roteiro sobre implantes está pronto há seis semanas.",
+   "alvo_s": 10.1,
+   "comeca_s": 10.1,
+   "termina_s": 13.054,
+   "deslizou_s": 0.0,
+   "trecho_da_tomada_s": [
+    8.95,
+    12.281
+   ],
+   "fala_na_tomada_s": [
+    9.138,
+    12.092
+   ],
+   "clip_no_episodio_s": [
+    9.912,
+    13.243
+   ],
+   "ganho_db": -8.3,
+   "ganho_total_db": 4.02,
+   "lufs": -18.4,
+   "pico_real_dbtp": -2.1,
+   "obs": "ganho 0,7 dB abaixo das outras: o \"o\" de \"o roteiro\" (10,22 s) somado à trilha passaria de -1,2 dBTP"
+  },
+  {
+   "texto": "a gravação, não.",
+   "alvo_s": 14.5,
+   "comeca_s": 14.5,
+   "termina_s": 15.664,
+   "deslizou_s": 0.0,
+   "trecho_da_tomada_s": [
+    12.281,
+    13.904
+   ],
+   "fala_na_tomada_s": [
+    12.47,
+    13.634
+   ],
+   "clip_no_episodio_s": [
+    14.311,
+    15.934
+   ],
+   "ganho_db": -7.6,
+   "ganho_total_db": 4.72,
+   "lufs": -22.6,
+   "pico_real_dbtp": -7.03
+  },
+  {
+   "texto": "ela não gravou a décima quinta.",
+   "alvo_s": 20.9,
+   "comeca_s": 20.9,
+   "termina_s": 22.414,
+   "deslizou_s": 0.0,
+   "trecho_da_tomada_s": [
+    13.974,
+    15.813
+   ],
+   "fala_na_tomada_s": [
+    14.174,
+    15.688
+   ],
+   "clip_no_episodio_s": [
+    20.7,
+    22.539
+   ],
+   "ganho_db": -7.6,
+   "ganho_total_db": 4.72,
+   "lufs": -16.2,
+   "pico_real_dbtp": -3.66
+  },
+  {
+   "texto": "mandou só o roteiro.",
+   "alvo_s": 23.4,
+   "comeca_s": 23.4,
+   "termina_s": 24.368,
+   "deslizou_s": 0.0,
+   "trecho_da_tomada_s": [
+    15.813,
+    17.09
+   ],
+   "fala_na_tomada_s": [
+    15.938,
+    16.906
+   ],
+   "clip_no_episodio_s": [
+    23.275,
+    24.552
+   ],
+   "ganho_db": -7.6,
+   "ganho_total_db": 4.72,
+   "lufs": -18.7,
+   "pico_real_dbtp": -6.83
+  },
+  {
+   "texto": "cada linha que ela escreveu virou uma cena.",
+   "alvo_s": 26.3,
+   "comeca_s": 26.3,
+   "termina_s": 28.604,
+   "deslizou_s": 0.0,
+   "trecho_da_tomada_s": [
+    17.09,
+    19.775
+   ],
+   "fala_na_tomada_s": [
+    17.29,
+    19.594
+   ],
+   "clip_no_episodio_s": [
+    26.1,
+    28.785
+   ],
+   "ganho_db": -7.6,
+   "ganho_total_db": 4.72,
+   "lufs": -19.4,
+   "pico_real_dbtp": -1.24,
+   "origem": "corte de 10 s (sem mudança)"
+  }
+ ],
+ "eventos": [
+  {
+   "nome": "toque seco no vidro (\"apagar\")",
+   "arquivo": "assets/audio/fontes/toque-vidro-c.mp3",
+   "origem": "novo (cenas 1 a 5)",
+   "trecho_do_arquivo_s": [
+    0.088,
+    0.22
+   ],
+   "ancora": "transiente",
+   "ancora_no_arquivo_s": 0.1,
+   "no_episodio_s": 2.23,
+   "toca_no_episodio_s": [
+    2.218,
+    2.35
+   ],
+   "ganho_db": -31.6,
+   "referencia_do_ganho": "pico 1 ms -2.4 dBFS -> -34.0",
+   "ganho_total_db": -19.3
+  },
+  {
+   "nome": "tique seco do contador (take 14 -> take 15)",
+   "arquivo": "assets/audio/fontes/tique-contador-a.mp3",
+   "origem": "novo (cenas 1 a 5)",
+   "trecho_do_arquivo_s": [
+    0.085,
+    0.135
+   ],
+   "ancora": "transiente",
+   "ancora_no_arquivo_s": 0.105,
+   "no_episodio_s": 3.1,
+   "toca_no_episodio_s": [
+    3.08,
+    3.13
+   ],
+   "ganho_db": -26.4,
+   "referencia_do_ganho": "pico 1 ms -10.6 dBFS -> -37.0",
+   "ganho_total_db": -14.1
+  },
+  {
+   "nome": "sopro grave do recuo que revela a maquete",
+   "arquivo": "assets/audio/fontes/sopro-grave-d.mp3",
+   "origem": "novo (cenas 1 a 5)",
+   "trecho_do_arquivo_s": [
+    0.0,
+    2.56
+   ],
+   "ancora": "pico",
+   "ancora_no_arquivo_s": 0.93,
+   "no_episodio_s": 5.3,
+   "toca_no_episodio_s": [
+    4.37,
+    6.93
+   ],
+   "ganho_db": -37.4,
+   "referencia_do_ganho": "pico 1 ms -0.6 dBFS -> -38.0",
+   "obs": "o pico do sopro cai em 5,3 s, a metade do recuo (4,0-6,6 s, power2.inOut = mais rápido no meio)",
+   "ganho_total_db": -25.1
+  },
+  {
+   "nome": "papel farfalhando de leve (a folha chega)",
+   "arquivo": "assets/audio/fontes/papel-farfalhando-a.mp3",
+   "origem": "novo (cenas 1 a 5)",
+   "trecho_do_arquivo_s": [
+    0.0,
+    0.85
+   ],
+   "ancora": "inicio",
+   "ancora_no_arquivo_s": 0.0,
+   "no_episodio_s": 10.3,
+   "toca_no_episodio_s": [
+    10.3,
+    11.15
+   ],
+   "ganho_db": 9.4,
+   "referencia_do_ganho": "pico 1 ms -51.4 dBFS -> -42.0",
+   "ganho_total_db": 21.7
+  },
+  {
+   "nome": "risco de caneta em \"gravar 06/11\"",
+   "arquivo": "assets/audio/fontes/risco-caneta-c.mp3",
+   "origem": "novo (cenas 1 a 5)",
+   "trecho_do_arquivo_s": [
+    0.0,
+    0.36
+   ],
+   "ancora": "trecho",
+   "ancora_no_arquivo_s": 0.0,
+   "no_episodio_s": 15.26,
+   "toca_no_episodio_s": [
+    15.26,
+    15.62
+   ],
+   "ganho_db": -21.9,
+   "referencia_do_ganho": "pico 1 ms -21.1 dBFS -> -43.0",
+   "obs": "cai no \"não\" de \"a gravação, não.\" (15,42 s), a fala mais baixa da tomada: fica 8 dB abaixo dela",
+   "ganho_total_db": -9.6
+  },
+  {
+   "nome": "toque seco no vidro (abre o perfil)",
+   "arquivo": "assets/audio/fontes/toque-vidro-c.mp3",
+   "origem": "novo (cenas 1 a 5)",
+   "trecho_do_arquivo_s": [
+    0.088,
+    0.22
+   ],
+   "ancora": "transiente",
+   "ancora_no_arquivo_s": 0.1,
+   "no_episodio_s": 17.27,
+   "toca_no_episodio_s": [
+    17.258,
+    17.39
+   ],
+   "ganho_db": -31.6,
+   "referencia_do_ganho": "pico 1 ms -2.4 dBFS -> -34.0",
+   "ganho_total_db": -19.3
+  },
+  {
+   "nome": "atrito suave da rolagem da tela",
+   "arquivo": "assets/audio/fontes/rolagem-tela-a.mp3",
+   "origem": "novo (cenas 1 a 5)",
+   "trecho_do_arquivo_s": [
+    0.3,
+    1.0
+   ],
+   "ancora": "trecho",
+   "ancora_no_arquivo_s": 0.3,
+   "no_episodio_s": 17.33,
+   "toca_no_episodio_s": [
+    17.33,
+    18.03
+   ],
+   "ganho_db": -25.3,
+   "referencia_do_ganho": "pico 1 ms -14.7 dBFS -> -40.0",
+   "obs": "trecho a partir de 0,30 s do arquivo (na conferência, era 0,10): o começo do arquivo sobe devagar e, com 0,10, o atrito só se ouvia em 17,45-17,54 s (4 a 6 quadros depois do dedo) e ficava mais forte em 17,70. Agora se ouve já em 17,33-17,34, fica mais forte em 17,50 (o começo da rolagem com inércia, a parte mais rápida) e some por volta de 17,8, enquanto a tela desliza até parar em 18,33. Mesmo arquivo, mesmo volume (o pico do trecho é o mesmo)",
+   "ganho_total_db": -13.0
+  },
+  {
+   "nome": "obturador do celular (fecha e reabre)",
+   "arquivo": "assets/audio/fontes/obturador-a.mp3",
+   "origem": "novo (cenas 1 a 5)",
+   "trecho_do_arquivo_s": [
+    0.0,
+    0.3
+   ],
+   "ancora": "trecho",
+   "ancora_no_arquivo_s": 0.0,
+   "no_episodio_s": 22.5,
+   "toca_no_episodio_s": [
+    22.5,
+    22.8
+   ],
+   "ganho_db": -30.4,
+   "referencia_do_ganho": "pico 1 ms -6.6 dBFS -> -37.0",
+   "obs": "dois estalos (fecha em 22,53 e reabre em 22,61), como a tela que fecha e reabre em 0,15 s; no volume percebido fica no nível do interruptor do abajur (é o estalo mais brilhante do arquivo)",
+   "ganho_total_db": -18.1
+  },
+  {
+   "nome": "toque seco no vidro (\"enviado\")",
+   "arquivo": "assets/audio/fontes/toque-vidro-c.mp3",
+   "origem": "novo (cenas 1 a 5)",
+   "trecho_do_arquivo_s": [
+    0.088,
+    0.22
+   ],
+   "ancora": "transiente",
+   "ancora_no_arquivo_s": 0.1,
+   "no_episodio_s": 22.9,
+   "toca_no_episodio_s": [
+    22.888,
+    23.02
+   ],
+   "ganho_db": -31.6,
+   "referencia_do_ganho": "pico 1 ms -2.4 dBFS -> -34.0",
+   "ganho_total_db": -19.3
+  },
+  {
+   "nome": "ambiente de consultório à noite",
+   "arquivo": "assets/audio/fontes/ambiente-noite-b.mp3",
+   "origem": "corte de 10 s (sem mudança)",
+   "trecho_do_arquivo_s": [
+    0.0,
+    1.2
+   ],
+   "ancora": "inicio",
+   "ancora_no_arquivo_s": 0.0,
+   "no_episodio_s": 25.3,
+   "toca_no_episodio_s": [
+    25.3,
+    26.5
+   ],
+   "ganho_db": -5.5,
+   "referencia_do_ganho": "RMS -50.5 dBFS -> -56.0",
+   "ganho_total_db": 6.8
+  },
+  {
+   "nome": "clique do interruptor do abajur",
+   "arquivo": "assets/audio/fontes/interruptor-b.mp3",
+   "origem": "corte de 10 s (sem mudança)",
+   "trecho_do_arquivo_s": [
+    0.0,
+    0.4
+   ],
+   "ancora": "transiente",
+   "ancora_no_arquivo_s": 0.053,
+   "no_episodio_s": 25.5,
+   "toca_no_episodio_s": [
+    25.447,
+    25.847
+   ],
+   "ganho_db": -23.2,
+   "referencia_do_ganho": "pico 1 ms -9.8 dBFS -> -33.0",
+   "ganho_total_db": -10.9
+  },
+  {
+   "nome": "traço no papel 1 (arcada)",
+   "arquivo": "assets/audio/fontes/traco-papel-a.mp3",
+   "origem": "corte de 10 s (sem mudança)",
+   "trecho_do_arquivo_s": [
+    0.0,
+    0.32
+   ],
+   "ancora": "inicio",
+   "ancora_no_arquivo_s": 0.0,
+   "no_episodio_s": 27.0,
+   "toca_no_episodio_s": [
+    27.0,
+    27.32
+   ],
+   "ganho_db": -6.5,
+   "referencia_do_ganho": "pico 1 ms -37.5 dBFS -> -44.0",
+   "ganho_total_db": 5.8
+  },
+  {
+   "nome": "traço no papel 2 (implantes)",
+   "arquivo": "assets/audio/fontes/traco-papel-b.mp3",
+   "origem": "corte de 10 s (sem mudança)",
+   "trecho_do_arquivo_s": [
+    0.0,
+    0.32
+   ],
+   "ancora": "inicio",
+   "ancora_no_arquivo_s": 0.009,
+   "no_episodio_s": 27.4,
+   "toca_no_episodio_s": [
+    27.391,
+    27.711
+   ],
+   "ganho_db": -10.4,
+   "referencia_do_ganho": "pico 1 ms -33.6 dBFS -> -44.0",
+   "ganho_total_db": 1.9
+  },
+  {
+   "nome": "traço no papel 3 (osseointegração)",
+   "arquivo": "assets/audio/fontes/traco-papel-a.mp3",
+   "origem": "corte de 10 s (sem mudança)",
+   "trecho_do_arquivo_s": [
+    0.0,
+    0.32
+   ],
+   "ancora": "inicio",
+   "ancora_no_arquivo_s": 0.0,
+   "no_episodio_s": 27.8,
+   "toca_no_episodio_s": [
+    27.8,
+    28.12
+   ],
+   "ganho_db": -6.5,
+   "referencia_do_ganho": "pico 1 ms -37.5 dBFS -> -44.0",
+   "ganho_total_db": 5.8
+  },
+  {
+   "nome": "traço no papel 4 (parafusada)",
+   "arquivo": "assets/audio/fontes/traco-papel-b.mp3",
+   "origem": "corte de 10 s (sem mudança)",
+   "trecho_do_arquivo_s": [
+    0.0,
+    0.32
+   ],
+   "ancora": "inicio",
+   "ancora_no_arquivo_s": 0.009,
+   "no_episodio_s": 28.2,
+   "toca_no_episodio_s": [
+    28.191,
+    28.511
+   ],
+   "ganho_db": -10.4,
+   "referencia_do_ganho": "pico 1 ms -33.6 dBFS -> -44.0",
+   "ganho_total_db": 1.9
+  },
+  {
+   "nome": "folha se descolando da mesa",
+   "arquivo": "assets/audio/fontes/folha-descolando-b.mp3",
+   "origem": "corte de 10 s (sem mudança)",
+   "trecho_do_arquivo_s": [
+    0.0,
+    1.0
+   ],
+   "ancora": "inicio",
+   "ancora_no_arquivo_s": 0.0,
+   "no_episodio_s": 30.333,
+   "toca_no_episodio_s": [
+    30.333,
+    31.333
+   ],
+   "ganho_db": -9.7,
+   "referencia_do_ganho": "pico 1 ms -30.3 dBFS -> -40.0",
+   "ganho_total_db": 2.6
+  },
+  {
+   "nome": "dobra de papel 1",
+   "arquivo": "assets/audio/fontes/dobra-1-a.mp3",
+   "origem": "corte de 10 s (sem mudança)",
+   "trecho_do_arquivo_s": [
+    0.3,
+    0.68
+   ],
+   "ancora": "transiente",
+   "ancora_no_arquivo_s": 0.378,
+   "no_episodio_s": 31.2,
+   "toca_no_episodio_s": [
+    31.122,
+    31.502
+   ],
+   "ganho_db": -9.0,
+   "referencia_do_ganho": "pico 1 ms -18.0 dBFS -> -27.0",
+   "ganho_total_db": 3.3
+  },
+  {
+   "nome": "dobra de papel 2",
+   "arquivo": "assets/audio/fontes/dobra-2-b.mp3",
+   "origem": "corte de 10 s (sem mudança)",
+   "trecho_do_arquivo_s": [
+    0.26,
+    0.68
+   ],
+   "ancora": "transiente",
+   "ancora_no_arquivo_s": 0.321,
+   "no_episodio_s": 32.033,
+   "toca_no_episodio_s": [
+    31.972,
+    32.392
+   ],
+   "ganho_db": -15.8,
+   "referencia_do_ganho": "pico 1 ms -11.2 dBFS -> -27.0",
+   "ganho_total_db": -3.5
+  },
+  {
+   "nome": "dobra de papel 3 (giro)",
+   "arquivo": "assets/audio/fontes/dobra-3-a.mp3",
+   "origem": "corte de 10 s (sem mudança)",
+   "trecho_do_arquivo_s": [
+    0.4,
+    0.68
+   ],
+   "ancora": "transiente",
+   "ancora_no_arquivo_s": 0.502,
+   "no_episodio_s": 32.933,
+   "toca_no_episodio_s": [
+    32.831,
+    33.111
+   ],
+   "ganho_db": -13.3,
+   "referencia_do_ganho": "pico 1 ms -13.7 dBFS -> -27.0",
+   "ganho_total_db": -1.0
+  },
+  {
+   "nome": "riser (som que sobe até o golpe)",
+   "arquivo": "assets/audio/fontes/riser-b.mp3",
+   "origem": "corte de 10 s (sem mudança)",
+   "trecho_do_arquivo_s": [
+    0.47,
+    2.0
+   ],
+   "ancora": "fim",
+   "ancora_no_arquivo_s": 2.0,
+   "no_episodio_s": 33.313,
+   "toca_no_episodio_s": [
+    31.783,
+    33.313
+   ],
+   "ganho_db": -21.2,
+   "referencia_do_ganho": "pico 1 ms -5.8 dBFS -> -27.0",
+   "ganho_total_db": -8.9
+  },
+  {
+   "nome": "impacto: grave + eco (reforço do golpe da trilha)",
+   "arquivo": "assets/audio/fontes/impacto-a.mp3",
+   "origem": "corte de 10 s (sem mudança)",
+   "trecho_do_arquivo_s": [
+    0.0,
+    3.0
+   ],
+   "ancora": "inicio",
+   "ancora_no_arquivo_s": 0.0,
+   "no_episodio_s": 33.333,
+   "toca_no_episodio_s": [
+    33.333,
+    36.333
+   ],
+   "ganho_db": -22.6,
+   "referencia_do_ganho": "pico 1 ms -0.4 dBFS -> -23.0",
+   "ganho_total_db": -10.3
+  }
+ ],
+ "trilha": {
+  "arquivo": "assets/audio/fontes/trilha-tema-b.mp3",
+  "candidata": "B (2ª de 3)",
+  "golpe_no_arquivo_s": 36.677,
+  "golpe_no_episodio_s": 33.333,
+  "deslocamento_s": 3.344,
+  "musica_tocada_s": [
+   7.344,
+   39.477
+  ],
+  "entrada_s": [
+   4.0,
+   5.0
+  ],
+  "volume_fator": [
+   [
+    5.0,
+    0.075
+   ],
+   [
+    6.336,
+    0.075
+   ],
+   [
+    6.636,
+    0.05
+   ],
+   [
+    9.671,
+    0.05
+   ],
+   [
+    9.971,
+    0.064
+   ],
+   [
+    12.631,
+    0.064
+   ],
+   [
+    12.931,
+    0.16
+   ],
+   [
+    16.341,
+    0.16
+   ],
+   [
+    16.641,
+    0.077
+   ],
+   [
+    19.666,
+    0.077
+   ],
+   [
+    19.966,
+    0.103
+   ],
+   [
+    23.016,
+    0.103
+   ],
+   [
+    23.316,
+    0.047
+   ],
+   [
+    25.3,
+    0.14
+   ],
+   [
+    28.8,
+    0.14
+   ],
+   [
+    33.3,
+    0.45
+   ],
+   [
+    36.133,
+    0.45
+   ]
+  ],
+  "recorte_medias": {
+   "faixa_hz": [
+    1000,
+    4000
+   ],
+   "db": -4.0,
+   "janelas_s": [
+    [
+     -0.1,
+     2.266
+    ],
+    [
+     2.116,
+     3.578
+    ],
+    [
+     4.2,
+     9.43
+    ],
+    [
+     9.9,
+     13.254
+    ],
+    [
+     14.3,
+     15.864
+    ],
+    [
+     20.7,
+     22.614
+    ],
+    [
+     23.2,
+     24.568
+    ],
+    [
+     26.1,
+     28.8
+    ]
+   ],
+   "rampa_s": 0.15
+  },
+  "tratamento": "sem esticar e sem cortar entre a entrada e o golpe; só deslocada (tempo da música = tempo do episódio + 3,344 s), com entrada de 1,0 s e volume"
+ },
+ "leito_ambiente": {
+  "nome": "ambiente de consultório à noite (leito de 0 a 25,3 s)",
+  "arquivo": "assets/audio/fontes/ambiente-noite-b.mp3",
+  "toca_no_episodio_s": [
+   0.0,
+   25.34
+  ],
+  "saida": "40 ms (25,30-25,34 s), por baixo da entrada do ambiente do corte",
+  "copias": 7,
+  "cruzamento_s": 0.5,
+  "emendas_no_episodio_s": [
+   4.5,
+   7.946,
+   11.391,
+   14.836,
+   18.282,
+   21.727
+  ],
+  "cada_copia_seguinte_comeca_no_arquivo_s": 1.054,
+  "semelhanca_na_emenda_0a1": 0.32,
+  "ganho_db": -5.5,
+  "por_que_repetir": "a tomada b é estável (nenhum estalo 15 dB acima do resto; o espectro do começo, do meio e do fim difere menos de 2 dB por faixa), então dá para repetir sem gerar uma nova; é o mesmo som que o corte usa a partir de 25,3 s"
+ },
+ "final": {
+  "arquivo": "assets/audio/mix-corte-ampliado.wav",
+  "duracao_s": 36.133,
+  "formato": "WAV PCM 24 bits",
+  "amostras": 1734384,
+  "amostragem_hz": 48000,
+  "canais": 2,
+  "ganho_fixo_final_db": 12.32,
+  "ganho_limitado_por": "pico real da voz do corte (\"cada linha...\")",
+  "ganho_que_daria_-14_lufs_db": 15.61,
+  "limitador": {
+   "janela_s": [
+    33.313,
+    34.15
+   ],
+   "agiu_de_ate_s": [
+    33.346,
+    34.45
+   ],
+   "reducao_maxima_db": 2.12,
+   "teto_dbtp": -1.2
+  },
+  "fade_fim_s": 0.25,
+  "medicoes": {
+   "lufs_integrado": -17.6,
+   "pico_real_dbtp": -1.2,
+   "golpe_no_episodio_s": 33.333,
+   "voz_lufs_nas_falas": -19.1,
+   "trilha_lufs_sob_a_voz": -32.3,
+   "efeitos_lufs_sob_a_voz": -39.3,
+   "voz_acima_da_trilha_db": 13.2,
+   "trilha_sozinha_lufs_por_frase_do_piano": {
+    "5-6.656": -33.1,
+    "6.656-9.991": -32.8,
+    "9.991-12.951": -32.3,
+    "12.951-16.661": -32.0,
+    "16.661-19.986": -31.5,
+    "19.986-23.336": -31.2,
+    "23.336-25.3": -30.8,
+    "25.3-26.666": -32.5,
+    "26.666-28.8": -30.5,
+    "28.8-30": -29.9,
+    "30-31.5": -21.6,
+    "31.5-33.333": -31.9,
+    "33.333-36.133": -11.4
+   }
+  },
+  "teste_de_subtracao_contra_o_corte_de_10s": {
+   "nivel_do_corte_dbfs": -17.7,
+   "diferenca_25_30_a_25_34_dbfs": -44.5,
+   "diferenca_de_25_34_ao_fim_dbfs": -300.0,
+   "maior_diferenca_de_25_34_ao_fim_dbfs": -300.0,
+   "leitura": "de 25,34 s até o fim a diferença é zero (amostra por amostra, é o mesmo arquivo do corte aprovado); nos 40 ms de 25,30 a 25,34 s sobra só a saída do leito de ambiente e os 5 ms de entrada que o corte fazia na trilha (aqui a trilha já vinha tocando)"
+  }
+ },
+ "_ganhos": "ganho_db = ganho próprio da fala/evento (antes do ganho fixo final); ganho_total_db = ganho_db + ganho fixo final, ou seja, quanto o arquivo de origem foi aumentado/abaixado no mix final."
+}

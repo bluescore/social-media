@@ -1,0 +1,2 @@
+Sheet of paper lifting off a wooden desk, soft paper peel and light rustle, close-mic, subtle, dry
+{"duration_seconds": 1, "prompt_influence": 0.6}

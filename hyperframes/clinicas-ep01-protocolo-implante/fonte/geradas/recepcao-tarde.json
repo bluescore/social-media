@@ -1,0 +1,31 @@
+{
+  "data": "2026-11-12T15:14:13.706Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1440x2560",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/maquete-larga-noite.png"
+  ],
+  "prompt": "Image 1 = a reference for the miniature dollhouse look of this clinic (style, scale and materials only).\nVertical 9:16 photograph of a premium tabletop MINIATURE: the cut-away reception area of the same small dental clinic in LATE AFTERNOON, seen at the height of the reception counter, macro photography with tilt-shift depth of field. A light wood reception counter fills the lower part of the frame; standing on the counter, centered, a small simple phone stand holding a smartphone that faces the viewer exactly frontally (generic slim charcoal phone, no logo, its screen a uniform flat dark plate, completely blank). Behind: warm greige plaster wall, a window with horizontal blinds on the LEFT letting in warm low golden sunlight that lays soft parallel stripes across the wall and counter, a small plant, two small waiting chairs in sage fabric softly out of focus. Calm, warm, hopeful mood; soft shadows, never pitch black. No people, no text, no logos, nothing orange (the sunlight is warm golden, not orange objects).",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\recepcao-tarde.png"
+  ],
+  "usage": {
+    "input_tokens": 1737,
+    "input_tokens_details": {
+      "image_tokens": 1508,
+      "text_tokens": 229
+    },
+    "output_tokens": 1843,
+    "output_tokens_details": {
+      "image_tokens": 1843,
+      "text_tokens": 0
+    },
+    "total_tokens": 3580
+  },
+  "custo_estimado_usd": 0.0685,
+  "segundos": 50
+}

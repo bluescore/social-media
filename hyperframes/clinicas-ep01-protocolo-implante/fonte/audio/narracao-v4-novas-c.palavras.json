@@ -1,0 +1,164 @@
+{
+ "arquivo": "assets/audio/fontes/narracao-v4-novas-c.mp3",
+ "modelo": "faster-whisper large-v3 (CPU, int8)",
+ "texto_esperado": "dezessete dias sem postar nada.\nela mandou o vídeo pra Lúcia.",
+ "como": "\"palavras_sem_dica\" = o Whisper sozinho na tomada inteira (para conferir que todas as palavras saíram). \"palavras\" = as mesmas, só que as palavras até \"dias\" vêm de uma 2ª passada nos primeiros 2.775 s (até o ponto mais silencioso da pausa depois de \"nada.\") com a frase \"Dezessete dias sem postar nada.\" como dica, para sair \"dezessete\" por extenso, com o tempo de cada palavra",
+ "erros": [
+  "sobrou \"para\"",
+  "trocou \"pra\" por \"a\""
+ ],
+ "obs": "\"sobrou para\" / \"trocou pra por a\" não é erro da fala: o Whisper escreve \"para a\" onde a voz diz \"pra\" (o mesmo da fala 10 antiga na tomada A); no voz-v4.palavras.json fica \"pra\"",
+ "palavras": [
+  {
+   "palavra": "Dezessete",
+   "inicio": 0.0,
+   "fim": 0.66,
+   "confianca": 0.683
+  },
+  {
+   "palavra": "dias",
+   "inicio": 0.66,
+   "fim": 1.02,
+   "confianca": 0.989
+  },
+  {
+   "palavra": "sem",
+   "inicio": 1.02,
+   "fim": 1.3,
+   "confianca": 0.996
+  },
+  {
+   "palavra": "postar",
+   "inicio": 1.3,
+   "fim": 1.74,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "nada.",
+   "inicio": 1.74,
+   "fim": 2.12,
+   "confianca": 0.993
+  },
+  {
+   "palavra": "Ela",
+   "inicio": 2.44,
+   "fim": 2.9,
+   "confianca": 0.985
+  },
+  {
+   "palavra": "mandou",
+   "inicio": 2.9,
+   "fim": 3.26,
+   "confianca": 0.998
+  },
+  {
+   "palavra": "o",
+   "inicio": 3.26,
+   "fim": 3.32,
+   "confianca": 0.948
+  },
+  {
+   "palavra": "vídeo",
+   "inicio": 3.32,
+   "fim": 3.58,
+   "confianca": 0.993
+  },
+  {
+   "palavra": "para",
+   "inicio": 3.58,
+   "fim": 3.74,
+   "confianca": 0.814
+  },
+  {
+   "palavra": "a",
+   "inicio": 3.74,
+   "fim": 3.82,
+   "confianca": 0.739
+  },
+  {
+   "palavra": "Lúcia.",
+   "inicio": 3.82,
+   "fim": 4.1,
+   "confianca": 0.964
+  }
+ ],
+ "erros_sem_dica": [
+  "trocou \"dezessete\" por \"17\"",
+  "sobrou \"para\"",
+  "trocou \"pra\" por \"a\""
+ ],
+ "palavras_sem_dica": [
+  {
+   "palavra": "17",
+   "inicio": 0.0,
+   "fim": 0.46,
+   "confianca": 0.649
+  },
+  {
+   "palavra": "dias",
+   "inicio": 0.46,
+   "fim": 1.02,
+   "confianca": 0.975
+  },
+  {
+   "palavra": "sem",
+   "inicio": 1.02,
+   "fim": 1.3,
+   "confianca": 0.996
+  },
+  {
+   "palavra": "postar",
+   "inicio": 1.3,
+   "fim": 1.74,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "nada.",
+   "inicio": 1.74,
+   "fim": 2.12,
+   "confianca": 0.993
+  },
+  {
+   "palavra": "Ela",
+   "inicio": 2.44,
+   "fim": 2.9,
+   "confianca": 0.985
+  },
+  {
+   "palavra": "mandou",
+   "inicio": 2.9,
+   "fim": 3.26,
+   "confianca": 0.998
+  },
+  {
+   "palavra": "o",
+   "inicio": 3.26,
+   "fim": 3.32,
+   "confianca": 0.948
+  },
+  {
+   "palavra": "vídeo",
+   "inicio": 3.32,
+   "fim": 3.58,
+   "confianca": 0.993
+  },
+  {
+   "palavra": "para",
+   "inicio": 3.58,
+   "fim": 3.74,
+   "confianca": 0.814
+  },
+  {
+   "palavra": "a",
+   "inicio": 3.74,
+   "fim": 3.82,
+   "confianca": 0.739
+  },
+  {
+   "palavra": "Lúcia.",
+   "inicio": 3.82,
+   "fim": 4.1,
+   "confianca": 0.964
+  }
+ ]
+}

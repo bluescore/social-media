@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Teaser Funcionária Digital</title>
+<style>
+@font-face{font-family:"HNT";src:url(assets/fonts/HelveticaNowText-Regular.ttf);font-weight:400}
+@font-face{font-family:"HNT";src:url(assets/fonts/HelveticaNowText-Medium.ttf);font-weight:500}
+@font-face{font-family:"HNT";src:url(assets/fonts/HelveticaNowText-Bold.ttf);font-weight:700}
+@font-face{font-family:"Megion";src:url(assets/fonts/Megion-Bold.otf);font-weight:700}
+:root{
+  --bg:#1E1415; --panel:#251A1B; --line:#3A2D2E; --card:#2F2425; --card2:#3A2E2F;
+  --text:#F6F4F1; --muted:#A39391; --dim:#6F605E; --accent:#F34500; --ink:#1E1415; --bird:#202020;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--bg)}
+body{font-family:"HNT",Arial,sans-serif;color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;background:var(--bg)}
+#world{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0}
+.a{position:absolute}
+.mask{position:absolute;overflow:hidden;white-space:nowrap}
+.in{display:inline-block}
+.hook{font-weight:700;font-size:184px;line-height:206px;height:206px;letter-spacing:-0.045em}
+.cdot{display:inline-block;width:0.22em;height:0.22em;border-radius:50%;background:var(--accent);margin-left:0.06em;vertical-align:baseline;transform-origin:50% 50%}
+.cap{font-weight:700;font-size:96px;line-height:116px;height:116px;letter-spacing:-0.04em;left:220px}
+.win{background:var(--panel);border:2px solid var(--line);border-radius:32px;overflow:hidden}
+.t-title{font-weight:500;font-size:24px;color:var(--text);letter-spacing:-0.01em}
+.t-sub{font-weight:400;font-size:18px;color:var(--muted)}
+.kcard{background:var(--card);border-radius:18px;width:292px;height:132px}
+.kname{position:absolute;left:22px;top:22px;font-weight:500;font-size:21px;color:#E9E2E0}
+.ksub{position:absolute;left:22px;top:54px;font-weight:400;font-size:17px;color:var(--muted)}
+.kbar{position:absolute;left:22px;bottom:22px;height:8px;border-radius:4px;background:var(--card2)}
+.chip{font-weight:500;font-size:17px;color:var(--muted);height:24px;line-height:24px;overflow:hidden;position:absolute}
+.oc{position:absolute;left:0;top:0}
+#obj{background:var(--accent);overflow:hidden}
+.dot{position:absolute;width:22px;height:22px;border-radius:11px;background:var(--ink)}
+.ink{color:var(--ink)}
+#cursor{position:absolute;left:0;top:0;width:44px;height:54px;transform-origin:4px 3px}
+.sub{font-weight:400;font-size:64px;line-height:1.25;letter-spacing:0;color:#FFFFFF}
+</style>
+</head>
+<body>
+<div id="stage"><div id="world">
+
+  <!-- GANCHO -->
+  <div class="mask hook" id="hl1" style="left:200px;top:262px;width:1500px"><span class="in" id="hw1">Paciente</span></div>
+  <div class="mask hook" id="hl2" style="left:200px;top:462px;width:1600px"><span class="in" id="hw2">sem</span><span class="in" style="width:0.26em"></span><span class="in" id="hw3">resposta</span><span class="in" id="baseMark" style="width:0;height:0"></span></div>
+
+  <!-- LEGENDAS -->
+  <div class="mask cap" id="c1a" style="top:412px;width:700px"><span class="in">Responde</span></div>
+  <div class="mask cap" id="c1b" style="top:528px;width:700px"><span class="in">na hora<i class="cdot"></i></span></div>
+  <div class="mask cap" id="c2a" style="top:412px;width:700px"><span class="in">Organiza</span></div>
+  <div class="mask cap" id="c2b" style="top:528px;width:700px"><span class="in">o funil<i class="cdot"></i></span></div>
+  <div class="mask cap" id="c3a" style="top:412px;width:700px"><span class="in">Marca</span></div>
+  <div class="mask cap" id="c3b" style="top:528px;width:700px"><span class="in">a avaliação<i class="cdot"></i></span></div>
+
+  <!-- CHAT -->
+  <div class="a win" id="chat" style="left:880px;top:160px;width:680px;height:760px">
+    <div class="a" id="chAv" style="left:28px;top:24px;width:56px;height:56px;border-radius:28px;background:var(--card2);color:var(--muted);font-weight:500;font-size:21px;line-height:56px;text-align:center">AS</div>
+    <div class="mask" style="left:100px;top:22px;height:32px;width:400px"><span class="in t-title" id="chName" style="font-size:26px">Ana Souza</span></div>
+    <div class="mask" style="left:100px;top:56px;height:26px;width:400px"><span class="in t-sub" id="chSub">WhatsApp · online</span></div>
+    <div class="a" id="chHr" style="left:0;top:104px;width:680px;height:2px;background:var(--line);transform-origin:0 0"></div>
+    <div class="a" id="chIn" style="left:28px;top:140px;padding:20px 26px;background:var(--card);border-radius:26px 26px 26px 8px;font-size:27px;line-height:36px;color:var(--text);transform-origin:0 100%">Oi! Queria agendar<br>uma avaliação.</div>
+    <div class="a" id="replySlot" style="right:28px;top:330px;padding:22px 28px;font-size:28px;line-height:36px;font-weight:500;visibility:hidden;white-space:nowrap">Claro! Quarta às 10h, pode ser?</div>
+    <div class="mask" id="chSeenM" style="right:30px;top:430px;height:26px;width:200px;text-align:right"><span class="in t-sub" id="chSeen">✓✓ agora</span></div>
+    <div class="a" id="chComp" style="left:28px;bottom:28px;width:624px;height:64px;border-radius:32px;background:var(--card);transform-origin:0 50%"><div class="t-sub" style="position:absolute;left:28px;top:20px;font-size:20px;color:var(--dim)">Mensagem</div></div>
+  </div>
+
+  <!-- FUNIL -->
+  <div class="a win" id="board" style="left:820px;top:190px;width:1000px;height:700px">
+    <div class="mask" style="left:32px;top:30px;height:32px;width:500px"><span class="in t-title" id="bdTitle">Funil de pacientes</span></div>
+  </div>
+
+  <!-- AGENDA -->
+  <div class="a win" id="cal" style="left:820px;top:170px;width:1000px;height:740px">
+    <div class="mask" style="left:32px;top:30px;height:32px;width:500px"><span class="in t-title" id="clTitle">Consultas</span></div>
+    <div class="mask" style="right:32px;top:34px;height:26px;width:300px;text-align:right"><span class="in t-sub" id="clWeek">Esta semana</span></div>
+  </div>
+
+  <!-- OBJETO (balão laranja) -->
+  <div class="a" id="obj">
+    <div class="oc" id="ocDots"><div class="dot" id="d0"></div><div class="dot" id="d1"></div><div class="dot" id="d2"></div></div>
+    <div class="oc" id="ocReply" style="left:28px;font-size:28px;line-height:36px;font-weight:500;white-space:nowrap" ><span class="ink">Claro! Quarta às 10h, pode ser?</span></div>
+    <div class="oc" id="ocCard" style="width:292px;height:132px">
+      <div class="mask" style="left:22px;top:18px;height:32px;width:250px"><span class="in ink" id="cdName" style="font-weight:700;font-size:24px">Ana Souza</span></div>
+      <div class="mask" style="left:22px;top:52px;height:26px;width:250px"><span class="in" id="cdSub" style="font-weight:500;font-size:18px;color:rgba(30,20,21,.72)">Avaliação · WhatsApp</span></div>
+      <div class="a" id="cdBtn" style="right:16px;bottom:16px;height:40px;border:2px solid var(--ink);border-radius:20px;overflow:hidden">
+        <div style="padding:0 20px;font-weight:500;font-size:17px;line-height:36px" class="ink">Agendar</div>
+        <div class="a" id="cdBtnFill" style="left:0;top:0;right:0;bottom:0;background:var(--ink)"><div style="padding:0 20px;font-weight:500;font-size:17px;line-height:36px;color:var(--accent)">Agendar</div></div>
+      </div>
+    </div>
+    <div class="oc" id="ocEv" style="width:164px;height:104px">
+      <div class="mask" style="left:14px;top:12px;height:26px;width:120px"><span class="in ink" id="evA" style="font-weight:700;font-size:19px">Avaliação</span></div>
+      <div class="mask" style="left:14px;top:40px;height:24px;width:140px"><span class="in ink" id="evB" style="font-weight:500;font-size:17px">Ana Souza</span></div>
+      <div class="mask" style="left:14px;top:68px;height:24px;width:140px"><span class="in" id="evC" style="font-weight:500;font-size:16px;color:rgba(30,20,21,.72)">10:00 – 11:00</span><span class="in ink" id="evD" style="position:absolute;left:0;top:0;font-weight:700;font-size:16px">Confirmada</span></div>
+      <svg class="a" id="evCheck" style="left:128px;top:12px" width="24" height="24" viewBox="0 0 24 24"><circle id="evCirc" cx="12" cy="12" r="10.5" fill="none" stroke="#1E1415" stroke-width="2.2"/><path id="evTick" d="M7 12.4 L10.4 15.6 L17 8.8" fill="none" stroke="#1E1415" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+
+  <!-- PASSARINHO (vetor + logo real) -->
+  <svg class="a" id="svgA" width="1920" height="1080" style="left:0;top:0;overflow:visible">
+    <defs><clipPath id="wipe1"><polygon id="wipe1p" points="0,0 0,0 0,0"/></clipPath></defs>
+    <path id="bOrange" fill="#F34500"/>
+    <path id="bDark" fill="#F5F4F4" clip-path="url(#wipe1)"/>
+  </svg>
+  <img class="a" id="bPng" src="assets/logo/icone_branco.png" alt="">
+  <svg class="a" id="svgB" width="1920" height="1080" style="left:0;top:0;overflow:visible">
+    <defs>
+      <clipPath id="wipe1b"><polygon id="wipe1bp" points="0,0 0,0 0,0"/></clipPath>
+      <clipPath id="wmClip"><rect id="wmClipR" x="0" y="0" width="0" height="0"/></clipPath>
+    </defs>
+    <path id="bLine" fill="none" stroke="#F34500" stroke-width="3" stroke-linejoin="round" clip-path="url(#wipe1b)"/>
+    <g clip-path="url(#wmClip)"><g id="wmG"><text id="wm" font-family="Megion" font-weight="700" fill="#FFFFFF">sabiá</text></g></g>
+  </svg>
+  <div class="mask sub" id="s1" style="left:0;top:0"><span class="in">inteligência que participa</span></div>
+
+  <!-- CURSOR -->
+  <svg id="cursor" viewBox="0 0 22 27"><path d="M2 1.5 L2 21.2 L6.9 16.6 L10.3 24.4 L13.9 22.9 L10.6 15.3 L17.4 15.3 Z" fill="#FFFFFF" stroke="#1E1415" stroke-width="1.3" stroke-linejoin="round"/></svg>
+</div></div>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+  <filter id="mbObj" x="-30%" y="-60%" width="160%" height="220%" color-interpolation-filters="sRGB"><feGaussianBlur id="mbObjG" stdDeviation="0 0"/></filter>
+  <filter id="mbCur" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur id="mbCurG" stdDeviation="0 0"/></filter>
+  <filter id="mbWm" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feGaussianBlur id="mbWmG" stdDeviation="0 0"/></filter>
+</defs></svg>
+
+<script src="assets/logo/bird-outline-branco.js"></script>
+<script>
+// ============ utilidades (tudo é função do tempo) ============
+const clamp=(x,a=0,b=1)=>x<a?a:x>b?b:x;
+const lerp=(a,b,k)=>a+(b-a)*k;
+const pr=(t,t0,d)=>clamp((t-t0)/(d*K));
+// mola criticamente amortecida "quase": zeta 0.78 => ~2% de passagem do ponto
+function sp(t,dur=0.5,z=0.78){ if(t<=0) return 0; dur*=K; const w=4/(z*dur), wd=w*Math.sqrt(1-z*z), e=Math.exp(-z*w*t); return 1-e*(Math.cos(wd*t)+(z*w/wd)*Math.sin(wd*t)); }
+const eIn=p=>p<=0?0:p>=1?1:(Math.pow(2,10*p)-1)/1023;
+const eOut=p=>1-eIn(1-p);
+const eIO=p=>p<0.5?eIn(2*p)/2:0.5+eOut(2*p-1)/2;
+const bump=p=>p<=0||p>=1?0:Math.sin(Math.PI*p);
+const $=id=>document.getElementById(id);
+const VERT=new URLSearchParams(location.search).has('v');
+const W=VERT?1080:1920, H=VERT?1920:1080;
+for(const el of [document.documentElement,document.body,$('stage')]){ el.style.width=W+'px'; el.style.height=H+'px'; }
+const px=v=>v.toFixed(2)+'px';
+const mixR=(A,B,k)=>({x:lerp(A.x,B.x,k),y:lerp(A.y,B.y,k),w:lerp(A.w,B.w,k),h:lerp(A.h,B.h,k),r:A.r.map((v,i)=>lerp(v,B.r[i],k))});
+const rr=(x,y,w,h,r)=>({x,y,w,h,r:Array.isArray(r)?r:[r,r,r,r]});
+const BEAT=0.75, SPEED=1.5, K=0.8, DUR=15; // tempo real = 2 x tempo da linha; animações 1,3x mais longas
+
+// entrada de linha por máscara (sobe de baixo) e saída
+const lineY=(t,tin,tout,dirOut=-1,din=0.45,dout=0.24)=>(1-sp(t-tin,din))*108 + dirOut*Math.pow(pr(t,tout,dout),2.2)*108;
+function setLine(el,t,tin,tout,dirOut=-1){ const y=lineY(t,tin,tout,dirOut); el.style.transform=`translateY(${y.toFixed(3)}%)`; el.style.visibility=(y>=107.9||y<=-107.9)?'hidden':'visible'; }
+
+// ============ layout (coordenadas do "mundo") ============
+const CHAT={x:880,y:160,w:680,h:760};
+const BOARD={x:820,y:190,w:1000,h:700};
+const CAL={x:820,y:170,w:1000,h:740};
+const COLX=c=>BOARD.x+32+c*320, SLOTY=i=>BOARD.y+150+i*148;
+const C1=rr(COLX(0),SLOTY(0),292,132,18), C2=rr(COLX(1),SLOTY(0),292,132,18);
+const DAYX=d=>CAL.x+110+d*176, HOURY=h=>CAL.y+150+h*112;
+const EV=rr(DAYX(2)+6,HOURY(1)+4,164,104,12);
+const U=2.009, F=U*177.8/377; // U = px por unidade do guia; F = escala do PNG branco (quadrado, 377 px)
+let M={}; // medidas feitas em tempo de execução
+
+// ============ layout vertical ============
+// gancho em três linhas; títulos em cima de cada tela, alinhados com o chat
+function verticalLayout(){
+  const hl2=$('hl2'), hl3=document.createElement('div');
+  hl3.className='mask hook'; hl3.id='hl3'; hl3.style.cssText='left:200px;top:662px;width:1600px';
+  hl2.children[1].remove(); hl3.appendChild($('hw3')); hl3.appendChild($('baseMark')); hl2.after(hl3);
+  const CAPX=870, CAPY=-150;
+  ['c1','c2','c3'].forEach(c=>{ $(c+'a').style.left=CAPX+'px'; $(c+'a').style.top=CAPY+'px'; $(c+'b').style.left=CAPX+'px'; $(c+'b').style.top=(CAPY+116)+'px'; });
+}
+
+// ============ construção (determinística) ============
+function build(){
+  const board=$('board');
+  const cols=[['Em conversa',null,['Carla Dias','Clareamento'],['Rafael Nunes','Implante']],
+              ['Avaliação',['Bruno Costa','Ortodontia'],['Lívia Ramos','Limpeza']],
+              ['Orçamento',['Marcos Lima','Prótese'],['Júlia Reis','Lentes de contato'],['Pedro Alves','Canal']]];
+  M.kcards=[];
+  cols.forEach((col,c)=>{
+    const hx=32+c*320;
+    const h=document.createElement('div'); h.className='mask'; h.style.cssText=`left:${hx}px;top:96px;height:28px;width:200px`;
+    h.innerHTML=`<span class="in t-title" style="font-size:20px">${col[0]}</span>`; board.appendChild(h);
+    const hr=document.createElement('div'); hr.className='a'; hr.style.cssText=`left:${hx}px;top:132px;width:292px;height:2px;background:var(--line);transform-origin:0 0`; board.appendChild(hr);
+    col.slice(1).forEach((k,i)=>{ if(!k) return;
+      const d=document.createElement('div'); d.className='a kcard';
+      d.style.left=(hx)+'px'; d.style.top=(150+i*148)+'px';
+      d.innerHTML=`<div class="kname">${k[0]}</div><div class="ksub">${k[1]}</div><div class="kbar" style="width:${90+((i*37+c*53)%80)}px"></div>`;
+      board.appendChild(d); M.kcards.push({el:d,c,i,hx});
+    });
+    M['bh'+c]={head:h.firstChild,hr};
+  });
+  // contadores
+  const counts=[['3','2'],['2','3'],['3']];
+  M.chips=counts.map((cs,c)=>{
+    const box=document.createElement('div'); box.className='chip'; box.style.cssText+=`left:${32+c*320+262}px;top:98px;width:30px;text-align:right`;
+    const spans=cs.map((v,j)=>{const s=document.createElement('div'); s.className='a'; s.style.cssText='right:0;top:0;width:30px;text-align:right'; s.textContent=v; box.appendChild(s); return s;});
+    board.appendChild(box); return spans;
+  });
+  // agenda
+  const cal=$('cal'); M.calLines=[]; M.calLabels=[]; M.calEvents=[];
+  for(let h=0;h<6;h++){ const l=document.createElement('div'); l.className='a'; l.style.cssText=`left:110px;top:${150+h*112}px;width:880px;height:2px;background:var(--line)`; cal.appendChild(l); M.calLines.push({el:l,kind:'h',y:150+h*112});
+    const lab=document.createElement('div'); lab.className='mask'; lab.style.cssText=`left:32px;top:${140+h*112}px;height:24px;width:70px`; lab.innerHTML=`<span class="in t-sub" style="font-size:16px">${String(9+h).padStart(2,'0')}:00</span>`; cal.appendChild(lab); M.calLabels.push({el:lab.firstChild,d:Math.abs(150+h*112-(EV.y-CAL.y))});
+  }
+  ['seg','ter','qua','qui','sex'].forEach((d,i)=>{ const v=document.createElement('div'); v.className='a'; v.style.cssText=`left:${110+i*176}px;top:130px;width:2px;height:580px;background:var(--line)`; cal.appendChild(v); M.calLines.push({el:v,kind:'v',x:110+i*176});
+    const lab=document.createElement('div'); lab.className='mask'; lab.style.cssText=`left:${110+i*176+14}px;top:92px;height:28px;width:120px`; lab.innerHTML=`<span class="in t-title" style="font-size:19px;color:${i===2?'var(--text)':'var(--muted)'}">${d}</span>`; cal.appendChild(lab); M.calLabels.push({el:lab.firstChild,d:Math.abs(110+i*176-(EV.x-CAL.x))});
+  });
+  [[0,0,1,'Limpeza'],[1,3,1,'Clareamento'],[3,2,1,'Canal'],[4,0,0.5,'Retorno'],[0,4,1,'Implante'],[3,4,0.5,'Manutenção']].forEach(([d,h,len,name])=>{
+    const e=document.createElement('div'); e.className='a';
+    const x=110+d*176+6, y=150+h*112+4, w=164, hh=112*len-8;
+    e.style.cssText=`left:${x}px;top:${y}px;width:${w}px;height:${hh}px;border-radius:12px;background:var(--card)`;
+    e.innerHTML=`<div class="t-sub" style="position:absolute;left:14px;top:12px;font-size:16px;color:#CFC5C3;font-weight:500">${name}</div>`;
+    cal.appendChild(e); M.calEvents.push({el:e,dist:Math.hypot(x+w/2-(EV.x-CAL.x+EV.w/2), y+hh/2-(EV.y-CAL.y+EV.h/2))});
+  });
+}
+
+// ============ medidas ============
+function measure(){
+  const wr=el=>el.getBoundingClientRect();
+  const r3=wr($('hw3')), base=wr($('baseMark')).top;
+  M.dot={x:r3.right+10, base};               // ponto final nasce aqui
+  const slot=wr($('replySlot'));
+  M.RR=rr(slot.left,slot.top,slot.width,slot.height,[32,32,10,32]);
+  M.CT=rr(M.RR.x+M.RR.w-150,M.RR.y+M.RR.h-84,150,84,[42,42,10,42]);
+  const btn=wr($('cdBtn')), obj=wr($('ocCard'));
+  M.btnOff={x:btn.left-obj.left+btn.width/2, y:btn.top-obj.top+btn.height/2, w:btn.width, h:btn.height};
+  // passarinho: centro do contorno coincide com o centro do evento
+  const B=window.BIRD_OUTLINE_BRANCO, bb=B.bbox;
+  const bcx=(bb[0]+bb[2])/2*F, bcy=(bb[1]+bb[3])/2*F;
+  M.bx=EV.x+EV.w/2-bcx; M.by=EV.y+EV.h/2-bcy;
+  M.birdPts=B.pts.map(p=>[M.bx+p[0]*F, M.by+p[1]*F]);
+  const png=$('bPng'); png.style.left=px(M.bx); png.style.top=px(M.by); png.style.width=px(B.w*F); png.style.height=px(B.h*F);
+  // logo horizontal (proporções do Logo.tsx da marca, variante branca: caixa do passarinho em 458,1 / 321,2)
+  M.wmX=M.bx+(634.3-458.1)*U; M.wmBase=M.by+(433.7-321.2)*U; M.wmSize=118.92*U;
+  const wm=$('wm'); wm.setAttribute('x',M.wmX.toFixed(2)); wm.setAttribute('y',M.wmBase.toFixed(2)); wm.setAttribute('font-size',M.wmSize.toFixed(2));
+  const wb=wm.getBBox(); M.wmBox={x:wb.x,y:wb.y,w:wb.width,h:wb.height};
+  const lockL=M.bx+(454-458.1)*U, lockR=lockL+484*U; M.lock={l:lockL,r:lockR,c:(lockL+lockR)/2};
+  const cr=$('wmClipR'); cr.setAttribute('x',(M.wmX-6).toFixed(2)); cr.setAttribute('y',(wb.y-40).toFixed(2)); cr.setAttribute('width',(wb.width+400).toFixed(2)); cr.setAttribute('height',(wb.height+80).toFixed(2));
+  // slogan logo abaixo de "sabiá", da largura do nome (borda esquerda e direita alinhadas)
+  const s1=$('s1'), sp1=s1.firstChild; const nat=sp1.getBoundingClientRect().width;
+  const fs=64*M.wmBox.w/nat; s1.style.fontSize=px(fs); s1.style.height=px(fs*1.25);
+  const sw=sp1.getBoundingClientRect().width;
+  const sy=M.wmBase+0.11*M.wmSize;
+  s1.style.left=px(M.wmBox.x+(M.wmBox.w-sw)/2); s1.style.top=px(sy); s1.style.width=px(sw+4);
+  M.endC={x:M.lock.c, y:(M.by+B.bbox[1]*F + sy+fs*1.25)/2};
+  // pontos do retângulo arredondado do evento x passarinho, alinhados
+  const N=B.pts.length;
+  M.rectPts=rectPoly(EV.x,EV.y,EV.w,EV.h,12,N);
+  if(Math.sign(area(M.rectPts))!==Math.sign(area(M.birdPts))) M.birdPts.reverse();
+  const norm=P=>{const xs=P.map(p=>p[0]),ys=P.map(p=>p[1]);const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);return P.map(p=>[(p[0]-x0)/(x1-x0),(p[1]-y0)/(y1-y0)]);};
+  const nr=norm(M.rectPts), nb=norm(M.birdPts); let best=0,bestE=1e18;
+  for(let o=0;o<N;o++){ let e=0; for(let i=0;i<N;i++){const b=nb[(i+o)%N]; e+=(nr[i][0]-b[0])**2+(nr[i][1]-b[1])**2;} if(e<bestE){bestE=e;best=o;} }
+  M.birdPts=M.birdPts.map((_,i)=>M.birdPts[(i+best)%N]);
+  // varredura diagonal: da ponta do rabo até o alto da cabeça
+  let tail=0, head=0; M.birdPts.forEach((p,i)=>{ if(p[0]-p[1]*0.15<M.birdPts[tail][0]-M.birdPts[tail][1]*0.15) tail=i; if(p[1]<M.birdPts[head][1]) head=i; });
+  const T=M.birdPts[tail], H=M.birdPts[head]; let dx=H[0]-T[0], dy=H[1]-T[1]; const dl=Math.hypot(dx,dy); M.wd=[dx/dl,dy/dl]; M.wO=T;
+  const proj=M.birdPts.map(p=>(p[0]-T[0])*M.wd[0]+(p[1]-T[1])*M.wd[1]); M.wMin=Math.min(...proj)-4; M.wMax=Math.max(...proj)+4;
+  M.tailIdx=tail; M.headIdx=head;
+  // contorno final para medir o perímetro
+  const bl=$('bLine'); bl.setAttribute('d',crPath(M.birdPts)); M.birdLen=bl.getTotalLength();
+  // posição (fração do perímetro) onde começa a "costa" do passarinho: do rabo até a cabeça
+  M.backStart=tail/N; M.backEnd=(head>tail?head:head+N)/N;
+}
+function area(P){let a=0;for(let i=0;i<P.length;i++){const p=P[i],q=P[(i+1)%P.length];a+=p[0]*q[1]-q[0]*p[1];}return a/2;}
+function rectPoly(x,y,w,h,r,N){
+  const segs=[], st=(x0,y0,x1,y1)=>({len:Math.hypot(x1-x0,y1-y0),f:u=>[lerp(x0,x1,u),lerp(y0,y1,u)]}),
+        ar=(cx,cy,a0)=>({len:Math.PI*r/2,f:u=>{const a=a0+u*Math.PI/2;return [cx+r*Math.cos(a),cy+r*Math.sin(a)];}});
+  segs.push(st(x+r,y,x+w-r,y),ar(x+w-r,y+r,-Math.PI/2),st(x+w,y+r,x+w,y+h-r),ar(x+w-r,y+h-r,0),st(x+w-r,y+h,x+r,y+h),ar(x+r,y+h-r,Math.PI/2),st(x,y+h-r,x,y+r),ar(x+r,y+r,Math.PI));
+  const tot=segs.reduce((s,g)=>s+g.len,0), P=[];
+  for(let i=0;i<N;i++){let s=tot*i/N; for(let j=0;j<segs.length;j++){const g=segs[j]; if(s<=g.len||j===segs.length-1){P.push(g.f(g.len?clamp(s/g.len):0));break;} s-=g.len;}}
+  return P;
+}
+function crPath(P){const n=P.length,f=v=>v.toFixed(2);let d=`M${f(P[0][0])},${f(P[0][1])}`;for(let i=0;i<n;i++){const p0=P[(i-1+n)%n],p1=P[i],p2=P[(i+1)%n],p3=P[(i+2)%n];d+=`C${f(p1[0]+(p2[0]-p0[0])/6)},${f(p1[1]+(p2[1]-p0[1])/6)} ${f(p2[0]-(p3[0]-p1[0])/6)},${f(p2[1]-(p3[1]-p1[1])/6)} ${f(p2[0])},${f(p2[1])}`;}return d+'Z';}
+function halfPlane(O,d,s,B=5000){const n=[-d[1],d[0]],P=[O[0]+d[0]*s,O[1]+d[1]*s];return [[P[0]+n[0]*B,P[1]+n[1]*B],[P[0]-n[0]*B,P[1]-n[1]*B],[P[0]-n[0]*B-d[0]*B,P[1]-n[1]*B-d[1]*B],[P[0]+n[0]*B-d[0]*B,P[1]+n[1]*B-d[1]*B]];}
+
+// ============ câmera ============
+// cada movimento: [início, duração, foco x, foco y, zoom]; além disso um empurrão contínuo de 4% a cada 2 s
+let CAMMOVES=[];
+function camSetup(){
+  const EC=[EV.x+EV.w/2,EV.y+EV.h/2];
+  if(VERT){ CAMMOVES=[
+    [1.50,0.75,1215,385,1.25],                       // gancho -> chat (título em cima, tela embaixo)
+    [2.85,0.60,1225,400,1.33],                       // aproxima na resposta
+    [3.50,0.65,1200,370,1.21],                       // chat -> funil
+    [5.40,0.38,1318,430,1.58],                       // aproxima no card (clique em Agendar)
+    [5.66,0.45,1200,380,1.14],                       // abre na agenda
+    [5.98,0.50,1210,370,1.21],                       // empurrão na batida forte
+    [6.95,0.55,EC[0],EC[1],2.18],                    // aproxima no evento
+    [7.45,0.60,EC[0]-10,EC[1]+6,2.2],                // passarinho se forma
+    [8.02,0.72,M.endC.x,M.endC.y,0.75],              // abre no cartão final
+  ]; return; }
+  CAMMOVES=[
+    [1.50,0.75, 890,540,1.19],                       // gancho -> chat
+    [2.85,0.60, 900,530,1.25],                       // aproxima na resposta
+    [3.50,0.65, 890,540,1.20],                       // chat -> funil
+    [5.40,0.38,1060,470,1.38],                       // aproxima no card (clique em Agendar)
+    [5.66,0.45, 890,540,1.12],                       // abre na agenda
+    [5.98,0.50, 900,530,1.19],                       // empurrão na batida forte
+    [6.95,0.55,EV.x+EV.w/2,EV.y+EV.h/2,1.85],        // aproxima no evento
+    [7.45,0.60,EV.x+EV.w/2-20,EV.y+EV.h/2+6,2.05],   // passarinho se forma
+    [8.02,0.72,M.endC.x,M.endC.y,0.86],              // abre no cartão final
+  ];
+}
+const CAM0=VERT?[640,565,1.0]:[815,470,1.0];
+function cam(t){let x=CAM0[0],y=CAM0[1],lz=Math.log(CAM0[2]);for(const m of CAMMOVES){const k=eIO(pr(t,m[0],m[1]));if(k<=0)continue;x=lerp(x,m[2],k);y=lerp(y,m[3],k);lz=lerp(lz,Math.log(m[4]),k);}return {x,y,s:Math.exp(lz)*Math.pow(1.04,t/2)};}
+
+// ============ objeto ============
+function objRect(t){
+  let R;
+  const dotS=40, ax=M.dot.x+dotS, ay=M.dot.base;
+  if(t<1.0){ const d=dotS*sp(t-0.5,0.42); R=rr(M.dot.x+dotS/2-d/2, ay-dotS/2-d/2, d, d, d/2); }
+  else {
+    const k=sp(t-1.0,0.45), w=lerp(dotS,250,k), h=lerp(dotS,130,k);
+    R=rr(ax-w, ay-h, w, h, [lerp(20,65,k),lerp(20,65,k),lerp(20,14,k),lerp(20,65,k)]);
+    R=mixR(R,M.CT,sp(t-1.6,0.6));
+    R=mixR(R,M.RR,sp(t-2.45,0.45));
+    R=mixR(R,C1,sp(t-3.5,0.5));
+    R=mixR(R,C2,eIO(pr(t,4.25,0.55)));
+    R=mixR(R,EV,t<6.0?eIO(pr(t,6.0-0.38*K,0.38)):1);
+  }
+  // "levantado" enquanto é arrastado
+  const lift=0.035*(sp(t-3.47,0.25)-sp(t-4.8,0.3));
+  if(lift>0.0001){ const cx=R.x+R.w/2, cy=R.y+R.h/2, s=1+lift; R={...R,x:cx-R.w*s/2,y:cy-R.h*s/2,w:R.w*s,h:R.h*s}; }
+  // carimbo: o card cresce no voo e bate no horário exatamente na batida de 6,0 s
+  if(t>6.0-0.38*K&&t<6.0){ const st=0.42*Math.sin(Math.PI*pr(t,6.0-0.38*K,0.38)), cx=R.x+R.w/2, cy=R.y+R.h/2, s=1+st; R={...R,x:cx-R.w*s/2,y:cy-R.h*s/2,w:R.w*s,h:R.h*s}; }
+  // aperto do botão / clique na agenda
+  const press=0.03*bump(pr(t,5.44,0.16))+0.03*bump(pr(t,6.44,0.16));
+  if(press>0){ const cx=R.x+R.w/2, cy=R.y+R.h/2, s=1-press; R={...R,x:cx-R.w*s/2,y:cy-R.h*s/2,w:R.w*s,h:R.h*s}; }
+  return R;
+}
+
+// ============ cursor ============
+function cursorPos(t){
+  const grab=(R,gx,gy)=>[R.x+R.w*gx,R.y+R.h*gy];
+  if(t>=3.45&&t<=4.85){ return grab(objRect(t),0.8,0.24); }
+  const dot=[M.dot.x+20,M.dot.base-20];
+  const RRg=grab(objRect(3.45),0.8,0.24);
+  let P, moves;
+  if(t<3.45){
+    P=[M.dot.x+700,M.dot.base+620];
+    moves=[[0.42,0.5,dot[0],dot[1]],[1.12,0.42,dot[0]+120,dot[1]+170],[1.75,0.7,CHAT.x+CHAT.w-120,CHAT.y+CHAT.h-40],[2.95,0.45,RRg[0],RRg[1]]];
+  } else {
+    P=grab(objRect(4.85),0.8,0.24);
+    const b=[C2.x+M.btnOff.x, C2.y+M.btnOff.y];
+    const chk=[EV.x+140, EV.y+24];
+    moves=[[4.98,0.42,b[0],b[1]],[5.62,0.42,EV.x+EV.w+60,EV.y+EV.h+40],[6.1,0.3,chk[0],chk[1]],[6.98,0.38,chk[0]+760,chk[1]+620]];
+  }
+  for(const m of moves){const k=eIO(pr(t,m[0],m[1])); if(k>0){P=[lerp(P[0],m[2],k),lerp(P[1],m[3],k)];}}
+  return P;
+}
+function cursorScale(t){
+  let s=1-0.16*bump(pr(t,0.93,0.14))-0.16*bump(pr(t,5.43,0.16))-0.16*bump(pr(t,6.43,0.16));
+  s-=0.1*(sp(t-3.4,0.12)-sp(t-4.83,0.15)); // segurando durante o arraste
+  return s;
+}
+
+// ============ desfoque que segue a velocidade ============
+function mblur(el,gEl,fid,vx,vy){ // v em px do mundo por segundo
+  const sx=Math.min(14,Math.abs(vx)/180*0.6), sy=Math.min(14,Math.abs(vy)/180*0.6);
+  if(sx<0.5&&sy<0.5){ el.style.filter='none'; return; }
+  gEl.setAttribute('stdDeviation',`${sx.toFixed(2)} ${sy.toFixed(2)}`); el.style.filter=`url(#${fid})`;
+}
+
+// ============ cenas ============
+function hookF(t){
+  setLine($('hw1'),t,-0.22,1.56,-1);
+  setLine($('hw2'),t,-0.16,1.50,+1);
+  setLine($('hw3'),t,-0.16,1.50,+1);
+}
+function capsF(t){
+  setLine($('c1a').firstChild,t,2.50,3.50,-1); setLine($('c1b').firstChild,t,2.95,3.55,-1);
+  setLine($('c2a').firstChild,t,4.45,5.45,-1); setLine($('c2b').firstChild,t,4.95,5.50,-1);
+  setLine($('c3a').firstChild,t,6.00,7.00,-1); setLine($('c3b').firstChild,t,6.45,7.05,-1);
+  // o ponto laranja nasce depois que a linha pousa, como o ponto do gancho
+  [['c1b',2.95],['c2b',4.95],['c3b',6.45]].forEach(([id,tin])=>{ const d=$(id).querySelector('.cdot'); d.style.transform=`scale(${sp(t-(tin+0.16),0.4).toFixed(4)})`; });
+}
+function winClip(el,W,t,tin,din,tout,dout,R0f,R1f){
+  // abre a partir do retângulo R0 e fecha para dentro de R1 (coordenadas do mundo)
+  const kin=sp(t-tin,din), kout=eIn(pr(t,tout,dout));
+  if(kin<=0.001||kout>=0.999){ el.style.display='none'; return false; }
+  el.style.display='block';
+  const R0=typeof R0f==='function'?R0f(t):R0f, R1=typeof R1f==='function'?R1f(t):R1f;
+  const ins=R=>[R.y-W.y, W.x+W.w-(R.x+R.w), W.y+W.h-(R.y+R.h), R.x-W.x];
+  const a=ins(R0), b=ins(R1); let v=a.map(x=>x*(1-kin));
+  if(kout>0) v=v.map((x,i)=>lerp(x,b[i],kout));
+  const rad=lerp(lerp(R0.r[0],32,kin),R1.r[0],kout);
+  el.style.clipPath=`inset(${v.map(x=>px(Math.max(0,x))).join(' ')} round ${px(rad)})`;
+  return true;
+}
+function chatF(t){
+  if(!winClip($('chat'),CHAT,t,1.80,0.55,3.50,0.28,objRect,objRect)) return;
+  const g=sp(t-1.95,0.42);
+  $('chAv').style.transform=`scale(${g.toFixed(4)})`;
+  setLine($('chName'),t,1.98,99); setLine($('chSub'),t,2.04,99);
+  $('chHr').style.transform=`scaleX(${sp(t-1.94,0.5).toFixed(4)})`;
+  $('chIn').style.transform=`scale(${sp(t-2.02,0.42).toFixed(4)})`;
+  $('chComp').style.transform=`scaleX(${sp(t-2.08,0.5).toFixed(4)})`;
+  setLine($('chSeen'),t,3.0,99);
+}
+function boardF(t){
+  if(!winClip($('board'),BOARD,t,3.78,0.55,5.48,0.24,objRect,objRect)) return;
+  setLine($('bdTitle'),t,3.9,99);
+  for(let c=0;c<3;c++){ setLine(M['bh'+c].head,t,3.92+c*0.05,99); M['bh'+c].hr.style.transform=`scaleX(${sp(t-3.9-c*0.05,0.5).toFixed(4)})`; }
+  // contadores (o número velho sobe, o novo entra por baixo)
+  M.chips.forEach((spans,c)=>{
+    const tin=3.95+c*0.05;
+    if(spans.length===1){ setLine(spans[0],t,tin,99); return; }
+    const tsw=c===0?4.6:4.9;
+    setLine(spans[0],t,tin,tsw,-1); setLine(spans[1],t,tsw,99);
+  });
+  M.kcards.forEach(k=>{
+    const d=Math.hypot(k.hx-(C1.x-BOARD.x),k.i*148);
+    const g=sp(t-(3.88+d*0.00022),0.45);
+    let dy=0;
+    if(k.c===0) dy=-148*sp(t-4.62,0.42);   // sobem quando a Ana sai
+    if(k.c===1) dy=148*sp(t-4.3,0.42);     // descem para abrir espaço
+    k.el.style.transform=`translateY(${dy.toFixed(2)}px) scale(${(0.6+0.4*g).toFixed(4)})`;
+    k.el.style.clipPath=`inset(0 0 ${((1-g)*100).toFixed(2)}% 0 round 18px)`;
+  });
+}
+function calF(t){
+  if(!winClip($('cal'),CAL,t,5.64,0.5,7.02,0.32,objRect,EV)) return;
+  const ex=EV.x-CAL.x+EV.w/2, ey=EV.y-CAL.y+EV.h/2;
+  setLine($('clTitle'),t,5.84,99); setLine($('clWeek'),t,5.88,99);
+  M.calLines.forEach((l,i)=>{
+    const g=sp(t-(5.68+i*0.015),0.5);
+    if(l.kind==='h'){ l.el.style.transformOrigin=`${ex-110}px 0`; l.el.style.transform=`scaleX(${g.toFixed(4)})`; }
+    else { l.el.style.transformOrigin=`0 ${ey-130}px`; l.el.style.transform=`scaleY(${g.toFixed(4)})`; }
+  });
+  M.calLabels.forEach(l=>setLine(l.el,t,5.76+l.d*0.0003,99));
+  M.calEvents.forEach(e=>{ const g=sp(t-(5.78+e.dist*0.0003),0.45); e.el.style.transform=`scale(${(0.5+0.5*g).toFixed(4)})`; e.el.style.clipPath=`inset(${((1-g)*50).toFixed(2)}% round 12px)`; });
+}
+function objF(t){
+  const o=$('obj');
+  if(t>=7.5||t<0.5){ o.style.display='none'; return; }
+  const R=objRect(t);
+  if(R.w<0.5){ o.style.display='none'; return; }
+  o.style.display='block';
+  o.style.left=px(R.x); o.style.top=px(R.y); o.style.width=px(R.w); o.style.height=px(R.h);
+  o.style.borderRadius=R.r.map(v=>px(Math.min(v,R.w/2,R.h/2))).join(' ');
+  const a=objRect(t-1/120), b=objRect(t+1/120);
+  mblur(o,$('mbObjG'),'mbObj',((b.x+b.w/2)-(a.x+a.w/2))*60/SPEED,((b.y+b.h/2)-(a.y+a.h/2))*60/SPEED);
+  // pontinhos "digitando"
+  const dots=$('ocDots'); const dk=1-eIn(pr(t,2.45,0.16));
+  if(t<2.62){ dots.style.display='block'; dots.style.left=px(R.w/2-55); dots.style.top=px(R.h/2-11);
+    for(let i=0;i<3;i++){ const d=$('d'+i); const g=sp(t-(1.1+i*0.06),0.35)*dk; const bob=-6*Math.max(0,Math.sin(2*Math.PI*1.6*SPEED*(t-1.1)-i*0.9));
+      d.style.left=px(i*44); d.style.transform=`translateY(${bob.toFixed(2)}px) scale(${g.toFixed(4)})`; } }
+  else dots.style.display='none';
+  // resposta (revelada por máscara da esquerda para a direita)
+  const rep=$('ocReply'); const ri=eOut(pr(t,2.55,0.32)), ro=eIn(pr(t,3.5,0.18));
+  if(ri>0&&ro<1){ rep.style.display='block'; rep.style.top=px((R.h-36)/2); rep.style.clipPath=`inset(0 ${((1-ri)*100).toFixed(2)}% 0 ${(ro*100).toFixed(2)}%)`; } else rep.style.display='none';
+  // card do funil
+  const cd=$('ocCard');
+  if(t>3.6&&t<5.8){ cd.style.display='block';
+    setLine($('cdName'),t,3.7,5.6,-1); setLine($('cdSub'),t,3.76,5.62,-1);
+    const bg=sp(t-3.84,0.4)*(1-eIn(pr(t,5.6,0.15))); $('cdBtn').style.transform=`scale(${bg.toFixed(4)})`;
+    const fill=eOut(pr(t,5.47,0.22)); $('cdBtnFill').style.clipPath=`circle(${(fill*120).toFixed(2)}% at 50% 50%)`;
+  } else cd.style.display='none';
+  // evento da agenda
+  const ev=$('ocEv');
+  if(t>5.85){ ev.style.display='block';
+    setLine($('evA'),t,5.9,7.28,-1); setLine($('evB'),t,5.96,7.31,-1);
+    setLine($('evC'),t,6.02,6.42,-1); setLine($('evD'),t,6.62,7.34,-1);
+    const ck=eOut(pr(t,6.48,0.3)), cOut=eIn(pr(t,7.26,0.18));
+    const circ=$('evCirc'), tick=$('evTick');
+    circ.style.strokeDasharray='66'; circ.style.strokeDashoffset=(66*(1-sp(t-6.02,0.45))).toFixed(2);
+    tick.style.strokeDasharray='16'; tick.style.strokeDashoffset=(16*(1-ck)).toFixed(2);
+    $('evCheck').style.transform=`scale(${(1-cOut).toFixed(4)})`;
+  } else ev.style.display='none';
+}
+function birdF(t){
+  const svgA=$('svgA'), png=$('bPng'), bl=$('bLine');
+  if(t<7.5){ svgA.style.display='none'; png.style.display='none'; bl.style.display='none'; return; }
+  svgA.style.display='block';
+  const k=sp(t-7.5,0.55,0.8);
+  const P=M.rectPts.map((p,i)=>[lerp(p[0],M.birdPts[i][0],k),lerp(p[1],M.birdPts[i][1],k)]);
+  const d=crPath(P);
+  const or=$('bOrange'); or.setAttribute('d',d); or.style.display=t>8.45?'none':'block';
+  $('bDark').setAttribute('d',d);
+  const s=lerp(M.wMin,M.wMax,eIO(pr(t,8.0,0.42)));
+  const hp=halfPlane(M.wO,M.wd,s).map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+  $('wipe1p').setAttribute('points',hp); $('wipe1bp').setAttribute('points',hp);
+  // linha laranja na aresta: o laranja do objeto recua até ficar só na costa do passarinho
+  bl.style.display=t>=8.0?'block':'none'; bl.setAttribute('d',d);
+  const L=M.birdLen, rk=eIO(pr(t,8.5,0.8)), gone=eIO(pr(t,8.95,0.6));
+  const start=lerp(lerp(0,M.backStart,rk),M.backEnd,gone), end=lerp(1,M.backEnd,rk);
+  if(gone>=0.999){ bl.style.display='none'; return finishPng(t); }
+  // depois de recolhida, a luz corre devagar pela costa
+  const seg=(end-start)*L, off=-start*L;
+  bl.style.strokeDasharray=`${seg.toFixed(2)} ${(L-seg+0.01).toFixed(2)}`;
+  bl.style.strokeDashoffset=off.toFixed(2);
+  finishPng(t);
+}
+function finishPng(t){
+  const png=$('bPng');
+  // logo de verdade (camadas) entra por máscara na mesma diagonal
+  const s2=lerp(M.wMin,M.wMax,eIO(pr(t,8.32,0.45)));
+  if(t>=8.32){ png.style.display='block';
+    const hp2=halfPlane(M.wO,M.wd,s2).map(p=>`${(p[0]-M.bx).toFixed(1)}px ${(p[1]-M.by).toFixed(1)}px`).join(',');
+    png.style.clipPath=`polygon(${hp2})`; } else png.style.display='none';
+}
+function endF(t){
+  const g=$('wmG');
+  if(t<8.36){ g.style.display='none'; } else {
+    g.style.display='block';
+    const k=sp(t-8.36,0.5), k2=sp(t-8.36+1/120,0.5), k1=sp(t-8.36-1/120,0.5);
+    const dx=-(1-k)*(M.wmBox.w+40);
+    g.setAttribute('transform',`translate(${dx.toFixed(2)},0)`);
+    mblur(g,$('mbWmG'),'mbWm',(k2-k1)*60/SPEED*(M.wmBox.w+40),0);
+  }
+  setLine($('s1').firstChild,t,8.62,99);
+}
+function cursorF(t){
+  const c=$('cursor'); const p=cursorPos(t), a=cursorPos(t-1/120), b=cursorPos(t+1/120);
+  if(t<0.4||t>7.45){ c.style.display='none'; return; }
+  c.style.display='block';
+  c.style.transform=`translate(${px(p[0]-4)},${px(p[1]-3)}) scale(${cursorScale(t).toFixed(4)})`;
+  mblur(c,$('mbCurG'),'mbCur',(b[0]-a[0])*60/SPEED,(b[1]-a[1])*60/SPEED);
+}
+
+// ============ seek ============
+function seek(tReal){
+  const t=tReal/SPEED;
+  const c=cam(t);
+  $('world').style.transform=`matrix(${c.s.toFixed(5)},0,0,${c.s.toFixed(5)},${(W/2-c.s*c.x).toFixed(3)},${(H/2-c.s*c.y).toFixed(3)})`;
+  hookF(t); capsF(t); chatF(t); boardF(t); calF(t); objF(t); birdF(t); endF(t); cursorF(t);
+}
+window.seek=seek;
+
+window.ready=(async()=>{
+  await Promise.all([document.fonts.load('700 184px HNT'),document.fonts.load('500 28px HNT'),document.fonts.load('400 18px HNT'),document.fonts.load('700 200px Megion')]);
+  await document.fonts.ready;
+  await $('bPng').decode();
+  if(VERT) verticalLayout();
+  build(); measure(); camSetup();
+  const q=new URLSearchParams(location.search);
+  if(q.has('play')){ const t0=performance.now(); const loop=()=>{ seek(((performance.now()-t0)/1000)%DUR); requestAnimationFrame(loop); }; loop(); }
+  else seek(parseFloat(q.get('t')||'0'));
+  return true;
+})();
+</script>
+</body>
+</html>

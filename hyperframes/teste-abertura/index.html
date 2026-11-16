@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ground: #f4efe6;
+        --ink: #14110f;
+        --acento: #c2410c;
+        --font-display: "Inter", sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--ground);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        font-family: var(--font-display);
+        color: var(--ink);
+      }
+      #fundo {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 30%, #ffd9c4 0%, var(--ground) 55%);
+      }
+      section.clip {
+        position: absolute;
+        inset: 0;
+      }
+      .miolo {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* Cena 1 */
+      .palavra {
+        font-size: 150px;
+        font-weight: 900;
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+      }
+
+      /* Cena 2 */
+      #feito {
+        font-size: 90px;
+        font-weight: 400;
+        margin-bottom: 30px;
+      }
+      #selo {
+        position: relative;
+        padding: 0 60px;
+      }
+      #faixa {
+        position: absolute;
+        inset: 0;
+        background: var(--acento);
+        border-radius: 24px;
+      }
+      #ia {
+        position: relative;
+        font-size: 280px;
+        font-weight: 900;
+        line-height: 1.1;
+        color: var(--ground);
+      }
+
+      /* Cena 3 */
+      #legenda-teste {
+        font-size: 64px;
+        color: #8a8178;
+        margin-bottom: 16px;
+      }
+      #nome {
+        font-size: 120px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        margin-bottom: 16px;
+      }
+      #formula {
+        font-size: 64px;
+        font-weight: 700;
+        color: var(--acento);
+      }
+
+      /* Barra de progresso */
+      #barra {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 14px;
+      }
+      #preenchimento {
+        width: 100%;
+        height: 100%;
+        background: var(--acento);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="10"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div id="fundo"></div>
+
+      <section id="cena1" class="clip" data-start="0" data-duration="3.2" data-track-index="0">
+        <div class="miolo">
+          <div id="p1" class="palavra">Meu</div>
+          <div id="p2" class="palavra">primeiro</div>
+          <div id="p3" class="palavra">vídeo</div>
+        </div>
+      </section>
+
+      <section id="cena2" class="clip" data-start="3.2" data-duration="3.4" data-track-index="0">
+        <div class="miolo">
+          <div id="feito">feito com</div>
+          <div id="selo">
+            <div id="faixa"></div>
+            <div id="ia">IA</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cena3" class="clip" data-start="6.6" data-duration="3.4" data-track-index="0">
+        <div class="miolo">
+          <div id="legenda-teste">teste 2 de 2</div>
+          <div id="nome">HyperFrames</div>
+          <div id="formula">HTML + GSAP → MP4</div>
+        </div>
+      </section>
+
+      <div id="barra" class="clip" data-start="0" data-duration="10" data-track-index="1">
+        <div id="preenchimento"></div>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // Cena 1: "Meu" já aparece no primeiro quadro (vira a capa no feed); as outras palavras entram com efeito de mola
+      tl.from("#p1", { scale: 1.25, duration: 0.6, ease: "power3.out" }, 0);
+      tl.from("#p2, #p3", { y: 140, scale: 0.4, opacity: 0, duration: 0.7, ease: "back.out(2)", stagger: 0.25 }, 0.35);
+      tl.to("#cena1 .miolo", { opacity: 0, y: -60, duration: 0.3, ease: "power2.in" }, 2.85);
+
+      // Cena 2: faixa laranja varre da esquerda e revela o "IA"
+      tl.from("#feito", { opacity: 0, y: 50, duration: 0.6, ease: "power3.out" }, 3.3);
+      tl.from("#faixa", { scaleX: 0, transformOrigin: "left center", duration: 0.6, ease: "power3.out" }, 3.6);
+      tl.to("#cena2 .miolo", { opacity: 0, y: -60, duration: 0.3, ease: "power2.in" }, 6.25);
+
+      // Cena 3: assinatura do teste
+      tl.from("#cena3 .miolo > div", { opacity: 0, y: 70, duration: 0.6, ease: "power3.out", stagger: 0.2 }, 6.7);
+      tl.to("#cena3 .miolo", { opacity: 0, duration: 0.3, ease: "power2.in" }, 9.6);
+
+      // Barra de progresso no rodapé, do início ao fim
+      tl.fromTo("#preenchimento", { scaleX: 0 }, { scaleX: 1, transformOrigin: "left center", duration: 9.96, ease: "none" }, 0);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

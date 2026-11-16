@@ -1,0 +1,152 @@
+<!-- CAPA B (Reels do ep. 1): "Ela apagou / a 14ª tentativa" — o título da B sobre a foto da A
+     Em cima: bloco laranja chapado (y 0-890) com o título e o logo pequeno no canto.
+     Embaixo (y 890-1920): a mesma foto da A — a Helena cansada, de olhos baixos, ao lado do celular no tripé com a
+     tela apagada (a tela preta já mostra o "apagou"; sem interface de celular, sem texto pequeno).
+     Na grade do Instagram aparece só o miolo 3:4 (y 240-1680): logo e título ficam dentro dele.
+     Camadas (originais em alta, de clinicas-ep01-protocolo-implante\fonte\geradas):
+       fundo-a-noite.jpg = maquete-larga-noite.png, recorte x 70-1400 / y 440-1708 (sem a moldura de madeira), desfocado (fonte/scripts/preparar-camadas.py)
+       helena-noite.png  = helena-corpo-tripe-v2.png (1152x2048) em 88% — sem espelhar (grisalho na têmpora direita dela)
+       tripe-celular.png = tripe-celular.png (1152x2048) em 70% -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #f34500;
+      font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+    }
+    /* ---------- bloco de cima ---------- */
+    #b-bloco {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 890px;
+      background: var(--laranja, #f34500);
+    }
+    #b-logo {
+      position: absolute;
+      left: 769px; /* o desenho do logo termina em x 972 (margem 108) */
+      top: 302px;
+      width: 205px;
+      height: 59px;
+    }
+    #b-titulo {
+      position: absolute;
+      left: 108px;
+      top: 484px; /* centrado entre o logo (y 357) e a emenda (y 890) */
+      width: 864px;
+      margin: 0;
+      color: #ffffff;
+      font-size: 136px;
+      font-weight: 400;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+    }
+    #b-titulo .linha {
+      display: block;
+      white-space: nowrap;
+    }
+    #b-titulo .chave {
+      position: relative;
+      font-weight: 700;
+    }
+    /* o "ª" do 14ª um pouco menor e mais baixo: no tamanho cheio ele encosta na perna do "p" de "apagou" logo acima
+       (entrelinha 0,9). Assim fica com folga e com a base no mesmo lugar do ª original */
+    #b-titulo .ord {
+      position: relative;
+      font-size: 0.75em;
+      top: -0.09em;
+    }
+    /* traço de caneta branco (o mesmo desenho do modelo laranja aprovado, na escala deste título);
+       "14ª tentativa" não tem perna descendo, então o traço fica logo abaixo da linha de base */
+    #b-titulo .risco {
+      position: absolute;
+      left: 0;
+      width: calc(100% + 18px);
+      top: calc(100% - 14px); /* a ponta da direita sobe: assim ela não encosta na base do "va" */
+      height: 40px;
+      overflow: visible;
+    }
+    /* ---------- foto de baixo (a mesma da A) ---------- */
+    #b-foto {
+      position: absolute;
+      left: 0;
+      top: 890px;
+      width: 1080px;
+      height: 1030px;
+      overflow: hidden;
+      background: #2b2224;
+    }
+    #b-fundo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1030px;
+    }
+    #b-helena {
+      position: absolute;
+      left: -34px;
+      top: -36px;
+      width: 1014px;
+      height: 1802px;
+    }
+    #b-tripe {
+      position: absolute;
+      left: 520px;
+      top: -10px;
+      width: 806px;
+      height: 1434px;
+    }
+    #b-tela {
+      position: absolute;
+      left: 819px;
+      top: 87px;
+      width: 207px;
+      height: 382px;
+      border-radius: 16px;
+      background:
+        linear-gradient(118deg, rgba(255, 226, 196, 0) 26%, rgba(255, 226, 196, 0.09) 42%, rgba(255, 226, 196, 0) 60%),
+        rgba(255, 250, 245, 0.065);
+    }
+  </style>
+
+  <div
+    id="root"
+    data-composition-id="capa-b"
+    data-width="1080"
+    data-height="1920"
+    data-composition-variables='[{"id":"linha1","type":"string","label":"Título, linha 1","default":"Ela apagou"},{"id":"linha2","type":"string","label":"Título, linha 2 (antes do destaque)","default":"a"},{"id":"numero","type":"string","label":"Número da tentativa (Bold, o ª vem depois)","default":"14"},{"id":"destaque","type":"string","label":"Destaque depois do número (Bold, sublinhado)","default":"tentativa"}]'
+  >
+    <div id="b-bloco">
+      <img id="b-logo" src="assets/marca/logo/sabia_branco.png" alt="Sabiá" />
+      <h1 id="b-titulo" data-layout-allow-overflow>
+        <span class="linha" data-var-text="linha1">Ela apagou</span>
+        <span class="linha"><span data-var-text="linha2">a</span> <span class="chave"><span data-var-text="numero">14</span><span class="ord">ª</span> <span data-var-text="destaque">tentativa</span><svg class="risco" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 26.7 L25 27.4 L50 27.8 L75 28.1 L100 28.1 L125 28.0 L150 27.6 L175 27.1 L200 26.3 L225 25.5 L250 24.5 L275 23.5 L300 22.5 L325 21.5 L350 20.6 L375 19.8 L400 19.2 L425 18.7 L450 18.4 L475 18.3 L500 18.3 L525 18.5 L550 18.8 L575 19.1 L600 19.5 L625 19.9 L650 20.2 L675 20.4 L700 20.5 L725 20.4 L750 20.2 L775 19.7 L800 19.0 L825 18.1 L850 17.0 L875 15.7 L900 14.4 L925 12.9 L950 11.4 L975 9.9 L1000 8.5" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></svg></span></span>
+      </h1>
+    </div>
+
+    <div id="b-foto">
+      <img id="b-fundo" src="assets/img/fundo-a-noite.jpg" alt="" />
+      <img id="b-helena" data-layout-allow-overflow src="assets/img/helena-noite.png" alt="dra. Helena" />
+      <img id="b-tripe" data-layout-allow-overflow src="assets/img/tripe-celular.png" alt="" />
+      <div id="b-tela"></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines["capa-b"] = gsap.timeline({ paused: true });
+  </script>
+</template>

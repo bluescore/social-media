@@ -1,0 +1,2 @@
+Short cinematic riser, soft airy swell rising steadily in pitch and volume, reversed cymbal texture, ends abruptly at its peak, no hit at the end
+{"duration_seconds": 2, "prompt_influence": 0.6}

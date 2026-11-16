@@ -1,0 +1,1052 @@
+{
+  "ok": false,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "gsap_callback_dom_measurement",
+        "severity": "warning",
+        "message": "Timeline callback reaches DOM measurement (getBoundingClientRect/getTotalLength/getComputedStyle/...). The renderer seeks with suppressEvents=false, so callbacks re-fire on every seek, and a cold render worker runs them against whatever DOM state its own non-linear seek order produced. Measured geometry is seek-order-dependent, and values measured at build time (before the callback ran) are stale or zero.",
+        "selector": "onUpdate: () => renderFio(relogio.t)",
+        "dataAttributes": {},
+        "sourceFile": "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\compositions\\virada.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Do all measurement and DOM setup synchronously at build time, before registering the timeline, or derive geometry from fixed composition coordinates instead of measuring."
+      }
+    ],
+    "filesScanned": 3
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 1,
+    "findings": [
+      {
+        "code": "motion_blur_filter_fallback",
+        "severity": "info",
+        "message": "data-motion-blur=\"on\" is drawn by the filter fallback: backface-visibility: hidden inside a 3D transform is drawn mirrored by html-in-canvas",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "10.8333",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-motion-blur": "on",
+          "data-motion-blur-events": "on"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "fixHint": "the fallback smears movement but only softens zoom and rotation; backface-visibility: hidden inside a 3D transform is drawn mirrored; avoid the 3D flip or drop motion blur"
+      }
+    ]
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 10,
+    "findings": [
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 0.602,
+        "selector": "#titulo-folha",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 213.38,
+          "top": 498.84,
+          "right": 703.58,
+          "bottom": 555.06,
+          "width": 490.2,
+          "height": 56.22
+        },
+        "containerSelector": "#helena-p2",
+        "text": "roteiro · protocolo sobre implantes",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.52,
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 213.38,
+          "y": 498.84,
+          "width": 490.2,
+          "height": 56.22
+        },
+        "firstSeen": 0.602,
+        "lastSeen": 0.602,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.602
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 0.602,
+        "selector": "#linhas > span:nth-of-type(1)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 226.39,
+          "top": 742.37,
+          "right": 806.35,
+          "bottom": 803.95,
+          "width": 579.96,
+          "height": 61.59
+        },
+        "containerSelector": "#helena-p2",
+        "text": "1. o que é: prótese fixa da inteira",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.3,
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 226.39,
+          "y": 742.37,
+          "width": 579.96,
+          "height": 61.59
+        },
+        "firstSeen": 0.602,
+        "lastSeen": 0.602,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.602
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 0.602,
+        "selector": "#linhas > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 229.44,
+          "top": 803.25,
+          "right": 756.55,
+          "bottom": 862.07,
+          "width": 527.11,
+          "height": 58.82
+        },
+        "containerSelector": "#helena-p2",
+        "text": "2. antes: exame clínico e tomografia",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.56,
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 229.44,
+          "y": 803.25,
+          "width": 527.11,
+          "height": 58.82
+        },
+        "firstSeen": 0.602,
+        "lastSeen": 0.602,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.602
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 0.602,
+        "selector": "#linhas > span:nth-of-type(3)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 232.48,
+          "top": 858.61,
+          "right": 812.27,
+          "bottom": 920.18,
+          "width": 579.79,
+          "height": 61.58
+        },
+        "containerSelector": "#helena-p2",
+        "text": "3. no osso: em geral, de 4 a 6",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.67,
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 232.48,
+          "y": 858.61,
+          "width": 579.79,
+          "height": 61.58
+        },
+        "firstSeen": 0.602,
+        "lastSeen": 0.602,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.602
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 0.602,
+        "selector": "#kw2 > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 269.17,
+          "top": 879.58,
+          "right": 412.02,
+          "bottom": 918.26,
+          "width": 142.86,
+          "height": 38.68
+        },
+        "containerSelector": "#helena-p2",
+        "text": "implantes",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 269.17,
+          "y": 879.58,
+          "width": 142.86,
+          "height": 38.68
+        },
+        "firstSeen": 0.602,
+        "lastSeen": 0.602,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.602
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 0.602,
+        "selector": "#linhas > span:nth-of-type(4)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 235.53,
+          "top": 918.56,
+          "right": 780.27,
+          "bottom": 978.3,
+          "width": 544.74,
+          "height": 59.74
+        },
+        "containerSelector": "#helena-p2",
+        "text": "4. : leva meses, varia",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.5,
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 235.53,
+          "y": 918.56,
+          "width": 544.74,
+          "height": 59.74
+        },
+        "firstSeen": 0.602,
+        "lastSeen": 0.602,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.602
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 0.602,
+        "selector": "#kw3 > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 272.21,
+          "top": 932.43,
+          "right": 515.51,
+          "bottom": 976.38,
+          "width": 243.29,
+          "height": 43.94
+        },
+        "containerSelector": "#helena-p2",
+        "text": "osseointegração",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.78,
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 272.21,
+          "y": 932.43,
+          "width": 243.29,
+          "height": 43.94
+        },
+        "firstSeen": 0.602,
+        "lastSeen": 0.602,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.602
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 0.602,
+        "selector": "#linhas > span:nth-of-type(5)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 238.57,
+          "top": 971.82,
+          "right": 875.85,
+          "bottom": 1036.41,
+          "width": 637.27,
+          "height": 64.59
+        },
+        "containerSelector": "#helena-p2",
+        "text": "5. prótese : só a dentista remove",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.5,
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 238.57,
+          "y": 971.82,
+          "width": 637.27,
+          "height": 64.59
+        },
+        "firstSeen": 0.602,
+        "lastSeen": 0.602,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.602
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 0.602,
+        "selector": "#kw4 > span:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 394.16,
+          "top": 988.4,
+          "right": 559.51,
+          "bottom": 1028.26,
+          "width": 165.35,
+          "height": 39.86
+        },
+        "containerSelector": "#helena-p2",
+        "text": "parafusada",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.41,
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 394.16,
+          "y": 988.4,
+          "width": 165.35,
+          "height": 39.86
+        },
+        "firstSeen": 0.602,
+        "lastSeen": 0.602,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.602
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 0.602,
+        "selector": "#linhas > span:nth-of-type(6)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 241.62,
+          "top": 1033.64,
+          "right": 808.34,
+          "bottom": 1094.53,
+          "width": 566.72,
+          "height": 60.89
+        },
+        "containerSelector": "#helena-p2",
+        "text": "fechar: leve sua dúvida para a consulta",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.33,
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 241.62,
+          "y": 1033.64,
+          "width": 566.72,
+          "height": 60.89
+        },
+        "firstSeen": 0.602,
+        "lastSeen": 0.602,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          0.602
+        ]
+      }
+    ],
+    "duration": 10.8333,
+    "samples": [
+      0.602,
+      1.806,
+      3.009,
+      4.213,
+      5.417,
+      6.62,
+      7.824,
+      9.028,
+      10.231
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 10,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": false,
+    "errorCount": 7,
+    "warningCount": 10,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 2.19:1; WCAG AA requires 3:1.",
+        "text": "rascunho · frases em revisão",
+        "fg": "rgb(246,244,241)",
+        "bg": "rgb(163,168,172)",
+        "ratio": 2.19,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(88,87,86)",
+        "large": true,
+        "selector": "#aviso",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 579.0079956054688,
+          "y": 495.3013916015625,
+          "width": 242.608154296875,
+          "height": 35.00927734375
+        },
+        "time": 0.602,
+        "times": [
+          0.602,
+          3.009,
+          5.417,
+          7.824
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 2.46:1; WCAG AA requires 3:1.",
+        "text": "dra. Helena Prado · cirurgiã-dentista · CRO-UF 000",
+        "fg": "rgb(246,244,241)",
+        "bg": "rgb(153,158,163)",
+        "ratio": 2.46,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(80,79,78)",
+        "large": true,
+        "selector": "#assinatura",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 362.27801513671875,
+          "y": 1194.69873046875,
+          "width": 509.62969970703125,
+          "height": 51.658203125
+        },
+        "time": 3.009,
+        "times": [
+          0.602,
+          3.009,
+          5.417,
+          7.824
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 2.39:1; WCAG AA requires 3:1.",
+        "text": "ilustração educativa · apoio de IA",
+        "fg": "rgb(246,244,241)",
+        "bg": "rgb(156,160,166)",
+        "ratio": 2.39,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(82,81,80)",
+        "large": true,
+        "selector": "#selo",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 578.535400390625,
+          "y": 1218.02001953125,
+          "width": 280.956787109375,
+          "height": 37.01904296875
+        },
+        "time": 0.602,
+        "times": [
+          0.602,
+          3.009,
+          5.417,
+          7.824
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.46:1; WCAG AA requires 3:1.",
+        "text": "arcada",
+        "fg": "rgb(243,69,0)",
+        "bg": "rgb(159,163,168)",
+        "ratio": 1.46,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(155,44,0)",
+        "large": true,
+        "selector": "div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(1) > span > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 609.5399780273438,
+          "y": 738.1754760742188,
+          "width": 104.6416015625,
+          "height": 38.057373046875
+        },
+        "time": 3.009,
+        "times": [
+          3.009,
+          5.417,
+          7.824,
+          10.231
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.26:1; WCAG AA requires 3:1.",
+        "text": "implantes",
+        "fg": "rgb(243,69,0)",
+        "bg": "rgb(147,151,157)",
+        "ratio": 1.26,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(138,39,0)",
+        "large": true,
+        "selector": "div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(3) > span > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 235.2777557373047,
+          "y": 806.6433715820312,
+          "width": 152.9034881591797,
+          "height": 34.40887451171875
+        },
+        "time": 5.417,
+        "times": [
+          3.009,
+          5.417,
+          7.824,
+          10.231
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.28:1; WCAG AA requires 3:1.",
+        "text": "osseointegração",
+        "fg": "rgb(243,69,0)",
+        "bg": "rgb(147,152,158)",
+        "ratio": 1.28,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(139,40,0)",
+        "large": true,
+        "selector": "div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(4) > span > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 317.195068359375,
+          "y": 854.9937133789062,
+          "width": 192.888671875,
+          "height": 42.273193359375
+        },
+        "time": 7.824,
+        "times": [
+          3.009,
+          5.417,
+          7.824,
+          10.231
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 1.31:1; WCAG AA requires 3:1.",
+        "text": "parafusada",
+        "fg": "rgb(243,69,0)",
+        "bg": "rgb(149,154,160)",
+        "ratio": 1.31,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(142,40,0)",
+        "large": true,
+        "selector": "div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(5) > span > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 364.2897644042969,
+          "y": 931.6781616210938,
+          "width": 174.92050170898438,
+          "height": 34.4957275390625
+        },
+        "time": 5.417,
+        "times": [
+          3.009,
+          5.417,
+          7.824
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.32:1; WCAG AA requires 3:1.",
+        "text": "roteiro · protocolo sobre implantes",
+        "fg": "rgb(48,50,54)",
+        "bg": "rgb(66,68,73)",
+        "ratio": 1.32,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(142,143,145)",
+        "large": true,
+        "selector": "#titulo-folha",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 60,
+          "y": 190,
+          "width": 960,
+          "height": 50.59375
+        },
+        "time": 10.231,
+        "times": [
+          10.231
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.14:1; WCAG AA requires 3:1.",
+        "text": "gravar 23/10",
+        "fg": "rgb(74,75,79)",
+        "bg": "rgb(65,67,72)",
+        "ratio": 1.14,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(141,142,145)",
+        "large": true,
+        "selector": "div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 60,
+          "y": 300,
+          "width": 350,
+          "height": 51
+        },
+        "time": 10.231,
+        "times": [
+          10.231
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.17:1; WCAG AA requires 3:1.",
+        "text": "gravar 30/10",
+        "fg": "rgb(74,75,79)",
+        "bg": "rgb(63,65,70)",
+        "ratio": 1.17,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(139,139,142)",
+        "large": true,
+        "selector": "div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 60,
+          "y": 351,
+          "width": 350,
+          "height": 51
+        },
+        "time": 10.231,
+        "times": [
+          10.231
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.17:1; WCAG AA requires 3:1.",
+        "text": "gravar 06/11",
+        "fg": "rgb(74,75,79)",
+        "bg": "rgb(63,65,70)",
+        "ratio": 1.17,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(139,139,142)",
+        "large": true,
+        "selector": "div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(3)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 60,
+          "y": 402,
+          "width": 350,
+          "height": 51
+        },
+        "time": 10.231,
+        "times": [
+          10.231
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.24:1; WCAG AA requires 3:1.",
+        "text": "1. o que é: prótese fixa da arcadaarcada inteira",
+        "fg": "rgb(48,50,54)",
+        "bg": "rgb(62,64,69)",
+        "ratio": 1.24,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(137,138,141)",
+        "large": true,
+        "selector": "div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 60,
+          "y": 560,
+          "width": 960,
+          "height": 57.328125
+        },
+        "time": 10.231,
+        "times": [
+          10.231
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.3:1; WCAG AA requires 3:1.",
+        "text": "2. antes: exame clínico e tomografia",
+        "fg": "rgb(48,50,54)",
+        "bg": "rgb(144,91,68)",
+        "ratio": 2.3,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(190,191,192)",
+        "large": true,
+        "selector": "div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 60,
+          "y": 647.328125,
+          "width": 960,
+          "height": 57.328125
+        },
+        "time": 10.231,
+        "times": [
+          10.231
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.18:1; WCAG AA requires 3:1.",
+        "text": "3. implantesimplantes no osso: em geral, de 4 a 6",
+        "fg": "rgb(48,50,54)",
+        "bg": "rgb(59,61,66)",
+        "ratio": 1.18,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(134,135,138)",
+        "large": true,
+        "selector": "div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(3)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 60,
+          "y": 734.65625,
+          "width": 960,
+          "height": 57.328125
+        },
+        "time": 10.231,
+        "times": [
+          10.231
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.16:1; WCAG AA requires 3:1.",
+        "text": "4. osseointegraçãoosseointegração: leva meses, var",
+        "fg": "rgb(48,50,54)",
+        "bg": "rgb(58,60,65)",
+        "ratio": 1.16,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(132,134,136)",
+        "large": true,
+        "selector": "div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(4)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 60,
+          "y": 821.984375,
+          "width": 960,
+          "height": 57.328125
+        },
+        "time": 10.231,
+        "times": [
+          10.231
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 1.15:1; WCAG AA requires 3:1.",
+        "text": "5. prótese parafusadaparafusada: só a dentista rem",
+        "fg": "rgb(48,50,54)",
+        "bg": "rgb(57,59,64)",
+        "ratio": 1.15,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(132,133,135)",
+        "large": true,
+        "selector": "div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(5)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 60,
+          "y": 909.3125,
+          "width": 960,
+          "height": 57.328125
+        },
+        "time": 10.231,
+        "times": [
+          10.231
+        ]
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.86:1; WCAG AA requires 3:1.",
+        "text": "fechar: leve sua dúvida para a consulta",
+        "fg": "rgb(48,50,54)",
+        "bg": "rgb(108,123,106)",
+        "ratio": 2.86,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(45,46,50)",
+        "large": true,
+        "selector": "div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > span:nth-of-type(6)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 60,
+          "y": 996.640625,
+          "width": 960,
+          "height": 57.328125
+        },
+        "time": 10.231,
+        "times": [
+          10.231
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      0.602,
+      3.009,
+      5.417,
+      7.824,
+      10.231
+    ],
+    "checked": 82,
+    "passed": 45
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 3,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 6 text elements stay under it for 0.5 s or more, the smallest \"rascunho · frases em revisão\" at 14 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "rascunho · frases em revisão",
+        "selector": "#aviso",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 575.89,
+          "y": 534.46,
+          "width": 222.65,
+          "height": 29.34
+        },
+        "time": 0,
+        "times": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "fontPx": 14.24,
+        "floorPx": 28,
+        "seconds": 8.468,
+        "elements": [
+          {
+            "selector": "#aviso",
+            "text": "rascunho · frases em revisão",
+            "fontPx": 14.24,
+            "time": 0,
+            "seconds": 8.468
+          },
+          {
+            "selector": "#selo",
+            "text": "ilustração educativa · apoio de IA",
+            "fontPx": 14.24,
+            "time": 0,
+            "seconds": 8.468
+          },
+          {
+            "selector": "#assinatura",
+            "text": "dra. Helena Prado · cirurgiã-dentista · CRO-UF 00000",
+            "fontPx": 15.26,
+            "time": 0,
+            "seconds": 8.343
+          },
+          {
+            "selector": "#datas > span:nth-of-type(1)",
+            "text": "gravar 23/10",
+            "fontPx": 17.3,
+            "time": 0,
+            "seconds": 8.219
+          },
+          {
+            "selector": "#datas > span:nth-of-type(2)",
+            "text": "gravar 30/10",
+            "fontPx": 17.3,
+            "time": 0,
+            "seconds": 8.219
+          },
+          {
+            "selector": "#datas > span:nth-of-type(3)",
+            "text": "gravar 06/11",
+            "fontPx": 17.3,
+            "time": 0,
+            "seconds": 8.219
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"dra. Helena Prado · cirurgiã-dentista · CRO-UF 00000\" (8 words) is on screen 2.14 s (±0.01 s), under the 2.17 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "dra. Helena Prado · cirurgiã-dentista · CRO-UF 00000",
+        "selector": "#assinatura",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 108.09,
+          "y": 1234.94,
+          "width": 731.29,
+          "height": 30
+        },
+        "time": 8.7,
+        "words": 8,
+        "seconds": 2.137,
+        "floorSeconds": 2.175
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"o que é uma prótese? protocolo\" (6 words) is on screen 1.90 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "o que é uma prótese? protocolo",
+        "selector": "#titulo-video",
+        "dataAttributes": {},
+        "sourceFile": "compositions/virada.html",
+        "bbox": {
+          "x": 108,
+          "y": 257,
+          "width": 660.91,
+          "height": 145.39
+        },
+        "time": 8.934,
+        "words": 6,
+        "seconds": 1.903,
+        "floorSeconds": 2
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 88
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 1,
+    "findings": [
+      {
+        "code": "audio_none",
+        "severity": "info",
+        "message": "The film has no sound: no clip in it plays audio.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0
+      }
+    ]
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

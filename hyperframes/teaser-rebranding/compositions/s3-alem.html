@@ -1,0 +1,72 @@
+<!-- Cena 3 (5,2–7,8 s): a virada. Mundo laranja, "Crescemos além deles."
+     gigante e as sementes menta se abrindo atrás. Sai num chicote para cima. -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Megion";
+      src: url("assets/fonts/Megion-Bold.otf") format("opentype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #f34500;
+      overflow: hidden;
+    }
+    #s3-conteudo {
+      position: absolute;
+      inset: 0;
+    }
+    #s3-sementes {
+      position: absolute;
+      width: 760px;
+      right: -170px;
+      top: 760px;
+    }
+    #s3-texto {
+      position: absolute;
+      left: 80px;
+      top: 430px;
+      font-family: "Megion", sans-serif;
+      font-weight: 700;
+      font-size: 172px;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      color: #1e1415;
+    }
+    .s3-linha {
+      white-space: nowrap;
+    }
+    #s3-destaque {
+      color: #ffffff;
+    }
+  </style>
+  <div data-hf-id="hf-vizh" id="root" data-composition-id="s3" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-lswh" id="s3-conteudo">
+      <img data-hf-id="hf-l5ap"
+        id="s3-sementes"
+        src="assets/marca/grafismos/sementes-cacho_preenchida_menta.png"
+        alt=""
+        data-layout-allow-overflow
+      />
+      <div data-hf-id="hf-w6rk" id="s3-texto">
+        <div data-hf-id="hf-xso9" class="s3-linha">Crescemos</div>
+        <div data-hf-id="hf-nbo5" id="s3-destaque" class="s3-linha">além</div>
+        <div data-hf-id="hf-bkbo" class="s3-linha">deles.</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // Cada linha entra inteira desfocando
+    tl.fromTo(".s3-linha", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power2.out", stagger: 0.12 }, 0.08);
+    // Sementes se abrem atrás do texto (o sabiá espalha sementes)
+    tl.fromTo("#s3-sementes", { scale: 0.4, opacity: 0, rotation: -15 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.9, ease: "expo.out" }, 0.35);
+
+    // Saída em chicote para cima
+    tl.fromTo("#s3-conteudo", { y: 0, filter: "blur(0px)" }, { y: -900, filter: "blur(20px)", duration: 0.25, ease: "power3.in" }, 2.35);
+
+    window.__timelines["s3"] = tl;
+  </script>
+</template>

@@ -1,0 +1,2 @@
+Light airy whoosh of moving air passing and receding, soft breathy swish of mid and high frequency air noise, like a paper card gliding away, gentle and short, no low end, no rumble, no boom, no thump, no hit, no pitch, no musical note
+{"duration_seconds": 1.4, "prompt_influence": 0.7}

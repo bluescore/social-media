@@ -1,0 +1,31 @@
+{
+  "data": "2026-11-12T15:18:03.453Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/corte-integrado.png"
+  ],
+  "prompt": "Image 1 is a 3D cutaway render: a block of mint-green glass bone sliced in half, with one titanium dental implant in the center. Keep EVERYTHING exactly the same, pixel-aligned with Image 1: the same framing, the same block, the same spongy lattice, the same implant, the same light, the same background.\nChange ONLY the contact between the bone and the implant, to show the moment BEFORE healing: the bone has NOT yet grown into the screw threads. Along both sides of the implant there is a thin, clearly visible empty dark channel that follows the zigzag outline of the threads, and the valleys between the threads are empty and dark (no mint glass inside them). The spongy lattice stops a few millimetres short of the titanium. Everything else stays identical.\nNo blood, no tissue, no instruments, no glow, no text, no labels.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\corte-antes.png"
+  ],
+  "usage": {
+    "input_tokens": 1708,
+    "input_tokens_details": {
+      "image_tokens": 1508,
+      "text_tokens": 200
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 3121
+  },
+  "custo_estimado_usd": 0.0555,
+  "segundos": 42
+}

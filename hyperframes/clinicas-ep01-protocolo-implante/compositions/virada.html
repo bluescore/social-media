@@ -1,0 +1,585 @@
+<!-- CENA "A VIRADA" — corte de 10 s do ep. 01 (sala de espera), 25,3 a 36,1 s do episódio, variante "dobra uma batida depois".
+     Tempos do corte (30 q/s):
+       0,20 clique do interruptor: a luz do abajur cai até 0,60 (a folha continua visível, na luz fria da rua)
+       0,55 a Helena (boneca de madeira) recolhe o braço; 0,68–0,98 sai pela esquerda
+       0,95 o ponto laranja (o fio) acende no canto da folha; contorno até 1,65
+       1,70 / 2,10 / 2,50 / 2,90 o fio pinta "arcada", "implantes", "osseointegração", "parafusada" (paradas até 5,03)
+       5,03–5,53 a folha sai da maquete (sobe, endireita, a bancada fica desfocada e mais escura)
+       5,53–6,23 dobra 1 (lateral esquerda para trás) · 6,37–7,07 dobra 2 (lateral direita) · o fio vira a moldura
+       7,20–8,033 giro de 180°; no verso, o estúdio a meia-luz
+       8,033 IMPACTO: a luz do estúdio acende, o brinquedo vira o real; o cartão cresce até a tela inteira (até 8,833)
+       8,833 o título do vídeo dela pousa; a câmera mergulha devagar e uma faixa de luz varre a peça
+     Imagens: assets/img (geradas pela OpenAI; prompts em fonte/prompts). Plano: _serie-clinicas/ep01-SPEC.md §9. -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #2b2224;
+      font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+    }
+    #cam {
+      position: absolute;
+      inset: 0;
+      transform-origin: 540px 960px;
+    }
+    .placa {
+      position: absolute;
+      left: -67.5px;
+      top: -120px;
+      width: 1215px;
+      height: 2160px;
+    }
+    #escurecer {
+      position: absolute;
+      left: -200px;
+      top: -200px;
+      width: 1480px;
+      height: 2320px;
+      background: #2b2224;
+      opacity: 0;
+    }
+    /* a Helena, boneca de madeira, de pé sobre a bancada ao lado do abajur */
+    .helena {
+      position: absolute;
+      width: 475px;
+      height: 845px;
+    }
+    #helena-p1 {
+      left: -49px;
+      top: 250px;
+    }
+    #helena-p2 {
+      left: -13px;
+      top: 262px;
+      opacity: 0;
+    }
+    #helena-sombra {
+      position: absolute;
+      left: 120px;
+      top: 1010px;
+      width: 230px;
+      height: 70px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(20, 12, 10, 0.45), rgba(20, 12, 10, 0) 70%);
+    }
+
+    /* ===== a folha (1350 x 1920 lógicos; o centro de 1080 vira o cartão 9:16 depois das dobras) ===== */
+    #mesa3d {
+      position: absolute;
+      inset: 0;
+      perspective: 2600px;
+      perspective-origin: 540px 960px;
+    }
+    #folha {
+      position: absolute;
+      left: -135px;
+      top: 0;
+      width: 1350px;
+      height: 1920px;
+      transform-origin: 675px 960px;
+      transform-style: preserve-3d;
+    }
+    .painel {
+      position: absolute;
+      top: 0;
+      height: 1920px;
+      transform-style: preserve-3d;
+    }
+    #aba-esq {
+      left: 0;
+      width: 135px;
+      transform-origin: 135px 960px;
+    }
+    #centro {
+      left: 135px;
+      width: 1080px;
+    }
+    #aba-dir {
+      left: 1215px;
+      width: 135px;
+      transform-origin: 0 960px;
+    }
+    .face {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      background-image: url("assets/img/papel.jpg");
+      background-size: 1350px 1920px;
+    }
+    .face.costas {
+      transform: rotateY(180deg);
+      background-color: #e9e5dc;
+    }
+    #aba-esq .face { background-position: 0 0; }
+    #centro .face.frente { background-position: -135px 0; }
+    #aba-dir .face { background-position: -1215px 0; }
+    #aba-esq .face.costas { background-position: -1215px 0; }
+    #aba-dir .face.costas { background-position: 0 0; }
+    /* luz sobre o papel: o abajur quente (da esquerda de cima) e, depois, a luz fria da rua (da direita) */
+    .luz {
+      position: absolute;
+      top: 0;
+      width: 1350px;
+      height: 1920px;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+    .luz.quente {
+      background: radial-gradient(ellipse 1500px 1700px at 0% 0%, #fff2df 0%, #ecd9c4 45%, #b9a594 100%);
+    }
+    .luz.fria {
+      opacity: 0;
+      background: linear-gradient(255deg, #e4e8ee 0%, #d4d9e1 55%, #c6ccd5 100%);
+    }
+    #aba-esq .luz { left: 0; }
+    #centro .luz { left: -135px; }
+    #aba-dir .luz { left: -1215px; }
+    .sombra-papel {
+      position: absolute;
+      inset: 0;
+      background: #e8dccb;
+      box-shadow: 0 10px 26px rgba(25, 14, 10, 0.38);
+    }
+    .sombra-dobra {
+      position: absolute;
+      inset: 0;
+      background: #000;
+      opacity: 0;
+    }
+
+    /* texto impresso (só no centro, para continuar inteiro depois das dobras) */
+    #texto {
+      position: absolute;
+      left: 60px;
+      top: 0;
+      width: 960px;
+      height: 1920px;
+      color: #303236;
+      letter-spacing: -0.02em;
+    }
+    #titulo-folha {
+      position: absolute;
+      left: 0;
+      top: 190px;
+      font-weight: 700;
+      font-size: 46px;
+      line-height: 1.1;
+      width: 960px;
+    }
+    #datas {
+      position: absolute;
+      left: 610px;
+      top: 300px;
+      width: 350px;
+      font-size: 34px;
+      line-height: 1.5;
+      color: #4a4b4f;
+    }
+    .data {
+      position: relative;
+      display: block;
+    }
+    .data svg {
+      position: absolute;
+      left: -6px;
+      top: 12px;
+      width: 230px;
+      height: 30px;
+      overflow: visible;
+    }
+    #linhas {
+      position: absolute;
+      left: 0;
+      top: 560px;
+      width: 960px;
+      font-size: 47px;
+      line-height: 1.22;
+    }
+    .linha {
+      display: block;
+      padding-left: 46px;
+      text-indent: -46px;
+      margin-bottom: 30px;
+    }
+    .kw {
+      position: relative;
+      display: inline-block;
+      text-indent: 0;
+    }
+    .kw .halo {
+      position: absolute;
+      left: -34px;
+      right: -34px;
+      top: -22px;
+      bottom: -22px;
+      border-radius: 40px;
+      background: radial-gradient(ellipse at center, rgba(255, 251, 246, 0.95) 0%, rgba(255, 251, 246, 0.8) 45%, rgba(255, 251, 246, 0) 72%);
+      opacity: 0;
+    }
+    .kw .b {
+      position: relative;
+      font-weight: 700;
+      color: #f34500;
+      opacity: 0;
+    }
+    .kw .r {
+      position: absolute;
+      left: 0;
+      top: 0;
+      white-space: nowrap;
+    }
+    /* o fio: contorno e ponto, num plano que não dobra */
+    #plano {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1350px;
+      height: 1920px;
+      transform: translateZ(2px);
+      pointer-events: none;
+    }
+    #plano svg {
+      position: absolute;
+      inset: 0;
+      overflow: visible;
+    }
+    #ponto-luz {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      margin: -130px 0 0 -130px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 240, 228, 0.7) 0%, rgba(255, 240, 228, 0) 68%);
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+    /* a moldura que o fio vira, no papel e no verso */
+    .moldura {
+      position: absolute;
+      inset: 0;
+      border: 6px solid #f34500;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* ===== verso: o vídeo da dra. Helena (o estúdio realista) ===== */
+    #verso {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transform: rotateY(180deg);
+      border-radius: 70px;
+      background: linear-gradient(180deg, #44464b 0%, #3a3c41 45%, #2a2c30 100%);
+    }
+    #pecas {
+      position: absolute;
+      inset: 0;
+      transform-origin: 540px 830px;
+    }
+    .peca {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    #sombra-osso {
+      position: absolute;
+      left: 190px;
+      top: 1430px;
+      width: 700px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(12, 12, 14, 0.55), rgba(12, 12, 14, 0) 70%);
+    }
+    #varre {
+      position: absolute;
+      inset: 0;
+      -webkit-mask-image: url("assets/img/osso.png");
+      mask-image: url("assets/img/osso.png");
+      -webkit-mask-size: 1080px 1920px;
+      mask-size: 1080px 1920px;
+      mix-blend-mode: screen;
+      opacity: 0.9;
+    }
+    #varre-faixa {
+      position: absolute;
+      top: -200px;
+      left: -700px;
+      width: 420px;
+      height: 2320px;
+      transform: rotate(14deg);
+      background: linear-gradient(90deg, rgba(255, 244, 232, 0) 0%, rgba(255, 244, 232, 0.55) 50%, rgba(255, 244, 232, 0) 100%);
+    }
+    #meia-luz {
+      position: absolute;
+      inset: 0;
+      background: #1c1718;
+      opacity: 0.62;
+    }
+    .rotulo {
+      position: absolute;
+      left: 108px;
+      color: #f6f4f1;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    #titulo-video {
+      top: 262px;
+      font-size: 76px;
+      font-weight: 400;
+      opacity: 0;
+    }
+    #titulo-video b {
+      font-weight: 700;
+    }
+    #assinatura {
+      top: 1262px;
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      opacity: 0.8;
+    }
+  </style>
+
+  <div data-hf-id="hf-ovy8" id="root" data-composition-id="virada" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-frxh" id="cam" data-layout-allow-overflow>
+      <img data-hf-id="hf-o77v" id="placa-apagada" class="placa" src="assets/img/placa-apagada.jpg" alt="" />
+      <img data-hf-id="hf-6i6u" id="placa-desfocada" class="placa" src="assets/img/placa-apagada-desfocada.jpg" alt="" style="opacity: 0" />
+      <img data-hf-id="hf-npnz" id="placa-acesa" class="placa" src="assets/img/placa-acesa.jpg" alt="" />
+      <div data-hf-id="hf-fr6w" id="escurecer"></div>
+
+      <div data-hf-id="hf-3xsp" id="mesa3d" data-layout-allow-overflow data-layout-allow-overlap>
+        <div data-hf-id="hf-z66h" id="folha">
+          <div data-hf-id="hf-r6ab" class="sombra-papel"></div>
+          <div data-hf-id="hf-8zvn" id="aba-esq" class="painel">
+            <div data-hf-id="hf-u3nt" class="face frente"><div data-hf-id="hf-6cwp" class="luz quente"></div><div data-hf-id="hf-i5ct" class="luz fria"></div><div data-hf-id="hf-2usb" class="sombra-dobra"></div></div>
+            <div data-hf-id="hf-abci" class="face costas"></div>
+          </div>
+          <div data-hf-id="hf-iowu" id="centro" class="painel">
+            <div data-hf-id="hf-ckjh" class="face frente">
+              <div data-hf-id="hf-ltwt" class="luz quente"></div>
+              <div data-hf-id="hf-bmi9" class="luz fria"></div>
+              <div data-hf-id="hf-li53" id="texto">
+                <div data-hf-id="hf-m2xj" id="titulo-folha">roteiro · protocolo sobre implantes</div>
+                <div data-hf-id="hf-4s64" id="datas">
+                  <span data-hf-id="hf-w7ol" class="data">gravar 23/10<svg data-hf-id="hf-5z13" viewBox="0 0 230 30"><path data-hf-id="hf-j4wo" d="M2 16 C 30 6, 50 26, 78 15 S 128 6, 156 16 S 205 24, 228 13" fill="none" stroke="#303236" stroke-width="4" stroke-linecap="round"/></svg></span>
+                  <span data-hf-id="hf-9pjl" class="data">gravar 30/10<svg data-hf-id="hf-w13r" viewBox="0 0 230 30"><path data-hf-id="hf-5yu4" d="M2 14 C 28 24, 54 5, 80 16 S 130 25, 158 13 S 204 6, 228 17" fill="none" stroke="#303236" stroke-width="4" stroke-linecap="round"/></svg></span>
+                  <span data-hf-id="hf-zr0d" class="data">gravar 06/11<svg data-hf-id="hf-vmsq" viewBox="0 0 230 30"><path data-hf-id="hf-7d6w" d="M2 17 C 32 7, 52 25, 82 14 S 134 7, 160 17 S 206 23, 228 12" fill="none" stroke="#303236" stroke-width="4" stroke-linecap="round"/></svg></span>
+                </div>
+                <div data-hf-id="hf-icri" id="linhas">
+                  <span data-hf-id="hf-1cz8" class="linha">1. o que é: prótese fixa da <span data-hf-id="hf-tq4o" class="kw" id="kw1"><span data-hf-id="hf-9rfj" class="halo"></span><span data-hf-id="hf-fn7h" class="b">arcada</span><span data-hf-id="hf-hde5" class="r">arcada</span></span> inteira</span>
+                  <span data-hf-id="hf-gfc9" class="linha">2. antes: exame clínico e tomografia</span>
+                  <span data-hf-id="hf-oa7e" class="linha">3. <span data-hf-id="hf-2e0j" class="kw" id="kw2"><span data-hf-id="hf-kskf" class="halo"></span><span data-hf-id="hf-2wx0" class="b">implantes</span><span data-hf-id="hf-7bx0" class="r">implantes</span></span> no osso: em geral, de 4 a 6</span>
+                  <span data-hf-id="hf-fmsn" class="linha">4. <span data-hf-id="hf-yfwi" class="kw" id="kw3"><span data-hf-id="hf-ke9e" class="halo"></span><span data-hf-id="hf-o2ob" class="b">osseointegração</span><span data-hf-id="hf-kq1n" class="r">osseointegração</span></span>: leva meses, varia</span>
+                  <span data-hf-id="hf-3hu9" class="linha">5. prótese <span data-hf-id="hf-fo6t" class="kw" id="kw4"><span data-hf-id="hf-jzyd" class="halo"></span><span data-hf-id="hf-nxy9" class="b">parafusada</span><span data-hf-id="hf-w6z5" class="r">parafusada</span></span>: só a dentista remove</span>
+                  <span data-hf-id="hf-j01r" class="linha">fechar: leve sua dúvida para a consulta</span>
+                </div>
+              </div>
+              <div data-hf-id="hf-049b" id="moldura-frente" class="moldura"></div>
+            </div>
+            <div data-hf-id="hf-dceu" id="verso">
+              <div data-hf-id="hf-exqb" id="pecas">
+                <div data-hf-id="hf-c8fu" id="sombra-osso"></div>
+                <img data-hf-id="hf-w70n" id="osso" class="peca" src="assets/img/osso.png" alt="" />
+                <img data-hf-id="hf-4bah" id="protese" class="peca" src="assets/img/protese.png" alt="" />
+                <div data-hf-id="hf-zqtz" id="varre"><div data-hf-id="hf-7j2x" id="varre-faixa"></div></div>
+              </div>
+              <div data-hf-id="hf-qev3" id="titulo-video" class="rotulo">o que é uma prótese<br data-hf-id="hf-x5px" /><b data-hf-id="hf-n6j2">protocolo</b>?</div>
+              <div data-hf-id="hf-r6nx" id="assinatura" class="rotulo">dra. Helena Prado · cirurgiã-dentista · CRO-UF 00000</div>
+              <div data-hf-id="hf-zizj" id="meia-luz"></div>
+              <div data-hf-id="hf-zyya" id="moldura-verso" class="moldura" style="border-radius: 70px"></div>
+            </div>
+          </div>
+          <div data-hf-id="hf-anvn" id="aba-dir" class="painel">
+            <div data-hf-id="hf-drgk" class="face frente"><div data-hf-id="hf-n0tw" class="luz quente"></div><div data-hf-id="hf-ctfc" class="luz fria"></div><div data-hf-id="hf-zhcr" class="sombra-dobra"></div></div>
+            <div data-hf-id="hf-ghpy" class="face costas"></div>
+          </div>
+          <div data-hf-id="hf-15fz" id="plano">
+            <div data-hf-id="hf-mud1" id="ponto-luz"></div>
+            <svg data-hf-id="hf-ztsy" viewBox="0 0 1350 1920" width="1350" height="1920">
+              <path data-hf-id="hf-7pft" id="contorno" d="M 8 8 H 1342 V 1912 H 8 Z" fill="none" stroke="#f34500" stroke-width="7" stroke-linejoin="round" />
+              <circle data-hf-id="hf-5lgh" id="ponto" cx="8" cy="8" r="11" fill="#f34500" opacity="0" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-4bzf" id="helena-sombra"></div>
+      <img data-hf-id="hf-mcd5" id="helena-p1" class="helena" src="assets/img/helena-p1.png" alt="" />
+      <img data-hf-id="hf-iweb" id="helena-p2" class="helena" src="assets/img/helena-p2.png" alt="" />
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const IMPACTO = 241 / 30; // 8,033 s
+
+      // ---- câmera: abre um pouco (0,9) e fecha na folha; leve avanço durante a leitura; volta a 1,0 quando a folha sobe
+      tl.fromTo("#cam", { scale: 0.9 }, { scale: 1, duration: 0.95, ease: "power2.inOut" }, 0);
+      tl.to("#cam", { scale: 1.045, duration: 4.0, ease: "sine.inOut" }, 0.95);
+      tl.to("#cam", { scale: 1, duration: 0.5, ease: "power2.inOut" }, 5.03);
+
+      // ---- folha pousada na bancada, girada 3°
+      tl.set("#folha", { x: 20, y: 60, scale: 0.68, rotation: -3, rotationY: 0 }, 0);
+
+      // ---- a luz do abajur cai (clique em 0,20)
+      tl.to("#placa-acesa", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 0.2);
+      tl.to(".luz.quente", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 0.2);
+      tl.to(".luz.fria", { opacity: 1, duration: 0.4, ease: "power2.inOut" }, 0.2);
+      tl.to("#helena-sombra", { opacity: 0, duration: 0.35 }, 0.2);
+      tl.to(".sombra-papel", { backgroundColor: "#c4c8d0", duration: 0.4, ease: "power2.inOut" }, 0.2);
+
+      // ---- a Helena recolhe o braço (corte na ação) e sai pela esquerda
+      tl.set("#helena-p1", { opacity: 0 }, 0.55);
+      tl.set("#helena-p2", { opacity: 1 }, 0.55);
+      tl.to("#helena-p2", { x: -760, duration: 0.3, ease: "power2.in" }, 0.68);
+
+      // ---- o fio: o ponto acende no canto (0,95), percorre o contorno (até 1,65) e desce pela margem como uma
+      //      régua de leitura, chegando a cada palavra no instante em que ela é pintada. Tudo calculado a partir do
+      //      tempo (função pura de t), para cada quadro sair igual no render.
+      const SOBE = 5.033;
+      const contorno = document.querySelector("#contorno");
+      const ponto = document.querySelector("#ponto");
+      const luzPonto = document.querySelector("#ponto-luz");
+      // contorno da folha: retângulo de (8,8) a (1342,1912), percorrido no sentido horário (conta feita aqui, sem medir o DOM)
+      const LADO_H = 1334, LADO_V = 1904;
+      const L = 2 * (LADO_H + LADO_V);
+      contorno.setAttribute("stroke-dasharray", String(L));
+      function pontoNoContorno(s) {
+        if (s <= LADO_H) return { x: 8 + s, y: 8 };
+        s -= LADO_H;
+        if (s <= LADO_V) return { x: 1342, y: 8 + s };
+        s -= LADO_V;
+        if (s <= LADO_H) return { x: 1342 - s, y: 1912 };
+        s -= LADO_H;
+        return { x: 8, y: 1912 - s };
+      }
+      const alvos = [
+        { id: "kw1", t: 1.7 },
+        { id: "kw2", t: 2.1 },
+        { id: "kw3", t: 2.5 },
+        { id: "kw4", t: 2.9 },
+      ];
+      const margemX = 165;
+      // altura de cada palavra na folha: medida uma vez, depois que as fontes carregam (o render espera essa promessa)
+      let ysPalavras = null;
+      function medirPalavras() {
+        ysPalavras = alvos.map((a) => {
+          const el = document.getElementById(a.id);
+          let y = 0;
+          let n = el;
+          while (n && n.id !== "folha") { y += n.offsetTop; n = n.offsetParent; }
+          return y + el.offsetHeight * 0.55;
+        });
+      }
+      window.__hf = window.__hf || {};
+      window.__hf.buildReady = window.__hf.buildReady || {};
+      window.__hf.buildReady["virada-fio"] = document.fonts.ready.then(() => {
+        medirPalavras();
+        renderFio(window.__timelines && window.__timelines["virada"] ? window.__timelines["virada"].time() : 0);
+      });
+      const suave = (a, b, p) => a + (b - a) * (p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2);
+      const cl = (v) => Math.max(0, Math.min(1, v));
+      function renderFio(t) {
+        // visibilidade: acende em 0,95; some quando a folha sobe
+        const vis = cl((t - 0.95) / 0.12) * (1 - cl((t - SOBE) / 0.3));
+        ponto.setAttribute("opacity", String(vis));
+        luzPonto.style.opacity = String(vis);
+        contorno.style.opacity = String(1 - cl((t - SOBE) / 0.3));
+        // contorno
+        const p = suave(0, 1, cl((t - 0.95) / 0.7));
+        contorno.setAttribute("stroke-dashoffset", String(L * (1 - p)));
+        let x, y;
+        if (t < 1.62 || !ysPalavras) {
+          const pt = pontoNoContorno(L * p);
+          x = pt.x; y = pt.y;
+        } else {
+          const ys = ysPalavras;
+          if (t < 1.74) {
+            const q = cl((t - 1.62) / 0.12);
+            x = suave(8, margemX, q); y = suave(8, ys[0], q);
+          } else {
+            x = margemX; y = ys[0];
+            for (let i = 1; i < alvos.length; i++) {
+              const t1 = alvos[i].t - 0.2;
+              if (t >= t1) y = suave(ys[i - 1], ys[i], cl((t - t1) / 0.2));
+            }
+          }
+        }
+        ponto.setAttribute("cx", String(x));
+        ponto.setAttribute("cy", String(y));
+        luzPonto.style.left = x + "px";
+        luzPonto.style.top = y + "px";
+      }
+      renderFio(0);
+      const relogio = { t: 0 };
+      tl.to(relogio, { t: 8.8333, duration: 8.8333, ease: "none", onUpdate: () => renderFio(relogio.t) }, 0);
+      // as palavras trocam de Regular chumbo para Bold laranja no instante em que o fio chega
+      alvos.forEach((a) => {
+        tl.to("#" + a.id + " .r", { opacity: 0, duration: 0.22, ease: "power1.out" }, a.t);
+        tl.to("#" + a.id + " .b", { opacity: 1, duration: 0.22, ease: "power1.out" }, a.t);
+        tl.to("#" + a.id + " .halo", { opacity: 1, duration: 0.3, ease: "power1.out" }, a.t - 0.04);
+      });
+
+      // ---- 5,03: a folha sai da maquete — sobe, endireita; a bancada desfoca e escurece (nunca abaixo de #2B2224)
+      tl.to(".sombra-papel", { opacity: 0, duration: 0.4 }, 5.45);
+      tl.to("#placa-desfocada", { opacity: 1, duration: 0.5, ease: "power2.inOut" }, SOBE);
+      tl.to("#escurecer", { opacity: 0.55, duration: 0.5, ease: "power2.inOut" }, SOBE);
+      tl.to("#folha", { x: 0, y: 0, scale: 0.72, rotation: 0, duration: 0.5, ease: "power2.inOut" }, SOBE);
+      tl.to(".sombra-papel", { boxShadow: "0 40px 80px rgba(20,12,10,0.55)", duration: 0.5 }, SOBE);
+
+      // ---- dobras na batida: a lateral esquerda e depois a direita dobram para trás
+      const D1 = 166 / 30, D2 = 191 / 30;
+      tl.to("#aba-esq", { rotationY: -179.5, duration: 0.7, ease: "power2.inOut" }, D1);
+      tl.to("#aba-esq .sombra-dobra", { opacity: 0.5, duration: 0.35, ease: "power1.in" }, D1);
+      tl.to("#aba-dir", { rotationY: 179.5, duration: 0.7, ease: "power2.inOut" }, D2);
+      tl.to("#aba-dir .sombra-dobra", { opacity: 0.5, duration: 0.35, ease: "power1.in" }, D2);
+      // o cartão se inclina para o lado que dobra, como uma folha sendo manuseada, e volta reto antes do giro
+      tl.to("#folha", { rotationY: 16, duration: 0.35, ease: "power2.out" }, D1);
+      tl.to("#folha", { rotationY: 0, duration: 0.4, ease: "power2.inOut" }, D1 + 0.37);
+      tl.to("#folha", { rotationY: -16, duration: 0.35, ease: "power2.out" }, D2);
+      tl.to("#folha", { rotationY: 0, duration: 0.4, ease: "power2.inOut" }, D2 + 0.37);
+      // o fio vira a moldura do cartão
+      tl.to("#moldura-frente", { opacity: 1, duration: 0.25, ease: "power1.out" }, 6.95);
+      tl.set("#moldura-verso", { opacity: 1 }, 6.95);
+
+      // ---- giro de 180°: no verso, o estúdio a meia-luz (as laterais somem quando o cartão está de lado)
+      tl.to("#folha", { rotationY: 180, duration: IMPACTO - 7.2, ease: "power3.in" }, 7.2);
+      tl.set(["#aba-esq", "#aba-dir"], { opacity: 0 }, 7.86);
+
+      // ---- IMPACTO: a luz do estúdio acende e o cartão vira a tela inteira
+      tl.to("#meia-luz", { opacity: 0, duration: 0.14, ease: "power2.out" }, IMPACTO);
+      tl.to("#folha", { scale: 1, duration: 0.8, ease: "power3.out" }, IMPACTO);
+      tl.to("#verso", { borderRadius: 0, duration: 0.8, ease: "power3.out" }, IMPACTO);
+      tl.to("#moldura-verso", { opacity: 0, borderRadius: 0, duration: 0.5, ease: "power2.out" }, IMPACTO + 0.2);
+      tl.to("#escurecer", { opacity: 0.8, duration: 0.4 }, IMPACTO);
+
+      // ---- o vídeo dela: título pousa; a câmera mergulha devagar; uma faixa de luz varre a peça
+      tl.to("#titulo-video", { opacity: 1, duration: 0.25, ease: "power1.out" }, 8.45);
+      // a peça fica parada aqui: a partir de 8,833 s o vídeo dela continua em compositions/s08-video-dela.html,
+      // que começa exatamente neste estado (peças em escala 0,7 e y -95; prótese em y -70; título visível)
+      tl.set("#pecas", { scale: 0.7, y: -95 }, 0);
+      tl.set("#protese", { y: -70 }, 0);
+
+      window.__timelines["virada"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,31 @@
+{
+  "data": "2026-11-12T15:13:59.264Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "medium",
+  "tamanho": "1024x1536",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/maquete-larga-noite.png"
+  ],
+  "prompt": "A large ceramic model of a single healthy tooth (white porcelain, smooth, educational model) standing on the warm wooden counter of a miniature dental clinic, a tiny plant blurred behind. Premium tabletop miniature photography (dollhouse scale), real materials (wood, ceramic, fabric, plaster), soft natural daylight, gentle tilt-shift depth of field, warm and friendly, tasteful muted palette (greige, sage, warm wood, off-white). Vertical 9:16 Instagram post photo. No text, no logos, no letters, no watermark, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\post-2-dente.png"
+  ],
+  "usage": {
+    "input_tokens": 1636,
+    "input_tokens_details": {
+      "image_tokens": 1508,
+      "text_tokens": 128
+    },
+    "output_tokens": 1132,
+    "output_tokens_details": {
+      "image_tokens": 1132,
+      "text_tokens": 0
+    },
+    "total_tokens": 2768
+  },
+  "custo_estimado_usd": 0.0467,
+  "segundos": 36
+}

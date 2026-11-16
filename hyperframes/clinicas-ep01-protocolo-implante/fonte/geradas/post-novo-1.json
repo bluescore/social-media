@@ -1,0 +1,29 @@
+{
+  "data": "2026-11-12T22:31:39.467Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "medium",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [],
+  "prompt": "SCENE (\"what is osseointegration?\" post): an abstract macro close-up of natural porous bone-like texture (trabecular, sponge-like honeycomb structure) sculpted in warm matte ceramic and plaster, like a handmade museum-quality tabletop model, filling the middle and lower part of the frame. Warm beige, cream, honey and amber tones; warm low side light raking across the pores, creating soft depth; shallow depth of field. Purely abstract, organic and beautiful.\nNo screw, no implant, no metal, no teeth, no blood, nothing gory. Absolutely nothing green, no teal, no mint, no glass.\nPremium tabletop miniature photography, real materials, soft focus fall-off. Vertical 9:16 Instagram post photo.\nCOMPOSITION FOR A TITLE: the top 30% of the frame fades into a deep warm brown-amber darkness (soft shadow), calm and uncluttered, no bright spots, where a white title will be added later.\nNo text, no logos, no letters, no numbers, no watermark, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\post-novo-1.png"
+  ],
+  "usage": {
+    "input_tokens": 222,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 222
+    },
+    "output_tokens": 1212,
+    "output_tokens_details": {
+      "image_tokens": 1212,
+      "text_tokens": 0
+    },
+    "total_tokens": 1434
+  },
+  "custo_estimado_usd": 0.0375,
+  "segundos": 21
+}

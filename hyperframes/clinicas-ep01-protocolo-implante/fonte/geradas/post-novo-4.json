@@ -1,0 +1,29 @@
+{
+  "data": "2026-11-12T22:31:43.756Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "medium",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [],
+  "prompt": "SCENE (\"what comes before the implant\" post): a miniature dental planning desk in a dim, calm room (dollhouse scale). On a light oak desk stands a small modern computer monitor, seen from a slight three-quarter angle in the middle of the frame. The monitor screen shows a grayscale dental panoramic X-ray / cone-beam CT image of a full jaw with natural teeth (generic, medical-looking, soft grey tones, no implants, no screws, no text or numbers on the screen). Next to the monitor: a tiny ceramic mug, a closed notebook with a pencil, and a small potted plant. Nobody is in the scene; nothing is being done to any patient.\nLIGHT: the cool soft glow of the screen lights the desk; the room around is deep blue-grey in shadow. Palette: cool slate blue, graphite, light oak and a soft white screen glow, calm and clinical-cosy.\nPremium tabletop miniature photography (dollhouse scale), real materials (wood, ceramic, fabric, plaster, paper), gentle tilt-shift depth of field. Vertical 9:16 Instagram post photo.\nCOMPOSITION FOR A TITLE: the top 30% of the frame is a calm, uncluttered, fairly DARK area (soft deep shadow of the background, no objects, no bright spots, no lamps) where a white title will be added later; the subject sits in the middle and lower part of the frame.\nNo text, no logos, no letters, no numbers, no watermark, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\post-novo-4.png"
+  ],
+  "usage": {
+    "input_tokens": 314,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 314
+    },
+    "output_tokens": 1212,
+    "output_tokens_details": {
+      "image_tokens": 1212,
+      "text_tokens": 0
+    },
+    "total_tokens": 1526
+  },
+  "custo_estimado_usd": 0.0379,
+  "segundos": 26
+}

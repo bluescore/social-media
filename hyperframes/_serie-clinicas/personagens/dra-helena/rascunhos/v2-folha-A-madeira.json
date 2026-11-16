@@ -1,0 +1,30 @@
+{
+  "data": "2026-11-12T12:32:19.679Z",
+  "modelo": "gpt-image-2.5-flare",
+  "qualidade": "low",
+  "tamanho": "1536x864",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 2,
+  "referencias": [],
+  "prompt": "Character model sheet. STYLE A, WOODEN FIGURE: a premium hand-made wooden figure, like a turned wooden peg doll / board-game figure with a refined designer finish; smooth satin-varnished light wood body; rounded head with a very minimal face (two small dark dot eyes, a tiny soft nose bump, no mouth); the hair, bun and grey streak are carved wood painted in matte colours; the lab coat is a carved, matte-painted wood shell with a few crisp grooves for the collar and pocket; simple rounded arms, mitten-like hands; slightly chunky proportions (head about 1/4 of height). Playful, crafted, collectible-board-game quality, tactile, realistic wood grain and real light. NOT a cartoon drawing, NOT plastic, NOT clay.\nIDENTITY (keep in every version): a fictional Brazilian dental surgeon, implant specialist, mid-40s woman; warm medium-brown skin; very dark brown hair pulled back into a LOW BUN at the nape with ONE wide grey streak from her own LEFT temple swept into the bun; bone-white lab coat (#F6F4F1) with a MANDARIN band collar and hidden buttons, sleeves folded once; charcoal (#303236) high-neck top, charcoal trousers, low charcoal shoes; thin brown watch on her LEFT wrist; charcoal pen in the left chest pocket. Nothing orange on her. No glasses, no jewelry, no logo, no text.\nLayout: character model sheet, four full-body views side by side at the same scale: front, three-quarter front, left profile, back. Neutral standing pose. Soft studio light from the upper LEFT, warm off-white seamless background (#F3EFE8), soft contact shadow under each figure. No text, no labels, no frames, no watermark, no extra people.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\_serie-clinicas\\personagens\\dra-helena\\rascunhos\\v2-folha-A-madeira-1.png",
+    "C:\\social-media\\hyperframes\\_serie-clinicas\\personagens\\dra-helena\\rascunhos\\v2-folha-A-madeira-2.png"
+  ],
+  "usage": {
+    "input_tokens": 746,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 746
+    },
+    "output_tokens": 240,
+    "output_tokens_details": {
+      "image_tokens": 240,
+      "text_tokens": 0
+    },
+    "total_tokens": 986
+  },
+  "custo_estimado_usd": 0.0109,
+  "segundos": 11
+}

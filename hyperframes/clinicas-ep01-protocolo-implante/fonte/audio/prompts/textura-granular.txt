@@ -1,0 +1,2 @@
+Fine granular texture slowly growing, soft crackle of tiny grains filling in and building up, like sand settling or frost forming on glass, close-mic, dry, quiet, no tone, no hum, no musical note
+{"duration_seconds": 1.4, "prompt_influence": 0.6}

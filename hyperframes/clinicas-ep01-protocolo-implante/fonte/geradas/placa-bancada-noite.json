@@ -1,0 +1,29 @@
+{
+  "data": "2026-11-12T13:13:16.538Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1440x2560",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [],
+  "prompt": "Vertical 9:16 photograph of a premium tabletop MINIATURE (dollhouse-scale diorama) of a dental office work counter at night, seen almost straight from above (camera tilted about 15 degrees from vertical), real macro photography with a strong tilt-shift depth of field: the top and bottom edges of the frame are softly out of focus, the centre is sharp.\nComposition: the warm wooden countertop (fine real wood grain at miniature scale) fills most of the frame. Top-LEFT corner: a small table lamp switched ON (seen from above: the round fabric shade and its warm glow), its warm 2700 K light spreading softly across the whole countertop and fading gently to the right; NO hard circle of light, no spotlight, no glowing ball. The CENTRE of the countertop is EMPTY and clear (a large free area, about 70% of the frame width, where a sheet of paper will be placed later). Small, sparse miniature props only at the edges: a tiny ceramic pen cup at the top-right edge, a tiny potted plant cut by the right edge, the edge of a dark tray at the bottom-left. Faint cool blue street light enters from the right through unseen blinds, very subtle.\nMood: late night, quiet, warm, cosy, readable; soft shadows, never pitch black (deepest tones around #2B2224). Real miniature materials: wood, ceramic, fabric. Nothing orange. No paper on the counter, no text, no logos, no screens, no people, no hands.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\placa-bancada-noite.png"
+  ],
+  "usage": {
+    "input_tokens": 320,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 320
+    },
+    "output_tokens": 1843,
+    "output_tokens_details": {
+      "image_tokens": 1843,
+      "text_tokens": 0
+    },
+    "total_tokens": 2163
+  },
+  "custo_estimado_usd": 0.0569,
+  "segundos": 50
+}

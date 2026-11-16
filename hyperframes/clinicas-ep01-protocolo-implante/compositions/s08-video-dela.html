@@ -1,0 +1,587 @@
+<!-- CENA 8 — "O VÍDEO DA DRA. HELENA" (episódio 34,733 → 46,7 s; 11,967 s; 1080×1920, 30 q/s). Sem narração.
+     v6 (pedido do dono, 13/11): a Helena NÃO aparece no vídeo dela (ela não gravou a 15ª, só mandou o roteiro) e a parte
+     de baixo não pode ficar vazia. A tela dividida da v4/v5 saiu; o vídeo dela ocupa o quadro inteiro, montado como um set:
+       ALTO   y 182–405   a assinatura "dra. Helena Prado · cirurgiã-dentista · CRO-UF 00000" (fixa, 30 px, CFO) e o
+                          título do passo (76 px, igual à virada; o "em geral, de 4 a 6" saiu do alto: está na tira)
+       MEIO   y 480–1131  o objeto 3D do passo, centralizado, com 110 px ou mais de folga dos lados; todos pousam na
+                          mesma linha do chão (y 1131) e se refletem nele (reflexo fraco, -webkit-box-reflect do #palco)
+       EMBAIXO y 1187–1297 uma tira de papel do roteiro dela (o mesmo papel da folha, no tom cinza da folha na virada) com
+                          a LINHA de onde a cena saiu e a palavra que o fio pintou na virada em laranja: a ponte "cada
+                          linha virou uma cena"
+       PÉ     y 1297–1920  o chão do estúdio: poça de luz suave abaixo da tira (centro y 1440), o reflexo do objeto num
+                          piso acetinado (desfoque leve, #cetim) e a sombra do papel (sem texto)
+     O 1º quadro continua igual ao último da virada (8,833 s locais dela): peças em escala 0,7 e y −95, prótese em y −70,
+     título "o que é uma prótese protocolo?" e a assinatura em y 1262.
+       0,28–0,95  a assinatura sai de baixo (0,28–0,43) e volta no alto (0,75–0,95); o passo 1 encolhe um pouco e desce
+                  para o meio (0,35–0,95; #cena1: escala 0,84, y 112,9, origem 540 0); a tira 1 aparece um pouco abaixo
+                  do lugar e sobe 240 px (0,32–0,95); o chão, o reflexo e o piso acetinado acendem (0,35–0,95)
+     Um mecanismo de movimento por passo (os mesmos tempos da v3/v5 — o som depende deles):
+       passo 1  0,000–2,600  a dúvida ........... MERGULHAR: as peças crescem devagar; uma faixa de luz varre (0,20–2,50)
+       passo 2  2,600–6,133  onde se apoia ...... corte seco para o osso de perto (escala 0,82: x 110–970), FOSCO; a faixa
+                                                   de vidro limpo atravessa (2,90–3,90) e revela os 5 implantes; parado
+       passo 3  6,133–9,233  a cicatrização ..... CORTAR: o plano de corte desce de logo abaixo do título até o chão
+                                                   (6,133–6,633); CRESCER: o osso preenche a rosca (6,733–7,933); a
+                                                   linha-guia sai da rosca e desce até a tira (7,933); a palavra
+                                                   "osseointegração" da tira acende com o halo da virada (8,113)
+       passo 4  9,233–11,967 a prótese no lugar . corte seco para a mesma arcada do passo 2, agora com a prótese, na
+                                                   sombra; REVELAR POR LUZ: a faixa de luz passa (9,433–10,433); parado
+     Trocas de título e de tira (a antiga sai em 0,12 s, a nova entra em 0,2 s): 2,600 · 6,133 · 9,233.
+       tira 1 "1. o que é: prótese fixa da arcada inteira"     entra 0,32 (sobe 240 px, pousa em 0,95) · sai em 2,600 (corte)
+       tira 2 "3. implantes no osso: em geral, de 4 a 6"       2,600 → 6,013
+       tira 3 "4. osseointegração: leva meses, varia"          6,383 (0,25 s depois do título) → 9,113
+       tira 4 "5. prótese parafusada: só a dentista remove"    9,233 → fim
+     Imagens (OpenAI, prompts em fonte/prompts): osso.png, protese.png, osso-fosco.png, corte-antes.jpg,
+     corte-integrado.jpg, protese-assentada.png, papel.jpg. (As imagens da Helena da v4/v5 ficam em assets/img, sem uso.)
+     Último quadro (para a cena 9 e a 10, assets/img/video-dela-final.jpg): assinatura e título "a prótese é parafusada /
+     nos implantes" no alto, a arcada com a prótese assentada iluminada no meio, a tira 5 embaixo e o chão com o reflexo. -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: linear-gradient(180deg, #44464b 0%, #3a3c41 45%, #2a2c30 100%);
+      font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+    }
+
+    /* ===== o chão do estúdio (acende entre 0,35 e 0,95) ===== */
+    #chao {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      background:
+        /* poça de luz no chão: a luz do estúdio chega ao chão ABAIXO da tira (centro em y 1440) */
+        radial-gradient(ellipse 560px 290px at 540px 1440px, rgba(255, 246, 236, 0.11) 0%, rgba(255, 246, 236, 0.05) 50%, rgba(255, 246, 236, 0) 100%),
+        /* a linha onde a parede vira chão: um brilho bem fraco */
+        linear-gradient(180deg, rgba(255, 250, 244, 0) 1060px, rgba(255, 250, 244, 0.05) 1136px, rgba(255, 250, 244, 0) 1240px),
+        /* o chão escurece para a frente (pé do quadro) */
+        linear-gradient(180deg, rgba(16, 16, 18, 0) 1300px, rgba(16, 16, 18, 0.38) 1920px);
+    }
+
+    /* ===== o palco: tudo o que se reflete no chão =====
+       o reflexo espelha o palco em torno da linha do chão (y 1136): deslocamento = 2 × 1136 − 2 × 1920 = −1568 px.
+       A máscara vale no quadro original: nada abaixo do chão entra no reflexo; ele é mais forte junto do chão e some
+       até y 616 do objeto. A força (--reflexo) é animada pela linha do tempo: 0 até 0,35 s, 0,3 a partir de 0,95 s.
+       O reflexo só é ligado em 0,35 s (data-reflexo="1"): antes disso o 1º quadro fica idêntico ao último da virada. */
+    #palco {
+      position: absolute;
+      inset: 0;
+      --reflexo: 0;
+    }
+    #palco[data-reflexo="1"] {
+      -webkit-box-reflect: below -1568px linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 616px, rgba(0, 0, 0, var(--reflexo)) 1134px, rgba(0, 0, 0, 0) 1136px, rgba(0, 0, 0, 0) 1920px);
+    }
+    /* piso acetinado: um desfoque leve só no chão (do pé dos objetos para baixo), para o reflexo parecer piso e
+       não espelho. Só é ligado em 0,35 s (data-on="1"), junto com o reflexo: o 1º quadro não muda. */
+    #cetim {
+      position: absolute;
+      left: 0;
+      top: 1140px;
+      width: 1080px;
+      height: 780px;
+      opacity: 0;
+    }
+    #cetim[data-on="1"] {
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+    }
+    .cena {
+      position: absolute;
+      inset: 0;
+    }
+    /* passo 1: encolhe a partir do alto (origem no meio do topo) */
+    #cena1 {
+      transform-origin: 540px 0px;
+    }
+    .pecas {
+      position: absolute;
+      inset: 0;
+      transform-origin: 540px 830px;
+    }
+    .peca {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    .sombra-osso {
+      position: absolute;
+      left: 190px;
+      top: 1430px;
+      width: 700px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(12, 12, 14, 0.55), rgba(12, 12, 14, 0) 70%);
+    }
+    /* faixa de luz: recortada pela forma da peça (máscara = a própria imagem) e somada por "screen" */
+    .varre {
+      position: absolute;
+      inset: 0;
+      -webkit-mask-size: 1080px 1920px;
+      mask-size: 1080px 1920px;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      mix-blend-mode: screen;
+      overflow: hidden;
+    }
+    .m-osso { -webkit-mask-image: url("assets/img/osso.png"); mask-image: url("assets/img/osso.png"); }
+    .m-protese { -webkit-mask-image: url("assets/img/protese.png"); mask-image: url("assets/img/protese.png"); }
+    .m-fosco { -webkit-mask-image: url("assets/img/osso-fosco.png"); mask-image: url("assets/img/osso-fosco.png"); }
+    .m-assentada { -webkit-mask-image: url("assets/img/protese-assentada.png"); mask-image: url("assets/img/protese-assentada.png"); }
+    /* a faixa: centro em x=0, y=1130 (meio do osso), inclinada 14°; o script a leva até a posição do quadro */
+    .faixa {
+      position: absolute;
+      left: -210px;
+      top: -400px;
+      width: 420px;
+      height: 2800px;
+      transform-origin: 210px 1530px;
+      transform: translateX(-2000px) rotate(14deg);
+    }
+    .faixa.suave {
+      background: linear-gradient(90deg, rgba(255, 244, 232, 0) 0%, rgba(255, 244, 232, 0.5) 50%, rgba(255, 244, 232, 0) 100%);
+    }
+    .faixa.vidro {
+      background: linear-gradient(90deg, rgba(236, 255, 244, 0) 18%, rgba(236, 255, 244, 0.55) 50%, rgba(236, 255, 244, 0) 82%);
+    }
+    .faixa.luz {
+      background: linear-gradient(90deg, rgba(255, 238, 220, 0) 12%, rgba(255, 238, 220, 0.6) 50%, rgba(255, 238, 220, 0) 88%);
+    }
+
+    /* ===== passo 1: o quadro que vem da virada ===== */
+    #grupo-protese {
+      position: absolute;
+      inset: 0;
+      transform-origin: 544px 717px;
+    }
+
+    /* ===== passos 2, 3 e 4 começam escondidos ===== */
+    #cena2,
+    #cena3,
+    #cena4 {
+      opacity: 0;
+    }
+
+    /* ===== passo 3: o corte ===== */
+    /* as imagens do corte (quadro inteiro 1080x1920) reduzidas e pousadas no chão */
+    #enq3 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      transform-origin: 540px 0px;
+    }
+    /* da foto só fica o bloco (com a cabeça do implante e a sombra embaixo dele): uma máscara no formato do bloco,
+       com borda macia, em coordenadas da imagem. O fundo da foto some e o chão e o reflexo aparecem por baixo. */
+    #fotos3 {
+      position: absolute;
+      inset: 0;
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1080' height='1920' viewBox='0 0 1080 1920'%3E%3Cfilter id='m'%3E%3CfeGaussianBlur stdDeviation='5'/%3E%3C/filter%3E%3Cpath filter='url(%23m)' fill='%23000' d='M172 700 L176 674 Q182 652 210 650 L250 649 Q300 652 350 668 L422 700 L424 610 Q426 594 444 594 L630 594 Q648 594 650 610 L652 700 L700 690 Q760 664 820 646 Q876 634 896 654 L904 700 L904 1250 Q904 1270 880 1270 L196 1270 Q172 1270 172 1250 Z'/%3E%3C/svg%3E");
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1080' height='1920' viewBox='0 0 1080 1920'%3E%3Cfilter id='m'%3E%3CfeGaussianBlur stdDeviation='5'/%3E%3C/filter%3E%3Cpath filter='url(%23m)' fill='%23000' d='M172 700 L176 674 Q182 652 210 650 L250 649 Q300 652 350 668 L422 700 L424 610 Q426 594 444 594 L630 594 Q648 594 650 610 L652 700 L700 690 Q760 664 820 646 Q876 634 896 654 L904 700 L904 1250 Q904 1270 880 1270 L196 1270 Q172 1270 172 1250 Z'/%3E%3C/svg%3E");
+      -webkit-mask-size: 1080px 1920px;
+      mask-size: 1080px 1920px;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+    #fotos3 img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    #crescer {
+      position: absolute;
+      inset: 0;
+      -webkit-mask-image: linear-gradient(90deg, transparent 395px, #000 425px, #000 655px, transparent 685px);
+      mask-image: linear-gradient(90deg, transparent 395px, #000 425px, #000 655px, transparent 685px);
+    }
+    /* a frente do crescimento: um brilho menta só na rosca (nunca sobre o titânio do meio) */
+    #frente {
+      position: absolute;
+      left: 405px;
+      top: 0;
+      width: 270px;
+      height: 80px;
+      background: radial-gradient(ellipse at center, rgba(214, 255, 226, 0.55) 0%, rgba(214, 255, 226, 0) 70%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 18px, #000 62px, transparent 78px, transparent 192px, #000 208px, #000 252px, transparent 270px);
+      mask-image: linear-gradient(90deg, transparent 0, #000 18px, #000 62px, transparent 78px, transparent 192px, #000 208px, #000 252px, transparent 270px);
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+    /* o plano de corte: uma lâmina de luz fina com um halo curto (aguenta o borrão de movimento) */
+    #lamina {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 64px;
+      background: linear-gradient(180deg, rgba(246, 244, 241, 0) 0%, rgba(246, 244, 241, 0.22) 40%, rgba(255, 255, 255, 0.95) 49%, rgba(255, 255, 255, 0.95) 51%, rgba(246, 244, 241, 0.22) 60%, rgba(246, 244, 241, 0) 100%);
+      opacity: 0;
+    }
+    /* a linha-guia e o rótulo do passo 3 ficam fora do palco (não se refletem no chão) */
+    #anot3 {
+      position: absolute;
+      inset: 0;
+    }
+    #guia-svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: visible;
+    }
+
+    /* ===== passo 4: a prótese assentada ===== */
+    #tinta4 {
+      position: absolute;
+      inset: 0;
+      background: #16171a;
+      opacity: 0.72;
+    }
+
+    /* ===== as tiras do roteiro (o mesmo papel da folha; texto como na folha) ===== */
+    .tira {
+      position: absolute;
+      top: 1190px;
+      left: 0;
+      right: 0;
+      width: max-content;
+      margin: 0 auto;
+      padding: 28px 20px 27px;
+      background-color: #ece7dd;
+      background-image: url("assets/img/papel.jpg");
+      background-size: 1350px 1920px;
+      color: #303236;
+      font-size: 41px;
+      line-height: 1.22;
+      letter-spacing: -0.025em;
+      white-space: nowrap;
+      display: flex;
+      align-items: baseline;
+      opacity: 0;
+      /* sombra curta, de papel pousado */
+      box-shadow: 0 2px 3px rgba(8, 8, 10, 0.35), 0 10px 22px rgba(8, 8, 10, 0.42);
+    }
+    /* a luz do estúdio no papel: escurece e esfria o papel para o tom da folha na virada (~206, 204, 203), um
+       pouco mais à direita. Fica POR BAIXO do texto (o texto não ganha véu). */
+    .tira .luz-papel {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(100deg, rgba(36, 44, 80, 0.14) 0%, rgba(36, 44, 80, 0.2) 100%);
+      pointer-events: none;
+    }
+    .tira .n,
+    .tira .txt {
+      position: relative;
+      z-index: 1;
+    }
+    /* o número fica por cima do halo da palavra vizinha */
+    .tira .n {
+      z-index: 2;
+    }
+    /* o número fica à parte, como o número pendurado na margem da folha */
+    .tira .n {
+      margin-right: 0.28em;
+    }
+    .tira b {
+      position: relative;
+      font-weight: 700;
+      color: #f34500;
+    }
+    /* o halo branco da virada atrás da palavra do fio (só na tira 3, aceso quando a linha-guia chega) */
+    .tira .kw {
+      position: relative;
+      display: inline-block;
+    }
+    .tira .kw .halo {
+      position: absolute;
+      left: -30px;
+      right: -30px;
+      top: -19px;
+      bottom: -19px;
+      border-radius: 36px;
+      background: radial-gradient(ellipse at center, rgba(255, 251, 246, 0.95) 0%, rgba(255, 251, 246, 0.8) 45%, rgba(255, 251, 246, 0) 72%);
+      opacity: 0;
+    }
+    #tira1 { background-position: -160px -560px; }
+    #tira2 { background-position: -420px -880px; }
+    #tira3 { background-position: -260px -1240px; }
+    #tira4 { background-position: -520px -1520px; }
+
+    /* ===== textos (iguais aos da virada) ===== */
+    .rotulo {
+      position: absolute;
+      left: 108px;
+      color: #f6f4f1;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    .titulo {
+      top: 262px;
+      font-size: 76px;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+    .titulo b {
+      font-weight: 700;
+    }
+    #titulo2,
+    #titulo3,
+    #titulo4 {
+      opacity: 0;
+    }
+    /* a assinatura começa onde a virada a deixou (y 1262) e passa para o alto (y 182) */
+    #assinatura {
+      top: 1262px;
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      opacity: 0.8;
+      white-space: nowrap;
+    }
+  </style>
+
+  <div id="root" data-composition-id="s08-video-dela" data-width="1080" data-height="1920">
+    <div id="chao"></div>
+
+    <div id="palco" data-reflexo="0" data-layout-allow-overflow data-layout-allow-overlap>
+      <!-- passo 1: o mesmo quadro do fim da virada -->
+      <div id="cena1" class="cena" data-layout-allow-overflow data-layout-allow-overlap>
+        <div id="pecas1" class="pecas" data-layout-allow-overflow data-layout-allow-overlap>
+          <div id="sombra-osso1" class="sombra-osso"></div>
+          <img id="osso1" class="peca" src="assets/img/osso.png" alt="" />
+          <div id="varre-osso1" class="varre m-osso"><div id="faixa1a" class="faixa suave"></div></div>
+          <div id="grupo-protese" data-layout-allow-overflow data-layout-allow-overlap>
+            <img id="protese1" class="peca" src="assets/img/protese.png" alt="" />
+            <div id="varre-protese1" class="varre m-protese"><div id="faixa1b" class="faixa suave"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- passo 2: o osso de perto; o fosco dá lugar ao vidro limpo -->
+      <div id="cena2" class="cena" data-layout-allow-overflow data-layout-allow-overlap>
+        <div id="pecas2" class="pecas" data-layout-allow-overflow data-layout-allow-overlap>
+          <div id="sombra-osso2" class="sombra-osso"></div>
+          <img id="osso-fosco2" class="peca" src="assets/img/osso-fosco.png" alt="" />
+          <div id="osso-limpo2" class="peca" style="background: url(&quot;assets/img/osso.png&quot;) 0 0 / 1080px 1920px no-repeat"></div>
+          <div id="brilho2" class="varre m-fosco"><div id="faixa2" class="faixa vidro"></div></div>
+        </div>
+      </div>
+
+      <!-- passo 3: o implante em corte; o osso cresce na rosca -->
+      <div id="cena3" class="cena" data-layout-allow-overflow data-layout-allow-overlap>
+        <div id="enq3" data-layout-allow-overflow data-layout-allow-overlap>
+          <div id="fotos3" data-layout-allow-overflow data-layout-allow-overlap>
+            <img id="corte-antes" src="assets/img/corte-antes.jpg" alt="" />
+            <div id="crescer"><img id="corte-depois" src="assets/img/corte-integrado.jpg" alt="" /></div>
+          </div>
+          <div id="frente"></div>
+        </div>
+      </div>
+
+      <!-- passo 4: a prótese já assentada, revelada pela luz -->
+      <div id="cena4" class="cena" data-layout-allow-overflow data-layout-allow-overlap>
+        <div id="pecas4" class="pecas" data-layout-allow-overflow data-layout-allow-overlap>
+          <div id="sombra-osso4" class="sombra-osso"></div>
+          <img id="assentada4" class="peca" src="assets/img/protese-assentada.png" alt="" />
+          <div id="sombra4" class="varre m-assentada" style="mix-blend-mode: normal"><div id="tinta4"></div></div>
+          <div id="luz4" class="varre m-assentada"><div id="faixa4" class="faixa luz"></div></div>
+        </div>
+      </div>
+
+      <div id="lamina"></div>
+    </div>
+
+    <!-- o piso acetinado (desfoca de leve o reflexo; liga em 0,35 s) -->
+    <div id="cetim" data-on="0"></div>
+
+    <!-- passo 3: a linha-guia (em coordenadas da tela). Sai da rosca da esquerda, onde o osso cresceu, e desce até a
+         palavra "osseointegração" na tira 3 (a tira fica por cima e cobre a ponta: a linha parece entrar no papel).
+         Não há rótulo à parte: a própria tira é o rótulo. -->
+    <div id="anot3" data-layout-allow-overflow data-layout-allow-overlap>
+      <svg id="guia-svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+        <polyline id="guia" points="453.6,798 398,830 398,1215" fill="none" stroke="#f34500" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" />
+        <circle id="ponto3" cx="453.6" cy="798" r="9" fill="#efff57" stroke="#2a2c30" stroke-width="3" opacity="0" />
+      </svg>
+    </div>
+
+    <!-- as tiras do roteiro: a linha da folha de onde cada passo saiu -->
+    <div id="tira1" class="tira"><span class="luz-papel"></span><span class="n">1.</span><span class="txt">o que é: prótese fixa da <b>arcada</b> inteira</span></div>
+    <div id="tira2" class="tira"><span class="luz-papel"></span><span class="n">3.</span><span class="txt"><b>implantes</b> no osso: em geral, de 4 a 6</span></div>
+    <div id="tira3" class="tira"><span class="luz-papel"></span><span class="n">4.</span><span class="txt"><span class="kw"><span class="halo"></span><b>osseointegração</b></span>: leva meses, varia</span></div>
+    <div id="tira4" class="tira"><span class="luz-papel"></span><span class="n">5.</span><span class="txt">prótese <b>parafusada</b>: só a dentista remove</span></div>
+
+    <div id="titulo1" class="rotulo titulo">o que é uma prótese<br /><b>protocolo</b>?</div>
+    <div id="titulo2" class="rotulo titulo">presa sobre <b>implantes</b></div>
+    <div id="titulo3" class="rotulo titulo">o osso se une<br />ao implante</div>
+    <div id="titulo4" class="rotulo titulo">a prótese é <b>parafusada</b><br />nos implantes</div>
+    <div id="assinatura" class="rotulo">dra. Helena Prado · cirurgiã-dentista · CRO-UF 00000</div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const FIM = 11.9667;
+      // P3 e P4 em quadros exatos (184 e 277 de 30 q/s); os tempos de cada passo são os da v3/v5 (o som depende deles)
+      const P2 = 2.6, P3 = 184 / 30, P4 = 277 / 30;
+      // a arrumação do quadro (o passo 1 vai para o meio, a tira e o chão aparecem)
+      const ARRUMA = 0.35, ARRUMADO = 0.95;
+      // a linha do chão: todos os objetos pousam aqui e se refletem a partir daqui
+      const CHAO = 1136;
+
+      // ---------- quadros fixos de cada passo (câmera) ----------
+      // passo 1: começa exatamente como a virada termina e mergulha devagar (a prótese cresce um pouco mais)
+      tl.fromTo("#pecas1", { scale: 0.7, y: -95 }, { scale: 0.755, y: -96, duration: P2, ease: "power1.inOut" }, 0);
+      tl.fromTo("#grupo-protese", { y: -70, scale: 1 }, { y: -74, scale: 1.025, duration: P2, ease: "power1.inOut" }, 0);
+      // a arrumação: o passo 1 inteiro encolhe para 0,84 e desce 112,9 px a partir do topo; no fim do mergulho (2,6)
+      // ele ocupa y ~485–1131 e x ~207–872 (a base continua no chão; ~80 px de respiro abaixo do título)
+      tl.fromTo("#cena1", { y: 0, scale: 1 }, { y: 112.9, scale: 0.84, duration: ARRUMADO - ARRUMA, ease: "power2.inOut" }, ARRUMA);
+      tl.to("#chao", { opacity: 1, duration: ARRUMADO - ARRUMA, ease: "power1.inOut" }, ARRUMA);
+      // o reflexo no chão acende junto (liga em 0,35; força 0 → 0,3), e o piso acetinado com ele
+      tl.set("#palco", { attr: { "data-reflexo": 1 } }, ARRUMA);
+      tl.fromTo("#palco", { "--reflexo": 0 }, { "--reflexo": 0.3, duration: ARRUMADO - ARRUMA, ease: "sine.inOut" }, ARRUMA);
+      tl.set("#cetim", { attr: { "data-on": 1 } }, ARRUMA);
+      tl.to("#cetim", { opacity: 1, duration: 0.6, ease: "sine.inOut" }, ARRUMA);
+      // a assinatura sai de baixo (0,28–0,43, antes de a tira 1 chegar ao lugar dela) e volta fixa no alto, acima do
+      // título (y 182)
+      tl.to("#assinatura", { opacity: 0, duration: 0.15, ease: "power1.in" }, 0.28);
+      tl.set("#assinatura", { y: 182 - 1262 }, ARRUMA + 0.25);
+      tl.to("#assinatura", { opacity: 0.8, duration: 0.2, ease: "power1.out" }, ARRUMADO - 0.2);
+      // passo 2: o osso de perto (corte seco), escala 0,82: y ~584–1131, x 110–970 (folga de 110 px dos lados)
+      tl.set("#pecas2", { scale: 0.82, y: -218.9 }, 0);
+      // passo 3: as imagens do corte em escala 0,9 (o bloco fica em y 577–1131, x 220–851)
+      tl.set("#enq3", { scale: 0.9, y: 24 }, 0);
+      // passo 4: a mesma arcada do passo 2, agora com a prótese assentada (corte seco)
+      tl.set("#pecas4", { scale: 0.82, y: -218.9 }, 0);
+
+      // ---------- cortes entre passos ----------
+      tl.set("#cena1", { opacity: 0 }, P2);
+      tl.set("#cena2", { opacity: 1 }, P2);
+      tl.set("#cena3", { opacity: 1 }, P3);
+      tl.set("#cena2", { opacity: 0 }, P3 + 0.5);
+      tl.set("#cena3", { opacity: 0 }, P4);
+      tl.set("#anot3", { opacity: 0 }, P4);
+      tl.set("#cena4", { opacity: 1 }, P4);
+
+      // ---------- títulos: o antigo sai (0,12 s), o novo entra inteiro (0,2 s), sem deslizar ----------
+      const sai = (sel, t) => tl.to(sel, { opacity: 0, duration: 0.12, ease: "power1.in" }, t - 0.12);
+      const entra = (sel, t) => tl.to(sel, { opacity: 1, duration: 0.2, ease: "power1.out" }, t);
+      sai("#titulo1", P2);
+      entra("#titulo2", P2);
+      sai("#titulo2", P3);
+      entra("#titulo3", P3);
+      sai("#titulo3", P4);
+      entra("#titulo4", P4);
+
+      // ---------- as tiras do roteiro ----------
+      // tira 1: aparece aos poucos um pouco abaixo do lugar e sobe 240 px até pousar levemente torta (0,32–0,95),
+      // sem encostar na assinatura (que já sumiu quando a tira passa por y 1300) nem no osso (que ainda desce).
+      // A linha já foi lida na folha da virada, então se reconhece rápido. Opacidade 0 em t=0: o 1º quadro não muda.
+      tl.set("#tira1", { opacity: 0, y: 240, rotation: -2.5 }, 0);
+      tl.to("#tira1", { opacity: 1, duration: 0.12, ease: "power1.out" }, 0.32);
+      tl.to("#tira1", { y: 0, rotation: -1.1, duration: ARRUMADO - 0.32, ease: "power3.out" }, 0.32);
+      // troca no corte de cada passo: a antiga sai (corte seco no passo 2, junto com o objeto; 0,12 s nos outros),
+      // a nova entra em 0,2 s e assenta com um leve giro, como um papel pousado
+      const pousa = (sel, t, giro) => {
+        tl.fromTo(sel, { opacity: 0, y: 14, rotation: giro + 1.4 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, t);
+        tl.to(sel, { y: 0, rotation: giro, duration: 0.35, ease: "power2.out" }, t);
+      };
+      tl.set("#tira1", { opacity: 0 }, P2);
+      pousa("#tira2", P2, 0.8);
+      sai("#tira2", P3);
+      // a tira 3 entra 0,25 s depois do título: primeiro o título, depois o plano de corte, depois a tira
+      pousa("#tira3", P3 + 0.25, -0.7);
+      sai("#tira3", P4);
+      pousa("#tira4", P4, 0.9);
+
+      // ---------- passo 3: o plano de corte e a linha-guia até a tira ----------
+      tl.to("#lamina", { opacity: 1, duration: 0.06 }, P3);
+      tl.to("#lamina", { opacity: 0, duration: 0.1 }, P3 + 0.4);
+      const guia = document.querySelector("#guia");
+      const COMP_GUIA = Math.hypot(453.6 - 398, 830 - 798) + (1215 - 830);
+      guia.setAttribute("stroke-dasharray", String(COMP_GUIA));
+      tl.set("#guia", { attr: { "stroke-dashoffset": COMP_GUIA } }, 0);
+      tl.to("#ponto3", { attr: { opacity: 1 }, duration: 0.12, ease: "power1.out" }, P3 + 1.8);
+      tl.to("#guia", { attr: { "stroke-dashoffset": 0 }, duration: 0.3, ease: "power2.out" }, P3 + 1.8);
+      // quando a linha chega ao papel (no tempo do antigo rótulo), a palavra acende com o halo branco da virada
+      tl.to("#tira3 .halo", { opacity: 1, duration: 0.3, ease: "power1.out" }, P3 + 1.98);
+
+      // ---------- máscaras, faixas de luz e reflexo: função pura do tempo ----------
+      const cl = (v) => Math.max(0, Math.min(1, v));
+      const sineIO = (p) => -(Math.cos(Math.PI * p) - 1) / 2;
+      const quadIO = (p) => (p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2);
+      const prog = (t, a, b, e) => e(cl((t - a) / (b - a)));
+      const lerp = (a, b, p) => a + (b - a) * p;
+      // gradiente a 104° (faixa inclinada 14°, a mesma inclinação da luz): posição ao longo da linha do gradiente
+      const ANG = (104 * Math.PI) / 180;
+      const SN = Math.sin(ANG), CS = Math.cos(ANG);
+      const LG = 1080 * Math.abs(SN) + 1920 * Math.abs(CS);
+      const proj = (x, y) => (x - 540) * SN - (y - 960) * CS + LG / 2;
+      const mask = (el, css) => { el.style.webkitMaskImage = css; el.style.maskImage = css; };
+      const pos = (el, x) => { el.style.transform = "translateX(" + x.toFixed(1) + "px) rotate(14deg)"; };
+      const $ = (s) => document.querySelector(s);
+      const faixa1a = $("#faixa1a"), faixa1b = $("#faixa1b"), faixa2 = $("#faixa2"), faixa4 = $("#faixa4");
+      const limpo2 = $("#osso-limpo2"), fosco2 = $("#osso-fosco2"), tinta4 = $("#tinta4");
+      const cena2 = $("#cena2"), cena3 = $("#cena3"), lamina = $("#lamina"), depois = $("#corte-depois"), frente = $("#frente");
+      const F = 160; // largura da transição entre fosco e limpo (e entre sombra e luz)
+
+      function render(t) {
+        // passo 1: faixa suave varre as peças (0,20–2,50)
+        const x1 = lerp(-420, 1500, prog(t, 0.2, 2.5, sineIO));
+        pos(faixa1a, x1);
+        pos(faixa1b, x1);
+
+        // passo 2: o vidro limpo atravessa (2,90–3,90)
+        const e2 = lerp(-200, 1280, prog(t, 2.9, 3.9, sineIO));
+        const p2 = proj(e2, 1130);
+        // o limpo fica por cima e some suave na faixa; o fosco, por baixo, só existe da faixa para a direita
+        mask(limpo2, "linear-gradient(104deg, #000 " + (p2 - F / 2).toFixed(1) + "px, transparent " + (p2 + F / 2).toFixed(1) + "px)");
+        mask(fosco2, "linear-gradient(104deg, transparent " + (p2 - F / 2 - 10).toFixed(1) + "px, #000 " + (p2 - F / 2).toFixed(1) + "px)");
+        pos(faixa2, e2);
+
+        // passo 3: o plano de corte desce de logo abaixo do título (y 450) até o chão (P3 → P3+0,5); acima dele já é o
+        // passo 3, abaixo ainda é o passo 2 (acima de 450 não há objeto). Não passa atrás da assinatura nem do título.
+        // O osso cresce na rosca (P3+0,6 → P3+1,8; em coordenadas da imagem do corte)
+        const y3 = lerp(450, CHAO + 4, prog(t, P3, P3 + 0.5, sineIO));
+        if (t >= P3 && t < P3 + 0.5) {
+          mask(cena3, "linear-gradient(180deg, #000 " + y3.toFixed(1) + "px, transparent " + y3.toFixed(1) + "px)");
+          mask(cena2, "linear-gradient(180deg, transparent " + y3.toFixed(1) + "px, #000 " + y3.toFixed(1) + "px)");
+        } else {
+          mask(cena3, "none");
+          mask(cena2, "none");
+        }
+        lamina.style.transform = "translateY(" + (y3 - 32).toFixed(1) + "px)";
+        const g = lerp(1225, 735, prog(t, P3 + 0.6, P3 + 1.8, quadIO));
+        mask(depois, "linear-gradient(180deg, transparent " + (g - 35).toFixed(1) + "px, #000 " + (g + 35).toFixed(1) + "px)");
+        frente.style.transform = "translateY(" + (g - 40).toFixed(1) + "px)";
+        frente.style.opacity = String(0.9 * cl((t - (P3 + 0.6)) / 0.15) * (1 - cl((t - (P3 + 1.65)) / 0.15)));
+
+        // passo 4: a faixa de luz revela a prótese assentada (P4+0,2 → P4+1,2)
+        const e4 = lerp(-200, 1280, prog(t, P4 + 0.2, P4 + 1.2, sineIO));
+        const p4 = proj(e4, 1130);
+        mask(tinta4, "linear-gradient(104deg, transparent " + (p4 - F / 2).toFixed(1) + "px, #000 " + (p4 + F / 2).toFixed(1) + "px)");
+        pos(faixa4, e4);
+      }
+      render(0);
+      const relogio = { t: 0 };
+      tl.to(relogio, { t: FIM, duration: FIM, ease: "none", onUpdate: () => render(relogio.t) }, 0);
+
+      window.__timelines["s08-video-dela"] = tl;
+    })();
+  </script>
+</template>

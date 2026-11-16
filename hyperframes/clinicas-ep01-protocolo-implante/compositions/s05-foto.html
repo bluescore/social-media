@@ -1,0 +1,339 @@
+<!-- CENA 5 (20,6 a 25,3 s do episódio): "ela não gravou a décima quinta. mandou só o roteiro."
+     20,6–22,45 vista de cima da bancada: a Helena de madeira, de pé ao lado da folha, aponta o celular para ela e fotografa.
+     22,45–22,6 obturador: duas faixas escuras fecham de cima e de baixo e reabrem já na conversa.
+     22,6–25,3 a tela do celular: a foto da folha vira um balão numa conversa escura (destinatário fora do quadro);
+          conversa com o Claude (ícone e nome no topo, v3); "enviado · 23:52" (22,9). Em 25,2 a tela apaga; em 25,3 entra a virada. -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #2b2224;
+      font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+      color: #f6f4f1;
+    }
+    #s5-cam {
+      position: absolute;
+      inset: 0;
+      transform-origin: 540px 1000px;
+    }
+    .placa {
+      position: absolute;
+      left: -67.5px;
+      top: -120px;
+      width: 1215px;
+      height: 2160px;
+    }
+    .folha-plana {
+      position: absolute;
+      left: -135px;
+      top: 0;
+      width: 1350px;
+      height: 1920px;
+      transform-origin: 675px 960px;
+      transform: translate(20px, 60px) scale(0.68) rotate(-3deg);
+    }
+    .folha-plana .papel {
+      position: absolute;
+      inset: 0;
+      background: #e8dccb url("assets/img/papel.jpg") 0 0 / 1350px 1920px;
+      box-shadow: 0 10px 26px rgba(25, 14, 10, 0.38);
+    }
+    .folha-plana .luz {
+      position: absolute;
+      inset: 0;
+      mix-blend-mode: multiply;
+      background: radial-gradient(ellipse 1500px 1700px at 0% 0%, #fff2df 0%, #ecd9c4 45%, #b9a594 100%);
+    }
+    .texto {
+      position: absolute;
+      left: 195px;
+      top: 0;
+      width: 960px;
+      height: 1920px;
+      color: #303236;
+      letter-spacing: -0.02em;
+    }
+    .titulo-folha {
+      position: absolute;
+      left: 0;
+      top: 190px;
+      font-weight: 700;
+      font-size: 46px;
+      line-height: 1.1;
+    }
+    .datas {
+      position: absolute;
+      left: 610px;
+      top: 300px;
+      width: 350px;
+      font-size: 34px;
+      line-height: 1.5;
+      color: #4a4b4f;
+    }
+    .data {
+      position: relative;
+      display: block;
+    }
+    .data svg {
+      position: absolute;
+      left: -6px;
+      top: 12px;
+      width: 230px;
+      height: 30px;
+      overflow: visible;
+    }
+    .linhas {
+      position: absolute;
+      left: 0;
+      top: 560px;
+      width: 960px;
+      font-size: 47px;
+      line-height: 1.22;
+    }
+    .linha {
+      display: block;
+      padding-left: 46px;
+      text-indent: -46px;
+      margin-bottom: 30px;
+    }
+    #helena {
+      position: absolute;
+      left: -40px;
+      top: 1020px;
+      width: 520px;
+      height: 924px;
+    }
+    #sombra-helena {
+      position: absolute;
+      left: 120px;
+      top: 1640px;
+      width: 300px;
+      height: 90px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(22, 13, 10, 0.4), rgba(22, 13, 10, 0) 70%);
+    }
+    .faixa {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 960px;
+      background: #0e0c0c;
+      z-index: 20;
+    }
+    #faixa-cima { top: 0; }
+    #faixa-baixo { bottom: 0; }
+
+    /* a conversa */
+    #conversa {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+    }
+    #fundo-conv {
+      position: absolute;
+      left: -67.5px;
+      top: -120px;
+      width: 1215px;
+      height: 2160px;
+    }
+    #fundo-conv-escuro {
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 22, 23, 0.62);
+    }
+    #celular {
+      position: absolute;
+      left: 140px;
+      top: 150px;
+      width: 800px;
+      height: 1620px;
+      border-radius: 76px;
+      background: #303236;
+      box-shadow: 0 30px 80px rgba(10, 6, 6, 0.55);
+    }
+    #tela {
+      position: absolute;
+      left: 22px;
+      top: 22px;
+      right: 22px;
+      bottom: 22px;
+      border-radius: 56px;
+      overflow: hidden;
+      background: #161719;
+    }
+    #barra {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 170px;
+      padding: 62px 40px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+      font-size: 36px;
+      border-bottom: 1px solid rgba(246, 244, 241, 0.08);
+    }
+    /* v3: a conversa é com o Claude (ícone desenhado em SVG, terracota do Claude) */
+    #barra .av {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #f2ece3;
+      margin-top: -12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #barra .claude-icone {
+      width: 46px;
+      height: 46px;
+    }
+    #barra .nome {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    #balao {
+      position: absolute;
+      right: 34px;
+      top: 300px;
+      width: 470px;
+      height: 640px;
+      border-radius: 34px 34px 10px 34px;
+      overflow: hidden;
+      background: #2d3036;
+      transform-origin: 100% 100%;
+    }
+    #balao .mini {
+      position: absolute;
+      left: -32px;
+      top: -168px;
+      width: 1080px;
+      height: 1920px;
+      transform-origin: 0 0;
+      transform: scale(0.5);
+    }
+    #enviado {
+      position: absolute;
+      right: 40px;
+      top: 960px;
+      font-size: 30px;
+      color: rgba(246, 244, 241, 0.75);
+      letter-spacing: -0.02em;
+      opacity: 0;
+    }
+    #tela-apaga {
+      position: absolute;
+      inset: 0;
+      background: #0c0b0b;
+      opacity: 0;
+      z-index: 30;
+    }
+  </style>
+
+  <div id="root" data-composition-id="s05-foto" data-width="1080" data-height="1920">
+    <div id="s5-cam" data-layout-allow-overflow data-layout-allow-overlap>
+      <img class="placa" src="assets/img/placa-acesa.jpg" alt="" />
+      <div class="folha-plana">
+        <div class="papel"></div>
+        <div class="luz"></div>
+        <div class="texto">
+          <div class="titulo-folha">roteiro · protocolo sobre implantes</div>
+          <div class="datas">
+            <span class="data">gravar 23/10<svg viewBox="0 0 230 30"><path d="M2 16 C 30 6, 50 26, 78 15 S 128 6, 156 16 S 205 24, 228 13" fill="none" stroke="#303236" stroke-width="4" stroke-linecap="round"/></svg></span>
+            <span class="data">gravar 30/10<svg viewBox="0 0 230 30"><path d="M2 14 C 28 24, 54 5, 80 16 S 130 25, 158 13 S 204 6, 228 17" fill="none" stroke="#303236" stroke-width="4" stroke-linecap="round"/></svg></span>
+            <span class="data">gravar 06/11<svg viewBox="0 0 230 30"><path d="M2 17 C 32 7, 52 25, 82 14 S 134 7, 160 17 S 206 23, 228 12" fill="none" stroke="#303236" stroke-width="4" stroke-linecap="round"/></svg></span>
+          </div>
+          <div class="linhas">
+            <span class="linha">1. o que é: prótese fixa da arcada inteira</span>
+            <span class="linha">2. antes: exame clínico e tomografia</span>
+            <span class="linha">3. implantes no osso: em geral, de 4 a 6</span>
+            <span class="linha">4. osseointegração: leva meses, varia</span>
+            <span class="linha">5. prótese parafusada: só a dentista remove</span>
+            <span class="linha">fechar: leve sua dúvida para a consulta</span>
+          </div>
+        </div>
+      </div>
+      <div id="sombra-helena"></div>
+      <img id="helena" src="assets/img/helena-fotografando.png" alt="" />
+    </div>
+
+    <div id="conversa">
+      <img id="fundo-conv" src="assets/img/maquete-noite-desfocada.jpg" alt="" />
+      <div id="fundo-conv-escuro"></div>
+      <div id="celular">
+        <div id="tela">
+          <div id="barra"><span>‹</span><span class="av"><svg class="claude-icone" viewBox="0 0 64 64" aria-hidden="true"><path d="M32.0 28.5L32.0 8.0 M33.9 29.0L42.6 15.0 M35.0 30.2L51.7 20.2 M35.5 32.1L53.0 32.7 M35.1 33.7L53.9 44.1 M33.7 35.1L41.2 48.6 M32.1 35.5L32.8 55.0 M30.2 35.0L21.2 50.0 M28.9 33.6L10.8 43.3 M28.5 32.1L12.0 32.7 M29.0 30.2L13.1 20.7 M30.1 29.0L20.9 14.2" stroke="#D97757" stroke-width="5.6" stroke-linecap="round" fill="none"/></svg></span><span class="nome">Claude</span></div>
+          <div id="balao">
+            <div class="mini">
+              <img class="placa" src="assets/img/placa-acesa.jpg" alt="" />
+              <div class="folha-plana">
+                <div class="papel"></div>
+                <div class="luz"></div>
+                <div class="texto">
+                  <div class="titulo-folha">roteiro · protocolo sobre implantes</div>
+                  <div class="linhas">
+                    <span class="linha">1. o que é: prótese fixa da arcada inteira</span>
+                    <span class="linha">2. antes: exame clínico e tomografia</span>
+                    <span class="linha">3. implantes no osso: em geral, de 4 a 6</span>
+                    <span class="linha">4. osseointegração: leva meses, varia</span>
+                    <span class="linha">5. prótese parafusada: só a dentista remove</span>
+                    <span class="linha">fechar: leve sua dúvida para a consulta</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="enviado">enviado · 23:52</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="faixa-cima" class="faixa"></div>
+    <div id="faixa-baixo" class="faixa"></div>
+    <div id="tela-apaga"></div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // tempo local = tempo do episódio − 20,6
+      tl.set("#faixa-cima", { y: -960 }, 0);
+      tl.set("#faixa-baixo", { y: 960 }, 0);
+
+      // ---- vista de cima: ela aponta o celular para a folha; leve avanço; um pequeno ajuste de mira antes do clique
+      tl.fromTo("#s5-cam", { scale: 1.0 }, { scale: 1.05, duration: 1.6, ease: "sine.inOut" }, 0);
+      tl.fromTo("#helena", { x: -60, rotation: -2 }, { x: 0, rotation: 0, duration: 0.5, ease: "power2.out" }, 0);
+      tl.to("#helena", { y: -10, duration: 0.2, ease: "power1.inOut" }, 1.2);
+      tl.to("#helena", { y: 0, duration: 0.2, ease: "power1.inOut" }, 1.4);
+
+      // ---- obturador (22,45–22,6): fecha de cima e de baixo e reabre já na conversa
+      tl.to("#faixa-cima", { y: 0, duration: 0.07, ease: "power2.in" }, 1.6);
+      tl.to("#faixa-baixo", { y: 0, duration: 0.07, ease: "power2.in" }, 1.6);
+      tl.set("#conversa", { opacity: 1 }, 1.68);
+      tl.set("#s5-cam", { opacity: 0 }, 1.68);
+      tl.to("#faixa-cima", { y: -960, duration: 0.08, ease: "power2.out" }, 1.68);
+      tl.to("#faixa-baixo", { y: 960, duration: 0.08, ease: "power2.out" }, 1.68);
+
+      // ---- a foto vira o balão; "enviado" (v3: a legenda "sem gravar de novo" saiu; a locução vai na faixa de legendas)
+      tl.fromTo("#balao", { scale: 1.6, x: -80, y: 120 }, { scale: 1, x: 0, y: 0, duration: 0.3, ease: "power3.out" }, 1.7);
+      tl.to("#enviado", { opacity: 1, duration: 0.15, ease: "power1.out" }, 2.05);
+
+      // ---- a tela apaga (25,2) e entra a virada (25,3)
+      tl.to("#tela-apaga", { opacity: 1, duration: 0.1, ease: "power1.in" }, 4.2);
+      window.__timelines["s05-foto"] = tl;
+    })();
+  </script>
+</template>

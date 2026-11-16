@@ -1,0 +1,2 @@
+Single dry mechanical tick of a small number counter stopping, like one click of a tally counter or ratchet, very short, close-mic, no beep, no tone, no musical note, no reverb
+{"duration_seconds": 0.5, "prompt_influence": 0.7}

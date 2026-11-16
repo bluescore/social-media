@@ -1,0 +1,2 @@
+Dry friction of a soft cloth wiping across frosted glass once, smooth airy rubbing noise, broadband and dull, rises and fades, close-mic, no squeak, no squeal, no ringing, no whistle, no pitch, no musical tone, no reverb
+{"duration_seconds": 1.2, "prompt_influence": 0.7}

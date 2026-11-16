@@ -1,0 +1,31 @@
+{
+  "data": "2026-11-12T13:13:10.477Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/_serie-clinicas/cenarios/rascunhos/estudio-video-dela.png"
+  ],
+  "prompt": "Image 1 = the approved studio frame. Produce ONLY the lower jaw bone (mandible) from Image 1, isolated on a fully TRANSPARENT background: the same frosted translucent mint-green glass bone, the same five parallel satin titanium implants already in place and visible through the glass, the same shape, angle, scale and position in the frame, the same warm key light from the upper left and thin orange rim light on the right edges. Remove the floating prosthesis and the background completely. No shadow on the ground, no text.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\camada-osso.png"
+  ],
+  "usage": {
+    "input_tokens": 1633,
+    "input_tokens_details": {
+      "image_tokens": 1508,
+      "text_tokens": 125
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 3046
+  },
+  "custo_estimado_usd": 0.0551,
+  "segundos": 44
+}

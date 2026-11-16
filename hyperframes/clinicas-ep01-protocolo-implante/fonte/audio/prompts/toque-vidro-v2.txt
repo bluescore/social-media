@@ -1,0 +1,2 @@
+Close-up fingertip tapping a smartphone touchscreen once, tiny soft dull dry tap of skin on glass, extremely short transient, no ringing, no resonance, no pitch, no hiss, no beep, no UI sound, no reverb
+{"duration_seconds": 0.5, "prompt_influence": 0.8}

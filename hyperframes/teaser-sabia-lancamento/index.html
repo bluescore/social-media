@@ -1,0 +1,72 @@
+<!doctype html>
+<!-- TEASER DE LANÇAMENTO DA SABIÁ (9 s, vertical 1080x1920, 30 fps).
+     Referência de ritmo: brutos\teaser-sabia-lancamento\exemplo.mp4 (corte a cada 0,3 s, tela em duas faixas).
+     A montagem inteira está em compositions\montagem.html; aqui só fica a cena montada (e a música, quando houver). -->
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #1e1415;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-91k1"
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="9"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div data-hf-id="hf-kmrq"
+        id="montagem"
+        class="clip"
+        data-composition-id="montagem"
+        data-composition-src="compositions/montagem.html"
+        data-start="0"
+        data-duration="9"
+        data-track-index="0"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+
+      <!-- Música: a mesma do vídeo de referência (brutos\...\exemplo.mp4), começando junto com o vídeo,
+           para os cortes de 0,3 s caírem nos mesmos pontos da música que no exemplo.
+           A original tem 7,97 s; a versão "-9s" repete, a partir de 7,915 s, o trecho que começa
+           um compasso antes (4,705 s, 75 batidas/min) e some aos poucos de 8,4 a 9 s.
+           Original sem emenda: assets/musica/musica-referencia.m4a -->
+      <audio
+        id="musica"
+        src="assets/musica/musica-referencia-9s.wav"
+        data-start="0"
+        data-duration="9"
+        data-volume="1"
+        data-track-index="1"
+        data-timeline-role="music"
+      ></audio>
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1031 @@
+{
+ "_sobre": "Tudo o que foi gerado no ElevenLabs (conector MCP desta sessão) para o áudio do ep. 01, em 12/11/2026. Créditos = os que o ElevenLabs cobrou em cada geração (resposta do próprio conector).",
+ "fluxo_elevenlabs": "MHFvq3M3aRWH1DU1Bimq",
+ "link_do_fluxo": "https://elevenlabs.io/app/flows/MHFvq3M3aRWH1DU1Bimq",
+ "narracao": {
+  "no": "Ke4fXji2NcQTodu7ziTd",
+  "modelo": "eleven_v4",
+  "voz": "A.Medeiros - Clear, Calm & Friendly (E9hPCbqBRCgB3UEiCUuE)",
+  "ajustes": {
+   "language_code": "pt",
+   "stability": 0.55,
+   "similarity": 0.75,
+   "estilo_e_velocidade": "o conector não expõe estilo nem velocidade; ficaram no padrão do modelo (estilo 0, velocidade 1,0)"
+  },
+  "texto": "décima quarta tentativa.\n\ne o vídeo não sai.\n\na doutora Helena explica a prótese protocolo toda semana, paciente por paciente.\n\no roteiro sobre implantes está pronto há seis semanas.\n\na gravação, não.\n\nela não gravou a décima quinta.\n\nmandou só o roteiro.\n\ncada linha que ela escreveu virou uma cena.\n\no perfil voltou a andar.\n\nela mandou o vídeo pra turma.\n\no roteiro ela já tinha.\n\nno próximo episódio: o que a recepção mais ouve.",
+  "caracteres": 432,
+  "tomadas": [
+   {
+    "tomada": "A",
+    "geracao": "0navjB9fZrXeAenydslT",
+    "arquivo": "assets/audio/fontes/narracao-amedeiros-v4-a.mp3",
+    "duracao_s": 28.0,
+    "creditos": 432,
+    "escolhida_para_o_corte": true
+   },
+   {
+    "tomada": "B",
+    "geracao": "WMOQrOuw3WWucbhDOXoe",
+    "arquivo": "assets/audio/fontes/narracao-amedeiros-v4-b.mp3",
+    "duracao_s": 28.24,
+    "creditos": 432,
+    "escolhida_para_o_corte": false
+   }
+  ],
+  "creditos_total": 864,
+  "custo_usd": 0.17
+ },
+ "trilha": {
+  "no": "TgrkpXayJgNw9qxd9QGZ",
+  "modelo": "eleven_music_v2_5",
+  "ajustes": {
+   "duration_seconds": 75,
+   "instrumental": true,
+   "lyrics_type": "instrumental"
+  },
+  "pedido": "Instrumental, 75 seconds, 72 BPM, steady tempo, calm cinematic. Starts almost silent with one low felt-piano note every two beats. A second piano voice joins around 0:08, soft low strings around 0:14, a gentle low pulse around 0:20. Continuous slow crescendo, no drums, no heavy kick. A short riser of about 1.5 s into ONE single cinematic impact (deep low hit + muffled cymbal + room reverb) around 0:28. After the impact, a sustained driving section of about 14 s (pulse and strings at full level, no second hit), then it relaxes into warm piano and strings and resolves on a warm major chord around 0:55, followed by a soft two-note piano motif around 1:01 and a slow fade.",
+  "candidatas": [
+   {
+    "candidata": "A",
+    "geracao": "cIAJvtMEJA8TPPH10ons",
+    "arquivo": "assets/audio/fontes/trilha-tema-a.mp3",
+    "duracao_s": 88.04,
+    "creditos": 1125
+   },
+   {
+    "candidata": "B",
+    "geracao": "3vqn5cQ74WsE42GGA5U3",
+    "arquivo": "assets/audio/fontes/trilha-tema-b.mp3",
+    "duracao_s": 75.0,
+    "creditos": 1125,
+    "escolhida_para_o_corte": true
+   },
+   {
+    "candidata": "C",
+    "geracao": "0RUn8wPsAkscXLpFeNDU",
+    "arquivo": "assets/audio/fontes/trilha-tema-c.mp3",
+    "duracao_s": 75.0,
+    "creditos": 1125
+   }
+  ],
+  "creditos_total": 3375,
+  "custo_usd": 0.68,
+  "obs": "a estimativa antes de gerar dizia 5.625 créditos para as 3; o cobrado foi 1.125 por candidata"
+ },
+ "efeitos": [
+  {
+   "efeito": "ambiente-noite",
+   "no": "N9tL24u3qPrY61Ue5Rs8",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 5,
+    "prompt_influence": 0.5
+   },
+   "pedido": "Quiet empty dental office at night, room tone, faint low electrical hum of an appliance, very soft distant air conditioning, no voices, no music",
+   "escolhida": "b (mais estável: oscila 11 dB contra 15 dB da a)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "6Wy8zMBdtXMr9JdM4wKC",
+     "arquivo": "assets/audio/fontes/ambiente-noite-a.mp3",
+     "creditos": 16.67
+    },
+    {
+     "tomada": "b",
+     "geracao": "JgryyZatV0jo6AySMIJv",
+     "arquivo": "assets/audio/fontes/ambiente-noite-b.mp3",
+     "creditos": 16.67
+    }
+   ]
+  },
+  {
+   "efeito": "interruptor",
+   "no": "UwSeLuvYaYMPIg9O9nWw",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 0.6,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Single small desk lamp switch click, dry plastic toggle, close-mic, short, no reverb, no tone",
+   "escolhida": "b (mais seco e curto: 25 ms, sem grave; a a tem um pré-clique e grave)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "8vNOKV7OBRn2lIxh1d0g",
+     "arquivo": "assets/audio/fontes/interruptor-a.mp3",
+     "creditos": 2
+    },
+    {
+     "tomada": "b",
+     "geracao": "943VC4pcMcV18Dsfm8dr",
+     "arquivo": "assets/audio/fontes/interruptor-b.mp3",
+     "creditos": 2
+    }
+   ]
+  },
+  {
+   "efeito": "traco-papel",
+   "no": "rwDNPs1HKAnYULyTGkes",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 0.6,
+    "prompt_influence": 0.7
+   },
+   "pedido": "One soft short pencil stroke on paper, gentle graphite scratch, close-mic, dry, no tone",
+   "escolhida": "a e b, alternadas (a, b, a, b), recortadas nos primeiros 0,32 s",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "L7PXCuIXhy4twUTN3KzV",
+     "arquivo": "assets/audio/fontes/traco-papel-a.mp3",
+     "creditos": 2
+    },
+    {
+     "tomada": "b",
+     "geracao": "KDomDfe2SIGqKXQVmYH3",
+     "arquivo": "assets/audio/fontes/traco-papel-b.mp3",
+     "creditos": 2
+    }
+   ]
+  },
+  {
+   "efeito": "folha-descolando",
+   "no": "oCojOKz7EffmQKSvQXGg",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 1,
+    "prompt_influence": 0.6
+   },
+   "pedido": "Sheet of paper lifting off a wooden desk, soft paper peel and light rustle, close-mic, subtle, dry",
+   "escolhida": "b (rangido que cresce e para; a a tem mais tom/zumbido)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "a2Mw8lPX2rW0R5vepp7f",
+     "arquivo": "assets/audio/fontes/folha-descolando-a.mp3",
+     "creditos": 3.33
+    },
+    {
+     "tomada": "b",
+     "geracao": "ZQ1DLCKpVYM72cO285FJ",
+     "arquivo": "assets/audio/fontes/folha-descolando-b.mp3",
+     "creditos": 3.33
+    }
+   ]
+  },
+  {
+   "efeito": "dobra-1",
+   "no": "iN2iJkjclB646F0Z4ZXT",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 0.7,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Crisp sheet of paper folding once, sharp paper crease snap, close-mic, short, dry",
+   "escolhida": "a (vinco nítido e brilhante em 0,378 s; a b é mais abafada e com mais tom)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "OPIUKOvagjinWi6BA1hM",
+     "arquivo": "assets/audio/fontes/dobra-1-a.mp3",
+     "creditos": 2.33
+    },
+    {
+     "tomada": "b",
+     "geracao": "Zd8yu51Y60Mc4nAprgAL",
+     "arquivo": "assets/audio/fontes/dobra-1-b.mp3",
+     "creditos": 2.33
+    }
+   ]
+  },
+  {
+   "efeito": "dobra-2",
+   "no": "hL60uO9fwi5LCPMBkhzC",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 0.7,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Thick paper folded over and pressed flat, crisp crease with a firm paper snap, close-mic, short, dry",
+   "escolhida": "b (um estalo firme só, em 0,321 s; a a tem dois estalos fracos)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "o0D7xV4vd30ZpArk5s6w",
+     "arquivo": "assets/audio/fontes/dobra-2-a.mp3",
+     "creditos": 2.33
+    },
+    {
+     "tomada": "b",
+     "geracao": "687Kl76DPSxk5OtB3qbp",
+     "arquivo": "assets/audio/fontes/dobra-2-b.mp3",
+     "creditos": 2.33
+    }
+   ]
+  },
+  {
+   "efeito": "dobra-3",
+   "no": "Zdw1vPfc9YDs5aebavDQ",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 0.7,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Stiff paper card flipped over quickly, short paper flick and soft air swish, close-mic, dry",
+   "escolhida": "a (virada limpa terminando em estalo em 0,502 s; a b tem um clique extra em 0,12 s)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "QsOPS6BpaxIvAhDWU72J",
+     "arquivo": "assets/audio/fontes/dobra-3-a.mp3",
+     "creditos": 2.33
+    },
+    {
+     "tomada": "b",
+     "geracao": "2yyMOeQ2350RG7x6ZH3x",
+     "arquivo": "assets/audio/fontes/dobra-3-b.mp3",
+     "creditos": 2.33
+    }
+   ]
+  },
+  {
+   "efeito": "riser",
+   "no": "5jRuhoRFyMlDxAKfYQXw",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 2,
+    "prompt_influence": 0.6
+   },
+   "pedido": "Short cinematic riser, soft airy swell rising steadily in pitch and volume, reversed cymbal texture, ends abruptly at its peak, no hit at the end",
+   "escolhida": "b (sobe do começo ao fim e termina no ponto mais alto; a a cai antes do fim)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "fqrmkzuvpAevF5zZIAJB",
+     "arquivo": "assets/audio/fontes/riser-a.mp3",
+     "creditos": 6.67
+    },
+    {
+     "tomada": "b",
+     "geracao": "IZvcMv968Of9ZjWODKGP",
+     "arquivo": "assets/audio/fontes/riser-b.mp3",
+     "creditos": 6.67
+    }
+   ]
+  },
+  {
+   "efeito": "impacto",
+   "no": "jgt4Vo9piooqZMjkZJsf",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 3,
+    "prompt_influence": 0.6
+   },
+   "pedido": "Single deep cinematic impact, low sub boom with a muffled cymbal and a short room reverb tail, one hit only, sharp attack at the very start",
+   "escolhida": "a (ataque seco logo no início; a b chega ao pico só em 0,25 s)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "8h7vi4eUTXypieFPPVPh",
+     "arquivo": "assets/audio/fontes/impacto-a.mp3",
+     "creditos": 10
+    },
+    {
+     "tomada": "b",
+     "geracao": "ARIh4bKbJXqkqjcObvX2",
+     "arquivo": "assets/audio/fontes/impacto-b.mp3",
+     "creditos": 10
+    }
+   ]
+  }
+ ],
+ "creditos_efeitos_total": 95.3,
+ "custo_efeitos_usd": 0.02,
+ "creditos_total_geral": 4402.3,
+ "custo_total_usd": 0.88,
+ "transcricao": "Whisper large-v3 no próprio computador (faster-whisper), sem custo",
+ "_sobre_corte_ampliado": "Efeitos novos do corte ampliado (0 a 36,133 s do episódio), gerados em 12/11/2026 no mesmo fluxo, em 2 rodadas: na 1ª, 7 efeitos x 2 tomadas; na 2ª, o toque, o sopro e o risco refeitos (2 tomadas cada). O ambiente de 0 a 25,3 s NÃO foi gerado: é a tomada ambiente-noite-b.mp3 repetida com cruzamentos.",
+ "efeitos_corte_ampliado": [
+  {
+   "efeito": "toque-vidro",
+   "rodada": 1,
+   "no": "PDHmO8OJZQMQ7h0Z6jZH",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 0.5,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Single dry fingertip tap on a smartphone glass screen, one soft short tap of skin on glass, close-mic, no beep, no tone, no musical note, no reverb",
+   "escolhida": "nenhuma (a: estalo agudo seguido de 0,25 s de chiado; b: \"toc\" com ressonância em 962 Hz, parece nota); refeito na 2ª rodada",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "04rBGIr8hGjEk80NXhO1",
+     "arquivo": "assets/audio/fontes/toque-vidro-a.mp3",
+     "creditos": 1.67
+    },
+    {
+     "tomada": "b",
+     "geracao": "UVeBaVV7x5wHHpiFtv4E",
+     "arquivo": "assets/audio/fontes/toque-vidro-b.mp3",
+     "creditos": 1.67
+    }
+   ]
+  },
+  {
+   "efeito": "tique-contador",
+   "rodada": 1,
+   "no": "iXXP0s8wN1mxQ5lQ0VP6",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 0.5,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Single dry mechanical tick of a small number counter stopping, like one click of a tally counter or ratchet, very short, close-mic, no beep, no tone, no musical note, no reverb",
+   "escolhida": "a, só o 2º estalo (0,085-0,135 s): seco, agudo, sem tom; a b é uma catraca de 6 estalos",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "esGuFUiJqtjE31up6aNL",
+     "arquivo": "assets/audio/fontes/tique-contador-a.mp3",
+     "creditos": 1.67
+    },
+    {
+     "tomada": "b",
+     "geracao": "yYTg8n5LjlLOtC0hBR8m",
+     "arquivo": "assets/audio/fontes/tique-contador-b.mp3",
+     "creditos": 1.67
+    }
+   ]
+  },
+  {
+   "efeito": "sopro-grave",
+   "rodada": 1,
+   "no": "4m6i1809QTrDaYaYkZvd",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 2.6,
+    "prompt_influence": 0.6
+   },
+   "pedido": "Soft low air whoosh of a slow camera pull back, gentle deep breath of air that swells smoothly in the middle and fades out, subtle and discreet, no tone, no hit, no riser, no musical note",
+   "escolhida": "nenhuma (as duas saíram como um estrondo grave em 62-80 Hz, quase uma nota; pareceria um 2º impacto); refeito na 2ª rodada",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "OSnX4Cw5QJfTlyWlzTZX",
+     "arquivo": "assets/audio/fontes/sopro-grave-a.mp3",
+     "creditos": 8.67
+    },
+    {
+     "tomada": "b",
+     "geracao": "DRt8xLBwdRkTa17WeqzR",
+     "arquivo": "assets/audio/fontes/sopro-grave-b.mp3",
+     "creditos": 8.67
+    }
+   ]
+  },
+  {
+   "efeito": "papel-farfalhando",
+   "rodada": 1,
+   "no": "uoQvlhONqUsq1M5ltmB7",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 1.0,
+    "prompt_influence": 0.6
+   },
+   "pedido": "Light soft rustle of a single sheet of paper on a wooden desk, brief and gentle, close-mic, dry, subtle, no tone",
+   "escolhida": "a (farfalhar leve e espalhado de 2 a 16 kHz, em duas ondas; a b é uma batida surda com tom em 349 Hz)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "0TSDl5GQrZataZUwXnmZ",
+     "arquivo": "assets/audio/fontes/papel-farfalhando-a.mp3",
+     "creditos": 3.33
+    },
+    {
+     "tomada": "b",
+     "geracao": "Pjsm7oknsXAY2eDqblYl",
+     "arquivo": "assets/audio/fontes/papel-farfalhando-b.mp3",
+     "creditos": 3.33
+    }
+   ]
+  },
+  {
+   "efeito": "risco-caneta",
+   "rodada": 1,
+   "no": "mSboDb9cK1fGCkLiqweB",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 0.5,
+    "prompt_influence": 0.7
+   },
+   "pedido": "One quick ballpoint pen stroke crossing out a word on paper, a single fast wavy scratch line, close-mic, dry, no tone",
+   "escolhida": "nenhuma (as duas rangem com tom entre 290 e 390 Hz); refeito na 2ª rodada",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "HPfdoBT1dYmtX3t5RaQ0",
+     "arquivo": "assets/audio/fontes/risco-caneta-a.mp3",
+     "creditos": 1.67
+    },
+    {
+     "tomada": "b",
+     "geracao": "q39vERNbuLPY1htiId6X",
+     "arquivo": "assets/audio/fontes/risco-caneta-b.mp3",
+     "creditos": 1.67
+    }
+   ]
+  },
+  {
+   "efeito": "rolagem-tela",
+   "rodada": 1,
+   "no": "9I3RwA4QEbGBF4aOJPWw",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 1.0,
+    "prompt_influence": 0.6
+   },
+   "pedido": "Soft fingertip swipe sliding on a smartphone glass screen, gentle skin on glass friction that slows down and stops, close-mic, very subtle, no beep, no tone, no musical note",
+   "escolhida": "a, de 0,10 s em diante (atrito suave de 2 a 8 kHz que cresce e some; a b range em 928 Hz)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "b1FFk2YJv27WLgw0kwdD",
+     "arquivo": "assets/audio/fontes/rolagem-tela-a.mp3",
+     "creditos": 3.33
+    },
+    {
+     "tomada": "b",
+     "geracao": "KKbf6vaevuRzFEviLpe6",
+     "arquivo": "assets/audio/fontes/rolagem-tela-b.mp3",
+     "creditos": 3.33
+    }
+   ]
+  },
+  {
+   "efeito": "obturador",
+   "rodada": 1,
+   "no": "eZv71AlVAoZI4S44K4s5",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 0.5,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Smartphone camera shutter, single dry short mechanical shutter click, close-mic, no beep, no tone, no musical note, no reverb",
+   "escolhida": "a (dois estalos secos, 80 ms um do outro: fecha e reabre, como a tela na imagem; a b é um estalo só, mais chiado)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "hVbwwduIsFeI4AqPLn4D",
+     "arquivo": "assets/audio/fontes/obturador-a.mp3",
+     "creditos": 1.67
+    },
+    {
+     "tomada": "b",
+     "geracao": "GezL2s3WHIkeHvFJv3ra",
+     "arquivo": "assets/audio/fontes/obturador-b.mp3",
+     "creditos": 1.67
+    }
+   ]
+  },
+  {
+   "efeito": "toque-vidro",
+   "rodada": 2,
+   "no": "WF5rtJDNVS6KAmPLZAGB",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 0.5,
+    "prompt_influence": 0.8
+   },
+   "pedido": "Close-up fingertip tapping a smartphone touchscreen once, tiny soft dull dry tap of skin on glass, extremely short transient, no ringing, no resonance, no pitch, no hiss, no beep, no UI sound, no reverb",
+   "escolhida": "c (um toque só, surdo e seco: cai 40 dB em 50 ms, sem ressonância; a d tem dois toques). O mesmo toque nos 3 lugares (apagar, tela, enviado)",
+   "tomadas": [
+    {
+     "tomada": "c",
+     "geracao": "CB9W1v4jVTw5qqYcRI5z",
+     "arquivo": "assets/audio/fontes/toque-vidro-c.mp3",
+     "creditos": 1.67
+    },
+    {
+     "tomada": "d",
+     "geracao": "bVbwi9LdS19umBr9tMqA",
+     "arquivo": "assets/audio/fontes/toque-vidro-d.mp3",
+     "creditos": 1.67
+    }
+   ]
+  },
+  {
+   "efeito": "sopro-grave",
+   "rodada": 2,
+   "no": "ozszJD9aMIazymDE9EIN",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 2.6,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Soft dark air whoosh, slow gentle swish of moving air like a camera gliding backwards, low-pitched filtered wind noise that swells smoothly and fades away, airy texture only, no boom, no sub bass tone, no thump, no hit, no musical note",
+   "escolhida": "d (vento grave que cresce devagar até 0,93 s e some; a frequência mais forte muda o tempo todo, então é ar, não nota; sobe mais suave que a c)",
+   "tomadas": [
+    {
+     "tomada": "c",
+     "geracao": "gOsLp6CAFPQa4AmcSCqj",
+     "arquivo": "assets/audio/fontes/sopro-grave-c.mp3",
+     "creditos": 8.67
+    },
+    {
+     "tomada": "d",
+     "geracao": "SxqnzaQPl7A4puhtu5gU",
+     "arquivo": "assets/audio/fontes/sopro-grave-d.mp3",
+     "creditos": 8.67
+    }
+   ]
+  },
+  {
+   "efeito": "risco-caneta",
+   "rodada": 2,
+   "no": "HL1buSWkX6oh21nOEkSG",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 0.5,
+    "prompt_influence": 0.7
+   },
+   "pedido": "One fast pen strike-through on a sheet of paper, dry scratchy papery friction, quick wavy stroke, close-mic, crisp texture, no squeak, no pitch, no tone",
+   "escolhida": "c (um traço só, seco e espalhado de 1 a 16 kHz, sem rangido; a d tem um vão no meio e soa como dois traços)",
+   "tomadas": [
+    {
+     "tomada": "c",
+     "geracao": "iZkGX3gAvzzyjuBBCdTJ",
+     "arquivo": "assets/audio/fontes/risco-caneta-c.mp3",
+     "creditos": 1.67
+    },
+    {
+     "tomada": "d",
+     "geracao": "oX7blzhoLhBd8MXz3yDO",
+     "arquivo": "assets/audio/fontes/risco-caneta-d.mp3",
+     "creditos": 1.67
+    }
+   ]
+  }
+ ],
+ "creditos_corte_ampliado": 68.0,
+ "custo_corte_ampliado_usd": 0.014,
+ "obs_creditos_corte_ampliado": "soma do preço de cada geração informado pelo conector (1,67 por 0,5 s; 3,33 por 1 s; 8,67 por 2,6 s); o resumo de cada execução arredonda cada geração para cima e mostra 72 no total",
+ "_sobre_final": "Efeitos novos do EPISÓDIO COMPLETO (0 a 64,0 s), gerados em 12/11/2026 no mesmo fluxo: 10 efeitos x 2 tomadas na 1ª rodada; o atrito de vidro refeito 2 vezes (rodadas 2 e 3) e o sopro de levar junto refeito 1 vez (rodada 2). Os toques de s10 (47,3 e 47,55 s) reaproveitam o toque-vidro-c.mp3; de s01 a s05 e na virada ficam as escolhas do corte ampliado e do corte de 10 s. Nenhuma narração ou trilha nova.",
+ "efeitos_final": [
+  {
+   "efeito": "atrito-vidro-fosco",
+   "rodada": 1,
+   "no": "8vEheqaJFDdqfMu8LlnR",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 1.2,
+    "prompt_influence": 0.6
+   },
+   "pedido": "Dry frosted glass friction, one smooth slow sweep of a fingertip across matte frosted glass, gentle airy scrape that rises and fades, close-mic, dry, no squeak, no ringing, no musical tone, no reverb",
+   "escolhida": "nenhuma (a: nota clara em 995 Hz, 38,7 dB acima da vizinhança; b: rangido com várias notas, 1.585/1.445/1.065 Hz); refeito nas rodadas 2 e 3",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "qxv6zNqb0yy0erBU3c68",
+     "arquivo": "assets/audio/fontes/atrito-vidro-fosco-a.mp3",
+     "creditos": 4
+    },
+    {
+     "tomada": "b",
+     "geracao": "IF8cWB11Cdnt39IfFgl4",
+     "arquivo": "assets/audio/fontes/atrito-vidro-fosco-b.mp3",
+     "creditos": 4
+    }
+   ]
+  },
+  {
+   "efeito": "atrito-vidro-fosco",
+   "rodada": 2,
+   "no": "9wj41NouBhISfkV4bRUs",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 1.2,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Dry friction of a soft cloth wiping across frosted glass once, smooth airy rubbing noise, broadband and dull, rises and fades, close-mic, no squeak, no squeal, no ringing, no whistle, no pitch, no musical tone, no reverb",
+   "escolhida": "nenhuma (c: nota em 1.405 Hz; d: nota em 745 Hz; as duas com \"tom\" 0,95)",
+   "tomadas": [
+    {
+     "tomada": "c",
+     "geracao": "XS8LaYlvkN3a8zncsmm5",
+     "arquivo": "assets/audio/fontes/atrito-vidro-fosco-c.mp3",
+     "creditos": 4
+    },
+    {
+     "tomada": "d",
+     "geracao": "8Sl3BUqzIEZJUJAqlTQg",
+     "arquivo": "assets/audio/fontes/atrito-vidro-fosco-d.mp3",
+     "creditos": 4
+    }
+   ]
+  },
+  {
+   "efeito": "atrito-vidro-fosco",
+   "rodada": 3,
+   "no": "mmmS0w4qs4pYjkty9dw4",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 1.2,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Soft dry swoosh of fine grit sliding across a matte frosted surface, smooth sandy hiss that swells and fades once, noise texture only, dull and close, no squeak, no squeal, no pitch, no tone, no musical note, no reverb",
+   "escolhida": "e (chiado de areia fina sem nota: ponta estreita de só 8,5 dB, \"tom\" 0,37; cresce até 0,4 s, fica e some em 1,1 s, como a faixa de vidro atravessando); a f tem uma ponta em 1.355 Hz (15 dB)",
+   "tomadas": [
+    {
+     "tomada": "e",
+     "geracao": "IRosg7wQGyABz0sxveZb",
+     "arquivo": "assets/audio/fontes/atrito-vidro-fosco-e.mp3",
+     "creditos": 4
+    },
+    {
+     "tomada": "f",
+     "geracao": "91ouHbffCKVDT5Wsju8m",
+     "arquivo": "assets/audio/fontes/atrito-vidro-fosco-f.mp3",
+     "creditos": 4
+    }
+   ]
+  },
+  {
+   "efeito": "chiado-corte",
+   "rodada": 1,
+   "no": "z4HNnzj5QAD0GcTkPqcE",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 0.6,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Thin fine hiss of a single cut, like a sharp blade lightly scoring glass once, short airy scratch with a soft tail, close-mic, dry, no squeal, no ringing, no musical tone, no reverb",
+   "escolhida": "a (chiado fino e claro de 0,34 s, sem nota; a b é igual, mas dura 0,47 s e tem 2 golpes)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "tiet0uqtzQMZTfAZ8f19",
+     "arquivo": "assets/audio/fontes/chiado-corte-a.mp3",
+     "creditos": 2
+    },
+    {
+     "tomada": "b",
+     "geracao": "y5U6cWc6oCTD0nmdnTfh",
+     "arquivo": "assets/audio/fontes/chiado-corte-b.mp3",
+     "creditos": 2
+    }
+   ]
+  },
+  {
+   "efeito": "textura-granular",
+   "rodada": 1,
+   "no": "rsAIT7uYfKpJoFMQs6MX",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 1.4,
+    "prompt_influence": 0.6
+   },
+   "pedido": "Fine granular texture slowly growing, soft crackle of tiny grains filling in and building up, like sand settling or frost forming on glass, close-mic, dry, quiet, no tone, no hum, no musical note",
+   "escolhida": "b (cresce mais devagar, até 0,55 s, e fica até 0,8 s, como o osso preenchendo a rosca; \"tom\" 0,15); a a chega ao máximo já em 0,4 s",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "qtnpE7OT6rEyxWqq6H1H",
+     "arquivo": "assets/audio/fontes/textura-granular-a.mp3",
+     "creditos": 4.67
+    },
+    {
+     "tomada": "b",
+     "geracao": "TJHmE6qBRKli8ekDcbkr",
+     "arquivo": "assets/audio/fontes/textura-granular-b.mp3",
+     "creditos": 4.67
+    }
+   ]
+  },
+  {
+   "efeito": "brilho-luz",
+   "rodada": 1,
+   "no": "WtDOob3FO9n8f888hyNh",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 1.2,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Soft dry airy shimmer of light, a gentle breathy swell of filtered noise that brightens and fades, like a band of light sweeping across a surface, no chime, no bell, no sparkle tones, no musical note, no pitch",
+   "escolhida": "a (sobe, fica e desce por igual, como uma faixa de luz passando); no mix, um filtro tira uma ponta estreita em 1.605 Hz (15,8 dB) para não soar como nota. A b chega ao pico em 0,3 s e já decai",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "LuRjqNplDSrK7onm5ojZ",
+     "arquivo": "assets/audio/fontes/brilho-luz-a.mp3",
+     "creditos": 4
+    },
+    {
+     "tomada": "b",
+     "geracao": "DpWYqBm21vbmFugLxO3j",
+     "arquivo": "assets/audio/fontes/brilho-luz-b.mp3",
+     "creditos": 4
+    }
+   ]
+  },
+  {
+   "efeito": "sopro-levar",
+   "rodada": 1,
+   "no": "tWKqwz2tQY1vsFvdtnlX",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 1.4,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Soft gentle air whoosh moving away, smooth swish of air like a small card carried off into the distance, light filtered wind that swells briefly and recedes, airy only, no boom, no low bass tone, no hit, no musical note",
+   "escolhida": "nenhuma (as duas saíram como um estrondo grave: 96% da energia abaixo de 150 Hz, com nota em 186 e 148 Hz; pareceria um segundo impacto); refeito na rodada 2",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "WdyQ5tdG04UIi3SOjtJh",
+     "arquivo": "assets/audio/fontes/sopro-levar-a.mp3",
+     "creditos": 4.67
+    },
+    {
+     "tomada": "b",
+     "geracao": "fVhJDRf0iF2sfFjaHMcR",
+     "arquivo": "assets/audio/fontes/sopro-levar-b.mp3",
+     "creditos": 4.67
+    }
+   ]
+  },
+  {
+   "efeito": "sopro-levar",
+   "rodada": 2,
+   "no": "LPaDdzHWVfYnFtFeCaxm",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 1.4,
+    "prompt_influence": 0.7
+   },
+   "pedido": "Light airy whoosh of moving air passing and receding, soft breathy swish of mid and high frequency air noise, like a paper card gliding away, gentle and short, no low end, no rumble, no boom, no thump, no hit, no pitch, no musical note",
+   "escolhida": "d (ar claro, sem grave e sem nota; cresce, passa em 0,33 s e se afasta devagar até ~1,2 s); a c some mais rápido (0,6 s)",
+   "tomadas": [
+    {
+     "tomada": "c",
+     "geracao": "zZyW7mEK1JT4DkcLsMwz",
+     "arquivo": "assets/audio/fontes/sopro-levar-c.mp3",
+     "creditos": 4.67
+    },
+    {
+     "tomada": "d",
+     "geracao": "oaZ939UgZMzZR7gNoyUk",
+     "arquivo": "assets/audio/fontes/sopro-levar-d.mp3",
+     "creditos": 4.67
+    }
+   ]
+  },
+  {
+   "efeito": "ambiente-recepcao-tarde",
+   "rodada": 1,
+   "no": "HAB1cWn6Bgv45oLnfCzG",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 9,
+    "prompt_influence": 0.5
+   },
+   "pedido": "Quiet small clinic reception in the late afternoon, soft room tone, very faint distant city street outside a closed window, far-away traffic hush, no voices, no music, no phones, no beeps",
+   "escolhida": "b (mais baixo e mais estável que a, com menos pontas estreitas: 11,6 contra 14,3 dB); as duas têm ronco de trânsito em 60-75 Hz, que o mix tira com um filtro passa-altas em 100 Hz",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "cvvAQ28Mpsh8PdSh2PP3",
+     "arquivo": "assets/audio/fontes/ambiente-recepcao-tarde-a.mp3",
+     "creditos": 30
+    },
+    {
+     "tomada": "b",
+     "geracao": "BpDez4RPGhmqoLjdpja4",
+     "arquivo": "assets/audio/fontes/ambiente-recepcao-tarde-b.mp3",
+     "creditos": 30
+    }
+   ]
+  },
+  {
+   "efeito": "ambiente-consultorio-tarde",
+   "rodada": 1,
+   "no": "oudT8HDPILIYom2TsUrP",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 8,
+    "prompt_influence": 0.5
+   },
+   "pedido": "Quiet empty dental office in the afternoon, soft room tone, faint distant street through a window, gentle still air, no voices, no music, no dental drill, no beeps",
+   "escolhida": "b, a partir de 0,45 s (sem estalos e sem ponta de nota; a a tem um chiado estreito em 4.405 Hz, 17,8 dB, e 1 estalo)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "pzKf4ZEvvIvKEhcarafx",
+     "arquivo": "assets/audio/fontes/ambiente-consultorio-tarde-a.mp3",
+     "creditos": 26.67
+    },
+    {
+     "tomada": "b",
+     "geracao": "aNKFY5utLwCbZVLeI6TI",
+     "arquivo": "assets/audio/fontes/ambiente-consultorio-tarde-b.mp3",
+     "creditos": 26.67
+    }
+   ]
+  },
+  {
+   "efeito": "passos-madeira",
+   "rodada": 1,
+   "no": "IWy0ADncau6Ulcf7nqAE",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 3,
+    "prompt_influence": 0.6
+   },
+   "pedido": "A few slow light footsteps of a small wooden doll walking on a wooden tabletop, soft hollow wooden taps, one tap per step, evenly spaced about half a second apart, close-mic, dry, no squeak, no music",
+   "escolhida": "b (6 passos de madeira, a cada ~0,44 s, com corpo; a a tem só 4 passos, a cada ~0,7 s, mais abafados). Cada passo é recortado e posto no seu quadro",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "uUwNPDvMenMLLNoYasfQ",
+     "arquivo": "assets/audio/fontes/passos-madeira-a.mp3",
+     "creditos": 10
+    },
+    {
+     "tomada": "b",
+     "geracao": "gP0ekuxfDegr4rwX3uFI",
+     "arquivo": "assets/audio/fontes/passos-madeira-b.mp3",
+     "creditos": 10
+    }
+   ]
+  },
+  {
+   "efeito": "porta-fechando",
+   "rodada": 1,
+   "no": "7UQrEHcN0XmlblPEBCcT",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 1.2,
+    "prompt_influence": 0.6
+   },
+   "pedido": "A door closing gently in a quiet room, soft wooden door with a light latch click and a muted thud, slightly distant, dry, no slam, no squeak, no music",
+   "escolhida": "a (\"tum\" abafado com o trinco, um pouco distante; a b começa já no ataque, sem a aproximação)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "evAEAypZGHI63x9QY6UV",
+     "arquivo": "assets/audio/fontes/porta-fechando-a.mp3",
+     "creditos": 4
+    },
+    {
+     "tomada": "b",
+     "geracao": "Pc2pb1jpy8fpFuRsC2x6",
+     "arquivo": "assets/audio/fontes/porta-fechando-b.mp3",
+     "creditos": 4
+    }
+   ]
+  },
+  {
+   "efeito": "chegada-mensagem",
+   "rodada": 1,
+   "no": "0ApWd4otM7o4uDwxwxAA",
+   "modelo": "eleven_text_to_sound_v2",
+   "ajustes": {
+    "duration_seconds": 0.5,
+    "prompt_influence": 0.8
+   },
+   "pedido": "Two quick soft dry fingertip taps on a smartphone glass screen, a double tap of skin on glass, extremely short transients, no ringing, no resonance, no pitch, no beep, no notification tone, no reverb",
+   "escolhida": "b (dois toques secos, 0,155 s um do outro, sem nota); a a tem uma ponta de nota em 4.045 Hz (23 dB acima da vizinhança)",
+   "tomadas": [
+    {
+     "tomada": "a",
+     "geracao": "iWT0Gay7TgY26RgSju6e",
+     "arquivo": "assets/audio/fontes/chegada-mensagem-a.mp3",
+     "creditos": 1.67
+    },
+    {
+     "tomada": "b",
+     "geracao": "SHQI8r6idPdQCMQfJbHn",
+     "arquivo": "assets/audio/fontes/chegada-mensagem-b.mp3",
+     "creditos": 1.67
+    }
+   ]
+  }
+ ],
+ "creditos_final": 208.7,
+ "creditos_final_arredondado_pelo_resumo": 212,
+ "custo_final_usd": 0.042,
+ "obs_creditos_final": "soma do preço de cada geração informado pelo conector (4 por 1,2 s; 2 por 0,6 s; 4,67 por 1,4 s; 30 por 9 s; 26,67 por 8 s; 10 por 3 s; 1,67 por 0,5 s); o resumo de cada execução arredonda cada geração para cima e mostra 186 + 18 + 8 = 212. A estimativa antes de gerar dizia 550 para a 1ª rodada.",
+ "creditos_total_geral_com_final": 4611.0,
+ "custo_total_com_final_usd": 0.92,
+ "_sobre_v3": "Revisão v3 do ep. 01 (pedido do dono de 12/11/2026): só as falas novas foram geradas, no mesmo fluxo, num nó novo, com a mesma voz e os mesmos ajustes da narração antiga (segundo fonte/PLANO-v3.md). As falas antigas continuam vindo da tomada A (narracao-amedeiros-v4-a.mp3). Nenhum efeito e nenhuma trilha nova: os sons novos da v3 (sopro, toques, tiques) reaproveitam tomadas que já existiam.",
+ "narracao_v3_novas": {
+  "no": "srEVcyQTHg543mt5kCKJ",
+  "modelo": "eleven_v4",
+  "voz": "A.Medeiros - Clear, Calm & Friendly (E9hPCbqBRCgB3UEiCUuE)",
+  "ajustes": "os mesmos da narração antiga (language_code pt, stability 0,55, similarity 0,75), segundo o PLANO-v3",
+  "texto": "quarenta e sete dias sem postar nada.\n\nmas isso está prestes a mudar...\n\no roteiro ela já tinha.\n\nfaltava tirar do papel.\n\nse você explica isso todo dia no consultório, o seu também já existe.\n\ncomente clínica e a gente te mostra como.",
+  "texto_obs": "o texto é o da tabela de falas do PLANO-v3 (F, T, \"o roteiro ela já tinha.\", 12, 13, 14), na ordem em que as falas saem nas 3 tomadas; o arquivo do pedido em si não ficou guardado no projeto",
+  "tomadas": [
+   {
+    "tomada": "a",
+    "geracao": "n2FUGZbC0SjfWpVl3XPZ",
+    "arquivo": "assets/audio/fontes/narracao-v3-novas-a.mp3",
+    "duracao_s": 15.52,
+    "creditos": 235,
+    "usada_para": [
+     "13"
+    ]
+   },
+   {
+    "tomada": "b",
+    "geracao": "262sHhUYbZmVW1V3r6kr",
+    "arquivo": "assets/audio/fontes/narracao-v3-novas-b.mp3",
+    "duracao_s": 15.6,
+    "creditos": 235,
+    "usada_para": [
+     "12",
+     "14"
+    ]
+   },
+   {
+    "tomada": "c",
+    "geracao": "1nopLRFz0OYqZ6J45WdD",
+    "arquivo": "assets/audio/fontes/narracao-v3-novas-c.mp3",
+    "duracao_s": 15.44,
+    "creditos": 235,
+    "usada_para": [
+     "F",
+     "T"
+    ]
+   }
+  ],
+  "escolhas": {
+   "F (quarenta e sete dias sem postar nada.)": "c: altura da voz mais próxima da tomada A (124,5 contra 123,8 Hz)",
+   "T (mas isso está prestes a mudar...)": "c: a menos aguda das 3 (a b sobe para 162 Hz); mesma tomada da F",
+   "o roteiro ela já tinha.": "nenhuma: fica a ANTIGA (tomada A), que já estava aprovada",
+   "12 (faltava tirar do papel.)": "b: altura quase igual à da tomada A (122,6 Hz)",
+   "13 (se você explica isso...)": "a: a melhor nota de altura + ritmo (a c quase empatou)",
+   "14 (comente clínica...)": "b: a melhor nota; a c ficou de fora (pico de -3,6 dBFS em \"comente\" baixaria o ganho final de tudo em 0,5 dB)",
+   "como": "medido, não ouvido: altura média da voz (Praat), sílabas por segundo, pico em relação ao volume (PLR) e transcrição completa (Whisper). Detalhes em assets/audio/audio-v3.json, \"escolha_das_tomadas\""
+  },
+  "transcricao": "Whisper large-v3 no computador (fonte/audio/narracao-v3-novas-a/b/c.palavras.json): as 3 tomadas completas; sem dica ele escreve \"47\" para \"quarenta e sete\"",
+  "creditos_total": 705,
+  "custo_usd": 0.14
+ },
+ "creditos_v3": 705,
+ "custo_v3_usd": 0.14,
+ "creditos_total_geral_com_v3": 5316.0,
+ "custo_total_com_v3_usd": 1.06,
+ "obs_custo_v3": "mesmo preço por crédito das contas anteriores (4.611 créditos = US$ 0,92, ou seja ~US$ 0,0002 por crédito)",
+ "_sobre_v4": "Revisão v4 do ep. 01 (2º pedido do dono, 12/11/2026, fonte/PLANO-v4.md): só as duas falas que mudaram (F e 10) foram geradas, no mesmo fluxo, num nó novo, com a mesma voz e o mesmo modelo. As outras 14 falas continuam vindo das tomadas da v3 (tomada A e narracao-v3-novas). Nenhum efeito e nenhuma trilha nova. As gerações foram feitas antes deste registro (os números abaixo são os do fonte/PLANO-v4.md); o agente de áudio só escolheu as tomadas e montou o mix-v4.wav.",
+ "narracao_v4_novas": {
+  "no": "0PmQSBQPgxTnuxxBlpSh",
+  "modelo": "eleven_v4",
+  "voz": "A.Medeiros - Clear, Calm & Friendly (E9hPCbqBRCgB3UEiCUuE)",
+  "ajustes": "segundo o PLANO-v4: A.Medeiros, eleven_v4, no mesmo fluxo da v3 (os ajustes do nó não foram conferidos aqui)",
+  "texto": "dezessete dias sem postar nada.\n\nela mandou o vídeo pra Lúcia.",
+  "tomadas": [
+   {
+    "tomada": "a",
+    "geracao": "4VYDeUD0SeigbwRRnLkY",
+    "arquivo": "assets/audio/fontes/narracao-v4-novas-a.mp3",
+    "duracao_s": 4.48,
+    "creditos": 62,
+    "usada_para": [
+     "10"
+    ]
+   },
+   {
+    "tomada": "b",
+    "geracao": "bAZ9HX1NUcvyV0WkUOGe",
+    "arquivo": "assets/audio/fontes/narracao-v4-novas-b.mp3",
+    "duracao_s": 4.48,
+    "creditos": 62,
+    "usada_para": []
+   },
+   {
+    "tomada": "c",
+    "geracao": "CoGtbiWFPn7Lz77q71rG",
+    "arquivo": "assets/audio/fontes/narracao-v4-novas-c.mp3",
+    "duracao_s": 4.48,
+    "creditos": 62,
+    "usada_para": [
+     "F"
+    ]
+   }
+  ],
+  "escolhas": {
+   "F (dezessete dias sem postar nada.)": "c: empata com a b nas medidas (altura e ritmo) e é a única com silêncio antes de \"dezessete\" (o corte do começo cai numa pausa); menor PLR (12,8 dB)",
+   "10 (ela mandou o vídeo pra Lúcia.)": "a: altura mais perto da tomada A (1,18 semitom acima) e ritmo igual ao da fala 10 aprovada (8,76 sílabas/s)",
+   "como": "medido, não ouvido: altura média da voz (Praat), sílabas por segundo, pico em relação ao volume (PLR) e transcrição completa (Whisper). Detalhes em assets/audio/audio-v4.json, \"escolha_das_tomadas\""
+  },
+  "transcricao": "Whisper large-v3 no computador (fonte/audio/narracao-v4-novas-a/b/c.palavras.json): as 3 tomadas completas; sem dica ele escreve \"17\" para \"dezessete\" e \"para a\" para \"pra\"",
+  "creditos_total": 186,
+  "custo_usd": 0.04
+ },
+ "creditos_v4": 186,
+ "custo_v4_usd": 0.04,
+ "creditos_total_geral_com_v4": 5502.0,
+ "custo_total_com_v4_usd": 1.1,
+ "obs_custo_v4": "mesmo preço por crédito das contas anteriores (~US$ 0,0002 por crédito): 186 créditos = ~US$ 0,037; o total geral (5.502 créditos) dá ~US$ 1,10"
+}

@@ -1,0 +1,146 @@
+<!-- Vinheta Sabiá Lab (4 s): o passarinho chega voando, o nome aparece,
+     as sementes se espalham e o slogan fecha. Bloco reaproveitável:
+     monte como abertura ou encerramento em qualquer peça. -->
+<template>
+  <style>
+    /* ===== MARCA SABIÁ LAB (copie este bloco em toda cena que usar a Megion) ===== */
+    @font-face {
+      font-family: "Megion"; /* títulos e chamadas */
+      src: url("assets/fonts/Megion-Bold.otf") format("opentype");
+      font-weight: 700;
+    }
+    /* Helvetica Now Text: texto corrido (300 Light, 400 Regular, 500 Medium, 700 Bold) */
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Light.ttf") format("truetype");
+      font-weight: 300;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Medium.ttf") format("truetype");
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    /* ===== fim do bloco da marca ===== */
+
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #1e1415; /* fundo escuro da marca */
+    }
+    #vinheta-conteudo {
+      position: absolute;
+      inset: 0;
+    }
+    .vinheta-sementes {
+      position: absolute;
+    }
+    #vinheta-sementes-a {
+      width: 560px;
+      right: -120px;
+      top: 120px;
+    }
+    #vinheta-sementes-b {
+      width: 520px;
+      left: -140px;
+      bottom: 140px;
+    }
+    #vinheta-miolo {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 70px;
+    }
+    /* Logo montado em código: passarinho (imagem) + "sabiá" na Megion.
+       Medidas tiradas do guia de marca; para mudar o tamanho, mude só a largura. */
+    #vinheta-logo {
+      position: relative;
+      width: 820px;
+      aspect-ratio: 484 / 179;
+    }
+    #vinheta-passaro {
+      position: absolute;
+      left: 0.847%;
+      top: 4.02%;
+      width: 36.74%;
+      height: 99.33%;
+    }
+    #vinheta-logo svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+    #vinheta-slogan {
+      font-family: "Helvetica Now Text", sans-serif;
+      font-size: 54px;
+      color: #ffffff;
+    }
+  </style>
+  <div id="root" data-composition-id="vinheta" data-width="1080" data-height="1920">
+    <div id="vinheta-conteudo">
+      <img
+        id="vinheta-sementes-a"
+        class="vinheta-sementes"
+        src="assets/marca/grafismos/sementes-soltas_preenchida_laranja.png"
+        alt=""
+        data-layout-allow-overflow
+      />
+      <img
+        id="vinheta-sementes-b"
+        class="vinheta-sementes"
+        src="assets/marca/grafismos/sementes-soltas_contorno_laranja.png"
+        alt=""
+        data-layout-allow-overflow
+      />
+      <div id="vinheta-miolo">
+        <div id="vinheta-logo">
+          <img id="vinheta-passaro" src="assets/marca/logo/icone/icone_branco.png" alt="" />
+          <svg viewBox="454 314 484 179">
+            <g id="vinheta-nome">
+              <text x="634.3" y="433.7" font-family="Megion" font-weight="700" font-size="118.92" fill="#ffffff">sabiá</text>
+            </g>
+            <g id="vinheta-lab">
+              <text x="932.8" y="483.8" text-anchor="end" font-family="Helvetica Now Text" font-weight="300" font-size="37" fill="#ffffff">LAB</text>
+            </g>
+          </svg>
+        </div>
+        <div id="vinheta-slogan">Inteligência que participa.</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // O passarinho chega voando de baixo/esquerda
+    tl.fromTo("#vinheta-passaro",
+      { xPercent: -160, yPercent: 90, rotation: -25, opacity: 0 },
+      { xPercent: 0, yPercent: 0, rotation: 0, opacity: 1, duration: 0.9, ease: "back.out(1.4)" }, 0);
+    // O nome desliza e aparece; o LAB vem logo depois
+    tl.fromTo("#vinheta-nome", { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.33);
+    tl.fromTo("#vinheta-lab", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 0.93);
+    // Sementes se espalham pelos cantos e giram devagar
+    tl.fromTo(".vinheta-sementes", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.9, ease: "power3.out", stagger: 0.1 }, 0.6);
+    tl.fromTo("#vinheta-sementes-a", { rotation: -20 }, { rotation: -6, duration: 4, ease: "none" }, 0);
+    tl.fromTo("#vinheta-sementes-b", { rotation: 160 }, { rotation: 146, duration: 4, ease: "none" }, 0);
+    // Slogan
+    tl.fromTo("#vinheta-slogan", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 1.33);
+    // Saída
+    tl.fromTo("#vinheta-conteudo", { opacity: 1 }, { opacity: 0, duration: 0.3, ease: "power2.in" }, 3.65);
+
+    window.__timelines["vinheta"] = tl;
+  </script>
+</template>

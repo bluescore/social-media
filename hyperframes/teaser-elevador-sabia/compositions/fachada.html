@@ -1,0 +1,332 @@
+<!-- Cena 1 — a fachada (0 a 7,7 s), cortada na trilha assets/audio/trilha3.mp3 (100 BPM, crescendo do quase silêncio
+     até o impacto na data; batidas medidas em BATIDAS abaixo; a câmera atravessa o vidro no início do 4º compasso, 7,667 s).
+     A câmera se aproxima devagar de um prédio à noite; as janelas piscam em laranja (como na referência),
+     vão se apagando até sobrar uma, e a câmera acelera até entrar por ela.
+     Imagens: assets/img/fachada.jpg (aberta, 4k), assets/img/fachada-close.jpg (close, encaixado por fonte/alinhar.py)
+     e a luz de cada janela em assets/img/janelas/ (separadas por fonte/janelas.py).
+     As janelas abaixo são escritas por fonte/montar-janelas.py: não edite à mão o trecho entre as marcas. -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #0b0e13;
+    }
+    /* "mundo" = a fachada inteira em pixels da imagem 4k (3072 × 5504); a câmera move e escala este bloco */
+    #fachada-mundo {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 3072px;
+      height: 5504px;
+    }
+    #fachada-base {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3072px;
+      height: 5504px;
+    }
+    .janela {
+      position: absolute;
+      opacity: 0;
+    }
+    /* close da fachada: retângulo calculado em fonte/encaixe.json */
+    #fachada-close {
+      position: absolute;
+      left: 1087.5px;
+      top: 1603.88px;
+      width: 892.95px;
+      height: 1600.41px;
+      opacity: 0;
+    }
+    /* letterings (regra do dono): Helvetica Now Text Regular, Bold só na palavra de destaque,
+       minúsculas, espaçamento entre letras -50 (-0.05em) e entrelinha 0.9 */
+    .letreiro {
+      position: absolute;
+      z-index: 10; /* sempre na frente das janelas */
+      font-family: "Helvetica Now Text", sans-serif;
+      font-weight: 400;
+      font-size: 76px; /* mesmo tamanho de todo texto de apoio do filme */
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      color: #ffffff;
+      text-transform: lowercase;
+      text-shadow: 0 2px 28px rgba(0, 0, 0, 0.6);
+      white-space: nowrap;
+    }
+    #letreiro-direita {
+      right: 96px;
+      top: 430px;
+      text-align: right;
+    }
+    #letreiro-esquerda {
+      left: 96px;
+      top: 1160px;
+      text-align: left;
+    }
+    .palavra {
+      display: inline-block;
+      opacity: 0;
+    }
+    .destaque {
+      font-weight: 700;
+    }
+  </style>
+  <div data-hf-id="hf-m7o7" id="root" data-composition-id="fachada" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-5wfe" id="fachada-mundo" data-layout-allow-overflow>
+      <img data-hf-id="hf-mjpv" id="fachada-base" src="assets/img/fachada.jpg" alt="" />
+      <!-- janelas:inicio -->
+      <img data-hf-id="hf-jcm6" id="j000" class="janela" data-motion-blur="off" src="assets/img/janelas/j000.png" alt="" style="left: 296px; top: 172px; width: 163px; height: 146px" />
+      <img data-hf-id="hf-o9b5" id="j001" class="janela" data-motion-blur="off" src="assets/img/janelas/j001.png" alt="" style="left: 593px; top: 173px; width: 146px; height: 145px" />
+      <img data-hf-id="hf-71a4" id="j002" class="janela" data-motion-blur="off" src="assets/img/janelas/j002.png" alt="" style="left: 1746px; top: 177px; width: 145px; height: 146px" />
+      <img data-hf-id="hf-333r" id="j003" class="janela" data-motion-blur="off" src="assets/img/janelas/j003.png" alt="" style="left: 2035px; top: 176px; width: 146px; height: 150px" />
+      <img data-hf-id="hf-vmob" id="j004" class="janela" data-motion-blur="off" src="assets/img/janelas/j004.png" alt="" style="left: 2609px; top: 187px; width: 163px; height: 147px" />
+      <img data-hf-id="hf-h2pl" id="j005" class="janela" data-motion-blur="off" src="assets/img/janelas/j005.png" alt="" style="left: 295px; top: 486px; width: 164px; height: 145px" />
+      <img data-hf-id="hf-t9xh" id="j006" class="janela" data-motion-blur="off" src="assets/img/janelas/j006.png" alt="" style="left: 594px; top: 487px; width: 144px; height: 146px" />
+      <img data-hf-id="hf-etfz" id="j007" class="janela" data-motion-blur="off" src="assets/img/janelas/j007.png" alt="" style="left: 1747px; top: 490px; width: 145px; height: 146px" />
+      <img data-hf-id="hf-fcn8" id="j008" class="janela" data-motion-blur="off" src="assets/img/janelas/j008.png" alt="" style="left: 2609px; top: 499px; width: 163px; height: 148px" />
+      <img data-hf-id="hf-6g3c" id="j009" class="janela" data-motion-blur="off" src="assets/img/janelas/j009.png" alt="" style="left: 2908px; top: 504px; width: 144px; height: 144px" />
+      <img data-hf-id="hf-7ul6" id="j010" class="janela" data-motion-blur="off" src="assets/img/janelas/j010.png" alt="" style="left: 1171px; top: 803px; width: 146px; height: 145px" />
+      <img data-hf-id="hf-8hdh" id="j011" class="janela" data-motion-blur="off" src="assets/img/janelas/j011.png" alt="" style="left: 2035px; top: 806px; width: 146px; height: 145px" />
+      <img data-hf-id="hf-ay9e" id="j012" class="janela" data-motion-blur="off" src="assets/img/janelas/j012.png" alt="" style="left: 19px; top: 1114px; width: 144px; height: 143px" />
+      <img data-hf-id="hf-0w4a" id="j013" class="janela" data-motion-blur="off" src="assets/img/janelas/j013.png" alt="" style="left: 1171px; top: 1116px; width: 146px; height: 143px" />
+      <img data-hf-id="hf-nkv0" id="j014" class="janela" data-motion-blur="off" src="assets/img/janelas/j014.png" alt="" style="left: 1462px; top: 1116px; width: 146px; height: 144px" />
+      <img data-hf-id="hf-jvkk" id="j015" class="janela" data-motion-blur="off" src="assets/img/janelas/j015.png" alt="" style="left: 2908px; top: 1127px; width: 143px; height: 143px" />
+      <img data-hf-id="hf-n49g" id="j016" class="janela" data-motion-blur="off" src="assets/img/janelas/j016.png" alt="" style="left: 18px; top: 1425px; width: 145px; height: 144px" />
+      <img data-hf-id="hf-o11w" id="j017" class="janela" data-motion-blur="off" src="assets/img/janelas/j017.png" alt="" style="left: 594px; top: 1426px; width: 145px; height: 146px" />
+      <img data-hf-id="hf-1qvd" id="j018" class="janela" data-motion-blur="off" src="assets/img/janelas/j018.png" alt="" style="left: 2037px; top: 1430px; width: 145px; height: 144px" />
+      <img data-hf-id="hf-rwaf" id="j019" class="janela" data-motion-blur="off" src="assets/img/janelas/j019.png" alt="" style="left: 296px; top: 1735px; width: 163px; height: 145px" />
+      <img data-hf-id="hf-qw7x" id="j020" class="janela" data-motion-blur="off" src="assets/img/janelas/j020.png" alt="" style="left: 593px; top: 1736px; width: 146px; height: 145px" />
+      <img data-hf-id="hf-gnpo" id="j021" class="janela" data-motion-blur="off" src="assets/img/janelas/j021.png" alt="" style="left: 1171px; top: 1738px; width: 146px; height: 143px" />
+      <img data-hf-id="hf-8l8v" id="j022" class="janela" data-motion-blur="off" src="assets/img/janelas/j022.png" alt="" style="left: 1462px; top: 1737px; width: 146px; height: 144px" />
+      <img data-hf-id="hf-hmy2" id="j023" class="janela" data-motion-blur="off" src="assets/img/janelas/j023.png" alt="" style="left: 1745px; top: 1738px; width: 147px; height: 145px" />
+      <img data-hf-id="hf-9m7o" id="j024" class="janela" data-motion-blur="off" src="assets/img/janelas/j024.png" alt="" style="left: 20px; top: 2038px; width: 144px; height: 143px" />
+      <img data-hf-id="hf-vk2n" id="j025" class="janela" data-motion-blur="off" src="assets/img/janelas/j025.png" alt="" style="left: 295px; top: 2038px; width: 164px; height: 142px" />
+      <img data-hf-id="hf-v7yb" id="j026" class="janela" data-motion-blur="off" src="assets/img/janelas/j026.png" alt="" style="left: 593px; top: 2038px; width: 146px; height: 143px" />
+      <img data-hf-id="hf-ns6z" id="j027" class="janela" data-motion-blur="off" src="assets/img/janelas/j027.png" alt="" style="left: 1462px; top: 2039px; width: 146px; height: 144px" />
+      <img data-hf-id="hf-j8rl" id="j028" class="janela" data-motion-blur="off" src="assets/img/janelas/j028.png" alt="" style="left: 1746px; top: 2040px; width: 146px; height: 143px" />
+      <img data-hf-id="hf-whcp" id="j029" class="janela" data-motion-blur="off" src="assets/img/janelas/j029.png" alt="" style="left: 2037px; top: 2040px; width: 145px; height: 144px" />
+      <img data-hf-id="hf-bboh" id="j030" class="janela" data-motion-blur="off" src="assets/img/janelas/j030.png" alt="" style="left: 2609px; top: 2043px; width: 163px; height: 144px" />
+      <img data-hf-id="hf-107p" id="j031" class="janela" data-motion-blur="off" src="assets/img/janelas/j031.png" alt="" style="left: 2908px; top: 2045px; width: 144px; height: 143px" />
+      <img data-hf-id="hf-huzz" id="j032" class="janela" data-motion-blur="off" src="assets/img/janelas/j032.png" alt="" style="left: 1172px; top: 2333px; width: 145px; height: 144px" />
+      <img data-hf-id="hf-r82s" id="j033" class="janela" data-motion-blur="off" src="assets/img/janelas/j033.png" alt="" data-alvo="1" style="left: 1462px; top: 2334px; width: 146px; height: 142px" />
+      <img data-hf-id="hf-g04r" id="j034" class="janela" data-motion-blur="off" src="assets/img/janelas/j034.png" alt="" style="left: 1747px; top: 2334px; width: 145px; height: 143px" />
+      <img data-hf-id="hf-jhgz" id="j035" class="janela" data-motion-blur="off" src="assets/img/janelas/j035.png" alt="" style="left: 2037px; top: 2334px; width: 145px; height: 144px" />
+      <img data-hf-id="hf-0aho" id="j036" class="janela" data-motion-blur="off" src="assets/img/janelas/j036.png" alt="" style="left: 2610px; top: 2336px; width: 161px; height: 144px" />
+      <img data-hf-id="hf-7ll7" id="j037" class="janela" data-motion-blur="off" src="assets/img/janelas/j037.png" alt="" style="left: 2908px; top: 2337px; width: 144px; height: 145px" />
+      <img data-hf-id="hf-m0qz" id="j038" class="janela" data-motion-blur="off" src="assets/img/janelas/j038.png" alt="" style="left: 1171px; top: 2628px; width: 146px; height: 141px" />
+      <img data-hf-id="hf-3nk5" id="j039" class="janela" data-motion-blur="off" src="assets/img/janelas/j039.png" alt="" style="left: 2610px; top: 2630px; width: 163px; height: 142px" />
+      <img data-hf-id="hf-z9b9" id="j040" class="janela" data-motion-blur="off" src="assets/img/janelas/j040.png" alt="" style="left: 2907px; top: 2632px; width: 146px; height: 142px" />
+      <img data-hf-id="hf-8phq" id="j041" class="janela" data-motion-blur="off" src="assets/img/janelas/j041.png" alt="" style="left: 296px; top: 2930px; width: 162px; height: 141px" />
+      <img data-hf-id="hf-4m3g" id="j042" class="janela" data-motion-blur="off" src="assets/img/janelas/j042.png" alt="" style="left: 593px; top: 2930px; width: 145px; height: 142px" />
+      <img data-hf-id="hf-payc" id="j043" class="janela" data-motion-blur="off" src="assets/img/janelas/j043.png" alt="" style="left: 1172px; top: 2930px; width: 143px; height: 142px" />
+      <img data-hf-id="hf-7nfc" id="j044" class="janela" data-motion-blur="off" src="assets/img/janelas/j044.png" alt="" style="left: 1461px; top: 2930px; width: 148px; height: 142px" />
+      <img data-hf-id="hf-xq4u" id="j045" class="janela" data-motion-blur="off" src="assets/img/janelas/j045.png" alt="" style="left: 18px; top: 3233px; width: 142px; height: 140px" />
+      <img data-hf-id="hf-mw4j" id="j046" class="janela" data-motion-blur="off" src="assets/img/janelas/j046.png" alt="" style="left: 295px; top: 3233px; width: 164px; height: 139px" />
+      <img data-hf-id="hf-tefz" id="j047" class="janela" data-motion-blur="off" src="assets/img/janelas/j047.png" alt="" style="left: 593px; top: 3233px; width: 145px; height: 140px" />
+      <img data-hf-id="hf-pggb" id="j048" class="janela" data-motion-blur="off" src="assets/img/janelas/j048.png" alt="" style="left: 1461px; top: 3234px; width: 148px; height: 138px" />
+      <img data-hf-id="hf-uuy6" id="j049" class="janela" data-motion-blur="off" src="assets/img/janelas/j049.png" alt="" style="left: 1747px; top: 3233px; width: 146px; height: 140px" />
+      <img data-hf-id="hf-eo78" id="j050" class="janela" data-motion-blur="off" src="assets/img/janelas/j050.png" alt="" style="left: 2037px; top: 3233px; width: 145px; height: 140px" />
+      <img data-hf-id="hf-4l71" id="j051" class="janela" data-motion-blur="off" src="assets/img/janelas/j051.png" alt="" style="left: 2610px; top: 3235px; width: 163px; height: 140px" />
+      <img data-hf-id="hf-v3ci" id="j052" class="janela" data-motion-blur="off" src="assets/img/janelas/j052.png" alt="" style="left: 2909px; top: 3235px; width: 144px; height: 141px" />
+      <img data-hf-id="hf-i1mo" id="j053" class="janela" data-motion-blur="off" src="assets/img/janelas/j053.png" alt="" style="left: 17px; top: 3534px; width: 142px; height: 138px" />
+      <img data-hf-id="hf-srxf" id="j054" class="janela" data-motion-blur="off" src="assets/img/janelas/j054.png" alt="" style="left: 295px; top: 3533px; width: 164px; height: 138px" />
+      <img data-hf-id="hf-leiq" id="j055" class="janela" data-motion-blur="off" src="assets/img/janelas/j055.png" alt="" style="left: 592px; top: 3534px; width: 146px; height: 138px" />
+      <img data-hf-id="hf-24pb" id="j056" class="janela" data-motion-blur="off" src="assets/img/janelas/j056.png" alt="" style="left: 1172px; top: 3534px; width: 144px; height: 138px" />
+      <img data-hf-id="hf-ux2o" id="j057" class="janela" data-motion-blur="off" src="assets/img/janelas/j057.png" alt="" style="left: 1747px; top: 3830px; width: 144px; height: 136px" />
+      <img data-hf-id="hf-qcz7" id="j058" class="janela" data-motion-blur="off" src="assets/img/janelas/j058.png" alt="" style="left: 2037px; top: 3830px; width: 144px; height: 136px" />
+      <img data-hf-id="hf-h6z5" id="j059" class="janela" data-motion-blur="off" src="assets/img/janelas/j059.png" alt="" style="left: 294px; top: 4125px; width: 164px; height: 133px" />
+      <img data-hf-id="hf-swmt" id="j060" class="janela" data-motion-blur="off" src="assets/img/janelas/j060.png" alt="" style="left: 593px; top: 4126px; width: 145px; height: 133px" />
+      <img data-hf-id="hf-6vj0" id="j061" class="janela" data-motion-blur="off" src="assets/img/janelas/j061.png" alt="" style="left: 1172px; top: 4127px; width: 145px; height: 133px" />
+      <img data-hf-id="hf-qucb" id="j062" class="janela" data-motion-blur="off" src="assets/img/janelas/j062.png" alt="" style="left: 2610px; top: 4125px; width: 164px; height: 135px" />
+      <img data-hf-id="hf-vgs9" id="j063" class="janela" data-motion-blur="off" src="assets/img/janelas/j063.png" alt="" style="left: 2908px; top: 4126px; width: 145px; height: 133px" />
+      <img data-hf-id="hf-yemt" id="j064" class="janela" data-motion-blur="off" src="assets/img/janelas/j064.png" alt="" style="left: 1747px; top: 4418px; width: 144px; height: 132px" />
+      <img data-hf-id="hf-bcjf" id="j065" class="janela" data-motion-blur="off" src="assets/img/janelas/j065.png" alt="" style="left: 2037px; top: 4417px; width: 144px; height: 132px" />
+      <img data-hf-id="hf-vy3p" id="j066" class="janela" data-motion-blur="off" src="assets/img/janelas/j066.png" alt="" style="left: 2610px; top: 4418px; width: 165px; height: 133px" />
+      <img data-hf-id="hf-ll0j" id="j067" class="janela" data-motion-blur="off" src="assets/img/janelas/j067.png" alt="" style="left: 2909px; top: 4418px; width: 144px; height: 131px" />
+      <img data-hf-id="hf-5ozl" id="j068" class="janela" data-motion-blur="off" src="assets/img/janelas/j068.png" alt="" style="left: 295px; top: 4708px; width: 163px; height: 130px" />
+      <img data-hf-id="hf-x6ku" id="j069" class="janela" data-motion-blur="off" src="assets/img/janelas/j069.png" alt="" style="left: 592px; top: 4709px; width: 146px; height: 131px" />
+      <img data-hf-id="hf-ourp" id="j070" class="janela" data-motion-blur="off" src="assets/img/janelas/j070.png" alt="" style="left: 1171px; top: 4710px; width: 146px; height: 130px" />
+      <img data-hf-id="hf-jk86" id="j071" class="janela" data-motion-blur="off" src="assets/img/janelas/j071.png" alt="" style="left: 1461px; top: 4708px; width: 149px; height: 131px" />
+      <img data-hf-id="hf-fvbv" id="j072" class="janela" data-motion-blur="off" src="assets/img/janelas/j072.png" alt="" style="left: 17px; top: 4996px; width: 144px; height: 129px" />
+      <img data-hf-id="hf-1bdt" id="j073" class="janela" data-motion-blur="off" src="assets/img/janelas/j073.png" alt="" style="left: 295px; top: 4996px; width: 164px; height: 130px" />
+      <img data-hf-id="hf-ma2v" id="j074" class="janela" data-motion-blur="off" src="assets/img/janelas/j074.png" alt="" style="left: 1461px; top: 4997px; width: 150px; height: 130px" />
+      <img data-hf-id="hf-yboq" id="j075" class="janela" data-motion-blur="off" src="assets/img/janelas/j075.png" alt="" style="left: 1747px; top: 4998px; width: 144px; height: 129px" />
+      <img data-hf-id="hf-lo94" id="j076" class="janela" data-motion-blur="off" src="assets/img/janelas/j076.png" alt="" style="left: 2037px; top: 4996px; width: 145px; height: 129px" />
+      <img data-hf-id="hf-n8gd" id="j077" class="janela" data-motion-blur="off" src="assets/img/janelas/j077.png" alt="" style="left: 2037px; top: 5285px; width: 144px; height: 127px" />      <!-- janelas:fim -->
+      <img data-hf-id="hf-qvl1" id="fachada-close" src="assets/img/fachada-close.jpg" alt="" />
+    </div>
+
+    <!-- 1º lettering, à direita -->
+    <div data-hf-id="hf-5k0n" id="letreiro-direita" class="letreiro clip" data-start="1" data-duration="3.05">
+      <span data-hf-id="hf-m5zm" class="palavra">quando</span> <span data-hf-id="hf-o4id" class="palavra">a</span> <span data-hf-id="hf-7hoz" class="palavra">forma</span><br data-hf-id="hf-x5px" />
+      <span data-hf-id="hf-47zd" class="palavra">de</span> <span data-hf-id="hf-uwx1" class="palavra">pensar</span> <span data-hf-id="hf-8014" class="palavra destaque">evolui</span>
+    </div>
+    <!-- 2º lettering, à esquerda -->
+    <div data-hf-id="hf-6kan" id="letreiro-esquerda" class="letreiro clip" data-start="4" data-duration="2.47">
+      <span data-hf-id="hf-pseh" class="palavra">a</span> <span data-hf-id="hf-mlef" class="palavra destaque">identidade</span><br data-hf-id="hf-rsrt" />
+      <span data-hf-id="hf-89u2" class="palavra">acompanha</span>
+    </div>
+  </div>
+  <script>
+    (function () {
+      // ---------- câmera ----------
+      // zoom = e^(DEVAGAR·t + MERGULHO·t⁴): começa num avanço lento e constante (~7% por segundo)
+      // e acelera no fim até atravessar a janela acesa em T_ENTRA segundos.
+      // trilha (assets/audio/trilha3.mp3): ataque de cada pulso, medido (fonte/montar-trilha3.py); compassos em 0, 4, 8, 12…
+      const BATIDAS = [0.447, 1.055, 1.654, 2.262, 2.853, 3.454, 4.058, 4.659, 5.254, 5.86, 6.457, 7.055, 7.654];
+      // arredondada para o quadro mais próximo (30 q/s)
+      const batida = (n) => Math.round(BATIDAS[n] * 30) / 30;
+      const T_ENTRA = batida(12); // 7,667 s: atravessa o vidro no início do 4º compasso
+      const ZOOM_FINAL = 62; // no fim, um vidro da janela ocupa a tela inteira
+      const DEVAGAR = 0.07;
+      const MERGULHO = (Math.log(ZOOM_FINAL) - DEVAGAR * T_ENTRA) / Math.pow(T_ENTRA, 4);
+      const BASE = 1080 / 3072; // fachada inteira cabendo na largura do vídeo
+      const CENTRO = { x: 1536, y: 2752 }; // centro da fachada
+      const ALVO = { x: 1534.6, y: 2404.8 }; // janela que fica acesa (fonte/janelas.json)
+      const VIDRO = { x: 1573.1, y: 2404.4 }; // vidro da direita dessa janela: é por ele que a câmera entra
+
+      const zoom = (t) => Math.exp(DEVAGAR * t + MERGULHO * Math.pow(t, 4));
+      const suave = (x) => {
+        const c = Math.min(Math.max(x, 0), 1);
+        return c * c * (3 - 2 * c);
+      };
+      // estado da câmera no tempo t: zoom e o ponto do prédio que está no centro da tela
+      function estado(t) {
+        const z = zoom(t);
+        // o ponto que fica no centro da tela vai do centro do prédio até a janela acesa
+        // e, já bem perto, desliza para o centro do vidro da direita (para não entrar pelo caixilho)
+        const p = suave(Math.log(z) / Math.log(3));
+        const q = suave((Math.log(z) - Math.log(8)) / (Math.log(40) - Math.log(8)));
+        const px = CENTRO.x + (ALVO.x - CENTRO.x) * p + (VIDRO.x - ALVO.x) * q;
+        const py = CENTRO.y + (ALVO.y - CENTRO.y) * p + (VIDRO.y - ALVO.y) * q;
+        return { s: BASE * z, px, py };
+      }
+      function camera(t) {
+        const { s, px, py } = estado(t);
+        gsap.set("#fachada-mundo", { x: 540 - s * px, y: 960 - s * py, scale: s, transformOrigin: "0 0" });
+      }
+      // tempo (s) em que o zoom atinge um valor, para amarrar outros eventos ao zoom
+      function quandoZoom(alvo) {
+        let a = 0,
+          b = T_ENTRA;
+        for (let i = 0; i < 40; i++) {
+          const m = (a + b) / 2;
+          if (zoom(m) < alvo) a = m;
+          else b = m;
+        }
+        return (a + b) / 2;
+      }
+
+      const tl = gsap.timeline({ paused: true });
+      const relogio = { t: 0 };
+      camera(0);
+      tl.to(relogio, { t: 7.7, duration: 7.7, ease: "none", onUpdate: () => camera(relogio.t) }, 0);
+
+      // ---------- close da fachada ----------
+      // entra quando já cobre a tela inteira (zoom ≥ 3,5) e a fachada aberta sai logo depois
+      const tClose = quandoZoom(3.6);
+      const tCloseFim = quandoZoom(4.6);
+      tl.fromTo("#fachada-close", { opacity: 0 }, { opacity: 1, duration: tCloseFim - tClose, ease: "none" }, tClose);
+      tl.set("#fachada-base, .janela", { opacity: 0 }, tCloseFim + 0.05);
+
+      // ---------- janelas piscando ----------
+      // como na referência: grupos de janelas acendem e apagam de uma vez, sempre na batida da trilha. Acompanham o
+      // crescendo: começam poucas e calmas, ganham uma rajada no 2º compasso e vão sumindo até sobrar só a janela-alvo.
+      const janelas = Array.from(document.querySelectorAll("#fachada-mundo .janela"));
+      const alvo = janelas.findIndex((j) => j.dataset.alvo === "1");
+      let semente = 16112026;
+      const sorteio = () => {
+        semente = (semente * 1664525 + 1013904223) % 4294967296;
+        return semente / 4294967296;
+      };
+      // nenhuma janela acende atrás das letras enquanto o texto está na tela (o branco perde contraste no laranja)
+      const AREAS_TEXTO = [
+        { de: 1.0, ate: 4.1, x0: 360, y0: 400, x1: 1010, y1: 600 }, // "quando a forma de pensar evolui"
+        { de: 4.0, ate: 6.5, x0: 70, y0: 1070, x1: 640, y1: 1310 }, // "a identidade acompanha"
+      ];
+      function naTela(el, t) {
+        const { s, px, py } = estado(t);
+        const wx = parseFloat(el.style.left), wy = parseFloat(el.style.top);
+        const x0 = 540 + s * (wx - px), y0 = 960 + s * (wy - py);
+        return [x0, y0, x0 + s * parseFloat(el.style.width), y0 + s * parseFloat(el.style.height)];
+      }
+      function atrasDoTexto(el, t) {
+        // a janela tem que ficar livre durante todo o tempo em que fica acesa (até ~0,6 s depois): com o zoom ela
+        // anda na tela, então confere a posição no começo e no fim desse tempo
+        return [t, t + 0.6].some((tt) => {
+          const [x0, y0, x1, y1] = naTela(el, tt);
+          return AREAS_TEXTO.some((a) => t + 0.6 > a.de && t < a.ate && x1 > a.x0 && x0 < a.x1 && y1 > a.y0 && y0 < a.y1);
+        });
+      }
+      function grupo(qtd, comAlvo, t) {
+        const outras = janelas.map((_, i) => i).filter((i) => i !== alvo && !atrasDoTexto(janelas[i], t));
+        for (let i = outras.length - 1; i > 0; i--) {
+          const k = Math.floor(sorteio() * (i + 1));
+          [outras[i], outras[k]] = [outras[k], outras[i]];
+        }
+        const g = new Set(outras.slice(0, comAlvo ? qtd - 1 : qtd));
+        if (comAlvo) g.add(alvo);
+        return g;
+      }
+      // [segundo, quantas janelas acesas, inclui a janela-alvo?]
+      const ESTADOS = [
+        [0.0, 6, true],
+        [batida(1), 10, false],
+        [batida(2), 16, true],
+        [batida(3), 8, false],
+        [batida(4), 30, true], // rajada no início do 2º compasso
+        [batida(4) + 0.15, 34, true], // rajada (semicolcheia depois)
+        [batida(5), 12, true],
+        [batida(6), 20, true],
+        [batida(6) + 0.3, 9, true],
+        [batida(7), 6, true], // começam a sumir
+        [batida(7) + 0.3, 3, true],
+        [batida(8), 1, true], // início do 3º compasso: só a janela-alvo
+      ];
+      let anterior = new Set();
+      for (const [t, qtd, comAlvo] of ESTADOS) {
+        const agora = qtd === 1 ? new Set([alvo]) : grupo(qtd, comAlvo, t);
+        janelas.forEach((el, i) => {
+          if (agora.has(i) !== anterior.has(i)) tl.set(el, { opacity: agora.has(i) ? 1 : 0 }, t);
+        });
+        anterior = agora;
+      }
+
+      // ---------- letterings ----------
+      // direita: palavra por palavra saindo do desfoque, a partir da batida 1; o destaque "evolui" cai na batida 2
+      tl.fromTo(
+        "#letreiro-direita .palavra",
+        { opacity: 0, filter: "blur(10px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power2.out", stagger: 0.12 },
+        batida(1),
+      );
+      tl.to("#letreiro-direita .palavra", { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in", stagger: 0.02 }, batida(6) - 0.3);
+      // esquerda: "a identidade" na batida 6 e "acompanha" na batida 7
+      const esq = document.querySelectorAll("#letreiro-esquerda .palavra");
+      tl.fromTo(
+        [esq[0], esq[1]],
+        { opacity: 0, filter: "blur(14px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out", stagger: 0.06 },
+        batida(6),
+      );
+      tl.fromTo(esq[2], { opacity: 0, filter: "blur(14px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, batida(7));
+      tl.to("#letreiro-esquerda .palavra", { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, batida(10) - 0.3);
+
+      window.__timelines["fachada"] = tl;
+    })();
+  </script>
+</template>

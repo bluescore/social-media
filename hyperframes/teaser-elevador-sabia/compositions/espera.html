@@ -1,0 +1,50 @@
+<!-- Cena 3 — a espera (3,0 s, do 5º compasso até o corte para o preto).
+     O homem espera o elevador de costas, iluminado pelo botão aceso; por cima entram os letterings (compositions/subir.html).
+     Vídeo: assets/video/espera.mp4 (Kling 4.0 a partir de fonte/quadros/q6-espera-a.png; cor do botão ajustada por
+     fonte/corrigir-clipes.py, que também troca o desenho do botão para o mesmo do close: quadrado com o triângulo aceso).
+     Usa o trecho de 1,9 a 4,9 s do clipe: o fim do olhar para cima e a espera parada. -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #000000;
+    }
+    #espera-camera {
+      position: absolute;
+      inset: 0;
+    }
+    #espera-video {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      object-fit: cover;
+    }
+  </style>
+  <div data-hf-id="hf-p29x" id="root" data-composition-id="espera" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-f486" id="espera-camera" data-layout-allow-overflow>
+      <video data-hf-id="hf-hgiq"
+        id="espera-video"
+        class="clip"
+        src="assets/video/espera.mp4"
+        data-start="0"
+        data-duration="3"
+        data-media-start="1.9"
+        muted
+        playsinline
+      ></video>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // avanço lentíssimo, constante (a tensão da espera)
+      // origem no botão aceso: ele fica parado no lugar enquanto o resto cresce
+      tl.fromTo("#espera-camera", { scale: 1 }, { scale: 1.05, duration: 3, ease: "none", transformOrigin: "1015px 1425px" }, 0);
+      window.__timelines["espera"] = tl;
+    })();
+  </script>
+</template>

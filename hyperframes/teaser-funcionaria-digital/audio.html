@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Trilha do teaser</title></head>
+<body>
+<script>
+// Trilha do teaser, feita só com Web Audio (OfflineAudioContext). 80 BPM, ré menor.
+// Bumbo em toda batida, impacto em cada troca de cena (2, 4, 6 e 8 s), cliques junto com o cursor.
+window.renderAudio = async () => {
+  const SR = 48000, DUR = 15.0, BEAT = 0.75;
+  const ctx = new OfflineAudioContext(2, Math.round(SR * DUR), SR);
+
+  // ruído determinístico (sempre o mesmo resultado)
+  let seed = 1234567;
+  const rnd = () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  const noiseBuf = ctx.createBuffer(1, SR * 2, SR);
+  { const d = noiseBuf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = rnd() * 2 - 1; }
+  const ir = ctx.createBuffer(2, Math.round(SR * 2.2), SR);
+  for (let c = 0; c < 2; c++) { const d = ir.getChannelData(c); for (let i = 0; i < d.length; i++) d[i] = (rnd() * 2 - 1) * Math.pow(1 - i / d.length, 3.2); }
+
+  // barramentos
+  const master = ctx.createGain(); master.gain.value = 0.9;
+  const comp = ctx.createDynamicsCompressor();
+  comp.threshold.value = -18; comp.knee.value = 8; comp.ratio.value = 3.5; comp.attack.value = 0.004; comp.release.value = 0.14;
+  master.connect(comp); comp.connect(ctx.destination);
+  master.gain.setValueAtTime(0.9, DUR - 0.09); master.gain.linearRampToValueAtTime(0.0, DUR);
+  const verb = ctx.createConvolver(); verb.buffer = ir; const verbOut = ctx.createGain(); verbOut.gain.value = 0.32; verb.connect(verbOut); verbOut.connect(master);
+  const duck = ctx.createGain(); duck.gain.value = 1; duck.connect(master);          // música que "respira" com o bumbo
+  const dly = ctx.createDelay(1); dly.delayTime.value = 0.375; const fb = ctx.createGain(); fb.gain.value = 0.28;
+  const dlyLp = ctx.createBiquadFilter(); dlyLp.type = 'lowpass'; dlyLp.frequency.value = 2600;
+  dly.connect(dlyLp); dlyLp.connect(fb); fb.connect(dly); const dlyOut = ctx.createGain(); dlyOut.gain.value = 0.35; dlyLp.connect(dlyOut); dlyOut.connect(duck);
+
+  const noise = (t, len, off = 0) => { const n = ctx.createBufferSource(); n.buffer = noiseBuf; n.start(t, off % 1.5); n.stop(t + len); return n; };
+  const env = (g, t, peak, a, d) => { g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(peak, t + a); g.gain.exponentialRampToValueAtTime(0.0001, t + a + d); };
+  const send = (node, amt) => { const s = ctx.createGain(); s.gain.value = amt; node.connect(s); s.connect(verb); };
+
+  function kick(t, vol = 1.0) {
+    const o = ctx.createOscillator(), g = ctx.createGain(); o.type = 'sine';
+    o.frequency.setValueAtTime(170, t); o.frequency.exponentialRampToValueAtTime(50, t + 0.10); o.frequency.exponentialRampToValueAtTime(40, t + 0.4);
+    env(g, t, vol, 0.003, 0.42); o.connect(g); g.connect(master); o.start(t); o.stop(t + 0.46);
+    const n = noise(t, 0.02, t * 0.37), f = ctx.createBiquadFilter(), ng = ctx.createGain(); f.type = 'highpass'; f.frequency.value = 3000;
+    env(ng, t, 0.18 * vol, 0.001, 0.012); n.connect(f); f.connect(ng); ng.connect(master);
+    duck.gain.setValueAtTime(0.28, t + 0.002); duck.gain.setTargetAtTime(1.0, t + 0.03, 0.075);
+  }
+  function clap(t, vol = 0.32) {
+    [0, 0.012, 0.024].forEach((d, i) => {
+      const n = noise(t + d, 0.25, (t + d) * 0.71), f = ctx.createBiquadFilter(), g = ctx.createGain(); f.type = 'bandpass'; f.frequency.value = 1500; f.Q.value = 0.9;
+      env(g, t + d, vol, 0.001, i === 2 ? 0.17 : 0.012); n.connect(f); f.connect(g); g.connect(master); if (i === 2) send(g, 0.35);
+    });
+  }
+  function hat(t, vol = 0.09, len = 0.045) {
+    const n = noise(t, len + 0.02, t * 1.13), f = ctx.createBiquadFilter(), g = ctx.createGain(); f.type = 'highpass'; f.frequency.value = 7600;
+    env(g, t, vol, 0.001, len); n.connect(f); f.connect(g); g.connect(master);
+  }
+  function bass(t, fr, len = 0.2, vol = 0.26) {
+    const o = ctx.createOscillator(), o2 = ctx.createOscillator(), lp = ctx.createBiquadFilter(), g = ctx.createGain();
+    o.type = 'sawtooth'; o.frequency.value = fr; o2.type = 'sine'; o2.frequency.value = fr;
+    lp.type = 'lowpass'; lp.Q.value = 3; lp.frequency.setValueAtTime(1100, t); lp.frequency.exponentialRampToValueAtTime(260, t + len);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.006); g.gain.setValueAtTime(vol, t + len * 0.6); g.gain.exponentialRampToValueAtTime(0.0001, t + len);
+    o.connect(lp); o2.connect(lp); lp.connect(g); g.connect(duck); o.start(t); o2.start(t); o.stop(t + len + 0.02); o2.stop(t + len + 0.02);
+  }
+  function pad(t, freqs, len, vol = 0.05, cut = 1500) {
+    const lp = ctx.createBiquadFilter(), g = ctx.createGain(); lp.type = 'lowpass'; lp.frequency.value = cut; lp.Q.value = 0.5;
+    g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(vol, t + 0.06); g.gain.setValueAtTime(vol, t + len - 0.05); g.gain.linearRampToValueAtTime(0.0001, t + len + 0.25);
+    freqs.forEach(f => [-7, 7].forEach(c => { const o = ctx.createOscillator(); o.type = 'sawtooth'; o.frequency.value = f; o.detune.value = c; o.connect(lp); o.start(t); o.stop(t + len + 0.3); }));
+    lp.connect(g); g.connect(duck); send(g, 0.5);
+  }
+  function pluck(t, f, vol = 0.06) {
+    const o = ctx.createOscillator(), lp = ctx.createBiquadFilter(), g = ctx.createGain(); o.type = 'square'; o.frequency.value = f;
+    lp.type = 'lowpass'; lp.Q.value = 2; lp.frequency.setValueAtTime(4200, t); lp.frequency.exponentialRampToValueAtTime(650, t + 0.16);
+    env(g, t, vol, 0.002, 0.2); o.connect(lp); lp.connect(g); g.connect(duck); g.connect(dly); send(g, 0.3); o.start(t); o.stop(t + 0.25);
+  }
+  function hit(t, chord, big = false) {
+    const o = ctx.createOscillator(), g = ctx.createGain(); o.type = 'sine';
+    o.frequency.setValueAtTime(big ? 120 : 100, t); o.frequency.exponentialRampToValueAtTime(32, t + 0.55);
+    env(g, t, big ? 0.85 : 0.6, 0.004, big ? 1.0 : 0.7); o.connect(g); g.connect(master); o.start(t); o.stop(t + 1.2);
+    const n = noise(t, 0.4, t * 0.29), f = ctx.createBiquadFilter(), ng = ctx.createGain(); f.type = 'bandpass'; f.frequency.value = 800; f.Q.value = 0.7;
+    env(ng, t, big ? 0.5 : 0.32, 0.002, 0.28); n.connect(f); f.connect(ng); ng.connect(master); send(ng, 0.4);
+    const lp = ctx.createBiquadFilter(), sg = ctx.createGain(); lp.type = 'lowpass'; lp.Q.value = 1.5;
+    lp.frequency.setValueAtTime(5000, t); lp.frequency.exponentialRampToValueAtTime(500, t + 0.4);
+    env(sg, t, big ? 0.16 : 0.11, 0.004, big ? 0.6 : 0.4);
+    chord.forEach(fr => [-9, 9].forEach(c => { const so = ctx.createOscillator(); so.type = 'sawtooth'; so.frequency.value = fr * 2; so.detune.value = c; so.connect(lp); so.start(t); so.stop(t + 0.9); }));
+    lp.connect(sg); sg.connect(master); send(sg, 0.6);
+    if (big) { const c = noise(t, 2.0, 0.5), hf = ctx.createBiquadFilter(), cg = ctx.createGain(); hf.type = 'highpass'; hf.frequency.value = 4800; env(cg, t, 0.13, 0.002, 1.7); c.connect(hf); hf.connect(cg); cg.connect(master); send(cg, 0.5); }
+  }
+  function riser(t0, t1, vol = 0.12) {
+    const n = noise(t0, t1 - t0, 0.9), f = ctx.createBiquadFilter(), g = ctx.createGain(); f.type = 'bandpass'; f.Q.value = 1.2;
+    f.frequency.setValueAtTime(400, t0); f.frequency.exponentialRampToValueAtTime(6500, t1);
+    g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(vol, t1 - 0.02); g.gain.linearRampToValueAtTime(0.0001, t1);
+    n.connect(f); f.connect(g); g.connect(master); send(g, 0.3);
+  }
+  function click(t, vol = 0.2, fr = 2500) {
+    const o = ctx.createOscillator(), g = ctx.createGain(); o.type = 'sine'; o.frequency.setValueAtTime(fr, t); o.frequency.exponentialRampToValueAtTime(fr * 0.6, t + 0.03);
+    env(g, t, vol, 0.001, 0.035); o.connect(g); g.connect(master); o.start(t); o.stop(t + 0.05);
+    const n = noise(t, 0.015, t * 0.53), hf = ctx.createBiquadFilter(), ng = ctx.createGain(); hf.type = 'highpass'; hf.frequency.value = 4000;
+    env(ng, t, vol * 0.6, 0.0005, 0.008); n.connect(hf); hf.connect(ng); ng.connect(master);
+  }
+  function blip(t, f0, f1, vol = 0.12, len = 0.09) {
+    const o = ctx.createOscillator(), g = ctx.createGain(); o.type = 'sine'; o.frequency.setValueAtTime(f0, t); o.frequency.exponentialRampToValueAtTime(f1, t + len);
+    env(g, t, vol, 0.003, len); o.connect(g); g.connect(master); send(g, 0.3); o.start(t); o.stop(t + len + 0.05);
+  }
+  function chirp(t, f0, f1, len, vol = 0.07) { // frase curta de sabiá: assobio com vibrato
+    const o = ctx.createOscillator(), g = ctx.createGain(), lfo = ctx.createOscillator(), lg = ctx.createGain();
+    o.type = 'sine'; o.frequency.setValueAtTime(f0, t); o.frequency.exponentialRampToValueAtTime(f1, t + len);
+    lfo.frequency.value = 34; lg.gain.value = 45; lfo.connect(lg); lg.connect(o.frequency);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.015); g.gain.setValueAtTime(vol, t + len * 0.7); g.gain.exponentialRampToValueAtTime(0.0001, t + len);
+    o.connect(g); g.connect(master); send(g, 0.6); o.start(t); o.stop(t + len + 0.02); lfo.start(t); lfo.stop(t + len + 0.02);
+  }
+
+  // ---------- harmonia: Dm | Bb | F | C | Fmaj7 ----------
+  const CH = [
+    { pad: [146.83, 174.61, 220.00, 293.66], bass: 73.42, arp: [587.33, 698.46, 880.00, 1174.66] },
+    { pad: [116.54, 146.83, 174.61, 233.08], bass: 58.27, arp: [466.16, 587.33, 698.46, 932.33] },
+    { pad: [174.61, 220.00, 261.63, 349.23], bass: 87.31, arp: [698.46, 880.00, 1046.50, 1396.91] },
+    { pad: [130.81, 164.81, 196.00, 261.63], bass: 65.41, arp: [523.25, 659.25, 783.99, 1046.50] },
+    { pad: [174.61, 220.00, 261.63, 329.63], bass: 87.31, arp: [698.46, 880.00, 1046.50, 1318.51] },
+  ];
+  const ARP = [0, 1, 2, 3, 2, 1, 2, 3];
+
+  // 15 s a 80 BPM = 20 batidas de 0,75 s = 5 compassos; cada cena tem 1 compasso (3 s) e um acorde
+  const NB = Math.round(DUR / BEAT), E = BEAT / 2, S16 = BEAT / 4;   // colcheia e semicolcheia
+  for (let b = 0; b < NB; b++) kick(b * BEAT, b === 12 ? 1.0 : (b < 4 ? 0.85 : 0.92));
+  for (let b = 0; b < NB; b++) hat(b * BEAT + E, b < 4 ? 0.055 : 0.08);
+  for (let b = 8; b < 16; b++) { hat(b * BEAT + S16, 0.032, 0.03); hat(b * BEAT + 3 * S16, 0.032, 0.03); }
+  for (let bar = 1; bar < 5; bar++) { clap(bar * 3 + BEAT); clap(bar * 3 + 3 * BEAT); }
+
+  // gancho (0-3 s): escuro e contido
+  pad(0, CH[0].pad, 3.0, 0.032, 650);
+  for (let i = 2; i < 4; i++) bass(i * BEAT + E, CH[0].bass, 0.22, 0.16);
+  // chat (3-6), funil (6-9), agenda (9-12), logo (12-15)
+  for (let sc = 1; sc < 5; sc++) {
+    const c = CH[sc], t0 = sc * 3, big = sc === 3;
+    pad(t0, c.pad, 3.0, big ? 0.055 : 0.045, big ? 2200 : 1500);
+    for (let i = 0; i < 4; i++) {
+      if (sc === 4 && i >= 3) break;
+      bass(t0 + i * BEAT + E, c.bass, 0.26, sc === 4 ? 0.2 : 0.26);
+      if (big) bass(t0 + i * BEAT + 3 * S16, c.bass * 2, 0.12, 0.12);
+    }
+    if (big) for (let i = 0; i < 16; i++) pluck(t0 + i * S16, c.arp[ARP[i % 8]], 0.055);
+    else if (sc < 4) for (let i = 0; i < 8; i++) pluck(t0 + i * E, c.arp[ARP[i % 8]], 0.045);
+    else for (let i = 0; i < 4; i++) pluck(t0 + BEAT * 0.5 + i * BEAT * 0.75, c.arp[ARP[i]], 0.035);
+  }
+
+  // impactos nas trocas de cena + subida antes da batida mais forte (9 s)
+  hit(3.0, CH[1].pad); hit(6.0, CH[2].pad); hit(9.0, CH[3].pad, true); hit(12.0, CH[4].pad);
+  riser(7.75, 9.0, 0.12);
+
+  // ações do cursor e do objeto (tempos reais = 1,5 x tempo da linha)
+  blip(0.75, 700, 1100, 0.08, 0.08);      // o ponto nasce
+  click(1.46); blip(1.52, 500, 900, 0.07, 0.12);  // clique, abre o "digitando"
+  blip(3.83, 900, 1300, 0.05, 0.08);      // resposta aparece
+  click(5.15, 0.18, 2200);                // agarra o balão
+  click(7.23, 0.2, 1400);                 // solta o card
+  click(8.22);                            // Agendar
+  click(9.72); blip(9.78, 1200, 1800, 0.05, 0.1); // confirma
+  // canto do sabiá quando o passarinho se forma
+  chirp(12.06, 2350, 3050, 0.11); chirp(12.2, 3050, 2600, 0.08); chirp(12.31, 2500, 3350, 0.14);
+  blip(12.95, 600, 820, 0.04, 0.2);       // slogan
+  hit(14.25, CH[4].pad);                  // só o logo: fecho
+
+  const buf = await ctx.startRendering();
+  // normaliza o pico em -1 dBFS e grava WAV 16 bits
+  const L = buf.getChannelData(0), R = buf.getChannelData(1); let peak = 0;
+  for (let i = 0; i < L.length; i++) peak = Math.max(peak, Math.abs(L[i]), Math.abs(R[i]));
+  const k = 0.891 / (peak || 1), n = L.length, out = new DataView(new ArrayBuffer(44 + n * 4));
+  const ws = (o, s) => { for (let i = 0; i < s.length; i++) out.setUint8(o + i, s.charCodeAt(i)); };
+  ws(0, 'RIFF'); out.setUint32(4, 36 + n * 4, true); ws(8, 'WAVE'); ws(12, 'fmt '); out.setUint32(16, 16, true); out.setUint16(20, 1, true); out.setUint16(22, 2, true);
+  out.setUint32(24, SR, true); out.setUint32(28, SR * 4, true); out.setUint16(32, 4, true); out.setUint16(34, 16, true); ws(36, 'data'); out.setUint32(40, n * 4, true);
+  for (let i = 0; i < n; i++) { out.setInt16(44 + i * 4, Math.max(-32768, Math.min(32767, Math.round(L[i] * k * 32767))), true); out.setInt16(46 + i * 4, Math.max(-32768, Math.min(32767, Math.round(R[i] * k * 32767))), true); }
+  const bytes = new Uint8Array(out.buffer); let bin = '';
+  for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+  return btoa(bin);
+};
+window.ready = Promise.resolve(true);
+</script>
+</body></html>

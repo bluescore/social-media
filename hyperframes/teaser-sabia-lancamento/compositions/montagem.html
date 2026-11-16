@@ -1,0 +1,123 @@
+<!-- MONTAGEM "teaser-sabia-lancamento" (9 s): ritmo copiado do brutos\...\exemplo.mp4.
+     A tela tem duas faixas, em cima e embaixo. A cada batida de 0,3 s só uma delas troca:
+     a foto nova entra pela METADE (data-entra = "cima" ou "baixo", até a linha data-corte, em px)
+     e, na batida seguinte, ocupa a tela INTEIRA. Corte seco, sem transição.
+
+     Para trocar uma foto: troque o src. Para mudar o enquadramento: mude o object-position dela no <style>.
+     Para mudar o ritmo: mude data-start/data-duration (cada foto = 0,9 s: meia, inteira, meia coberta). -->
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #1e1415; /* fundo escuro da marca (nunca aparece: as fotos cobrem tudo) */
+    }
+    .camada {
+      position: absolute;
+      inset: 0;
+    }
+    .foto {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      object-fit: cover;
+    }
+    /* Fotos deitadas (paisagem) ficam só numa faixa, nunca na tela inteira */
+    .painel-cima .foto {
+      height: 960px;
+    }
+    .painel-baixo .foto {
+      top: 960px;
+      height: 960px;
+    }
+
+    /* Enquadramento de cada foto (horizontal vertical) */
+    #m-01 .foto { object-position: 75% 50%; }
+    #m-02 .foto { object-position: 40% 50%; }
+    #m-03 .foto { object-position: 75% 50%; }
+    #m-05 .foto { object-position: 60% 50%; }
+    #m-06 .foto { object-position: 75% 50%; }
+    #m-07 .foto { object-position: 35% 50%; }
+    #m-09 .foto { object-position: 50% 50%; }
+    #m-10 .foto { object-position: 50% 50%; }
+    #m-11 .foto { object-position: 45% 50%; }
+    #m-12 .foto { object-position: 80% 50%; }
+    #m-13 .foto { object-position: 45% 50%; }
+  </style>
+
+  <div data-hf-id="hf-az9f" id="root" data-composition-id="montagem" data-width="1080" data-height="1920">
+    <!-- 0,0 s: abre com o sabiá de verdade (é a capa do vídeo) -->
+    <div data-hf-id="hf-d1yc" id="m-01" class="clip camada" data-start="0" data-duration="0.6" data-track-index="0" style="z-index: 1">
+      <img data-hf-id="hf-iwp9" class="foto" src="assets/fotos/01-sabia-tordo.jpg" alt="Sabiá-laranjeira">
+    </div>
+    <div data-hf-id="hf-379r" id="m-02" class="clip camada" data-start="0.3" data-duration="0.9" data-entra="cima" data-corte="960" data-track-index="1" style="z-index: 2">
+      <img data-hf-id="hf-82bx" class="foto" src="assets/fotos/02-post-its.jpg" alt="Mãos colando post-its na parede">
+    </div>
+    <div data-hf-id="hf-igbr" id="m-03" class="clip camada" data-start="0.9" data-duration="0.9" data-entra="baixo" data-corte="1000" data-track-index="0" style="z-index: 3">
+      <img data-hf-id="hf-tvyg" class="foto" src="assets/fotos/03-sabia-galho.jpg" alt="Sabiá no galho">
+    </div>
+    <!-- 1,5 s: o pássaro de verdade vira o pássaro da marca -->
+    <div data-hf-id="hf-r0ih" id="m-04" class="clip camada" data-start="1.5" data-duration="0.9" data-entra="baixo" data-corte="900" data-track-index="1" style="z-index: 4">
+      <img data-hf-id="hf-hayp" class="foto" src="assets/fotos/04-passaro-fundo-escuro.png" alt="Passarinho laranja da marca">
+    </div>
+    <div data-hf-id="hf-m58q" id="m-05" class="clip camada" data-start="2.1" data-duration="0.9" data-entra="cima" data-corte="960" data-track-index="0" style="z-index: 5">
+      <img data-hf-id="hf-qohi" class="foto" src="assets/fotos/05-escrita.jpg" alt="Mão escrevendo">
+    </div>
+    <div data-hf-id="hf-r3a8" id="m-06" class="clip camada" data-start="2.7" data-duration="0.9" data-entra="baixo" data-corte="1060" data-track-index="1" style="z-index: 6">
+      <img data-hf-id="hf-r1mt" class="foto" src="assets/fotos/06-sabia-musgo.jpg" alt="Sabiá no galho com musgo">
+    </div>
+    <div data-hf-id="hf-mms0" id="m-07" class="clip camada" data-start="3.3" data-duration="0.9" data-entra="cima" data-corte="880" data-track-index="0" style="z-index: 7">
+      <img data-hf-id="hf-7hte" class="foto" src="assets/fotos/07-maos-notebook.jpg" alt="Mãos no notebook">
+    </div>
+    <!-- 3,9 s: as sementes da marca -->
+    <div data-hf-id="hf-99dd" id="m-08" class="clip camada" data-start="3.9" data-duration="0.9" data-entra="baixo" data-corte="960" data-track-index="1" style="z-index: 8">
+      <img data-hf-id="hf-u3qe" class="foto" src="assets/fotos/08-sementes-lima.png" alt="Sementes da marca no fundo lima">
+    </div>
+    <div data-hf-id="hf-lj9s" id="m-09" class="clip camada" data-start="4.5" data-duration="0.9" data-entra="cima" data-corte="1000" data-track-index="0" style="z-index: 9">
+      <img data-hf-id="hf-xwqx" class="foto" src="assets/fotos/09-sabia-wikipedia.jpg" alt="Sabiá visto de baixo">
+    </div>
+    <div data-hf-id="hf-cge1" id="m-10" class="clip camada" data-start="5.1" data-duration="0.9" data-entra="baixo" data-corte="960" data-track-index="1" style="z-index: 10">
+      <img data-hf-id="hf-z30x" class="foto" src="assets/fotos/10-celular.jpg" alt="Mão segurando celular">
+    </div>
+    <!-- 5,7 s: duas fotos deitadas, uma em cada faixa -->
+    <div data-hf-id="hf-5nqc" id="m-11" class="clip camada painel-cima" data-start="5.7" data-duration="0.6" data-track-index="0" style="z-index: 11">
+      <img data-hf-id="hf-pbnc" class="foto" src="assets/fotos/11-sofa.jpg" alt="Duas pessoas no sofá laranja com notebook">
+    </div>
+    <div data-hf-id="hf-jqk0" id="m-12" class="clip camada painel-baixo" data-start="6" data-duration="0.6" data-track-index="1" style="z-index: 12">
+      <img data-hf-id="hf-cd7m" class="foto" src="assets/fotos/12-notebook-laranja.jpg" alt="Mulher no notebook com fundo laranja">
+    </div>
+    <div data-hf-id="hf-9yd6" id="m-13" class="clip camada" data-start="6.3" data-duration="0.9" data-entra="cima" data-corte="1080" data-track-index="0" style="z-index: 13">
+      <img data-hf-id="hf-28x1" class="foto" src="assets/fotos/13-sabia-tronco.jpg" alt="Sabiá no tronco">
+    </div>
+    <!-- 6,9 s: entra o logo; de 7,2 s até o fim ele fica na tela, aproximando devagar -->
+    <div data-hf-id="hf-17ay" id="m-14" class="clip camada" data-start="6.9" data-duration="2.1" data-entra="baixo" data-corte="960" data-track-index="1" style="z-index: 14">
+      <img data-hf-id="hf-u3qz" class="foto" src="assets/fotos/14-logo-sabia-laranja.png" alt="Logo sabiá vertical no fundo laranja">
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const BATIDA = 0.3; // 9 quadros a 30 fps, igual ao vídeo de referência
+    const INTEIRA = "inset(0px 0px 0px 0px)";
+
+    // Cada foto com data-entra aparece só numa faixa por uma batida e depois ocupa a tela toda.
+    document.querySelectorAll(".camada[data-entra]").forEach((camada) => {
+      const foto = camada.querySelector(".foto");
+      const inicio = parseFloat(camada.dataset.start);
+      const corte = parseFloat(camada.dataset.corte);
+      const metade =
+        camada.dataset.entra === "cima"
+          ? `inset(0px 0px ${1920 - corte}px 0px)` // mostra de 0 até a linha
+          : `inset(${corte}px 0px 0px 0px)`; // mostra da linha até o fim
+      tl.fromTo(foto, { clipPath: metade }, { clipPath: INTEIRA, duration: 0, immediateRender: true }, inicio + BATIDA);
+    });
+
+    // Logo final: aproxima 4% bem devagar enquanto fica na tela
+    tl.fromTo("#m-14 .foto", { scale: 1 }, { scale: 1.04, duration: 1.8, ease: "power1.out" }, 7.2);
+
+    window.__timelines["montagem"] = tl;
+  </script>
+</template>

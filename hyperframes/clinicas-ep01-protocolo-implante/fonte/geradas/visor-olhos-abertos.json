@@ -1,0 +1,31 @@
+{
+  "data": "2026-11-12T14:10:43.834Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/visor-olhos-fechados.png"
+  ],
+  "prompt": "Image 1 = the close shot to edit. Create the SAME image: same framing, pose, figure, light, background and every detail in exactly the same place. Change ONLY her painted eyes: now OPEN, painted as two small round black dots, looking straight at the lens, a little tired (a very thin painted eyelid line just above each dot). Nothing else changes. No text.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\visor-olhos-abertos.png"
+  ],
+  "usage": {
+    "input_tokens": 1604,
+    "input_tokens_details": {
+      "image_tokens": 1508,
+      "text_tokens": 96
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 3017
+  },
+  "custo_estimado_usd": 0.0549,
+  "segundos": 41
+}

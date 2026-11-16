@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "audio": "assets/musica/musica-referencia.m4a",
+  "beats": [
+    {
+      "time": 0.715,
+      "strength": 0.696
+    },
+    {
+      "time": 1.525,
+      "strength": 0.272
+    },
+    {
+      "time": 2.305,
+      "strength": 0.479
+    },
+    {
+      "time": 2.985,
+      "strength": 0.771
+    },
+    {
+      "time": 3.905,
+      "strength": 0.548
+    },
+    {
+      "time": 4.705,
+      "strength": 0.811
+    },
+    {
+      "time": 5.505,
+      "strength": 1
+    },
+    {
+      "time": 6.305,
+      "strength": 0.784
+    },
+    {
+      "time": 7.115,
+      "strength": 0.605
+    }
+  ]
+}

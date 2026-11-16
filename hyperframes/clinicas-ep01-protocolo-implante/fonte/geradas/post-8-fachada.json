@@ -1,0 +1,31 @@
+{
+  "data": "2026-11-12T15:14:01.485Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "medium",
+  "tamanho": "1024x1536",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/maquete-larga-noite.png"
+  ],
+  "prompt": "The small facade of a miniature dental clinic on a tiny street corner in daylight: a light plaster wall, a big window with soft curtains, a wooden door, a small potted tree, a blank sign board with no letters. Premium tabletop miniature photography (dollhouse scale), real materials (wood, ceramic, fabric, plaster), soft natural daylight, gentle tilt-shift depth of field, warm and friendly, tasteful muted palette (greige, sage, warm wood, off-white). Vertical 9:16 Instagram post photo. No text, no logos, no letters, no watermark, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\post-8-fachada.png"
+  ],
+  "usage": {
+    "input_tokens": 1646,
+    "input_tokens_details": {
+      "image_tokens": 1508,
+      "text_tokens": 138
+    },
+    "output_tokens": 1132,
+    "output_tokens_details": {
+      "image_tokens": 1132,
+      "text_tokens": 0
+    },
+    "total_tokens": 2778
+  },
+  "custo_estimado_usd": 0.0467,
+  "segundos": 38
+}

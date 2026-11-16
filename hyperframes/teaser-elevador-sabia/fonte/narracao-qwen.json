@@ -1,0 +1,48 @@
+{
+  "_sobre": "Narração com a Yago-Voice (voz clonada do dono no Higgsfield, id af270031-c3d6-4d9a-9f1f-6c4ac3d98bbb). Tomada escolhida: Qwen Audio TTS (v2) — a única em que todas as falas cabem nos tempos dos textos. Alternativas no arquivo fonte/audio/narracao-comparacao.mp3 (1º ElevenLabs, 2º MiniMax, 3º Qwen). Para trocar de tomada: mude 'tomada' e os tempos 'de'/'ate' (da tomada) e rode python -I fonte/montar-narracao.py. 'no_filme' = onde a fala começa no vídeo. 'ganho_db' = ganho fixo de cada fala inteira (as primeiras mais baixas, para o filme começar leve). Na última fala a música desce uma profundidade fixa (-6 dB) em rampa, sem cortar o eco do impacto.",
+  "tomada": "fonte/audio/narracao-qwen-v2.wav",
+  "voz_lufs": -21.0,
+  "voz_acima_da_musica_db": 8.0,
+  "reducao_max_db": 9.0,
+  "impacto_s": 14.833,
+  "falas": [
+    {
+      "texto": "Quando a forma de pensar evolui,",
+      "de": 0.0,
+      "ate": 1.64,
+      "no_filme": 1.075,
+      "ganho_db": -5.0
+    },
+    {
+      "texto": "a identidade acompanha.",
+      "de": 2.08,
+      "ate": 3.5,
+      "no_filme": 4.075,
+      "ganho_db": -7.0
+    },
+    {
+      "texto": "E nós queremos... subir.",
+      "de": 3.865,
+      "ate": 5.65,
+      "no_filme": 10.647,
+      "ganho_db": 0.0
+    },
+    {
+      "texto": "Em breve.",
+      "de": 5.92,
+      "ate": 6.575,
+      "no_filme": 13.175,
+      "ganho_db": -2.0
+    },
+    {
+      "texto": "Dezesseis de novembro.",
+      "de": 6.85,
+      "ate": 8.06,
+      "no_filme": 15.25,
+      "ganho_db": 0.0,
+      "abaixar_fixo_db": -6.0,
+      "desce_s": 0.2,
+      "solta_s": 0.4
+    }
+  ]
+}

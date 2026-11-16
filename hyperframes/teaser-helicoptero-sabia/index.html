@@ -1,0 +1,165 @@
+<!doctype html>
+<!-- TEASER HELICÓPTERO SABIÁ (vertical 1080×1920, 16,5 s)
+     Helicóptero laranja leva o contêiner da Sabiá pela cidade e pousa no topo de uma torre;
+     fecha em tela preta com a data do lançamento.
+     Cenas geradas por IA no Higgsfield: roteiro, textos e scripts em fonte\ (veja fonte\ROTEIRO.md).
+     Para trocar a data: data-variable-values da cena "data", mais abaixo. -->
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000000;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .cena {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1080px;
+        height: 1920px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-a5zy"
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="16.5"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- 1. decolagem: o helicóptero ergue o contêiner do telhado -->
+      <video data-hf-id="hf-3tj9"
+        id="cena-decolagem"
+        class="clip cena"
+        src="assets/video/c1-decolagem.mp4"
+        data-start="0"
+        data-duration="3.2"
+        data-media-start="0.2"
+        data-track-index="0"
+        style="z-index: 1"
+        data-has-audio="true"
+        data-volume="0.75"
+        data-fade-out="0.08"
+        playsinline
+      ></video>
+      <!-- 2. voo entre as torres de vidro -->
+      <video data-hf-id="hf-n75x"
+        id="cena-voo"
+        class="clip cena"
+        src="assets/video/c2-voo.mp4"
+        data-start="3.2"
+        data-duration="3.2"
+        data-media-start="0.5"
+        data-track-index="0"
+        style="z-index: 2"
+        data-has-audio="true"
+        data-volume="0.75"
+        data-fade-in="0.08"
+        data-fade-out="0.08"
+        playsinline
+      ></video>
+      <!-- 3. o contêiner passa perto: ícone em destaque -->
+      <video data-hf-id="hf-pwi2"
+        id="cena-logo"
+        class="clip cena"
+        src="assets/video/c3-logo.mp4"
+        data-start="6.4"
+        data-duration="3.1"
+        data-media-start="1.3"
+        data-track-index="0"
+        style="z-index: 3"
+        data-has-audio="true"
+        data-volume="0.75"
+        data-fade-in="0.08"
+        data-fade-out="0.08"
+        playsinline
+      ></video>
+      <!-- 4. pouso no heliponto da torre -->
+      <video data-hf-id="hf-urm1"
+        id="cena-pouso"
+        class="clip cena"
+        src="assets/video/c4-pouso.mp4"
+        data-start="9.5"
+        data-duration="3"
+        data-media-start="0.6"
+        data-playback-rate="1.35"
+        data-track-index="0"
+        style="z-index: 4"
+        data-has-audio="true"
+        data-volume="0.75"
+        data-fade-in="0.08"
+        playsinline
+      ></video>
+
+      <!-- 5. tela preta com a data -->
+      <div data-hf-id="hf-g9mm"
+        id="data"
+        data-composition-id="data"
+        data-composition-src="compositions/data.html"
+        data-variable-values='{"data":"16/11"}'
+        data-start="12.5"
+        data-duration="4"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 5"
+      ></div>
+
+      <!-- som: helicóptero, trilha de suspense e a batida grave na data -->
+      <audio data-hf-id="hf-hrex"
+        id="som-rotor"
+        class="clip"
+        src="assets/audio/rotor.mp3"
+        data-start="0"
+        data-duration="12.5"
+        data-track-index="2"
+        data-volume="0.35"
+        data-fade-in="0.15"
+      ></audio>
+      <audio data-hf-id="hf-6nwy"
+        id="som-trilha"
+        class="clip"
+        src="assets/audio/trilha.mp3"
+        data-start="0"
+        data-duration="12.5"
+        data-track-index="3"
+        data-volume="0.6"
+        data-fade-in="0.6"
+      ></audio>
+      <audio data-hf-id="hf-jj80"
+        id="som-impacto"
+        class="clip"
+        src="assets/audio/impacto.mp3"
+        data-start="12.5"
+        data-duration="4"
+        data-track-index="4"
+        data-volume="1"
+      ></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

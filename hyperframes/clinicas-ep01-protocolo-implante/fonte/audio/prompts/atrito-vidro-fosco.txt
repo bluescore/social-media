@@ -1,0 +1,2 @@
+Dry frosted glass friction, one smooth slow sweep of a fingertip across matte frosted glass, gentle airy scrape that rises and fades, close-mic, dry, no squeak, no ringing, no musical tone, no reverb
+{"duration_seconds": 1.2, "prompt_influence": 0.6}

@@ -1,0 +1,2 @@
+One quick ballpoint pen stroke crossing out a word on paper, a single fast wavy scratch line, close-mic, dry, no tone
+{"duration_seconds": 0.5, "prompt_influence": 0.7}

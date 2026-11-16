@@ -1,0 +1,2 @@
+Thin fine hiss of a single cut, like a sharp blade lightly scoring glass once, short airy scratch with a soft tail, close-mic, dry, no squeal, no ringing, no musical tone, no reverb
+{"duration_seconds": 0.6, "prompt_influence": 0.7}

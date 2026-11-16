@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-12T13:14:48.119Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/folha-A-final.png",
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/placa-bancada-noite.png"
+  ],
+  "prompt": "Image 1 = approved character model sheet (wooden figure). Image 2 = the miniature counter scene she is in (for light and scale only; do not include the counter).\nKeep EXACTLY her design, materials and finish from Image 1: carved dark brown wooden hair in a LOW BUN with ONE wide band of carved GREY hair on her own RIGHT side, bone-white carved lab coat with notched lapels and rolled sleeves, honey-brown satin wood hands, brown watch on her LEFT wrist.\nPOSE AND VIEW: seen from ABOVE and slightly behind (camera looking down at about 70 degrees), as in an overhead photo of a miniature: we see the top of her head with the low bun and the grey band, her shoulders and the top of the lab coat from behind, foreshortened. Her LEFT arm is stretched forward and up toward the upper-left of the image (reaching to switch off a table lamp that is NOT in the picture), hand slightly open. Her right arm relaxed by her side.\nLIGHT: warm 2700 K lamp light coming from the upper-LEFT (where her hand reaches), soft; faint cool light from the right.\nBACKGROUND: fully TRANSPARENT, isolated figure, no floor, no cast shadow, no counter. No text, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\helena-de-cima-pose1.png"
+  ],
+  "usage": {
+    "input_tokens": 3306,
+    "input_tokens_details": {
+      "image_tokens": 3016,
+      "text_tokens": 290
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 4719
+  },
+  "custo_estimado_usd": 0.068,
+  "segundos": 43
+}

@@ -1,0 +1,2 @@
+Single dry fingertip tap on a smartphone glass screen, one soft short tap of skin on glass, close-mic, no beep, no tone, no musical note, no reverb
+{"duration_seconds": 0.5, "prompt_influence": 0.7}

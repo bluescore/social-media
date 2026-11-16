@@ -1,0 +1,2 @@
+Crisp sheet of paper folding once, sharp paper crease snap, close-mic, short, dry
+{"duration_seconds": 0.7, "prompt_influence": 0.7}

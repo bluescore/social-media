@@ -1,0 +1,115 @@
+<!doctype html>
+<!-- TEASER "E NÓS QUEREMOS SUBIR" — Sabiá Lab (vertical 1080×1920, 17 s)
+     Fachada à noite → a câmera entra pela única janela acesa → detalhe da mão apertando o botão do elevador →
+     o homem esperando ("e nós queremos" / "SUBIR") → preto com "em breve" → "16.11" (fim: só a data, sem logo).
+     Trilha: assets/audio/trilha3.mp3 (100 BPM) — começa quase em silêncio, cresce sem parar e tem UM impacto,
+     na data (14,833 s). Batidas medidas (ataques): 0,447 / 1,055 / 1,654 / 2,262 / 2,853 / … / 14,833 s; os cortes e
+     eventos ficam no quadro (30 q/s) mais próximo da batida:
+       7,667 s  entrada pela janela (início do 4º compasso)   8,267 s  o botão acende (+ clique)
+       10,067 s a espera (início do 5º compasso)              10,667 s "e nós queremos"   11,867 s "SUBIR"
+       13,067 s corte para o preto, "em breve"                14,833 s "16.11" + impacto + "plim"
+     Narração (A.Medeiros, ElevenLabs): "quando a forma de pensar evolui" 1,08 s · "a identidade acompanha" 4,07 s ·
+       "e nós queremos... subir" 10,58 s (o "subir" em 11,96 s, com a palavra na tela) · "em breve" 13,17 s ·
+       "dezesseis de novembro" 15,29 s, logo depois do impacto (a cauda do "plim" já vai sumindo).
+     Roteiro e arquivos de origem: fonte\ROTEIRO.md -->
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --laranja-intenso: #f34500;
+        --laranja-medio: #f35c05;
+        --laranja-ambar: #f28801;
+        --branco: #ffffff;
+        --preto: #000000;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000000;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-81xy"
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="17"
+      data-width="1080"
+      data-height="1920"
+      data-motion-blur="on"
+      data-motion-blur-events="on"
+    >
+      <!-- 1. fachada: zoom lento, janelas piscando na batida, letterings à direita e à esquerda, mergulho na janela acesa -->
+      <div data-hf-id="hf-vnvp" id="fachada" class="clip" data-composition-id="fachada" data-composition-src="compositions/fachada.html"
+        data-start="0" data-duration="7.7" data-track-index="0" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 1"></div>
+      <!-- passagem: a luz laranja da cortina toma a tela e se abre no início do 4º compasso (7,667 s) -->
+      <div data-hf-id="hf-la5w" id="passagem" class="clip" data-composition-id="passagem" data-composition-src="compositions/passagem.html"
+        data-start="7.0333" data-duration="1.2" data-track-index="1" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 5"></div>
+      <!-- 2. detalhe do botão (como a referência): a mão já em movimento, aperta, e ele acende na batida de 8,267 s -->
+      <div data-hf-id="hf-yh1o" id="botao" class="clip" data-composition-id="botao" data-composition-src="compositions/botao.html"
+        data-start="7.5333" data-duration="2.5667" data-track-index="0" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 2"></div>
+      <!-- 3. a espera, no início do 5º compasso -->
+      <div data-hf-id="hf-y4q7" id="espera" class="clip" data-composition-id="espera" data-composition-src="compositions/espera.html"
+        data-start="10.0666" data-duration="3" data-track-index="0" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 3"></div>
+      <!-- letterings centralizados: "e nós queremos" e, duas batidas depois, "SUBIR" -->
+      <div data-hf-id="hf-3zhs" id="subir" class="clip" data-composition-id="subir" data-composition-src="compositions/subir.html"
+        data-start="10.6666" data-duration="2.4" data-track-index="2" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 4"></div>
+      <!-- 4. preto: "em breve" enquanto a trilha sobe; "16.11" no impacto (14,833 s) até o fim -->
+      <div data-hf-id="hf-vwdi" id="breve" class="clip" data-composition-id="breve" data-composition-src="compositions/breve.html"
+        data-start="13.0666" data-duration="3.9334" data-track-index="0" data-track-kind="graphics"
+        data-width="1080" data-height="1920" style="z-index: 6"></div>
+
+      <!-- SOM — a trilha começa quase em silêncio e cresce até o único impacto, na data; os efeitos ficam por baixo
+           dela: lá fora a cidade bem baixinha e um sopro que leva até a janela; dentro, o clique quando o botão
+           acende e o ambiente do hall; no preto, o elevador subindo (tics de andar) e o "plim" junto com o 16.11.
+           O volume final é ajustado depois do render (fonte/normalizar-audio.py), sem achatar o impacto. -->
+      <!-- trilha abaixada só enquanto a voz fala (fonte/montar-narracao.py; a original é trilha3.mp3) -->
+      <audio data-hf-id="hf-yb0x" id="som-trilha" class="clip" src="assets/audio/trilha3-narrada.wav"
+        data-start="0" data-duration="17" data-track-index="4" data-volume="1"></audio>
+      <!-- NARRAÇÃO: voz A.Medeiros (ElevenLabs, modelo v4). Cada fala já está no lugar dentro do
+           arquivo (fonte/narracao.json): sem esticar, sem acelerar, sem limitador. -->
+      <audio data-hf-id="hf-ejbz" id="som-narracao" class="clip" src="assets/audio/narracao.wav"
+        data-start="0" data-duration="17" data-track-index="12" data-volume="1"></audio>
+      <!-- cidade: trecho 3–10 s de cidade.mp3, sem o carro alto do começo e sem o ronco grave, subindo junto com a música (cidade2.mp3) -->
+      <audio data-hf-id="hf-zmmr" id="som-cidade" class="clip" src="assets/audio/cidade2.mp3"
+        data-start="0" data-duration="7" data-track-index="5" data-volume="0.1" data-fade-out="0.8"></audio>
+      <audio data-hf-id="hf-7pc6" id="som-passagem" class="clip" src="assets/audio/passagem2.mp3"
+        data-start="5.65" data-duration="2.1" data-media-start="0.5" data-track-index="6" data-volume="0.15" data-fade-in="0.6" data-fade-out="0.5"></audio>
+      <audio data-hf-id="hf-lhb8" id="som-clique" class="clip" src="assets/audio/clique.mp3"
+        data-start="8.16" data-duration="0.8" data-track-index="7" data-volume="0.3"></audio>
+      <audio data-hf-id="hf-jm8a" id="som-hall" class="clip" src="assets/audio/hall2.mp3"
+        data-start="7.667" data-duration="5.4" data-track-index="8" data-volume="0.2" data-fade-in="0.3" data-fade-out="0.15"></audio>
+      <audio data-hf-id="hf-nz9l" id="som-chegada" class="clip" src="assets/audio/chegada2.mp3"
+        data-start="13.0666" data-duration="2.41" data-media-start="0.74" data-track-index="9" data-volume="0.4"></audio>
+      <audio data-hf-id="hf-y17p" id="som-plim" class="clip" src="assets/audio/plim.mp3"
+        data-start="14.699" data-duration="2.3" data-track-index="10" data-volume="0.65" data-fade-out="1.1"></audio>
+      <audio data-hf-id="hf-sig9" id="som-hall-preto" class="clip" src="assets/audio/hall2.mp3"
+        data-start="13.0666" data-duration="3.9334" data-media-start="1.0" data-track-index="11" data-volume="0.1" data-fade-out="1"></audio>
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

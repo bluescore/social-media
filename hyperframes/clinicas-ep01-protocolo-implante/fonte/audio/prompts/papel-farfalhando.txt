@@ -1,0 +1,2 @@
+Light soft rustle of a single sheet of paper on a wooden desk, brief and gentle, close-mic, dry, subtle, no tone
+{"duration_seconds": 1.0, "prompt_influence": 0.6}

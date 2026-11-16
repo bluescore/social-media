@@ -1,0 +1,2 @@
+Soft low air whoosh of a slow camera pull back, gentle deep breath of air that swells smoothly in the middle and fades out, subtle and discreet, no tone, no hit, no riser, no musical note
+{"duration_seconds": 2.6, "prompt_influence": 0.6}

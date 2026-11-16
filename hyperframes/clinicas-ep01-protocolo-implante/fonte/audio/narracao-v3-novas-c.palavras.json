@@ -1,0 +1,520 @@
+{
+ "arquivo": "assets/audio/fontes/narracao-v3-novas-c.mp3",
+ "modelo": "faster-whisper large-v3 (CPU, int8)",
+ "texto_esperado": "quarenta e sete dias sem postar nada.\nmas isso está prestes a mudar...\no roteiro ela já tinha.\nfaltava tirar do papel.\nse você explica isso todo dia no consultório, o seu também já existe.\ncomente clínica e a gente te mostra como.",
+ "como": "\"palavras_sem_dica\" = o Whisper sozinho na tomada inteira (para conferir que todas as palavras saíram; ele escreve \"47\"). \"palavras\" = as mesmas, só que as palavras até \"dias\" vêm de uma 2ª passada nos primeiros 2,8 s com a frase \"Quarenta e sete dias sem postar nada.\" como dica, para sair \"quarenta e sete\" por extenso, com o tempo de cada uma",
+ "erros": [],
+ "palavras": [
+  {
+   "palavra": "Quarenta",
+   "inicio": 0.0,
+   "fim": 0.42,
+   "confianca": 0.682
+  },
+  {
+   "palavra": "e",
+   "inicio": 0.42,
+   "fim": 0.44,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "sete",
+   "inicio": 0.44,
+   "fim": 0.8,
+   "confianca": 0.995
+  },
+  {
+   "palavra": "dias",
+   "inicio": 0.8,
+   "fim": 1.1,
+   "confianca": 0.998
+  },
+  {
+   "palavra": "sem",
+   "inicio": 1.08,
+   "fim": 1.38,
+   "confianca": 0.996
+  },
+  {
+   "palavra": "postar",
+   "inicio": 1.38,
+   "fim": 1.84,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "nada.",
+   "inicio": 1.84,
+   "fim": 2.2,
+   "confianca": 0.995
+  },
+  {
+   "palavra": "Mas",
+   "inicio": 2.52,
+   "fim": 2.98,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "isso",
+   "inicio": 2.98,
+   "fim": 3.3,
+   "confianca": 0.982
+  },
+  {
+   "palavra": "está",
+   "inicio": 3.3,
+   "fim": 3.62,
+   "confianca": 0.99
+  },
+  {
+   "palavra": "prestes",
+   "inicio": 3.62,
+   "fim": 4.28,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "a",
+   "inicio": 4.28,
+   "fim": 4.28,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "mudar.",
+   "inicio": 4.28,
+   "fim": 4.54,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "O",
+   "inicio": 4.84,
+   "fim": 5.26,
+   "confianca": 0.996
+  },
+  {
+   "palavra": "roteiro",
+   "inicio": 5.26,
+   "fim": 5.7,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "ela",
+   "inicio": 5.7,
+   "fim": 5.8,
+   "confianca": 0.95
+  },
+  {
+   "palavra": "já",
+   "inicio": 5.8,
+   "fim": 5.98,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "tinha.",
+   "inicio": 5.98,
+   "fim": 6.22,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "Faltava",
+   "inicio": 6.46,
+   "fim": 7.06,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "tirar",
+   "inicio": 7.06,
+   "fim": 7.26,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "do",
+   "inicio": 7.26,
+   "fim": 7.5,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "papel.",
+   "inicio": 7.5,
+   "fim": 7.74,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "Se",
+   "inicio": 8.02,
+   "fim": 8.42,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "você",
+   "inicio": 8.42,
+   "fim": 8.58,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "explica",
+   "inicio": 8.58,
+   "fim": 9.08,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "isso",
+   "inicio": 9.08,
+   "fim": 9.26,
+   "confianca": 0.998
+  },
+  {
+   "palavra": "todo",
+   "inicio": 9.26,
+   "fim": 9.62,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "dia",
+   "inicio": 9.62,
+   "fim": 9.92,
+   "confianca": 0.996
+  },
+  {
+   "palavra": "no",
+   "inicio": 9.92,
+   "fim": 10.06,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "consultório,",
+   "inicio": 10.06,
+   "fim": 10.76,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "o",
+   "inicio": 10.82,
+   "fim": 11.06,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "seu",
+   "inicio": 11.06,
+   "fim": 11.34,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "também",
+   "inicio": 11.34,
+   "fim": 11.72,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "já",
+   "inicio": 11.72,
+   "fim": 11.98,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "existe.",
+   "inicio": 11.98,
+   "fim": 12.34,
+   "confianca": 0.998
+  },
+  {
+   "palavra": "Comente",
+   "inicio": 12.7,
+   "fim": 13.3,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "clínica",
+   "inicio": 13.3,
+   "fim": 13.84,
+   "confianca": 0.915
+  },
+  {
+   "palavra": "e",
+   "inicio": 13.84,
+   "fim": 14.02,
+   "confianca": 0.986
+  },
+  {
+   "palavra": "a",
+   "inicio": 14.02,
+   "fim": 14.16,
+   "confianca": 0.998
+  },
+  {
+   "palavra": "gente",
+   "inicio": 14.16,
+   "fim": 14.36,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "te",
+   "inicio": 14.36,
+   "fim": 14.5,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "mostra",
+   "inicio": 14.5,
+   "fim": 14.78,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "como.",
+   "inicio": 14.78,
+   "fim": 15.06,
+   "confianca": 0.999
+  }
+ ],
+ "erros_sem_dica": [
+  "faltou \"quarenta\"",
+  "faltou \"e\"",
+  "trocou \"sete\" por \"47\""
+ ],
+ "palavras_sem_dica": [
+  {
+   "palavra": "47",
+   "inicio": 0.0,
+   "fim": 0.48,
+   "confianca": 0.899
+  },
+  {
+   "palavra": "dias",
+   "inicio": 0.48,
+   "fim": 1.08,
+   "confianca": 0.988
+  },
+  {
+   "palavra": "sem",
+   "inicio": 1.08,
+   "fim": 1.38,
+   "confianca": 0.996
+  },
+  {
+   "palavra": "postar",
+   "inicio": 1.38,
+   "fim": 1.84,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "nada.",
+   "inicio": 1.84,
+   "fim": 2.2,
+   "confianca": 0.995
+  },
+  {
+   "palavra": "Mas",
+   "inicio": 2.52,
+   "fim": 2.98,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "isso",
+   "inicio": 2.98,
+   "fim": 3.3,
+   "confianca": 0.982
+  },
+  {
+   "palavra": "está",
+   "inicio": 3.3,
+   "fim": 3.62,
+   "confianca": 0.99
+  },
+  {
+   "palavra": "prestes",
+   "inicio": 3.62,
+   "fim": 4.28,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "a",
+   "inicio": 4.28,
+   "fim": 4.28,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "mudar.",
+   "inicio": 4.28,
+   "fim": 4.54,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "O",
+   "inicio": 4.84,
+   "fim": 5.26,
+   "confianca": 0.996
+  },
+  {
+   "palavra": "roteiro",
+   "inicio": 5.26,
+   "fim": 5.7,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "ela",
+   "inicio": 5.7,
+   "fim": 5.8,
+   "confianca": 0.95
+  },
+  {
+   "palavra": "já",
+   "inicio": 5.8,
+   "fim": 5.98,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "tinha.",
+   "inicio": 5.98,
+   "fim": 6.22,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "Faltava",
+   "inicio": 6.46,
+   "fim": 7.06,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "tirar",
+   "inicio": 7.06,
+   "fim": 7.26,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "do",
+   "inicio": 7.26,
+   "fim": 7.5,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "papel.",
+   "inicio": 7.5,
+   "fim": 7.74,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "Se",
+   "inicio": 8.02,
+   "fim": 8.42,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "você",
+   "inicio": 8.42,
+   "fim": 8.58,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "explica",
+   "inicio": 8.58,
+   "fim": 9.08,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "isso",
+   "inicio": 9.08,
+   "fim": 9.26,
+   "confianca": 0.998
+  },
+  {
+   "palavra": "todo",
+   "inicio": 9.26,
+   "fim": 9.62,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "dia",
+   "inicio": 9.62,
+   "fim": 9.92,
+   "confianca": 0.996
+  },
+  {
+   "palavra": "no",
+   "inicio": 9.92,
+   "fim": 10.06,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "consultório,",
+   "inicio": 10.06,
+   "fim": 10.76,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "o",
+   "inicio": 10.82,
+   "fim": 11.06,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "seu",
+   "inicio": 11.06,
+   "fim": 11.34,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "também",
+   "inicio": 11.34,
+   "fim": 11.72,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "já",
+   "inicio": 11.72,
+   "fim": 11.98,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "existe.",
+   "inicio": 11.98,
+   "fim": 12.34,
+   "confianca": 0.998
+  },
+  {
+   "palavra": "Comente",
+   "inicio": 12.7,
+   "fim": 13.3,
+   "confianca": 0.999
+  },
+  {
+   "palavra": "clínica",
+   "inicio": 13.3,
+   "fim": 13.84,
+   "confianca": 0.915
+  },
+  {
+   "palavra": "e",
+   "inicio": 13.84,
+   "fim": 14.02,
+   "confianca": 0.986
+  },
+  {
+   "palavra": "a",
+   "inicio": 14.02,
+   "fim": 14.16,
+   "confianca": 0.998
+  },
+  {
+   "palavra": "gente",
+   "inicio": 14.16,
+   "fim": 14.36,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "te",
+   "inicio": 14.36,
+   "fim": 14.5,
+   "confianca": 0.997
+  },
+  {
+   "palavra": "mostra",
+   "inicio": 14.5,
+   "fim": 14.78,
+   "confianca": 1.0
+  },
+  {
+   "palavra": "como.",
+   "inicio": 14.78,
+   "fim": 15.06,
+   "confianca": 0.999
+  }
+ ]
+}

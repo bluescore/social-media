@@ -1,0 +1,29 @@
+{
+  "data": "2026-11-12T15:13:53.099Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "medium",
+  "tamanho": "1024x1536",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [],
+  "prompt": "A neat flat lay seen from above on a soft greige linen surface: a bamboo toothbrush, a small roll of dental floss and a small glass, arranged with care, soft daylight shadows. Premium tabletop miniature photography (dollhouse scale), real materials (wood, ceramic, fabric, plaster), soft natural daylight, gentle tilt-shift depth of field, warm and friendly, tasteful muted palette (greige, sage, warm wood, off-white). Vertical 9:16 Instagram post photo. No text, no logos, no letters, no watermark, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\post-5-escova.png"
+  ],
+  "usage": {
+    "input_tokens": 120,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 120
+    },
+    "output_tokens": 1132,
+    "output_tokens_details": {
+      "image_tokens": 1132,
+      "text_tokens": 0
+    },
+    "total_tokens": 1252
+  },
+  "custo_estimado_usd": 0.0346,
+  "segundos": 30
+}

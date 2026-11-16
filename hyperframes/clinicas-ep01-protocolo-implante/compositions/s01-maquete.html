@@ -1,0 +1,283 @@
+<!-- CENAS 1 e 2 (0 a 10,3 s do episódio): "o take 14" e a revelação da maquete.
+     0,0  capa: o celular no tripé, grande no quadro; no visor (câmera traseira, sem espelho) a Helena de madeira de olhos
+          fechados; atrás e à esquerda do tripé, ela mesma de corpo inteiro, desfocada.
+     0,43 ela abre os olhos · 0,80–1,20 sobe "apagar vídeo?" · parado até 2,20 · 2,23 toca "apagar" · 2,50 prévia volta
+     3,00–3,30 o contador rola de "take 14" para "take 15"
+     4,00–6,60 RECUO QUE REVELA A MAQUETE: cada camada encolhe numa velocidade (o tripé mais rápido que a Helena, que é mais
+          rápida que a maquete), e o desfoque sai; a borda de madeira da caixa entra e mostra que tudo é uma maquete
+     8,0 ela vira a cabeça para a bancada (onde está a folha)
+     10,0–10,3 a câmera desce rápido (com borrão de movimento) para a bancada: passa para a cena 3
+     Medidas: o tripé (assets/img/tripe.png, 864x1536) tem a tela em x 320–541, y 105–514 (medido por cor). -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #2b2224;
+      font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+    }
+    #s1-cam {
+      position: absolute;
+      inset: 0;
+      transform-origin: 540px 860px;
+    }
+    /* cada camada escala em volta do mesmo ponto (o centro da tela do celular), com velocidades diferentes */
+    .camada {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      transform-origin: 689.5px 685px;
+    }
+    .placa {
+      position: absolute;
+      left: -67.5px;
+      top: -120px;
+      width: 1215px;
+      height: 2160px;
+    }
+    #helena-corpo,
+    #helena-corpo-desf,
+    #helena-vira {
+      position: absolute;
+      left: 185px;
+      top: 509px;
+      width: 536px;
+      height: 952px;
+      transform-origin: 268px 940px;
+    }
+    #helena-vira {
+      opacity: 0;
+    }
+    #sombra-helena,
+    #sombra-tripe {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(22, 13, 10, 0.42), rgba(22, 13, 10, 0) 70%);
+    }
+    #sombra-helena {
+      left: 330px;
+      top: 1395px;
+      width: 290px;
+      height: 70px;
+    }
+    #sombra-tripe {
+      left: 560px;
+      top: 1405px;
+      width: 260px;
+      height: 60px;
+    }
+    #tripe {
+      position: absolute;
+      left: 414px;
+      top: 487px;
+      width: 553px;
+      height: 983px;
+    }
+    /* a tela do celular: desenhada em 441 x 812 (o tamanho dela na capa) e encolhida para caber na imagem do tripé */
+    #tela {
+      position: absolute;
+      left: 619px;
+      top: 554px;
+      width: 441px;
+      height: 812px;
+      transform-origin: 0 0;
+      transform: scale(0.32258);
+      border-radius: 34px;
+      overflow: hidden;
+      background: #1b1c1f;
+      color: #f6f4f1;
+    }
+    .visor {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 441px;
+      height: 812px;
+      object-fit: cover;
+      transform-origin: 220px 812px;
+    }
+    #visor-abertos {
+      opacity: 0;
+    }
+    #reflexo {
+      position: absolute;
+      inset: -40px;
+      background: linear-gradient(118deg, rgba(255, 238, 220, 0) 30%, rgba(255, 238, 220, 0.1) 44%, rgba(255, 238, 220, 0) 58%);
+      pointer-events: none;
+    }
+    #rec {
+      position: absolute;
+      left: 26px;
+      top: 26px;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    }
+    #rec .bola {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #f6f4f1;
+      margin-right: 12px;
+    }
+    #rec .num {
+      display: inline-block;
+      height: 40px;
+      overflow: hidden;
+      vertical-align: top;
+      margin-left: 10px;
+    }
+    #rec .rolo {
+      display: block;
+    }
+    #rec .rolo span {
+      display: block;
+      height: 40px;
+    }
+    #hora {
+      position: absolute;
+      right: 26px;
+      top: 30px;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    }
+    #painel {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 330px;
+      background: rgba(48, 50, 54, 0.94);
+      border-radius: 30px 30px 0 0;
+      padding: 44px 32px 0;
+    }
+    #painel .pergunta {
+      font-size: 36px;
+      letter-spacing: -0.02em;
+      margin-bottom: 40px;
+    }
+    #painel .botoes {
+      display: flex;
+      gap: 18px;
+    }
+    #painel .botao {
+      flex: 1;
+      height: 92px;
+      border-radius: 22px;
+      background: rgba(246, 244, 241, 0.12);
+      font-size: 34px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #painel #apagar {
+      background: rgba(246, 244, 241, 0.22);
+    }
+  </style>
+
+  <div id="root" data-composition-id="s01-maquete" data-width="1080" data-height="1920">
+    <div id="s1-cam" data-layout-allow-overflow data-layout-allow-overlap>
+      <div id="c-placa" class="camada">
+        <img id="placa-nitida" class="placa" src="assets/img/maquete-noite.jpg" alt="" />
+        <img id="placa-desf" class="placa" src="assets/img/maquete-noite-desfocada.jpg" alt="" />
+      </div>
+      <div id="c-helena" class="camada">
+        <div id="sombra-helena"></div>
+        <img id="helena-corpo" src="assets/img/helena-corpo.png" alt="" />
+        <img id="helena-vira" src="assets/img/helena-corpo-vira.png" alt="" />
+        <img id="helena-corpo-desf" src="assets/img/helena-corpo-desfocada.png" alt="" />
+      </div>
+      <div id="c-tripe" class="camada">
+        <div id="sombra-tripe"></div>
+        <img id="tripe" src="assets/img/tripe.png" alt="" />
+        <div id="tela">
+          <img id="visor-fechados" class="visor" src="assets/img/visor-fechados.jpg" alt="" />
+          <img id="visor-abertos" class="visor" src="assets/img/visor-abertos.jpg" alt="" />
+          <div id="rec"><span class="bola"></span>take<span class="num"><span class="rolo"><span>14</span><span>15</span></span></span></div>
+          <div id="hora">23:47</div>
+          <div id="painel">
+            <div class="pergunta">apagar vídeo?</div>
+            <div class="botoes"><div class="botao">cancelar</div><div class="botao" id="apagar">apagar</div></div>
+          </div>
+          <div id="reflexo"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const T0 = { x: -149.5, y: 175 };
+
+      // ---- capa: cada camada começa ampliada em volta do celular; empurrão leve até 3,8 s
+      tl.set("#c-tripe", { x: T0.x, y: T0.y, scale: 3.1 }, 0);
+      tl.set("#c-helena", { x: T0.x, y: T0.y, scale: 2.55 }, 0);
+      tl.set("#c-placa", { x: T0.x, y: T0.y, scale: 2.2 }, 0);
+      tl.fromTo("#s1-cam", { scale: 1 }, { scale: 1.02, duration: 3.4, ease: "sine.inOut" }, 0);
+      tl.set("#painel", { y: 330 }, 0);
+
+      // ---- respiração dela (no visor e no corpo desfocado), ciclos de 1,6 s
+      for (let i = 0; i < 6; i++) {
+        tl.to(".visor", { scaleY: 1.01, duration: 0.8, ease: "sine.inOut" }, i * 1.6);
+        tl.to(".visor", { scaleY: 1, duration: 0.8, ease: "sine.inOut" }, i * 1.6 + 0.8);
+      }
+
+      // ---- ela abre os olhos (0,43–0,53) e os ombros assentam
+      tl.to("#visor-abertos", { opacity: 1, duration: 0.1, ease: "none" }, 0.43);
+      tl.to(".visor", { y: -6, duration: 0.15, ease: "power1.out" }, 0.4);
+      tl.to(".visor", { y: 0, duration: 0.25, ease: "power2.out" }, 0.6);
+
+      // ---- "apagar vídeo?" sobe, fica parado, ela apaga, o painel desce
+      tl.to("#painel", { y: 0, duration: 0.35, ease: "expo.out" }, 0.7);
+      tl.to("#apagar", { scale: 0.97, backgroundColor: "rgba(246,244,241,0.34)", duration: 0.07, ease: "power1.out" }, 1.9);
+      tl.to("#painel", { y: 330, duration: 0.2, ease: "power2.in" }, 2.0);
+
+      // ---- o contador rola de 14 para 15 e para seco
+      tl.to("#rec .rolo", { y: -40, duration: 0.3, ease: "back.out(1.6)" }, 2.55);
+
+      // ---- RECUO QUE REVELA A MAQUETE (4,0–6,6)
+      const RECUO = { duration: 2.3, ease: "power2.inOut" };
+      tl.to("#c-tripe", { x: 0, y: 0, scale: 1, ...RECUO }, 3.55);
+      tl.to("#c-helena", { x: 0, y: 0, scale: 1, ...RECUO }, 3.55);
+      tl.to("#c-placa", { x: 0, y: 0, scale: 1, ...RECUO }, 3.55);
+      tl.to("#s1-cam", { scale: 1, duration: 2.3, ease: "power2.inOut" }, 3.55);
+      tl.to("#placa-desf", { opacity: 0, duration: 1.4, ease: "power1.inOut" }, 4.0);
+      tl.to("#helena-corpo-desf", { opacity: 0, duration: 1.2, ease: "power1.inOut" }, 4.2);
+      // a Helena respira devagar enquanto olha o celular
+      tl.to(["#helena-corpo", "#helena-vira"], { scaleY: 1.006, duration: 1.2, ease: "sine.inOut" }, 5.85);
+      tl.to(["#helena-corpo", "#helena-vira"], { scaleY: 1, duration: 1.2, ease: "sine.inOut" }, 7.05);
+
+      // (v3: a legenda "na cadeira, ela explica de cor" saiu a pedido do dono; a locução agora aparece na faixa de legendas)
+
+      // ---- ela vira a cabeça para a bancada (8,0)
+      tl.to("#helena-vira", { opacity: 1, duration: 0.12, ease: "none" }, 7.2);
+      tl.set("#helena-corpo", { opacity: 0 }, 7.33);
+
+      // ---- a câmera desce rápido para a bancada (passa para a cena 3)
+      tl.to("#s1-cam", { y: -900, duration: 0.3, ease: "power2.in" }, 9.0);
+
+      window.__timelines["s01-maquete"] = tl;
+    })();
+  </script>
+</template>

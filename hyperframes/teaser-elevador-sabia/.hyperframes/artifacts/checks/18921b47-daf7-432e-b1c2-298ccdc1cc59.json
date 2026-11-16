@@ -1,0 +1,265 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 4
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 1,
+    "findings": [
+      {
+        "code": "motion_blur_no_movers",
+        "severity": "info",
+        "message": "data-motion-blur=\"on\" is set but nothing in the composition moves fast enough to blur, so it has no effect",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "8",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-motion-blur": "on"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "fixHint": "animate an element's transform or position by 2+ px per frame; if the motion is set from a timeline callback (onUpdate, render(t)), add data-motion-blur-events=\"on\"; otherwise drop data-motion-blur"
+      }
+    ]
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 2,
+    "findings": [
+      {
+        "code": "escaped_container",
+        "severity": "warning",
+        "time": 4,
+        "selector": "#fachada-mundo",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": -446.9,
+          "top": -681.05,
+          "right": 1527.79,
+          "bottom": 2856.92,
+          "width": 1974.68,
+          "height": 3537.97
+        },
+        "containerSelector": "#fachada > div:nth-of-type(1)",
+        "text": "",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/fachada.html",
+        "bbox": {
+          "x": -446.9,
+          "y": -681.05,
+          "width": 1974.68,
+          "height": 3537.97
+        },
+        "firstSeen": 4,
+        "lastSeen": 6.667,
+        "occurrences": 4,
+        "heldMs": 2667,
+        "times": [
+          4,
+          4.889,
+          5.778,
+          6.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 0.444,
+        "selector": "#fachada-mundo",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -16.65,
+          "top": -37.06,
+          "right": 1096.64,
+          "bottom": 1957.59,
+          "width": 1113.29,
+          "height": 1994.65
+        },
+        "containerSelector": "#fachada > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 16.65,
+          "right": 16.64,
+          "top": 37.06,
+          "bottom": 37.59
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/fachada.html",
+        "bbox": {
+          "x": -16.65,
+          "y": -37.06,
+          "width": 1113.29,
+          "height": 1994.65
+        },
+        "firstSeen": 0.444,
+        "lastSeen": 6.667,
+        "occurrences": 8,
+        "heldMs": 6223,
+        "times": [
+          0.444,
+          1.333,
+          2.222,
+          3.111,
+          4,
+          4.889,
+          5.778,
+          6.667
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 7.556,
+        "selector": "#hall-camera",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -35.26,
+          "top": -62.69,
+          "right": 1115.26,
+          "bottom": 1982.69,
+          "width": 1150.52,
+          "height": 2045.38
+        },
+        "containerSelector": "#hall > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 35.26,
+          "right": 35.26,
+          "top": 62.69,
+          "bottom": 62.69
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/hall.html",
+        "bbox": {
+          "x": -35.26,
+          "y": -62.69,
+          "width": 1150.52,
+          "height": 2045.38
+        },
+        "firstSeen": 7.556,
+        "lastSeen": 7.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.556
+        ]
+      }
+    ],
+    "duration": 8,
+    "samples": [
+      0.444,
+      1.333,
+      2.222,
+      3.111,
+      4,
+      4.889,
+      5.778,
+      6.667,
+      7.556
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 3,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      0.444,
+      2.222,
+      4,
+      5.778,
+      7.556
+    ],
+    "checked": 12,
+    "passed": 12
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 64
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

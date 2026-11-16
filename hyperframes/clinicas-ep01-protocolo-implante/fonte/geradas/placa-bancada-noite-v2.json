@@ -1,0 +1,31 @@
+{
+  "data": "2026-11-12T13:15:05.662Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "xhigh",
+  "tamanho": "1440x2560",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/placa-bancada-noite.png"
+  ],
+  "prompt": "Image 1 = the miniature counter at night. Create the SAME photograph: same camera angle, lens, framing, tilt-shift focus, lamp, lamp light, pen cup, plant and wood. Changes: (1) REMOVE the metal tray and the dental instruments at the bottom-left completely; the warm wooden countertop simply continues there, with a small closed notebook in muted grey at the very bottom-left corner, mostly out of focus; (2) render the wood with smooth, continuous, natural tonal gradients (fine grain, no blotchy flat patches, no banding). Keep the centre of the countertop EMPTY. No instruments, no paper in the centre, no text, no people, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\placa-bancada-noite-v2.png"
+  ],
+  "usage": {
+    "input_tokens": 1665,
+    "input_tokens_details": {
+      "image_tokens": 1508,
+      "text_tokens": 157
+    },
+    "output_tokens": 3276,
+    "output_tokens_details": {
+      "image_tokens": 3276,
+      "text_tokens": 0
+    },
+    "total_tokens": 4941
+  },
+  "custo_estimado_usd": 0.1111,
+  "segundos": 61
+}

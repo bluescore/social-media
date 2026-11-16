@@ -1,0 +1,138 @@
+<!-- Cena 6 (13,6–16,8 s): o final. Logo antigo riscado de laranja, cinco traços
+     (as cinco letras do nome novo, escondidas) e "Em breve." -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Megion";
+      src: url("assets/fonts/Megion-Bold.otf") format("opentype");
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #1e1415;
+      overflow: hidden;
+    }
+    .s6-sementes {
+      position: absolute;
+    }
+    #s6-sementes-a {
+      width: 420px;
+      right: -150px;
+      top: 40px;
+    }
+    #s6-sementes-b {
+      width: 500px;
+      left: -150px;
+      bottom: 120px;
+    }
+    #s6-antigo {
+      position: absolute;
+      left: 50%;
+      top: 400px;
+      width: 500px;
+      height: 144px;
+      margin-left: -250px;
+    }
+    #s6-logo-antigo {
+      width: 100%;
+      opacity: 0.75;
+    }
+    #s6-risco {
+      position: absolute;
+      left: -20px;
+      right: -20px;
+      top: 64px;
+      height: 16px;
+      background: #f34500;
+      transform-origin: left center;
+    }
+    #s6-tracos {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 760px;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+    .s6-traco {
+      width: 118px;
+      height: 14px;
+      background: #f34500;
+      transform-origin: center center;
+    }
+    #s6-em-breve {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 900px;
+      text-align: center;
+      font-family: "Megion", sans-serif;
+      font-weight: 700;
+      font-size: 170px;
+      line-height: 1;
+      color: #ffffff;
+    }
+    #s6-chamada {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 1130px;
+      text-align: center;
+      font-family: "Helvetica Now Text", sans-serif;
+      font-weight: 400;
+      font-size: 44px;
+      color: rgba(255, 255, 255, 0.72);
+    }
+  </style>
+  <div data-hf-id="hf-az72" id="root" data-composition-id="s6" data-width="1080" data-height="1920">
+    <img data-hf-id="hf-471h"
+      id="s6-sementes-a"
+      class="s6-sementes"
+      src="assets/marca/grafismos/sementes-soltas_preenchida_laranja.png"
+      alt=""
+      data-layout-allow-overflow
+    />
+    <img data-hf-id="hf-j7i1"
+      id="s6-sementes-b"
+      class="s6-sementes"
+      src="assets/marca/grafismos/sementes-soltas_contorno_laranja.png"
+      alt=""
+      data-layout-allow-overflow
+    />
+    <div data-hf-id="hf-e2px" id="s6-antigo">
+      <img data-hf-id="hf-ptr7" id="s6-logo-antigo" src="assets/marca-antiga/bluescore_logo_branco.png" alt="Blue Score" />
+      <div data-hf-id="hf-o8wp" id="s6-risco"></div>
+    </div>
+    <div data-hf-id="hf-u7vb" id="s6-tracos">
+      <div data-hf-id="hf-g5s1" class="s6-traco"></div>
+      <div data-hf-id="hf-0v9x" class="s6-traco"></div>
+      <div data-hf-id="hf-2270" class="s6-traco"></div>
+      <div data-hf-id="hf-1nvz" class="s6-traco"></div>
+      <div data-hf-id="hf-2ut2" class="s6-traco"></div>
+    </div>
+    <div data-hf-id="hf-zlpu" id="s6-em-breve">Em breve.</div>
+    <div data-hf-id="hf-q6qw" id="s6-chamada">Ative as notificações</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo(".s6-sementes", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.7, ease: "expo.out", stagger: 0.08 }, 0.05);
+    // O nome antigo aparece e é riscado (eco do gancho)
+    tl.fromTo("#s6-logo-antigo", { opacity: 0, filter: "blur(8px)" }, { opacity: 0.75, filter: "blur(0px)", duration: 0.2, ease: "power2.out" }, 0.05);
+    tl.fromTo("#s6-risco", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "expo.out" }, 0.3);
+    // Cinco traços: cinco letras escondidas
+    tl.fromTo(".s6-traco", { scaleX: 0 }, { scaleX: 1, duration: 0.25, ease: "expo.out", stagger: 0.08 }, 0.6);
+    // "Em breve." bate junto com o impacto
+    tl.fromTo("#s6-em-breve", { opacity: 0, filter: "blur(10px)", scale: 1.06 }, { opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.2, ease: "expo.out" }, 1.1);
+    tl.fromTo("#s6-chamada", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power2.out" }, 1.3);
+
+    window.__timelines["s6"] = tl;
+  </script>
+</template>

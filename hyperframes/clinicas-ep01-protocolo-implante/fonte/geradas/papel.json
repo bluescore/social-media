@@ -1,0 +1,29 @@
+{
+  "data": "2026-11-12T13:12:50.061Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "medium",
+  "tamanho": "1088x1536",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [],
+  "prompt": "Top-down flat photograph of a single blank sheet of matte off-white printer paper (#F4F1EA), perfectly flat and filling the entire frame edge to edge, very subtle natural paper fibres and tooth, soft even neutral light, no shadows, no folds, no text, no marks, no border.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\papel.png"
+  ],
+  "usage": {
+    "input_tokens": 67,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 67
+    },
+    "output_tokens": 1238,
+    "output_tokens_details": {
+      "image_tokens": 1238,
+      "text_tokens": 0
+    },
+    "total_tokens": 1305
+  },
+  "custo_estimado_usd": 0.0375,
+  "segundos": 24
+}

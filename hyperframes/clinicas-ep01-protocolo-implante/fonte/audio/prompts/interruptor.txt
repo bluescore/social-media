@@ -1,0 +1,2 @@
+Single small desk lamp switch click, dry plastic toggle, close-mic, short, no reverb, no tone
+{"duration_seconds": 0.6, "prompt_influence": 0.7}

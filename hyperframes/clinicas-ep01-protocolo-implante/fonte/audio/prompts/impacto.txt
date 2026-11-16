@@ -1,0 +1,2 @@
+Single deep cinematic impact, low sub boom with a muffled cymbal and a short room reverb tail, one hit only, sharp attack at the very start
+{"duration_seconds": 3, "prompt_influence": 0.6}

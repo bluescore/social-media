@@ -1,0 +1,31 @@
+{
+  "data": "2026-11-12T12:33:52.725Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [
+    "hyperframes/_serie-clinicas/personagens/dra-helena/rascunhos/v2-folha-B-designer-toy-1.png"
+  ],
+  "prompt": "Image 1 = approved character model sheet. Keep exactly her design, proportions, materials and rendering style from Image 1 (face, low bun with the grey streak from her LEFT temple, bone-white mandarin-collar lab coat, charcoal top and trousers, brown watch). Nothing orange on her. Mouth closed.\nSCENE: vertical 9:16 frame. A tabletop miniature diorama of a small, tasteful dental office at night, built as a cut-away room (like a premium dollhouse set with two walls and a floor), seen from a slightly high three-quarter angle, with a gentle tilt-shift shallow depth of field so it reads as a real miniature on a table.\nInside the room: a warm wooden work counter on the LEFT with a small table lamp switched on (warm 2700 K light that spreads softly across the whole room, no hard circle of light); an empty, generic dental chair in muted warm grey on the RIGHT, softly lit; a window with horizontal blinds on the back wall, faint cool street light outside.\nIn the CENTER foreground: a smartphone on a small tripod, facing her; its screen is a plain dark blank plate (no interface). She stands just behind and to the left of the tripod, looking at the phone, tired after a long day: heavy eyelids, shoulders dropped, one hand resting on the counter.\nMood: late night, quiet, a little tired, but warm, cosy and readable; soft shadows, never pitch black (deepest tones around #2B2224). Real miniature materials: painted wood, fabric, plaster with fine texture, real light bounce.\nConstraints: nothing orange in the scene; no text, no logos, no UI, no labels, no watermark, no extra people, no instruments.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\_serie-clinicas\\personagens\\dra-helena\\rascunhos\\v2-capa-B.png"
+  ],
+  "usage": {
+    "input_tokens": 1670,
+    "input_tokens_details": {
+      "image_tokens": 1296,
+      "text_tokens": 374
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 3083
+  },
+  "custo_estimado_usd": 0.0546,
+  "segundos": 53
+}

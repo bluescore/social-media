@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-12T15:15:29.870Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/folha-A-final.png",
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/helena-andando-a.png"
+  ],
+  "prompt": "Image 1 = approved character sheet. Image 2 = the same figure walking (keep the same view, scale, light and design exactly).\nKeep EXACTLY the wooden-figure character of Image 1 (approved sheet): honey-brown satin turned-wood head and hands, minimal painted face (small black dot eyes, tiny wooden nose knob, thin smile line), carved dark brown hair in a LOW BUN with ONE wide band of carved GREY hair on her own RIGHT side, bone-white carved lab coat with notched lapels and a small charcoal pen in the LEFT chest pocket, charcoal top and trousers, brown watch on her LEFT wrist. Nothing orange.\nPOSE: identical to Image 2 (walking toward the RIGHT, same three-quarter view and scale), but at the next step: RIGHT leg forward, arms swinging the other way. Warm low golden late-afternoon sunlight from the LEFT. Fully TRANSPARENT background, isolated figure, no floor, no shadow, no text, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\helena-andando-b.png"
+  ],
+  "usage": {
+    "input_tokens": 3243,
+    "input_tokens_details": {
+      "image_tokens": 3016,
+      "text_tokens": 227
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 4656
+  },
+  "custo_estimado_usd": 0.0677,
+  "segundos": 38
+}

@@ -1,0 +1,2 @@
+Soft dark air whoosh, slow gentle swish of moving air like a camera gliding backwards, low-pitched filtered wind noise that swells smoothly and fades away, airy texture only, no boom, no sub bass tone, no thump, no hit, no musical note
+{"duration_seconds": 2.6, "prompt_influence": 0.7}

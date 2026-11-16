@@ -1,0 +1,140 @@
+<!-- CENA 11 (58,5 a 67,5 s do episódio, 9,0 s) — v3: o fechamento.
+     A maquete do consultório à tarde (mesma placa e mesma câmera quase parada da v2). A Helena NÃO anda:
+     está parada no consultório, de pé, olhando o celular (vendo o perfil crescer). Só respira de leve.
+     Lettering da locução (cada frase entra inteira quando a voz começa; a anterior sai antes):
+     "o roteiro ela já tinha" · "faltava tirar do papel" · "se você explica isso todo dia no consultório," +
+     "o seu também já existe" (as duas partes da fala 13 ficam juntas). O cartão (s12) desce por cima em 8,4. -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #2b2224;
+      font-family: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+    }
+    #s11-cam {
+      position: absolute;
+      inset: 0;
+      transform-origin: 540px 1000px;
+    }
+    .placa {
+      position: absolute;
+      left: -67.5px;
+      top: -120px;
+      width: 1215px;
+      height: 2160px;
+    }
+    /* a Helena parada, na escala da Helena andando da v2 (sola no chão em y 1432) */
+    #s11-helena {
+      position: absolute;
+      left: 601px;
+      top: 517px;
+      width: 318px;
+      height: 922px;
+      transform-origin: 50% 99%;
+    }
+    /* sombra de contato (sob os pés) + a sombra longa e fraca que o sol da janela joga para a frente-esquerda,
+       desenhadas num PNG (fonte/scripts/sombra-helena-parada.py) que cobre x 400-900, y 1380-1500 */
+    #s11-sombra {
+      position: absolute;
+      left: 400px;
+      top: 1380px;
+      width: 500px;
+      height: 120px;
+    }
+    #s11-veu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 760px;
+      background: linear-gradient(180deg, rgba(36, 26, 22, 0.55) 0%, rgba(36, 26, 22, 0.35) 55%, rgba(36, 26, 22, 0) 100%);
+      opacity: 0;
+    }
+    .frase {
+      position: absolute;
+      left: 108px;
+      top: 240px;
+      width: 864px;
+      color: #f6f4f1;
+      font-size: 96px;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      text-shadow: 0 3px 24px rgba(30, 18, 12, 0.55);
+      opacity: 0;
+    }
+    .frase b {
+      font-weight: 700;
+    }
+    /* a primeira parte da fala 13 é menor; a segunda entra embaixo dela */
+    #s11-f3 {
+      font-size: 68px;
+    }
+    #s11-f4 {
+      top: 392px;
+    }
+  </style>
+
+  <div id="root" data-composition-id="s11-tarde" data-width="1080" data-height="1920">
+    <div id="s11-cam" data-layout-allow-overflow>
+      <img class="placa" src="assets/img/consultorio-tarde.jpg" alt="" />
+      <img id="s11-sombra" src="assets/img/sombra-helena-parada.png" alt="" />
+      <img id="s11-helena" src="assets/img/helena-parada-celular.png" alt="" />
+    </div>
+    <div id="s11-veu"></div>
+    <div id="s11-f1" class="frase">o roteiro<br />ela já tinha</div>
+    <div id="s11-f2" class="frase">faltava tirar<br />do <b>papel</b></div>
+    <div id="s11-f3" class="frase">se você explica isso<br />todo dia no consultório,</div>
+    <div id="s11-f4" class="frase">o seu também<br />já <b>existe</b></div>
+  </div>
+
+  <script>
+    (function () {
+      // TEMPOS DA LOCUÇÃO (ajustados pelo agente de legendas com assets/audio/voz-v3.palavras.json) — segundos LOCAIS desta cena (cena começa em 58,5 do episódio)
+      const TEMPOS = {
+        roteiro: 0.4, // fala 11 "o roteiro ela já tinha."            (58,900 no episódio)
+        papel: 1.9, // fala 12 "faltava tirar do papel."               (60,400)
+        explica: 3.6, // fala 13 "se você explica isso todo dia no consultório," (62,100)
+        existe: 6.29, // fala 13 (2ª parte) "o seu também já existe." (64,794, depois da pausa da vírgula)
+      };
+      const ENTRA = 0.18; // a frase aparece inteira, num fade curto
+      const SAI = 0.15; // a anterior some antes da próxima entrar (nunca texto sobre texto)
+
+      const tl = gsap.timeline({ paused: true });
+
+      // câmera quase parada (calma): avanço mínimo, na mesma velocidade da v2
+      tl.fromTo("#s11-cam", { scale: 1 }, { scale: 1.025, duration: 9.0, ease: "sine.inOut" }, 0);
+
+      // ela fica parada; só respira bem de leve (ciclos de 1,6 s, como em s01)
+      for (let i = 0; i < 5; i++) {
+        tl.to("#s11-helena", { scaleY: 1.006, duration: 0.8, ease: "sine.inOut" }, i * 1.6);
+        tl.to("#s11-helena", { scaleY: 1, duration: 0.8, ease: "sine.inOut" }, i * 1.6 + 0.8);
+      }
+      tl.to("#s11-helena", { scaleY: 1.006, duration: 0.8, ease: "sine.inOut" }, 8.0);
+
+      // véu escuro no alto, para o texto ler bem
+      tl.to("#s11-veu", { opacity: 1, duration: 0.35, ease: "power1.out" }, 0.05);
+
+      // as frases, cada uma com a voz
+      tl.to("#s11-f1", { opacity: 1, duration: ENTRA, ease: "power1.out" }, TEMPOS.roteiro);
+      tl.to("#s11-f1", { opacity: 0, duration: SAI, ease: "power1.in" }, TEMPOS.papel - SAI - 0.02);
+      tl.to("#s11-f2", { opacity: 1, duration: ENTRA, ease: "power1.out" }, TEMPOS.papel);
+      tl.to("#s11-f2", { opacity: 0, duration: SAI, ease: "power1.in" }, TEMPOS.explica - SAI - 0.02);
+      tl.to("#s11-f3", { opacity: 1, duration: ENTRA, ease: "power1.out" }, TEMPOS.explica);
+      tl.to("#s11-f4", { opacity: 1, duration: ENTRA, ease: "power1.out" }, TEMPOS.existe);
+
+      window.__timelines["s11-tarde"] = tl;
+    })();
+  </script>
+</template>

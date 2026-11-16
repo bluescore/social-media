@@ -1,0 +1,4 @@
+Image 1 is a 3D render layer of a human lower jaw bone made of translucent mint-green glass, with five titanium dental implants visible inside it, on a fully transparent background.
+Edit it and keep EXACTLY the same jaw: the same outline, the same shape, the same angle, the same scale and the same position in the frame (pixel-aligned with Image 1), the same warm soft key light from the upper left and the same thin orange rim light on the right edges.
+Change ONLY the glass: make it heavily FROSTED, milky, sandblasted mint-green glass, soft and cloudy, so opaque that NOTHING inside can be seen. The five implants must be completely hidden, including their tops: no metal visible anywhere, and the crest of the bone is smooth and continuous where the implant tops were.
+Keep the fully transparent background. No ground shadow, no glow, no text, no labels.

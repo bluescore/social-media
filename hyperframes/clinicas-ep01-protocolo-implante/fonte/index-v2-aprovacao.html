@@ -1,0 +1,201 @@
+<!doctype html>
+<!-- SALA DE ESPERA · EP. 01 "o roteiro parado" — EPISÓDIO COMPLETO (versão para aprovação, 64 s)
+     Trecho da virada (episódio 25,3 → 36,1 s, variante "dobra uma batida depois"), 11 s, vertical 1080×1920, 30 q/s.
+     Direção visual v2 "a maquete e o real": a vida da dra. Helena é uma maquete com uma boneca de madeira;
+     o vídeo dela é 3D realista. Roteiro: ../_serie-clinicas/ep01-ROTEIRO.md · plano: ../_serie-clinicas/ep01-SPEC.md §9.
+     Depois da aprovação, esta raiz vira o episódio inteiro (esta versão fica guardada como corte-10s.html).
+     Prova interna: as frases técnicas levam "rascunho · frases em revisão" e o render não sai de renders\. -->
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #2b2224;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+    <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="64"
+      data-width="1080"
+      data-height="1920"
+      data-motion-blur="on"
+      data-motion-blur-events="on"
+    >
+      <!-- 1–2 (0–9,3): o take 14 no visor; o recuo revela a maquete com a Helena de corpo inteiro -->
+      <div
+        id="s01-maquete"
+        class="clip"
+        data-composition-id="s01-maquete"
+        data-composition-src="compositions/s01-maquete.html"
+        data-start="0"
+        data-duration="9.3"
+        data-track-index="0"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 1"
+      ></div>
+      <!-- 3 (9,2–15,3): a folha na bancada; a mão de madeira risca "gravar 06/11" -->
+      <div
+        id="s03-folha"
+        class="clip"
+        data-composition-id="s03-folha"
+        data-composition-src="compositions/s03-folha.html"
+        data-start="9.2"
+        data-duration="6.1"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 2"
+      ></div>
+      <!-- 4 (15,3–18,3): o perfil parado, "último post · há 47 dias" -->
+      <div
+        id="s04-perfil"
+        class="clip"
+        data-composition-id="s04-perfil"
+        data-composition-src="compositions/s04-perfil.html"
+        data-start="15.3"
+        data-duration="3.0"
+        data-track-index="0"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 3"
+      ></div>
+      <!-- 5 (18,3–22,6): ela fotografa a folha e manda só o roteiro -->
+      <div
+        id="s05-foto"
+        class="clip"
+        data-composition-id="s05-foto"
+        data-composition-src="compositions/s05-foto.html"
+        data-start="18.3"
+        data-duration="4.3"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 4"
+      ></div>
+      <!-- 6–7 (22,6–31,43): abajur apaga → o fio lê → a folha dobra e gira → IMPACTO (30,633) → o vídeo dela -->
+      <div
+        id="virada"
+        class="clip"
+        data-composition-id="virada"
+        data-composition-src="compositions/virada.html"
+        data-start="22.6"
+        data-duration="8.8333"
+        data-track-index="0"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 5"
+      ></div>
+      <!-- 8 (31,43–43,4): o vídeo da dra. Helena em 3D realista, 4 passos -->
+      <div
+        id="s08-video-dela"
+        class="clip"
+        data-composition-id="s08-video-dela"
+        data-composition-src="compositions/s08-video-dela.html"
+        data-start="31.4333"
+        data-duration="11.9667"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 6"
+      ></div>
+      <!-- 9 (43,4–46,9): o vídeo vira o primeiro post, no celular da recepção, à tarde -->
+      <div
+        id="s09-post"
+        class="clip"
+        data-composition-id="s09-post"
+        data-composition-src="compositions/s09-post.html"
+        data-start="43.4"
+        data-duration="3.5"
+        data-track-index="0"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 7"
+      ></div>
+      <!-- 10 (46,9–51,9): ela manda para a turma; "Lúcia: ficou com a sua cara" -->
+      <div
+        id="s10-turma"
+        class="clip"
+        data-composition-id="s10-turma"
+        data-composition-src="compositions/s10-turma.html"
+        data-start="46.9"
+        data-duration="5.0"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 8"
+      ></div>
+      <!-- 11 (51,9–59,3): a maquete à tarde; ela sai andando; "faltava a forma"; dedicatória -->
+      <div
+        id="s11-tarde"
+        class="clip"
+        data-composition-id="s11-tarde"
+        data-composition-src="compositions/s11-tarde.html"
+        data-start="51.9"
+        data-duration="8"
+        data-track-index="0"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 9"
+      ></div>
+      <!-- 12 (59,3–64): o cartão da série -->
+      <div
+        id="s12-cartao"
+        class="clip"
+        data-composition-id="s12-cartao"
+        data-composition-src="compositions/s12-cartao.html"
+        data-start="59.3"
+        data-duration="4.7"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 10"
+      ></div>
+      <!-- SOM do episódio: narração A.Medeiros (take A, cortada nas pausas), trilha B alinhada pelo golpe no impacto
+           (30,633 s) e efeitos, já mixados em assets/audio/mix-final.wav (receita: fonte/audio/montar-final.py). -->
+      <audio
+        id="som-mix"
+        class="clip"
+        src="assets/audio/mix-final.wav"
+        data-start="0"
+        data-duration="64"
+        data-track-index="11"
+        data-volume="1"
+      ></audio>
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

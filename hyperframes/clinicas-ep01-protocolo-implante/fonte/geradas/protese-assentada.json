@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-12T15:16:36.982Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/camada-osso.png",
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/camada-protese.png"
+  ],
+  "prompt": "Image 1 is a transparent 3D render layer of a human lower jaw bone in translucent mint-green glass with five parallel titanium dental implants already in place. Image 2 is a transparent layer of the matching full-arch fixed prosthesis (horseshoe-shaped base in matte rosy resin with twelve natural white porcelain teeth) from the same scene, where it was floating above the jaw.\nProduce Image 1 with the prosthesis from Image 2 now SEATED on the jaw: the prosthesis rests directly on the five implant heads along the crest of the jaw, following the curve of the arch, its base sitting flush on the bone, viewed from the same camera. The jaw must stay EXACTLY as in Image 1: same outline, same shape, same angle, same scale and same position in the frame (pixel-aligned), with the implant bodies still visible through the glass below the prosthesis. Same warm soft key light from the upper left and the same thin orange rim light on the right edges of the teeth and the glass.\nFully transparent background. No ground shadow, no glow, no hands, no tools, no text, no labels.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\protese-assentada.png"
+  ],
+  "usage": {
+    "input_tokens": 3275,
+    "input_tokens_details": {
+      "image_tokens": 3016,
+      "text_tokens": 259
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 4688
+  },
+  "custo_estimado_usd": 0.0678,
+  "segundos": 47
+}

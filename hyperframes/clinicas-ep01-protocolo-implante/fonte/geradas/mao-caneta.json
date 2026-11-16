@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-12T14:09:05.284Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/folha-A-final.png",
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/placa-bancada-noite-v2.png"
+  ],
+  "prompt": "Image 1 = approved character sheet (wooden figure). Image 2 = the counter seen from above (for light and scale only).\nSeen from directly ABOVE (top-down), the figure's RIGHT hand and forearm entering from the bottom-right of the frame: a honey-brown satin turned-wood hand (simple rounded fingers, as in Image 1) holding a small charcoal pen with its tip touching down at the upper-left of the hand, as if writing on paper; the bone-white carved lab-coat sleeve rolled once at the forearm. No watch on this wrist. Warm 2700 K lamp light from the upper LEFT, soft. Fully TRANSPARENT background, isolated hand and forearm only, no paper, no table, no shadow, no text, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\mao-caneta.png"
+  ],
+  "usage": {
+    "input_tokens": 3201,
+    "input_tokens_details": {
+      "image_tokens": 3016,
+      "text_tokens": 185
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 4614
+  },
+  "custo_estimado_usd": 0.0674,
+  "segundos": 41
+}

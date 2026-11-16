@@ -1,0 +1,99 @@
+<!-- Cena 4 (7,8–10,6 s): o mistério. "Inteligência que…" e um caça-palavra gira;
+     antes de parar, uma tarja lima censura a palavra e cresce até virar a tela. -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Megion";
+      src: url("assets/fonts/Megion-Bold.otf") format("opentype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #1e1415;
+      overflow: hidden;
+    }
+    #s4-bloco {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 470px;
+      text-align: center;
+      font-family: "Megion", sans-serif;
+      font-weight: 700;
+      font-size: 175px;
+      line-height: 1;
+      color: #ffffff;
+    }
+    .s4-linha {
+      height: 175px;
+      white-space: nowrap;
+    }
+    #s4-janela {
+      position: relative;
+      height: 190px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    .s4-palavra {
+      height: 190px;
+      line-height: 190px;
+      color: #f34500;
+      white-space: nowrap;
+    }
+    /* cobre a janela inteira do caça-palavra (y 830–1020) com folga */
+    #s4-tarja {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      top: 822px;
+      height: 206px;
+      background: #efff57;
+      transform-origin: left center;
+    }
+    #s4-inundacao {
+      position: absolute;
+      inset: 0;
+      background: #efff57;
+      opacity: 0;
+      clip-path: inset(822px 60px 892px 60px);
+    }
+  </style>
+  <div data-hf-id="hf-q5j8" id="root" data-composition-id="s4" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-rwgk" id="s4-bloco">
+      <div data-hf-id="hf-4z1x" class="s4-linha">Inteligência</div>
+      <div data-hf-id="hf-844b" class="s4-linha">que</div>
+      <div data-hf-id="hf-950s" id="s4-janela">
+        <div data-hf-id="hf-8owu" id="s4-faixa">
+          <div data-hf-id="hf-ui58" class="s4-palavra">analisa</div>
+          <div data-hf-id="hf-edgm" class="s4-palavra">calcula</div>
+          <div data-hf-id="hf-janj" class="s4-palavra">responde</div>
+          <div data-hf-id="hf-tceg" class="s4-palavra">automatiza</div>
+          <div data-hf-id="hf-qs4g" class="s4-palavra">aprende</div>
+          <div data-hf-id="hf-t6eu" class="s4-palavra">conecta</div>
+          <div data-hf-id="hf-3yuj" class="s4-palavra">decide</div>
+          <div data-hf-id="hf-slwm" class="s4-palavra">participa</div>
+        </div>
+      </div>
+    </div>
+    <div data-hf-id="hf-65n1" id="s4-tarja"></div>
+    <div data-hf-id="hf-e2wn" id="s4-inundacao"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // Entrada: o bloco chega de baixo, continuando o chicote da cena 3
+    tl.fromTo("#s4-bloco", { y: 700, filter: "blur(20px)" }, { y: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 0);
+    // Caça-palavra: gira rápido e vai freando
+    tl.fromTo("#s4-faixa", { y: 0 }, { y: -7 * 190, duration: 1.0, ease: "power3.out" }, 0.6);
+    // A tarja censura a palavra antes de ela parar
+    tl.fromTo("#s4-tarja", { scaleX: 0 }, { scaleX: 1, duration: 0.14, ease: "expo.out" }, 1.35);
+
+    // A tarja vira o mundo lima; o texto desfoca e some
+    tl.set("#s4-inundacao", { opacity: 1 }, 2.0);
+    tl.fromTo("#s4-inundacao", { clipPath: "inset(822px 60px 892px 60px)" }, { clipPath: "inset(0px 0px 0px 0px)", duration: 0.6, ease: "power2.inOut" }, 2.05);
+    tl.fromTo("#s4-bloco", { opacity: 1 }, { opacity: 0, duration: 0.3, ease: "power2.in" }, 2.05);
+
+    window.__timelines["s4"] = tl;
+  </script>
+</template>

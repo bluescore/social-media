@@ -1,0 +1,90 @@
+<!-- Cena 3 (letterings) — "e nós queremos" + "SUBIR" (3,0 s), SEM fundo: vai por cima do vídeo do homem esperando o elevador.
+     "e nós queremos" entra palavra por palavra (Helvetica Now Text Regular) numa batida; "SUBIR" entra em 1,2 s,
+     na batida (2 tempos depois) (Megion Bold, caixa alta: a única palavra de destaque).
+     Os dois ficam parados até o corte seco para a tela preta (fim da cena, junto com o fim da música).
+     Posição: sobre o casaco escuro (entre 50% e 64% da altura), longe do reflexo laranja das portas.
+     Cor de "SUBIR": variável --cor-destaque (padrão branco #FFFFFF). -->
+<template>
+  <style>
+    @font-face {
+      font-family: "Helvetica Now Text";
+      src: url("assets/fonts/HelveticaNowText-Regular.ttf") format("truetype");
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: "Megion";
+      src: url("assets/fonts/Megion-Bold.otf") format("opentype");
+      font-weight: 700;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .subir-linha {
+      position: absolute;
+      left: 0;
+      width: 1080px;
+      text-align: center;
+      color: #ffffff;
+      white-space: nowrap;
+      text-shadow: 0 2px 28px rgba(0, 0, 0, 0.55);
+    }
+    #subir-frase {
+      top: 968px;
+      font-family: "Helvetica Now Text", sans-serif;
+      font-weight: 400;
+      font-size: 76px; /* mesmo tamanho de todo texto de apoio do filme */
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    #subir-destaque {
+      top: 1037px;
+      font-family: "Megion", sans-serif;
+      font-weight: 700;
+      font-size: 220px;
+      line-height: 1;
+      color: var(--cor-destaque, #ffffff);
+    }
+    .subir-palavra,
+    #subir-destaque-tinta {
+      display: inline-block;
+      opacity: 0;
+    }
+  </style>
+  <div data-hf-id="hf-18sf"
+    id="root"
+    data-composition-id="subir"
+    data-width="1080"
+    data-height="1920"
+    data-composition-variables='[{"id":"cor-destaque","type":"color","label":"Cor de SUBIR","default":"#FFFFFF"}]'
+  >
+    <div data-hf-id="hf-hodi" id="subir-frase" class="subir-linha clip" data-start="0" data-duration="2.4">
+      <span data-hf-id="hf-amt9" class="subir-palavra">e</span> <span data-hf-id="hf-3boa" class="subir-palavra">nós</span> <span data-hf-id="hf-2ryv" class="subir-palavra">queremos</span>
+    </div>
+    <div data-hf-id="hf-nnhg" id="subir-destaque" class="subir-linha clip" data-start="1.2" data-duration="1.2">
+      <span data-hf-id="hf-9mq6" id="subir-destaque-tinta">SUBIR</span>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // palavra por palavra, saindo do desfoque
+      tl.fromTo(
+        "#subir-frase .subir-palavra",
+        { opacity: 0, filter: "blur(8px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.25, ease: "power3.out", stagger: 0.1 },
+        0,
+      );
+      // "SUBIR": chega com impacto e para
+      tl.fromTo(
+        "#subir-destaque-tinta",
+        { opacity: 0, filter: "blur(14px)", scale: 1.06 },
+        { opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.25, ease: "expo.out" },
+        1.2,
+      );
+      // sem saída: a cena termina num corte seco para o preto, junto com o fim da música
+      window.__timelines["subir"] = tl;
+    })();
+  </script>
+</template>

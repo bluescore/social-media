@@ -1,0 +1,31 @@
+{
+  "data": "2026-11-12T13:16:47.494Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "xhigh",
+  "tamanho": "1440x2560",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/placa-bancada-noite-v2.png"
+  ],
+  "prompt": "Image 1 = the miniature counter at night with the lamp ON. Create the SAME photograph: same camera, lens, framing, focus, and every object in exactly the same position and shape (lamp, pen cup, plant, notebook, drawers, wood grain). Change ONLY the light: the table lamp in the top-left corner is switched OFF (shade unlit, no warm glow anywhere). The only light now is a weak, cool bluish street light coming through unseen window blinds from the RIGHT, laying a few faint, soft parallel stripes of light across the countertop; overall about 30% of the previous brightness, calm and readable, never pitch black (deepest tones around #2B2224). Smooth tonal gradients, no banding. The centre of the countertop stays EMPTY. No people, no text, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\placa-bancada-apagado.png"
+  ],
+  "usage": {
+    "input_tokens": 1692,
+    "input_tokens_details": {
+      "image_tokens": 1508,
+      "text_tokens": 184
+    },
+    "output_tokens": 3276,
+    "output_tokens_details": {
+      "image_tokens": 3276,
+      "text_tokens": 0
+    },
+    "total_tokens": 4968
+  },
+  "custo_estimado_usd": 0.1113,
+  "segundos": 74
+}

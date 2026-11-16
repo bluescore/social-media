@@ -1,0 +1,2 @@
+Quiet small clinic reception in the late afternoon, soft room tone, very faint distant city street outside a closed window, far-away traffic hush, no voices, no music, no phones, no beeps
+{"duration_seconds": 9, "prompt_influence": 0.5}

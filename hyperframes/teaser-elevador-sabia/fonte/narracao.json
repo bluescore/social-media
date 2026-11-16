@@ -1,0 +1,48 @@
+{
+  "_sobre": "Narração com a voz A.Medeiros – Clear, Calm & Friendly (biblioteca da ElevenLabs, voice_id E9hPCbqBRCgB3UEiCUuE), pedida pelo dono em 2026-11-11, gerada pelo conector da ElevenLabs (modelo eleven_v4, tomada A). Outras tomadas: fonte/audio/narracao-amedeiros-v4-b.mp3, -ml2-a.mp3, -ml2-b.mp3 (Multilingual v2). A versão anterior (Yago-Voice/Qwen) está em fonte/narracao-qwen.json. 'de'/'ate' = trecho da tomada (cortes no meio das pausas); 'no_filme' = onde o trecho começa no vídeo; 'ganho_db' = ganho fixo de cada fala inteira (as primeiras mais baixas, para o filme começar leve). Na última fala a música desce uma profundidade fixa (-6 dB) em rampa, sem cortar o eco do impacto. Rode python -I fonte/montar-narracao.py depois de mudar.",
+  "tomada": "fonte/audio/narracao-amedeiros-v4-a.mp3",
+  "voz_lufs": -22.5,
+  "voz_acima_da_musica_db": 8.0,
+  "reducao_max_db": 9.0,
+  "impacto_s": 14.833,
+  "falas": [
+    {
+      "texto": "Quando a forma de pensar evolui,",
+      "de": 0.0,
+      "ate": 2.1,
+      "no_filme": 1.025,
+      "ganho_db": -5.0
+    },
+    {
+      "texto": "a identidade acompanha.",
+      "de": 2.36,
+      "ate": 4.0,
+      "no_filme": 3.975,
+      "ganho_db": -2.5
+    },
+    {
+      "texto": "E nós queremos... subir.",
+      "de": 4.25,
+      "ate": 6.45,
+      "no_filme": 10.48,
+      "ganho_db": -0.5
+    },
+    {
+      "texto": "Em breve.",
+      "de": 6.67,
+      "ate": 7.5,
+      "no_filme": 13.075,
+      "ganho_db": 0.0
+    },
+    {
+      "texto": "Dezesseis de novembro.",
+      "de": 7.67,
+      "ate": 9.12,
+      "no_filme": 15.19,
+      "ganho_db": -1.0,
+      "abaixar_fixo_db": -6.0,
+      "desce_s": 0.2,
+      "solta_s": 0.4
+    }
+  ]
+}

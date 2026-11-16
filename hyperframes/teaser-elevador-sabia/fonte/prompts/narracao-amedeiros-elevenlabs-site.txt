@@ -1,0 +1,20 @@
+NARRAÇÃO DO TEASER — gerar no site da ElevenLabs (elevenlabs.io → Text to Speech)
+
+Voz: A.medeiros – Clear, Calm & Friendly (Voice Library; "Add to my voices" se ainda não estiver na sua conta)
+Modelo: Eleven Multilingual v2 (o mais estável em português)
+Ajustes: Stability ~55% · Similarity ~75% · Style 0–10% · Speed 1.0 (padrão)
+
+Texto (copie exatamente, com as linhas em branco — elas criam as pausas que eu uso para recortar cada fala):
+
+Quando a forma de pensar evolui... a identidade acompanha.
+
+E nós queremos... subir.
+
+Em breve.
+
+Dezesseis de novembro.
+
+Depois de gerar: baixe o MP3 e salve em
+C:\social-media\brutos\2026-11-11_narracao-teaser-elevador\narracao-amedeiros.mp3
+(se gerar mais de uma versão, salve todas na mesma pasta: -1, -2...). Eu recorto cada fala nas pausas, sem esticar
+nem acelerar, encaixo nos tempos dos textos e refaço a mixagem.

@@ -1,0 +1,31 @@
+{
+  "data": "2026-11-12T14:09:05.244Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "high",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "transparent",
+  "n": 1,
+  "referencias": [
+    "hyperframes/_serie-clinicas/personagens/dra-helena/rascunhos/v2-capa-A.png"
+  ],
+  "prompt": "Image 1 = the miniature dollhouse office (for light, scale and materials only).\nA small dollhouse-scale black tripod (three thin legs, a small ball head) holding a smartphone in a simple clamp, standing upright, seen exactly from the FRONT at the height of the phone: the phone faces the viewer, perfectly frontal, not tilted. The phone is a generic slim charcoal (#303236) phone with rounded corners and NO logo; its screen is a uniform flat dark plate (#1b1c1f), completely blank, no reflections, no interface. Warm 2700 K light from the LEFT, faint cool light from the right. Fully TRANSPARENT background, isolated object, no floor, no shadow, no text, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\tripe-celular.png"
+  ],
+  "usage": {
+    "input_tokens": 1675,
+    "input_tokens_details": {
+      "image_tokens": 1508,
+      "text_tokens": 167
+    },
+    "output_tokens": 1413,
+    "output_tokens_details": {
+      "image_tokens": 1413,
+      "text_tokens": 0
+    },
+    "total_tokens": 3088
+  },
+  "custo_estimado_usd": 0.0553,
+  "segundos": 41
+}

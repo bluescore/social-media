@@ -1,0 +1,2 @@
+Quiet empty dental office in the afternoon, soft room tone, faint distant street through a window, gentle still air, no voices, no music, no dental drill, no beeps
+{"duration_seconds": 8, "prompt_influence": 0.5}

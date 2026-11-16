@@ -1,0 +1,32 @@
+{
+  "data": "2026-11-12T22:31:45.933Z",
+  "modelo": "gpt-image-2.6-sunburst",
+  "qualidade": "medium",
+  "tamanho": "1152x2048",
+  "formato": "png",
+  "fundo": "auto",
+  "n": 1,
+  "referencias": [
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/folha-A-final.png",
+    "hyperframes/clinicas-ep01-protocolo-implante/fonte/geradas/post-1-helena.png"
+  ],
+  "prompt": "Image 1 = approved character sheet. Image 2 = an older post of the same miniature world: use it ONLY as a reference for the rendering, scale and materials; do not copy its room, light or composition.\nKeep EXACTLY the wooden-figure character of Image 1 (approved sheet): honey-brown satin turned-wood head and hands, minimal painted face (small black dot eyes, tiny wooden nose knob, thin smile line), carved dark brown hair in a LOW BUN with ONE wide band of carved GREY hair on her own RIGHT temple, bone-white carved lab coat with notched lapels and a small charcoal pen in the chest pocket on her own LEFT side, charcoal top and charcoal trousers, dark shoes, brown leather watch on her own LEFT wrist. Nothing orange.\nSCENE (\"question of the week\" post): inside her miniature dental office in the evening, the wooden figure dentist is seen from the front, from the waist up, centered in the lower two thirds of the frame. She holds up with BOTH hands, at chest height, a small plain white card printed with ONE single large charcoal question mark symbol (only the question mark, nothing else on the card). Curious, friendly expression (dot eyes, small smile), head tilted slightly. Because she faces the camera: the GREY band of hair is on the LEFT side of the image (her own right temple), the BUN is behind her head, and the brown WATCH is on the wrist of the hand on the RIGHT side of the image (her own left wrist). Do not mirror the character.\nBACKGROUND AND LIGHT: a warm dark walnut wood-panelled wall right behind her, softly out of focus; she is lit by a warm table lamp out of frame on the right; cosy evening mood, rich warm-brown, cream and bone-white palette, clearly different from a bright daylight room.\nPremium tabletop miniature photography (dollhouse scale), real materials (wood, ceramic, fabric, plaster, paper), gentle tilt-shift depth of field, warm and friendly, the same handmade miniature world as Image 2 but a NEW scene. Vertical 9:16 Instagram post photo.\nCOMPOSITION FOR A TITLE: the top 30% of the frame is a calm, uncluttered, fairly DARK area (soft deep shadow of the background, no objects, no bright spots, no lamps) where a white title will be added later; the subject sits in the middle and lower part of the frame.\nNo text, no logos, no letters, no numbers, no watermark, nothing orange.",
+  "arquivos": [
+    "C:\\social-media\\hyperframes\\clinicas-ep01-protocolo-implante\\fonte\\geradas\\post-novo-5.png"
+  ],
+  "usage": {
+    "input_tokens": 3590,
+    "input_tokens_details": {
+      "image_tokens": 3044,
+      "text_tokens": 546
+    },
+    "output_tokens": 1212,
+    "output_tokens_details": {
+      "image_tokens": 1212,
+      "text_tokens": 0
+    },
+    "total_tokens": 4802
+  },
+  "custo_estimado_usd": 0.0634,
+  "segundos": 28
+}
